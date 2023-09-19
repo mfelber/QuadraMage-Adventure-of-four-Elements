@@ -1,1 +1,1 @@
-# QuadraMage---Puzzles-of-the-Four-Elements
+# QuadraMage-Puzzles-of-the-Four-Elements
