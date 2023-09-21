@@ -6,9 +6,10 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 
-    Rigidbody2D Player;
+    public Rigidbody2D Player;
 
-    float jumpHeight = 40f;
+    public float jumpHeight = 40f;
+    public float playerSpeed = 30f;
     bool playerOnGround;
 
 
@@ -23,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
     {
 
         float x = Input.GetAxisRaw("Horizontal");
-        Player.velocity = new Vector2(x * 30f, Player.velocity.y);
+        Player.velocity = new Vector2(x * playerSpeed, Player.velocity.y);
 
         if (Input.GetButtonDown("Jump") && !playerOnGround)        
         {
