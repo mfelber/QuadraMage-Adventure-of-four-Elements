@@ -5,21 +5,46 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public Rigidbody2D Player;
-    public float runSpeed = 40f;
-    public float Horizontal;
-   
-  
+
+    Rigidbody2D Player;
+
+    float jumpHeight = 40f;
+    bool playerOnGround;
+
+
+
+    private void Start()
+    {
+        Player = GetComponent<Rigidbody2D>();
+    }
+
+
     void Update()
     {
-        Horizontal = Input.GetAxisRaw("Horizontal");
+
+        float x = Input.GetAxisRaw("Horizontal");
+        Player.velocity = new Vector2(x * 30f, Player.velocity.y);
+
+        if (Input.GetButtonDown("Jump") && !playerOnGround)        
+        {
+           
+            Player.velocity = new Vector2(Player.velocity.x, jumpHeight);
+            playerOnGround = true;
+        }
 
       
+
     }
 
-    private void FixedUpdate()
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        Player.velocity = new Vector2( Horizontal * runSpeed, Player.velocity.y);
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            playerOnGround=false;
+        }
     }
+
+
+
 
 }
