@@ -10,7 +10,10 @@ public class PlayerMovement : MonoBehaviour
 
     public float jumpHeight = 40f;
     public float playerSpeed = 30f;
+
     bool playerOnGround;
+    bool playerFacingRight = true;
+    
 
 
 
@@ -23,8 +26,8 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
-        float x = Input.GetAxisRaw("Horizontal");
-        Player.velocity = new Vector2(x * playerSpeed, Player.velocity.y);
+        float playerMove = Input.GetAxisRaw("Horizontal");
+        Player.velocity = new Vector2(playerMove * playerSpeed, Player.velocity.y);
 
         if (Input.GetButtonDown("Jump") && !playerOnGround)        
         {
@@ -33,10 +36,28 @@ public class PlayerMovement : MonoBehaviour
             playerOnGround = true;
         }
 
-      
+        if(playerMove > 0 && !playerFacingRight)
+        {
+            flipPlayer();
+        }
+        if (playerMove < 0 && playerFacingRight)
+        {
+            flipPlayer();
+        }
+
 
     }
 
+    void flipPlayer()
+    {
+        Vector3 currentScale = Player.transform.localScale;
+        currentScale.x *= -1;
+        Player.transform.localScale = currentScale;
+
+        playerFacingRight = !playerFacingRight;
+    }
+
+  
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
