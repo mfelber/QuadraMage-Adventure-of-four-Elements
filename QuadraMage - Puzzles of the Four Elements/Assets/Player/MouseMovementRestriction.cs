@@ -12,15 +12,13 @@ public class MouseMovementRestriction : MonoBehaviour
     Vector2 direction;
     public Transform Wand;
 
-    PlayerMovement skript;
+ 
 
 
-    
 
     void Start()
     {
-        GameObject objektSakriptomB = GameObject.Find("Player");
-        skript = objektSakriptomB.GetComponent<PlayerMovement>();
+        
     }
 
 
@@ -29,8 +27,7 @@ public class MouseMovementRestriction : MonoBehaviour
          Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition); // getting mouse position
          direction = mousePosition - (Vector2)Wand.position;
 
-       
-        
+     
     }
 
 
@@ -40,6 +37,8 @@ public class MouseMovementRestriction : MonoBehaviour
      public void aim()
     {
         Wand.transform.right = direction;
+
+        
     }
 
 }

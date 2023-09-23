@@ -3,19 +3,22 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
+
 public class PlayerMovement : MonoBehaviour
 {
 
     public Rigidbody2D Player;
+    public GameObject wand;
 
     public float jumpHeight = 40f;
     public float playerSpeed = 30f;
 
     bool playerOnGround;
     bool playerFacingRight = true;
-    
 
 
+
+ 
 
     private void Start()
     {
@@ -25,6 +28,9 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        
+
+
 
         float playerMove = Input.GetAxisRaw("Horizontal");
         Player.velocity = new Vector2(playerMove * playerSpeed, Player.velocity.y);
@@ -36,17 +42,38 @@ public class PlayerMovement : MonoBehaviour
             playerOnGround = true;
         }
 
-        if(playerMove > 0 && !playerFacingRight)
+        
+
+            
+        if(playerMove > 0 && !playerFacingRight )
         {
             flipPlayer();
+            flipWand();
         }
-        if (playerMove < 0 && playerFacingRight)
+        if (playerMove < 0 && playerFacingRight )
         {
             flipPlayer();
+            flipWand();
+            Debug.Log("pozeram do lava");
         }
+
+    
 
 
     }
+
+    
+
+    void flipWand()
+    {
+        Vector3 currentScale = wand.transform.localScale;
+        currentScale.x *= -1;
+        wand.transform.localScale = currentScale;
+    }
+
+
+
+
 
     void flipPlayer()
     {
