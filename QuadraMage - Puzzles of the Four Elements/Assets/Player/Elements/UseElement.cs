@@ -11,7 +11,7 @@ public class UseElement : MonoBehaviour
     //public Transform aimPoint;
 
 
-    public Transform Element;
+    
     //Vector2 direction;
     MouseMovementRestriction skriptB;
     

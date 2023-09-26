@@ -13,13 +13,13 @@ public class InventarHraca : MonoBehaviour
 
         if (inventarHraca == null)
         {
-            Debug.LogError("Skript Inventar nie je priradený alebo nie je inicializovaný na GameObjecte hrá?a.");
+            Debug.LogError("Script Inventory is not set to Player");
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Polozka"))
+        if (other.CompareTag("Wind")|| other.CompareTag("Fire") || other.CompareTag("Water") || other.CompareTag("Earth") || other.CompareTag("Elemental"))
         {
 
             Item.ItemData itemData = other.GetComponent<Item>().itemData;

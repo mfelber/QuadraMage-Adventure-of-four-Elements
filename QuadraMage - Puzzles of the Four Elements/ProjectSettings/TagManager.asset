@@ -6,7 +6,11 @@ TagManager:
   tags:
   - Ground
   - Wand
-  - Polozka
+  - Wind
+  - Fire
+  - Water
+  - Earth
+  - Element
   layers:
   - Default
   - TransparentFX

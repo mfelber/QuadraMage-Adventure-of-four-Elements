@@ -525,7 +525,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Fire: {fileID: 7718479357045859184, guid: a18e45a3e4daf7645b7d9c108d66a838, type: 3}
   fireSpeed: 12000
-  Element: {fileID: 1980839509}
 --- !u!114 &885900222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -727,6 +726,7 @@ GameObject:
   - component: {fileID: 1107637946}
   - component: {fileID: 1107637947}
   - component: {fileID: 1107637948}
+  - component: {fileID: 1107637949}
   m_Layer: 0
   m_Name: PlayerTest
   m_TagString: Player
@@ -914,6 +914,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventar: []
+--- !u!114 &1107637949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1107637940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a529cfa5f7458a44bcbcd1020025c73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Fire: {fileID: 0}
+  fireSpeed: 0
 --- !u!1 &1190652564
 GameObject:
   m_ObjectHideFlags: 0
@@ -961,7 +975,7 @@ GameObject:
   - component: {fileID: 1225197066}
   m_Layer: 0
   m_Name: earth
-  m_TagString: Polozka
+  m_TagString: Earth
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1124,7 +1138,7 @@ GameObject:
   - component: {fileID: 1339718040}
   m_Layer: 0
   m_Name: wind
-  m_TagString: Polozka
+  m_TagString: Wind
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1287,7 +1301,7 @@ GameObject:
   - component: {fileID: 1396967844}
   m_Layer: 0
   m_Name: fire
-  m_TagString: Polozka
+  m_TagString: Fire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1640,7 +1654,7 @@ GameObject:
   - component: {fileID: 1815679595}
   m_Layer: 0
   m_Name: water
-  m_TagString: Polozka
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
