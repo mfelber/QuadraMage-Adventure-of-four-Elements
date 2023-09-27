@@ -5,9 +5,9 @@ using UnityEngine;
 public class PlayerUseElements : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject WindElement;
-    public GameObject FireElement;
-    private string itemName;
+    //public GameObject WindElement;
+    //public GameObject FireElement;
+    
 
     void Start()
     {
@@ -17,13 +17,13 @@ public class PlayerUseElements : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      
-        
+
+       
     }
 
-   
 
 
+ 
 
     public void useFireElement()
     {

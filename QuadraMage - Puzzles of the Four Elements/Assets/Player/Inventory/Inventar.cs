@@ -8,14 +8,13 @@ public class Inventar : MonoBehaviour
 
     private int currentIndex = 0;
 
-    PlayerUseElements skriptB;
+    
 
 
     void Start()
     {
 
-         GameObject objektSakriptomB = GameObject.Find("Player");
-         skriptB = objektSakriptomB.GetComponent<PlayerUseElements>();
+         
     
         if (inventar.Count > 0)
         {
@@ -44,8 +43,7 @@ public class Inventar : MonoBehaviour
         if (index >= 0 && index < inventar.Count)
         {
             currentIndex = index;
-            AktualizovatAktualniElement();
-            
+            AktualizovatAktualniElement();           
             
         }
         else
@@ -62,7 +60,57 @@ public class Inventar : MonoBehaviour
         Debug.Log("Mas v ruke element : " + inventar[currentIndex].itemName);
     }
 
-    
+
+
+    public void useWaterElement()
+    {
+
+        /*
+        GameObject fireInstance = Instantiate(FireElement, skriptB.aimPoint.position, skriptB.aimPoint.rotation);
+        fireInstance.GetComponent<Rigidbody2D>().AddForce(fireInstance.transform.right * fireSpeed);
+        Destroy(fireInstance, 1); // destroy fire instance after 2 second when player use element
+                                  // 
+        */
+
+        Debug.Log("strielam vodny element");
+    }
+    public void useEarthElement()
+    {
+
+        /*
+        GameObject fireInstance = Instantiate(FireElement, skriptB.aimPoint.position, skriptB.aimPoint.rotation);
+        fireInstance.GetComponent<Rigidbody2D>().AddForce(fireInstance.transform.right * fireSpeed);
+        Destroy(fireInstance, 1); // destroy fire instance after 2 second when player use element
+                                  // 
+        */
+
+        Debug.Log("strielam zem element");
+    }
+
+    public void useWindElement()
+    {
+
+        /*
+        GameObject fireInstance = Instantiate(FireElement, skriptB.aimPoint.position, skriptB.aimPoint.rotation);
+        fireInstance.GetComponent<Rigidbody2D>().AddForce(fireInstance.transform.right * fireSpeed);
+        Destroy(fireInstance, 1); // destroy fire instance after 2 second when player use element
+                                  // 
+        */
+
+        Debug.Log("strielam wind element");
+    }
+
+    public void useFireElement()
+    {
+
+        /*
+        GameObject fireInstance = Instantiate(FireElement, skriptB.aimPoint.position, skriptB.aimPoint.rotation);
+        fireInstance.GetComponent<Rigidbody2D>().AddForce(fireInstance.transform.right * fireSpeed);
+        Destroy(fireInstance, 1); // destroy fire instance after 2 second when player use element
+                                  // 
+        */
+        Debug.Log("strielam fire element");
+    }
 
     void Update()
     {
@@ -70,8 +118,20 @@ public class Inventar : MonoBehaviour
         {
             if (inventar.Count > 0)
             {
-                
-               // shootElement(inventar[currentIndex].itemName);
+                if (inventar[currentIndex].itemName.Equals("Wind")){
+                    useWindElement();
+                } else if (inventar[currentIndex].itemName.Equals("Fire")) {
+                    useFireElement();
+                }
+                else if (inventar[currentIndex].itemName.Equals("Water"))
+                {
+                    useWaterElement();
+                }
+                else if (inventar[currentIndex].itemName.Equals("Earth"))
+                {
+                    useEarthElement();
+                }
+
             }
             else
             {
