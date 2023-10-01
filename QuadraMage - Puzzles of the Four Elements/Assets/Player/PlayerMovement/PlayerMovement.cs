@@ -16,10 +16,6 @@ public class PlayerMovement : MonoBehaviour
     bool playerOnGround;
     bool playerFacingRight = true;
 
-
-
- 
-
     private void Start()
     {
         Player = GetComponent<Rigidbody2D>();
@@ -54,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
         {
             flipPlayer();
             flipWand();
-            Debug.Log("pozeram do lava");
+            Debug.Log("looking to left");
         }
 
     
@@ -70,9 +66,6 @@ public class PlayerMovement : MonoBehaviour
         currentScale.x *= -1;
         wand.transform.localScale = currentScale;
     }
-
-
-
 
 
     void flipPlayer()
@@ -92,8 +85,6 @@ public class PlayerMovement : MonoBehaviour
             playerOnGround=false;
         }
     }
-
-
 
 
 }
