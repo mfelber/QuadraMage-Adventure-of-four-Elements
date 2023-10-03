@@ -21,7 +21,7 @@ public class PlayerInventory : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Wind") || other.CompareTag("Fire") || other.CompareTag("Water") || other.CompareTag("Earth") || other.CompareTag("Elemental"))
+        if (other.CompareTag("Wind") || other.CompareTag("Fire") || other.CompareTag("Water") || other.CompareTag("Earth"))
         {
 
             Item.ItemData itemData = other.GetComponent<Item>().itemData;
