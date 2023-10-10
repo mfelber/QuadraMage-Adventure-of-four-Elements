@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
@@ -16,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     bool playerOnGround;
     bool playerFacingRight = true;
 
+
+
     private void Start()
     {
         Player = GetComponent<Rigidbody2D>();
@@ -24,8 +27,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        
-
 
 
         float playerMove = Input.GetAxisRaw("Horizontal");
@@ -39,32 +40,34 @@ public class PlayerMovement : MonoBehaviour
         }
 
         
-
-            
         if(playerMove > 0 && !playerFacingRight )
         {
+            
             flipPlayer();
             flipWand();
+            
         }
-        if (playerMove < 0 && playerFacingRight )
+        else if (playerMove < 0 && playerFacingRight )
         {
+           
+            
             flipPlayer();
             flipWand();
             Debug.Log("looking to left");
         }
 
-    
-
 
     }
 
-    
+
+
 
     void flipWand()
     {
         Vector3 currentScale = wand.transform.localScale;
         currentScale.x *= -1;
         wand.transform.localScale = currentScale;
+
     }
 
 

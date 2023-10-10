@@ -23,18 +23,15 @@ public class Inventory : MonoBehaviour
  
     public Transform shootpoint;
 
-  
-
     
 
     void Start()
     {
-        loadElementScripts();
-        
-        // ak ma hrac aspon 1 vec v inventari tak sa aktualizuje element
+        loadElementScripts();        
+       
+        //if player has at least 1 element inventory than update actual element
         if (inventory.Count > 0)
         {
-
             updateActualElement();
         }
     }
@@ -48,12 +45,10 @@ public class Inventory : MonoBehaviour
             {
                 if (inventory[currentIndex].itemName.Equals("Wind"))
                 {
-
                     windScript.createWindElement();
                 }
                 else if (inventory[currentIndex].itemName.Equals("Fire"))
                 {
-
                     fireScript.createFireElement();
                 }
                 else if (inventory[currentIndex].itemName.Equals("Water"))
@@ -68,7 +63,7 @@ public class Inventory : MonoBehaviour
             }
             else
             {
-                Debug.Log("Inventory is Empty you cant shoot");
+                Debug.Log("Inventory is mpty you cant shoot");
             }
         }
 
@@ -109,14 +104,7 @@ public class Inventory : MonoBehaviour
     {
         inventory.Add(itemData);
         Debug.Log("Element " + itemData.itemName + " is added to your inventory");
-
-        currentIndex = inventory.Count - 1;
-
-        if (inventory.Count == 1)
-        {
-            updateActualElement();
-        }
-
+        
     }
 
     public void changeElement(int index)
