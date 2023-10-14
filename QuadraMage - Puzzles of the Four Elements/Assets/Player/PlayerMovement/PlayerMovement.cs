@@ -8,8 +8,11 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 
-    public Rigidbody2D Player;
-    public GameObject wand;
+    public Rigidbody2D Player;    
+    public GameObject player;
+    
+    
+  
 
     public float jumpHeight = 40f;
     public float playerSpeed = 30f;
@@ -22,12 +25,17 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         Player = GetComponent<Rigidbody2D>();
+        player = player.gameObject;
+        
+         
+      
     }
 
 
     void Update()
     {
 
+        Vector3 mouseP = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         float playerMove = Input.GetAxisRaw("Horizontal");
         Player.velocity = new Vector2(playerMove * playerSpeed, Player.velocity.y);
@@ -39,7 +47,8 @@ public class PlayerMovement : MonoBehaviour
             playerOnGround = true;
         }
 
-        
+
+        /*
         if(playerMove > 0 && !playerFacingRight )
         {
             
@@ -55,30 +64,44 @@ public class PlayerMovement : MonoBehaviour
             flipWand();
             Debug.Log("looking to left");
         }
+        */
 
+       
+
+        if (mouseP.x < Player.transform.position.x && playerFacingRight)
+        {
+            flip();
+            
+
+        } else if (mouseP.x > Player.transform.position.x && !playerFacingRight)
+        {
+            flip();
+           
+        }
 
     }
 
+    void flip()
+    {
+        playerFacingRight = !playerFacingRight;
+        player.transform.Rotate(0f, 180f, 0f);
+        
 
-
+    }
+    
+    
 
     void flipWand()
     {
+        /*
         Vector3 currentScale = wand.transform.localScale;
         currentScale.x *= -1;
         wand.transform.localScale = currentScale;
-
+        */
     }
 
 
-    void flipPlayer()
-    {
-        Vector3 currentScale = Player.transform.localScale;
-        currentScale.x *= -1;
-        Player.transform.localScale = currentScale;
-
-        playerFacingRight = !playerFacingRight;
-    }
+ 
 
   
     void OnCollisionEnter2D(Collision2D collision)

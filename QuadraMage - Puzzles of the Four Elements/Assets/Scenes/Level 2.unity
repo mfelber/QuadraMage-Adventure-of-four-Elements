@@ -609,6 +609,63 @@ Transform:
   - {fileID: 304046822}
   m_Father: {fileID: 1107637945}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &705163758
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2141965624151776839, guid: 752c56e12f5a6c14ba4004a5cf782df7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -415.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2141965624151776839, guid: 752c56e12f5a6c14ba4004a5cf782df7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -40.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2141965624151776839, guid: 752c56e12f5a6c14ba4004a5cf782df7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.1608546
+      objectReference: {fileID: 0}
+    - target: {fileID: 2141965624151776839, guid: 752c56e12f5a6c14ba4004a5cf782df7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2141965624151776839, guid: 752c56e12f5a6c14ba4004a5cf782df7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2141965624151776839, guid: 752c56e12f5a6c14ba4004a5cf782df7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2141965624151776839, guid: 752c56e12f5a6c14ba4004a5cf782df7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2141965624151776839, guid: 752c56e12f5a6c14ba4004a5cf782df7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2141965624151776839, guid: 752c56e12f5a6c14ba4004a5cf782df7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2141965624151776839, guid: 752c56e12f5a6c14ba4004a5cf782df7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7661652042606637701, guid: 752c56e12f5a6c14ba4004a5cf782df7, type: 3}
+      propertyPath: m_Name
+      value: Player (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 752c56e12f5a6c14ba4004a5cf782df7, type: 3}
 --- !u!1 &885900212
 GameObject:
   m_ObjectHideFlags: 0
@@ -714,7 +771,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 885900219}
-  wand: {fileID: 1190652564}
+  player: {fileID: 0}
   jumpHeight: 40
   playerSpeed: 30
 --- !u!50 &885900219
@@ -817,6 +874,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aimPoint: {fileID: 143154096}
   Wand: {fileID: 1190652565}
+--- !u!4 &896354641 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2141965624151776839, guid: 752c56e12f5a6c14ba4004a5cf782df7, type: 3}
+  m_PrefabInstance: {fileID: 705163758}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1042209280
 GameObject:
   m_ObjectHideFlags: 0
@@ -1032,7 +1094,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &1107637941
 Rigidbody2D:
   serializedVersion: 4
@@ -1125,7 +1187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 1107637941}
-  wand: {fileID: 671429500}
+  player: {fileID: 0}
   jumpHeight: 40
   playerSpeed: 30
 --- !u!4 &1107637945
@@ -1229,7 +1291,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b336ace957497a4b8a72ad9ef4a9820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 0}
   Wand: {fileID: 671429501}
+  turnSpeed: 45
+  sprite: {fileID: 0}
+  offsetRightX: 0
+  offsetRightY: 0
+  offsetLeftX: 0
+  offsetLeftY: 0
+  shootPointOffsetLeftY: 0
+  shootPointOffsetLeftX: 0
+  shootPointOffSetRightY: 0
+  shootPointOffSetRightX: 0
+  shootPoint: {fileID: 0}
 --- !u!114 &1107637950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1861,7 +1935,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f23ca46d16cb949b677e6e45886264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1107637945}
+  target: {fileID: 896354641}
 --- !u!1 &1553621831
 GameObject:
   m_ObjectHideFlags: 0
@@ -2511,3 +2585,4 @@ SceneRoots:
   - {fileID: 432505772}
   - {fileID: 1727580950}
   - {fileID: 1437611634}
+  - {fileID: 705163758}
