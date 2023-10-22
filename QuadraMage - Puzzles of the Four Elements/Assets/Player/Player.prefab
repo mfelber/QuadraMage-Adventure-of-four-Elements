@@ -158,7 +158,6 @@ GameObject:
   - component: {fileID: 6346610186937338273}
   - component: {fileID: 5864270610317773621}
   - component: {fileID: 510457324502128889}
-  - component: {fileID: 3047139215618581031}
   - component: {fileID: 5419202839412612106}
   - component: {fileID: 6211282684799709898}
   - component: {fileID: 531285289443121034}
@@ -354,31 +353,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eddf9450d9dc75f4ab7552632948d24f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3047139215618581031
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7661652042606637701}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b336ace957497a4b8a72ad9ef4a9820, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 7661652042606637701}
-  Wand: {fileID: 2120503571106301795}
-  turnSpeed: 45
-  sprite: {fileID: 0}
-  offsetRightX: 0
-  offsetRightY: 0
-  offsetLeftX: 0
-  offsetLeftY: 0
-  shootPointOffsetLeftY: 0
-  shootPointOffsetLeftX: 0
-  shootPointOffSetRightY: 0
-  shootPointOffSetRightX: 0
-  shootPoint: {fileID: 0}
 --- !u!114 &5419202839412612106
 MonoBehaviour:
   m_ObjectHideFlags: 0

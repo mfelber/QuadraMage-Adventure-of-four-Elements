@@ -23,10 +23,11 @@ public class Inventory : MonoBehaviour
  
     public Transform shootpoint;
 
-    
+    PauseMenu pauseMenu;
 
     void Start()
     {
+
         loadElementScripts();        
        
         //if player has at least 1 element inventory than update actual element
@@ -38,57 +39,59 @@ public class Inventory : MonoBehaviour
 
     void Update()
     {
-        
-        if (Input.GetMouseButtonDown(0))
+        if (!PauseMenu.isGamePaused)
         {
-            if (inventory.Count > 0)
+            if (Input.GetMouseButtonDown(0))
             {
-                if (inventory[currentIndex].itemName.Equals("Wind"))
+                if (inventory.Count > 0)
                 {
-                    windScript.createWindElement();
-                }
-                else if (inventory[currentIndex].itemName.Equals("Fire"))
-                {
-                    fireScript.createFireElement();
-                }
-                else if (inventory[currentIndex].itemName.Equals("Water"))
-                {
-                    waterScript.createWaterElement();
-                }
-                else if (inventory[currentIndex].itemName.Equals("Earth"))
-                {
-                    earthScript.createEarthElement();
-                }
+                    if (inventory[currentIndex].itemName.Equals("Wind"))
+                    {
+                        windScript.createWindElement();
+                    }
+                    else if (inventory[currentIndex].itemName.Equals("Fire"))
+                    {
+                        fireScript.createFireElement();
+                    }
+                    else if (inventory[currentIndex].itemName.Equals("Water"))
+                    {
+                        waterScript.createWaterElement();
+                    }
+                    else if (inventory[currentIndex].itemName.Equals("Earth"))
+                    {
+                        earthScript.createEarthElement();
+                    }
 
+                }
+                else
+                {
+                    Debug.Log("Inventory is mpty you cant shoot");
+                }
             }
-            else
+
+
+
+            if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-                Debug.Log("Inventory is mpty you cant shoot");
+
+                //TODO pridat podmienky na zmenenie sprite palicky
+
+
+                changeElement(0); // parameter for function changeElement is index of list
             }
-        }
+            else if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
 
-
-
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            
-            //TODO pridat podmienky na zmenenie sprite palicky
-
-
-            changeElement(0); // parameter for function changeElement is index of list
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            
-            changeElement(1);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            changeElement(2);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            changeElement(3);
+                changeElement(1);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                changeElement(2);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                changeElement(3);
+            }
         }
     }
 
@@ -119,7 +122,6 @@ public class Inventory : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             Debug.Log("este si neziskal ohnivy element");
-
         }
 
         else if (Input.GetKeyDown(KeyCode.Alpha3))
