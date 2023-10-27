@@ -10,13 +10,14 @@ public class PlayerMovement : MonoBehaviour
 
     public Rigidbody2D Player;    
     public GameObject player;
+    private Animator animator;
 
     PauseMenu pauseMenu;
-    
-  
 
-    public float jumpHeight = 40f;
-    public float playerSpeed = 30f;
+
+
+    public float jumpHeight = 10f;
+    public float playerSpeed = 3.5f;
 
     bool playerOnGround;
     bool playerFacingRight = true;
@@ -27,7 +28,8 @@ public class PlayerMovement : MonoBehaviour
     {
         
         Player = GetComponent<Rigidbody2D>();
-        player = player.gameObject;     
+        player = player.gameObject;  
+        animator = GetComponent<Animator>();
     }
 
 
@@ -42,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
 
             if (Input.GetButtonDown("Jump") && !playerOnGround)
             {
-
+               // animator.SetBool("running", false);
                 Player.velocity = new Vector2(Player.velocity.x, jumpHeight);
                 playerOnGround = true;
             }
@@ -58,6 +60,19 @@ public class PlayerMovement : MonoBehaviour
             {
                 flip();
 
+            }
+
+            // animation if player is moving or player is idle
+            if(playerMove > 0f)
+            {
+                animator.SetBool("running",true);
+            }else if (playerMove < 0f)
+            {
+                animator.SetBool("running", true);
+            }
+            else
+            {
+                animator.SetBool("running", false);
             }
         }
        
