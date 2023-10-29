@@ -8,20 +8,18 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 
-    public Rigidbody2D Player;    
-    public GameObject player;
-    private Animator animator;
-
     PauseMenu pauseMenu;
 
+    public Rigidbody2D Player;    
+    public GameObject player;
+    private Animator animator;    
 
-
-    public float jumpHeight = 10f;
-    public float playerSpeed = 3.5f;
+    [Serialize] private float playerMove = 0f;
+    [Serialize] public float jumpHeight = 7f;
+    [Serialize] public float playerSpeed = 3.5f;
 
     bool playerOnGround;
     bool playerFacingRight = true;
-
 
 
     private void Start()
@@ -39,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Vector3 mouseP = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            float playerMove = Input.GetAxisRaw("Horizontal");
+            playerMove = Input.GetAxisRaw("Horizontal");
             Player.velocity = new Vector2(playerMove * playerSpeed, Player.velocity.y);
 
             if (Input.GetButtonDown("Jump") && !playerOnGround)
@@ -62,21 +60,27 @@ public class PlayerMovement : MonoBehaviour
 
             }
 
-            // animation if player is moving or player is idle
-            if(playerMove > 0f)
-            {
-                animator.SetBool("running",true);
-            }else if (playerMove < 0f)
-            {
-                animator.SetBool("running", true);
-            }
-            else
-            {
-                animator.SetBool("running", false);
-            }
+            UpdateAnimation();
         }
        
 
+    }
+
+    private void UpdateAnimation()
+    {
+        // animation if player is moving or player is idle
+        if (playerMove > 0f)
+        {
+            animator.SetBool("running", true);
+        }
+        else if (playerMove < 0f)
+        {
+            animator.SetBool("running", true);
+        }
+        else
+        {
+            animator.SetBool("running", false);
+        }
     }
 
     void flip()
