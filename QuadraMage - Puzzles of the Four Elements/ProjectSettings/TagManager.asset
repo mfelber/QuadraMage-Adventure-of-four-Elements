@@ -11,6 +11,7 @@ TagManager:
   - Water
   - Earth
   - Element
+  - Cloud
   layers:
   - Default
   - TransparentFX

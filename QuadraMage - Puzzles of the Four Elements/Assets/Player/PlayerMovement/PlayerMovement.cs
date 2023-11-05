@@ -10,23 +10,27 @@ public class PlayerMovement : MonoBehaviour
 
     PauseMenu pauseMenu;
 
-    public Rigidbody2D Player;    
-    public GameObject player;
-    private Animator animator;    
+    [Serialize] Rigidbody2D Player;    
+    
+    private Animator animator;
+    
 
     [Serialize] private float playerMove = 0f;
     [Serialize] public float jumpHeight = 7f;
     [Serialize] public float playerSpeed = 3.5f;
 
-    bool playerOnGround;
+    bool playerOnGround = true;
     bool playerFacingRight = true;
+
+    private enum PlayerMovementStates { idle, running, jumping , falling}
+    
 
 
     private void Start()
     {
         
         Player = GetComponent<Rigidbody2D>();
-        player = player.gameObject;  
+        
         animator = GetComponent<Animator>();
     }
 
@@ -40,13 +44,14 @@ public class PlayerMovement : MonoBehaviour
             playerMove = Input.GetAxisRaw("Horizontal");
             Player.velocity = new Vector2(playerMove * playerSpeed, Player.velocity.y);
 
-            if (Input.GetButtonDown("Jump") && !playerOnGround)
+            if (Input.GetButtonDown("Jump") && playerOnGround)
             {
                // animator.SetBool("running", false);
                 Player.velocity = new Vector2(Player.velocity.x, jumpHeight);
-                playerOnGround = true;
+                playerOnGround = false;
             }
 
+            
 
             if (mouseP.x < Player.transform.position.x && playerFacingRight)
             {
@@ -59,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
                 flip();
 
             }
-
+            
             UpdateAnimation();
         }
        
@@ -68,35 +73,50 @@ public class PlayerMovement : MonoBehaviour
 
     private void UpdateAnimation()
     {
-        // animation if player is moving or player is idle
-        if (playerMove > 0f)
+        float verticalVelocity = Player.velocity.y;
+        PlayerMovementStates state;
+
+        if (playerOnGround)
         {
-            animator.SetBool("running", true);
-        }
-        else if (playerMove < 0f)
-        {
-            animator.SetBool("running", true);
+            if (Mathf.Abs(playerMove) > 0.1f)
+            {
+                state = PlayerMovementStates.running;
+            }
+            else
+            {
+                state = PlayerMovementStates.idle;
+            }
+          
         }
         else
         {
-            animator.SetBool("running", false);
+            if (verticalVelocity > 0.1f)
+            {
+                state = PlayerMovementStates.jumping;
+            }
+            else
+            {
+                state = PlayerMovementStates.falling;
+            }
         }
+
+        animator.SetInteger("state", (int)state);
     }
 
     void flip()
     {
         playerFacingRight = !playerFacingRight;
-        player.transform.Rotate(0f, 180f, 0f);
-        
+        transform.Rotate(0f, 180f, 0f);     
 
     }
     
   
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Cloud"))
         {
-            playerOnGround=false;
+            
+            playerOnGround = true;
         }
     }
 
