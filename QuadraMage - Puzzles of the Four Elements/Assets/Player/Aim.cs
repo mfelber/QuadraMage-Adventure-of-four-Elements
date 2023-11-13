@@ -21,11 +21,11 @@ public class Aim : MonoBehaviour
     public float offsetLeftX;
     public float offsetLeftY;
 
-    public float shootPointOffsetLeftY;
-    public float shootPointOffsetLeftX;
+    public float shootPointOffsetLY;
+    public float shootPointOffsetLX;
 
-    public float shootPointOffSetRightY;
-    public float shootPointOffSetRightX;
+    public float shootPointOffSetRY;
+    public float shootPointOffSetRX;
 
 
     public GameObject shootPoint;
@@ -46,21 +46,28 @@ public class Aim : MonoBehaviour
             if (rotZ < 89 && rotZ > -89)
             {
 
-                sprite.flipY = false;
+               sprite.flipY = false;
+              
                 Wand.transform.localPosition = new Vector2(offsetRightX, offsetRightY);
-                shootPoint.transform.localPosition = new Vector2(shootPointOffSetRightX, shootPointOffSetRightY);
+                shootPoint.transform.localPosition = new Vector2(shootPointOffSetRX, shootPointOffSetRY);
                 // Wand.transform.localPosition = Vector2.zero;
+                
+
+
+
 
             }
             else
             {
 
-                sprite.flipY = true;
+             sprite.flipY = true;
+                
                 //Vector2 pos = new Vector2(transform.position.x, transform.position.y + offset);
                 //transform.position = pos;
                 Wand.transform.localPosition = new Vector2(offsetLeftX, offsetLeftY);
-                shootPoint.transform.localPosition = new Vector2(shootPointOffsetLeftX, shootPointOffsetLeftY);
+                shootPoint.transform.localPosition = new Vector2(shootPointOffsetLX, shootPointOffsetLY);
 
+                
 
             }
 

@@ -17,13 +17,16 @@ public class Inventory : MonoBehaviour
     private int currentIndex = 0;
    
 
-    public GameObject Wind;
-    public float windSpeed;
+   // public GameObject Wind;
+   // public float windSpeed;
 
  
     public Transform shootpoint;
 
     PauseMenu pauseMenu;
+
+    public GameObject waterball;
+
 
     void Start()
     {
@@ -35,10 +38,15 @@ public class Inventory : MonoBehaviour
         {
             updateActualElement();
         }
+        if(waterball == null)
+        {
+            Debug.LogError("nemas prefab");
+        }
     }
 
     void Update()
     {
+        Animator anim = GetComponent<Animator>();
         if (!PauseMenu.isGamePaused)
         {
             if (Input.GetMouseButtonDown(0))
@@ -48,6 +56,7 @@ public class Inventory : MonoBehaviour
                     if (inventory[currentIndex].itemName.Equals("Wind"))
                     {
                         windScript.createWindElement();
+                        
                     }
                     else if (inventory[currentIndex].itemName.Equals("Fire"))
                     {
@@ -55,7 +64,8 @@ public class Inventory : MonoBehaviour
                     }
                     else if (inventory[currentIndex].itemName.Equals("Water"))
                     {
-                        waterScript.createWaterElement();
+                        anim.SetBool("WaterBall", true);
+                        
                     }
                     else if (inventory[currentIndex].itemName.Equals("Earth"))
                     {
@@ -93,6 +103,20 @@ public class Inventory : MonoBehaviour
                 changeElement(3);
             }
         }
+    }
+
+
+    public void SpawnWaterElement(Object nullobj) 
+    {
+       // GameObject obj = Instantiate(waterElement, inventoryScript.shootpoint.position, inventoryScript.shootpoint.rotation);
+        GameObject obj = GameObject.Instantiate<GameObject>(waterball,shootpoint.position,shootpoint.rotation);
+        Destroy(obj, 2);
+    }
+
+    public void SwitchTransition(Object nullobj)
+    {
+        Animator anim = GetComponent<Animator>();
+        anim.SetBool("WaterBall", false);
     }
 
     public void loadElementScripts()
