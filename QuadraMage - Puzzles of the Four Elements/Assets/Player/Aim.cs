@@ -32,6 +32,23 @@ public class Aim : MonoBehaviour
 
     PauseMenu pauseMenu;
 
+    public float maxZRot = 15;
+    public float minZRot = -40;
+
+    public float maxZRotL = 360;
+    public float minZRotL = 0;
+
+    private Transform localTrans;
+
+
+
+
+
+    private void Start()
+    {
+        localTrans = GetComponent<Transform>();
+    }
+
 
     void Update()
     {
@@ -42,6 +59,7 @@ public class Aim : MonoBehaviour
             Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
             float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
 
+            
 
             if (rotZ < 89 && rotZ > -89)
             {
@@ -51,11 +69,16 @@ public class Aim : MonoBehaviour
                 Wand.transform.localPosition = new Vector2(offsetRightX, offsetRightY);
                 shootPoint.transform.localPosition = new Vector2(shootPointOffSetRX, shootPointOffSetRY);
                 // Wand.transform.localPosition = Vector2.zero;
-                
+                rotZ = Mathf.Clamp(rotZ, minZRot, maxZRot);
 
+                /*
 
+                Vector3 playerEulerAngles = localTrans.rotation.eulerAngles;
+                playerEulerAngles.z = (playerEulerAngles.z > 180) ? playerEulerAngles.z - 360 : playerEulerAngles.z;
+                playerEulerAngles.z = Mathf.Clamp(playerEulerAngles.z, minZRot, maxZRot);
+                localTrans.rotation = Quaternion.Euler(playerEulerAngles);
 
-
+                */
             }
             else
             {
@@ -66,14 +89,33 @@ public class Aim : MonoBehaviour
                 //transform.position = pos;
                 Wand.transform.localPosition = new Vector2(offsetLeftX, offsetLeftY);
                 shootPoint.transform.localPosition = new Vector2(shootPointOffsetLX, shootPointOffsetLY);
-
-                
+                rotZ = Mathf.Clamp(rotZ, minZRotL, maxZRotL);
+                /*
+                Vector3 playerEulerAngles = localTrans.rotation.eulerAngles;
+                playerEulerAngles.z = (playerEulerAngles.z > 180) ? playerEulerAngles.z - 360 : playerEulerAngles.z;
+                playerEulerAngles.z = Mathf.Clamp(playerEulerAngles.z, minZRotL, maxZRotL);
+                localTrans.rotation = Quaternion.Euler(playerEulerAngles);
+                */
 
             }
-
+            
             transform.rotation = Quaternion.Euler(0f, 0f, rotZ);
+           // LimitRot();
         }
     }
+
+    public void LimitRot()
+    {
+
+        Vector3 playerEulerAngles = localTrans.rotation.eulerAngles;
+        playerEulerAngles.z = (playerEulerAngles.z > 180) ? playerEulerAngles.z - 360 : playerEulerAngles.z;
+        playerEulerAngles.z = Mathf.Clamp(playerEulerAngles.z, minZRot, maxZRot);
+        localTrans.rotation = Quaternion.Euler(playerEulerAngles);
+
+
+
+    }
+
 
 }
 

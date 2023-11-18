@@ -675,7 +675,7 @@ Transform:
   m_GameObject: {fileID: 466131631}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.09, y: 0.039, z: 0}
+  m_LocalPosition: {x: 0.122, y: 0.079, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5628,7 +5628,7 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.26}
+  m_Offset: {x: 0.03, y: -0.26}
   serializedVersion: 2
   m_Radius: 0.11
 --- !u!61 &565569977
@@ -5663,7 +5663,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.020156145, y: -0.1}
+  m_Offset: {x: 0.04, y: -0.1}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -5674,7 +5674,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.3377757, y: 0.48}
+  m_Size: {x: 0.23, y: 0.48}
   m_EdgeRadius: 0
 --- !u!50 &565569978
 Rigidbody2D:
@@ -5757,7 +5757,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 1787307360, guid: 8a5341141866c0c40b49b3a4762fed01, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5838,9 +5838,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.02, y: 0.14}
+  m_Offset: {x: 0.075, y: 0.14}
   serializedVersion: 2
-  m_Radius: 0.25
+  m_Radius: 0.22
 --- !u!114 &565569984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6246,6 +6246,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 710664236314865701, guid: 95390e295d2f28541a9ab13b59e1dea4, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1879078106849885460, guid: 95390e295d2f28541a9ab13b59e1dea4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -6865,14 +6869,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1801669840}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.1114689, w: 0.9937679}
   m_LocalPosition: {x: 0.251, y: -0.183, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 571802285}
   m_Father: {fileID: 565569981}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 12.8}
 --- !u!114 &1801669842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6893,11 +6897,15 @@ MonoBehaviour:
   offsetRightY: -0.18
   offsetLeftX: 0.26
   offsetLeftY: -0.18
-  shootPointOffsetLY: 0
-  shootPointOffsetLX: 0
-  shootPointOffSetRY: 0.039
-  shootPointOffSetRX: 0.09
+  shootPointOffsetLY: -0.01
+  shootPointOffsetLX: 0.17
+  shootPointOffSetRY: 0.079
+  shootPointOffSetRX: 0.17
   shootPoint: {fileID: 466131631}
+  maxZRot: 15
+  minZRot: -40
+  maxZRotL: 360
+  minZRotL: 0
 --- !u!1 &1897903799
 GameObject:
   m_ObjectHideFlags: 0

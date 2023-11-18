@@ -66,6 +66,7 @@ public class Inventory : MonoBehaviour
                     {
                         anim.SetBool("WaterBall", true);
                         
+                        
                     }
                     else if (inventory[currentIndex].itemName.Equals("Earth"))
                     {
@@ -104,6 +105,7 @@ public class Inventory : MonoBehaviour
             }
         }
     }
+
 
 
     public void SpawnWaterElement(Object nullobj) 
