@@ -69,7 +69,7 @@ public class Aim : MonoBehaviour
                 Wand.transform.localPosition = new Vector2(offsetRightX, offsetRightY);
                 shootPoint.transform.localPosition = new Vector2(shootPointOffSetRX, shootPointOffSetRY);
                 // Wand.transform.localPosition = Vector2.zero;
-                rotZ = Mathf.Clamp(rotZ, minZRot, maxZRot);
+              //  rotZ = Mathf.Clamp(rotZ, minZRot, maxZRot);
 
                 /*
 
@@ -89,7 +89,7 @@ public class Aim : MonoBehaviour
                 //transform.position = pos;
                 Wand.transform.localPosition = new Vector2(offsetLeftX, offsetLeftY);
                 shootPoint.transform.localPosition = new Vector2(shootPointOffsetLX, shootPointOffsetLY);
-                rotZ = Mathf.Clamp(rotZ, minZRotL, maxZRotL);
+              //  rotZ = Mathf.Clamp(rotZ, minZRotL, maxZRotL);
                 /*
                 Vector3 playerEulerAngles = localTrans.rotation.eulerAngles;
                 playerEulerAngles.z = (playerEulerAngles.z > 180) ? playerEulerAngles.z - 360 : playerEulerAngles.z;
