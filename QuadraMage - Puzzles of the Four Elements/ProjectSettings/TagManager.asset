@@ -12,6 +12,7 @@ TagManager:
   - Earth
   - Element
   - Cloud
+  - Box
   layers:
   - Default
   - TransparentFX

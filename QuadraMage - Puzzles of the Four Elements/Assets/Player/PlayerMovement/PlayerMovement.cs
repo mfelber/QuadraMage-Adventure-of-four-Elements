@@ -19,7 +19,9 @@ public class PlayerMovement : MonoBehaviour
     [Serialize] public float jumpHeight = 7f;
     [Serialize] public float playerSpeed = 3.5f;
 
+    
     bool playerOnGround = true;
+
     bool playerFacingRight = true;
 
     private enum PlayerMovementStates { idle, running, jumping , falling}
@@ -51,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
                 playerOnGround = false;
             }
 
-            
+
 
             if (mouseP.x < Player.transform.position.x && playerFacingRight)
             {
@@ -118,7 +120,9 @@ public class PlayerMovement : MonoBehaviour
             
             playerOnGround = true;
         }
+ 
     }
+
 
 
 }
