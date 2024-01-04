@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f99d1a7a8199f9c4ebf7dc1911884362
+guid: 1ae779ad39b209745acf7e339e5b8001
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: waterWand_0
+      name: fireWand_0
       rect:
         serializedVersion: 2
         x: 4
-        y: 0
+        y: 2
         width: 18
-        height: 21
+        height: 19
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e9469c59ec93eb4494c405190a23845
-      internalID: -173167900
+      spriteID: 640740c0053e95749afca8accfef8fe5
+      internalID: 1768708191
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: waterWand_1
+      name: fireWand_1
       rect:
         serializedVersion: 2
         x: 22
-        y: 0
+        y: 2
         width: 18
-        height: 21
+        height: 19
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b75cd8a644d29ea499c7357d12cd543f
-      internalID: 1321706575
+      spriteID: 7b385c704896c8d4fb1f4493cf074794
+      internalID: 1030170096
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: waterWand_2
+      name: fireWand_2
       rect:
         serializedVersion: 2
         x: 41
-        y: 0
-        width: 17
-        height: 21
+        y: 2
+        width: 18
+        height: 19
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a4af546ad2759cf4a8b6f41fcd671e28
-      internalID: -1436938423
+      spriteID: 6b307a8c50e97f342aa56a2fb87a9d8f
+      internalID: 1904876850
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: waterWand_3
+      name: fireWand_3
       rect:
         serializedVersion: 2
         x: 59
-        y: 0
-        width: 17
-        height: 21
+        y: 2
+        width: 18
+        height: 19
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,20 +200,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bb7c37109f6bce042a7f005a027af114
-      internalID: 830152412
+      spriteID: bbbb5ebf43fab6b49b72d7b8d343055e
+      internalID: 328137923
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: waterWand_4
+      name: fireWand_4
       rect:
         serializedVersion: 2
         x: 77
-        y: 0
-        width: 17
-        height: 21
+        y: 2
+        width: 18
+        height: 19
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,8 +221,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f763aa1fc937c3448130a97bd58ba3f
-      internalID: 792452606
+      spriteID: 767948194ab2b9642a00e4e97b435767
+      internalID: -1387577398
       vertices: []
       indices: 
       edges: []
@@ -238,11 +238,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      waterWand_0: -173167900
-      waterWand_1: 1321706575
-      waterWand_2: -1436938423
-      waterWand_3: 830152412
-      waterWand_4: 792452606
+      fireWand_0: 1768708191
+      fireWand_1: 1030170096
+      fireWand_2: 1904876850
+      fireWand_3: 328137923
+      fireWand_4: -1387577398
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

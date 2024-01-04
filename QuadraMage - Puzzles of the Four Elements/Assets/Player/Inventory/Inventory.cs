@@ -26,6 +26,9 @@ public class Inventory : MonoBehaviour
     PauseMenu pauseMenu;
 
     public GameObject waterball;
+   // public GameObject earthball;
+    public GameObject fireball;
+    
 
 
     void Start()
@@ -41,6 +44,10 @@ public class Inventory : MonoBehaviour
         if(waterball == null)
         {
             Debug.LogError("nemas prefab");
+        }
+        if (fireball == null)
+        {
+            Debug.LogError("nemas prefab fire ball");
         }
     }
 
@@ -60,7 +67,8 @@ public class Inventory : MonoBehaviour
                     }
                     else if (inventory[currentIndex].itemName.Equals("Fire"))
                     {
-                        fireScript.createFireElement();
+                        // fireScript.createFireElement();
+                        anim.SetBool("FireBall", true);
                     }
                     else if (inventory[currentIndex].itemName.Equals("Water"))
                     {
@@ -108,17 +116,25 @@ public class Inventory : MonoBehaviour
 
 
 
-    public void SpawnWaterElement(Object nullobj) 
+    public void SpawnWaterElement(Object water) 
     {
        // GameObject obj = Instantiate(waterElement, inventoryScript.shootpoint.position, inventoryScript.shootpoint.rotation);
         GameObject obj = GameObject.Instantiate<GameObject>(waterball,shootpoint.position,shootpoint.rotation);
         Destroy(obj, 2);
     }
 
+    public void SpawnFireElement(Object fire)
+    {
+        // GameObject obj = Instantiate(waterElement, inventoryScript.shootpoint.position, inventoryScript.shootpoint.rotation);
+        GameObject obj = GameObject.Instantiate<GameObject>(fireball, shootpoint.position, shootpoint.rotation);
+        Destroy(obj, 2);
+    }
+
     public void SwitchTransition(Object nullobj)
     {
         Animator anim = GetComponent<Animator>();
-        anim.SetBool("WaterBall", false);
+        //anim.SetBool("WaterBall", false);
+        anim.SetBool("FireBall", false);
     }
 
     public void loadElementScripts()
