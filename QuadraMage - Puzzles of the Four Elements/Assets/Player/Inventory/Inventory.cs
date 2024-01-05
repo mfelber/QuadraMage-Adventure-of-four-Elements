@@ -28,6 +28,9 @@ public class Inventory : MonoBehaviour
     public GameObject waterball;
    // public GameObject earthball;
     public GameObject fireball;
+
+
+    public Sprite water,fire;
     
 
 
@@ -49,6 +52,8 @@ public class Inventory : MonoBehaviour
         {
             Debug.LogError("nemas prefab fire ball");
         }
+
+        
     }
 
     void Update()
@@ -73,6 +78,7 @@ public class Inventory : MonoBehaviour
                     else if (inventory[currentIndex].itemName.Equals("Water"))
                     {
                         anim.SetBool("WaterBall", true);
+
                         
                         
                     }
@@ -96,12 +102,14 @@ public class Inventory : MonoBehaviour
                 //TODO pridat podmienky na zmenenie sprite palicky
 
 
-                changeElement(0); // parameter for function changeElement is index of list
+                changeElement(0);                
+                GetComponent<SpriteRenderer>().sprite = water;
             }
             else if (Input.GetKeyDown(KeyCode.Alpha2))
             {
 
                 changeElement(1);
+                GetComponent<SpriteRenderer>().sprite = fire;
             }
             else if (Input.GetKeyDown(KeyCode.Alpha3))
             {
@@ -133,7 +141,7 @@ public class Inventory : MonoBehaviour
     public void SwitchTransition(Object nullobj)
     {
         Animator anim = GetComponent<Animator>();
-        //anim.SetBool("WaterBall", false);
+        anim.SetBool("WaterBall", false);
         anim.SetBool("FireBall", false);
     }
 
@@ -182,6 +190,7 @@ public class Inventory : MonoBehaviour
     {
 
         Debug.Log("You are using : " + inventory[currentIndex].itemName);
+        
     }
 
 
