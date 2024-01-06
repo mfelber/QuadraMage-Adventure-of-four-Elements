@@ -31,7 +31,8 @@ public class Inventory : MonoBehaviour
 
 
     public Sprite water,fire;
-    
+
+   
 
 
     void Start()
@@ -40,10 +41,13 @@ public class Inventory : MonoBehaviour
         loadElementScripts();        
        
         //if player has at least 1 element inventory than update actual element
+
+        
         if (inventory.Count > 0)
         {
             updateActualElement();
         }
+        
         if(waterball == null)
         {
             Debug.LogError("nemas prefab");
@@ -90,35 +94,40 @@ public class Inventory : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("Inventory is mpty you cant shoot");
+                    Debug.Log("Inventory is empty you cant shoot");
                 }
             }
 
 
+                if (Input.GetKeyDown(KeyCode.Alpha1))
+                {
 
-            if (Input.GetKeyDown(KeyCode.Alpha1))
-            {
-
-                //TODO pridat podmienky na zmenenie sprite palicky
+                    //TODO pridat podmienky na zmenenie sprite palicky
 
 
-                changeElement(0);                
+                    changeElement(0);
+
+                }
+                else if (Input.GetKeyDown(KeyCode.Alpha2))
+                {
+
+                    changeElement(1);
                 GetComponent<SpriteRenderer>().sprite = water;
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha2))
-            {
 
-                changeElement(1);
-                GetComponent<SpriteRenderer>().sprite = fire;
+
+
             }
-            else if (Input.GetKeyDown(KeyCode.Alpha3))
-            {
-                changeElement(2);
+                else if (Input.GetKeyDown(KeyCode.Alpha3))
+                {
+                    changeElement(2);           
+                   GetComponent<SpriteRenderer>().sprite = fire;
+
             }
-            else if (Input.GetKeyDown(KeyCode.Alpha4))
-            {
-                changeElement(3);
-            }
+                else if (Input.GetKeyDown(KeyCode.Alpha4))
+                {
+                    changeElement(3);
+                }
+
         }
     }
 
@@ -169,14 +178,22 @@ public class Inventory : MonoBehaviour
 
         }
 
+    
+
+
+        else if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            Debug.Log("este si neziskal vzdusny element");
+        }
+
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            Debug.Log("este si neziskal ohnivy element");
+            Debug.Log("este si neziskal vodny element");
         }
 
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            Debug.Log("este si neziskal vodny element");
+            Debug.Log("este si neziskal ohnivy element");
         }
         else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
@@ -190,8 +207,8 @@ public class Inventory : MonoBehaviour
     {
 
         Debug.Log("You are using : " + inventory[currentIndex].itemName);
+
         
+
     }
-
-
 }
