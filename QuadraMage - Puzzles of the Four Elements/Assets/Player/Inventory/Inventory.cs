@@ -11,8 +11,9 @@ public class Inventory : MonoBehaviour
     FireElement fireScript;
     WaterElement waterScript;
     EarthElement earthScript;
+   
 
-    public List<Item.ItemData> inventory = new List<Item.ItemData>();
+    public static List<Item.ItemData> inventory = new List<Item.ItemData>();
 
     private int currentIndex = 0;
    
@@ -30,7 +31,7 @@ public class Inventory : MonoBehaviour
     public GameObject fireball;
 
 
-    public Sprite water,fire;
+    public Sprite water,fire,wind;
 
    
 
@@ -38,11 +39,13 @@ public class Inventory : MonoBehaviour
     void Start()
     {
 
-        loadElementScripts();        
-       
+        
+
+        loadElementScripts();
+        
         //if player has at least 1 element inventory than update actual element
 
-        
+
         if (inventory.Count > 0)
         {
             updateActualElement();
@@ -57,7 +60,7 @@ public class Inventory : MonoBehaviour
             Debug.LogError("nemas prefab fire ball");
         }
 
-        
+
     }
 
     void Update()
@@ -77,7 +80,10 @@ public class Inventory : MonoBehaviour
                     else if (inventory[currentIndex].itemName.Equals("Fire"))
                     {
                         // fireScript.createFireElement();
+                        
                         anim.SetBool("FireBall", true);
+                        Debug.LogError(inventory.Count);
+
                     }
                     else if (inventory[currentIndex].itemName.Equals("Water"))
                     {
@@ -102,25 +108,39 @@ public class Inventory : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Alpha1))
                 {
 
-                    //TODO pridat podmienky na zmenenie sprite palicky
+                //TODO pridat podmienky na zmenenie sprite palicky
 
-
+             
                     changeElement(0);
+                    
+                   
+       
+                
 
                 }
                 else if (Input.GetKeyDown(KeyCode.Alpha2))
                 {
 
+                //changeElement(1);
+            
                     changeElement(1);
-                GetComponent<SpriteRenderer>().sprite = water;
+                    
+               
+                    
 
 
 
             }
                 else if (Input.GetKeyDown(KeyCode.Alpha3))
                 {
-                    changeElement(2);           
-                   GetComponent<SpriteRenderer>().sprite = fire;
+                
+              
+                    //Debug.Log(inventory.Count);
+                    changeElement(2);
+                
+                   
+
+
 
             }
                 else if (Input.GetKeyDown(KeyCode.Alpha4))
@@ -131,6 +151,16 @@ public class Inventory : MonoBehaviour
         }
     }
 
+
+    
+    /*
+    bool IsElementInInventory(int index)
+    {
+        return index >= 0 && index < inventory.Count;
+        Debug.Log(inventory.Count);
+       
+    }
+    */
 
 
     public void SpawnWaterElement(Object water) 
