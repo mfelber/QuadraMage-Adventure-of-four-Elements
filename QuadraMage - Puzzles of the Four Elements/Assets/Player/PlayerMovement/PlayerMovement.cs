@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
 {
 
     PauseMenu pauseMenu;
+    
 
     [Serialize] Rigidbody2D Player;    
     
@@ -20,9 +21,11 @@ public class PlayerMovement : MonoBehaviour
     [Serialize] public float playerSpeed = 3.5f;
 
     
-    bool playerOnGround = true;
+    public bool playerOnGround = true;
 
     bool playerFacingRight = true;
+
+    public static bool PlayerIsMoving;
 
     private enum PlayerMovementStates { idle, running, jumping , falling}
     
@@ -37,13 +40,36 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
+    public void playerIsMoving()
+    {
+        
+        PlayerIsMoving = true;
+    }
+
+    public void playerIsNotMoving()
+    {
+        PlayerIsMoving = false;
+    }
+
+
     void Update()
     {
         if (!PauseMenu.isGamePaused)
         {
             Vector3 mouseP = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
+
+            
             playerMove = Input.GetAxisRaw("Horizontal");
+            if (playerMove > 0 || playerMove < 0)
+            {
+                playerIsMoving();
+               
+            } else
+            {
+                playerIsNotMoving();
+                
+            }
             Player.velocity = new Vector2(playerMove * playerSpeed, Player.velocity.y);
 
             if (Input.GetButtonDown("Jump") && playerOnGround)
@@ -72,6 +98,8 @@ public class PlayerMovement : MonoBehaviour
        
 
     }
+
+
 
     private void UpdateAnimation()
     {

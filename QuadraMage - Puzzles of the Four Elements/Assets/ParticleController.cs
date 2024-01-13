@@ -7,7 +7,7 @@ public class ParticleController : MonoBehaviour
 
     [SerializeField] Rigidbody2D rb;
     [SerializeField] ParticleSystem cloudParticles;
-    private bool isOnCloud = false;
+    public bool isOnCloud = false;
 
 
    
