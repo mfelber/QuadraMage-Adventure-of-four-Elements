@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
 {
 
     PauseMenu pauseMenu;
+    Inventory inventory;
     
 
     [Serialize] Rigidbody2D Player;    
@@ -21,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     [Serialize] public float playerSpeed = 3.5f;
 
     
-    public bool playerOnGround = true;
+    public static bool playerOnGround = true;
 
     bool playerFacingRight = true;
 
@@ -59,7 +60,8 @@ public class PlayerMovement : MonoBehaviour
             Vector3 mouseP = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
 
-            
+            if (!Inventory.isPlayerUsingElement) 
+            {
             playerMove = Input.GetAxisRaw("Horizontal");
             if (playerMove > 0 || playerMove < 0)
             {
@@ -77,8 +79,9 @@ public class PlayerMovement : MonoBehaviour
                // animator.SetBool("running", false);
                 Player.velocity = new Vector2(Player.velocity.x, jumpHeight);
                 playerOnGround = false;
-            }
-
+                
+            } 
+           
 
 
             if (mouseP.x < Player.transform.position.x && playerFacingRight)
@@ -92,7 +95,8 @@ public class PlayerMovement : MonoBehaviour
                 flip();
 
             }
-            
+            }
+
             UpdateAnimation();
         }
        

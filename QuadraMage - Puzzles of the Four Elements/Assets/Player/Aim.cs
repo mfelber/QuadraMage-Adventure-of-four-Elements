@@ -31,6 +31,7 @@ public class Aim : MonoBehaviour
     public GameObject shootPoint;
 
     PauseMenu pauseMenu;
+    Inventory inventory;
 
     public float maxZRot = 15;
     public float minZRot = -40;
@@ -54,22 +55,22 @@ public class Aim : MonoBehaviour
     {
         if (!PauseMenu.isGamePaused)
         {
-
-            // Gun Rotation Function
-            Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+            if (!Inventory.isPlayerUsingElement) { 
+                // Gun Rotation Function
+                Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
             float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
 
-            
+
 
             if (rotZ < 89 && rotZ > -89)
             {
 
-               sprite.flipY = false;
-              
+                sprite.flipY = false;
+
                 Wand.transform.localPosition = new Vector2(offsetRightX, offsetRightY);
                 shootPoint.transform.localPosition = new Vector2(shootPointOffSetRX, shootPointOffSetRY);
                 // Wand.transform.localPosition = Vector2.zero;
-              //  rotZ = Mathf.Clamp(rotZ, minZRot, maxZRot);
+                //  rotZ = Mathf.Clamp(rotZ, minZRot, maxZRot);
 
                 /*
 
@@ -83,13 +84,13 @@ public class Aim : MonoBehaviour
             else
             {
 
-             sprite.flipY = true;
-                
+                sprite.flipY = true;
+
                 //Vector2 pos = new Vector2(transform.position.x, transform.position.y + offset);
                 //transform.position = pos;
                 Wand.transform.localPosition = new Vector2(offsetLeftX, offsetLeftY);
                 shootPoint.transform.localPosition = new Vector2(shootPointOffsetLX, shootPointOffsetLY);
-              //  rotZ = Mathf.Clamp(rotZ, minZRotL, maxZRotL);
+                //  rotZ = Mathf.Clamp(rotZ, minZRotL, maxZRotL);
                 /*
                 Vector3 playerEulerAngles = localTrans.rotation.eulerAngles;
                 playerEulerAngles.z = (playerEulerAngles.z > 180) ? playerEulerAngles.z - 360 : playerEulerAngles.z;
@@ -98,9 +99,10 @@ public class Aim : MonoBehaviour
                 */
 
             }
-            
+
             transform.rotation = Quaternion.Euler(0f, 0f, rotZ);
-           // LimitRot();
+            // LimitRot();
+        }
         }
     }
 

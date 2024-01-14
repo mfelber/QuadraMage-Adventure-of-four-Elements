@@ -6069,6 +6069,7 @@ GameObject:
   - component: {fileID: 565569976}
   - component: {fileID: 565569982}
   - component: {fileID: 565569983}
+  - component: {fileID: 565569990}
   - component: {fileID: 565569979}
   - component: {fileID: 565569984}
   - component: {fileID: 565569989}
@@ -6350,6 +6351,7 @@ MonoBehaviour:
   water: {fileID: 21300000, guid: d09a628a51f81194cb1651d6e7c36f16, type: 3}
   fire: {fileID: 21300000, guid: 85239f58657055847ab71234ca07a41c, type: 3}
   wind: {fileID: 0}
+  canUseElement: 1
 --- !u!114 &565569985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6416,6 +6418,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eddf9450d9dc75f4ab7552632948d24f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &565569990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 565569974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc4d06be9c1a616499df02bcd450a492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &571802284
@@ -8137,6 +8151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 565569978}
   cloudParticles: {fileID: 0}
+  isOnCloud: 0
 --- !u!4 &1699859023 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3644526773300180022, guid: 655d5ddcbf8ede94c84d1ca105333a21, type: 3}

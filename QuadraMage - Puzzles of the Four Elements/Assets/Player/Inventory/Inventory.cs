@@ -38,13 +38,9 @@ public class Inventory : MonoBehaviour
 
     public Sprite water, fire, wind;
 
-
-    //private float timePassed = 0f;
-    public float intervalMeziPlnenim = 5f;
-
-
-    public bool canUseElement = true;
-    public float elementCooldown =1;
+    public static bool isPlayerUsingElement;
+    private bool canSpawnElement = true;
+    public static bool canUseElement = true;
 
     void Start()
     {
@@ -75,7 +71,16 @@ public class Inventory : MonoBehaviour
 
     }
 
-    private bool canSpawnElement = true;
+    public void playerUsingElement()
+    {
+        isPlayerUsingElement = true;    
+    }
+    public void playerStopUsingElement()
+    {
+        isPlayerUsingElement = false;
+    }
+
+
 
     void Update()
     {
@@ -114,6 +119,11 @@ public class Inventory : MonoBehaviour
             Invoke("setManaToMax", 3);
             
         }
+
+        if(currentMana > 100)
+        {
+            manaBar.setMana(100);
+        }
         
         Animator anim = GetComponent<Animator>();
         if (!PauseMenu.isGamePaused)
@@ -133,12 +143,14 @@ public class Inventory : MonoBehaviour
                         else if (inventory[currentIndex].itemName.Equals("Fire"))
                         {                                                       
                             Debug.LogError(inventory.Count);
-                            if (canSpawnElement && !ManaBar.isEmpty)
+                            if (canUseElement == true && !ManaBar.isEmpty && PlayerMovement.playerOnGround == true)
                             {
+
                                 anim.SetBool("FireBall", true);
-                                useMana(25);
-                                StartCoroutine(ElementCooldown());
+                                useMana(25);                                
                                 Debug.LogError("mas manu");
+                                playerUsingElement();
+                                canUseElement = false;
                             } else
                             {
                                 Debug.LogError("uz nemas manu");
@@ -196,26 +208,17 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    IEnumerator ElementCooldown()
-    {
-        canSpawnElement = false;
-
-        float originalCooldown = elementCooldown;  // Store the original cooldown value
-        elementCooldown = 2f;  // Set the desired shorter cooldown value
-
-        yield return new WaitForSeconds(originalCooldown);
-
-        elementCooldown = originalCooldown;  // Restore the original cooldown value
-        canSpawnElement = true;
-    }
-
-
+    
 
     void setManaToMax()
     {
-        currentMana = 100;
-        manaBar.setMana(currentMana);
-        ManaBar.isEmpty = false;
+        if(currentMana == 0)
+        {
+            currentMana = 100;
+            manaBar.setMana(currentMana);
+            ManaBar.isEmpty = false;
+        }
+       
     }
 
     void useMana(int mana)
@@ -263,6 +266,28 @@ public class Inventory : MonoBehaviour
         // GameObject obj = Instantiate(waterElement, inventoryScript.shootpoint.position, inventoryScript.shootpoint.rotation);
         GameObject obj = GameObject.Instantiate<GameObject>(fireball, shootpoint.position, shootpoint.rotation);
         Destroy(obj, 1);
+        StartCoroutine(CheckIfElementDestroyed(obj));
+        Invoke("playerStopUsingElement", 0.3f);
+        //playerStopUsingElement();
+    }
+
+    IEnumerator CheckIfElementDestroyed(GameObject element)
+    {
+        yield return new WaitForSeconds(1);
+
+        // Skontrolujte, ?i je objekt zni?ený
+        if (element == null)
+        {
+            canUseElement = true;
+            
+        }
+        else
+        {
+            canUseElement = false;
+        }
+
+        
+        
     }
 
     public void SwitchTransition(Object nullobj)
