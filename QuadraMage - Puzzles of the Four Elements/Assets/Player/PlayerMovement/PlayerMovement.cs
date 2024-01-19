@@ -59,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Vector3 mouseP = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-
+           
             if (!Inventory.isPlayerUsingElement) 
             {
             playerMove = Input.GetAxisRaw("Horizontal");

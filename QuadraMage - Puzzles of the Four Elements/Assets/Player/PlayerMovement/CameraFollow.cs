@@ -5,22 +5,14 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
 
-    private Vector3 offset = new Vector3(0f, 30f, -10f);
-    private float smoothTime = 0.25f;
-    private Vector3 velocity = Vector3.zero;
-    // Start is called before the first frame update
+    [SerializeField]private Transform player;
 
-
-    public Transform target;
-    void Start()
+    private void Update()
     {
-        
+        transform.position = new Vector3(player.position.x, player.position.y + 3, transform.position.z);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        Vector3 targetPosition = target.position + offset;
-        transform.position = Vector3.SmoothDamp(transform.position,targetPosition,ref velocity,smoothTime);
-    }
+
+
+
 }

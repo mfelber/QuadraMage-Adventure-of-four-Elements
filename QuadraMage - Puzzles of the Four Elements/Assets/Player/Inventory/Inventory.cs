@@ -7,52 +7,43 @@ public class Inventory : MonoBehaviour
 {
 
 
-    public int maxMana = 100;
-    public int currentMana;
-    public ManaBar manaBar;
+    //public int maxMana = 100;
+    //public int currentMana;
+   // public ManaBar manaBar;
+    //public Player player;
 
-    WindElement windScript;
-    FireElement fireScript;
-    WaterElement waterScript;
-    EarthElement earthScript;
-
-
+    Player player;
+   
     public static List<Item.ItemData> inventory = new List<Item.ItemData>();
 
     private int currentIndex = 0;
 
 
-    // public GameObject Wind;
-    // public float windSpeed;
-
-
-    public Transform shootpoint;
+   public Transform shootpoint;
 
     PauseMenu pauseMenu;
     PlayerMovement playermovement;
 
-    public GameObject waterball;
-    // public GameObject earthball;
+    public GameObject windball;
+    public GameObject waterball;    
     public GameObject fireball;
+    public GameObject earthball;
 
 
-    public Sprite water, fire, wind;
-
-    public static bool isPlayerUsingElement;
-    private bool canSpawnElement = true;
+    
+    public static bool isPlayerUsingElement;    
     public static bool canUseElement = true;
 
     void Start()
     {
 
 
-        currentMana = maxMana;
-        manaBar.setMaxMana(maxMana);
-        loadElementScripts();
+        //currentMana = maxMana;
+       // manaBar.setMaxMana(maxMana);
         
-
         //if player has at least 1 element inventory than update actual element
 
+        player = GetComponent<Player>();
 
         if (inventory.Count > 0)
         {
@@ -83,36 +74,9 @@ public class Inventory : MonoBehaviour
 
 
     void Update()
-    {
-
+    {      
+        
         /*
-        if (currentMana < 100)
-        {
-            Invoke("fillMana", 2);
-        } if (currentMana < 75)
-        {
-            Invoke("fillMana", 2.5f);
-        }
-        if (currentMana < 50)
-        {
-            Invoke("fillMana", 2.75f);
-        }
-        if (currentMana < 25)
-        {
-            Invoke("fillMana", 3);
-        }
-        
-        
-        if(currentMana < maxMana)
-        {
-            timePassed += Time.deltaTime;
-            if(timePassed>= intervalMeziPlnenim)
-            {
-                fillMana();
-                timePassed = 0f;
-            }
-        }
-        */
 
         if (ManaBar.isEmpty)
         {
@@ -120,11 +84,29 @@ public class Inventory : MonoBehaviour
             
         }
 
-        if(currentMana > 100)
+        if (Player.currentMana > 100)
         {
             manaBar.setMana(100);
         }
-        
+        */
+
+        /*
+        else if (currentMana == 75)
+        {
+            manaBar.setMana(100);
+            currentMana = 100;
+        }
+        else if (currentMana == 50)
+        {
+            manaBar.setMana(75);
+            currentMana = 75;
+        }
+        else if (currentMana == 25)
+        {
+            manaBar.setMana(50);
+            currentMana = 50;
+        }
+        */
         Animator anim = GetComponent<Animator>();
         if (!PauseMenu.isGamePaused)
         {
@@ -136,22 +118,15 @@ public class Inventory : MonoBehaviour
                         
                         if (inventory[currentIndex].itemName.Equals("Wind"))
                         {
-                            windScript.createWindElement();
-                            useMana(25);
-
-                        }
-                        else if (inventory[currentIndex].itemName.Equals("Fire"))
-                        {                                                       
-                            Debug.LogError(inventory.Count);
-                            if (canUseElement == true && !ManaBar.isEmpty && PlayerMovement.playerOnGround == true)
+                            
+                            if(canUseElement == true && !ManaBar.isEmpty && PlayerMovement.playerOnGround == true)
                             {
-
-                                anim.SetBool("FireBall", true);
-                                useMana(25);                                
-                                Debug.LogError("mas manu");
+                                anim.SetBool("WindBall", true);
+                                player.useMana(25);
+                                Debug.LogError("pouzil si wind");
                                 playerUsingElement();
                                 canUseElement = false;
-                            } else
+                            }  else if (ManaBar.isEmpty)
                             {
                                 Debug.LogError("uz nemas manu");
                             }
@@ -159,16 +134,59 @@ public class Inventory : MonoBehaviour
 
                         }
                         else if (inventory[currentIndex].itemName.Equals("Water"))
-                        {
-                            anim.SetBool("WaterBall", true);
-                            useMana(25);
+                        {                                                       
+                            Debug.LogError(inventory.Count);
+                            if (canUseElement == true && !ManaBar.isEmpty && PlayerMovement.playerOnGround == true)
+                            {
 
+                                anim.SetBool("WaterBall", true);
+                                //useMana(25);
+                                player.useMana(25);
+                                Debug.LogError("pouzil si water");
+                                playerUsingElement();
+                                canUseElement = false;
+                            } else if (ManaBar.isEmpty)
+                            {
+                                Debug.LogError("uz nemas manu");
+                            }                           
+
+                        }
+                        else if (inventory[currentIndex].itemName.Equals("Fire"))
+                        {
+
+                            Debug.LogError(inventory.Count);
+                            if (canUseElement == true && !ManaBar.isEmpty && PlayerMovement.playerOnGround == true)
+                            {
+
+                                anim.SetBool("FireBall", true);
+                                player.useMana(25);
+                                Debug.LogError("pouzil si fire");
+                                playerUsingElement();
+                                canUseElement = false;
+                            }
+                            else if (ManaBar.isEmpty)
+                            {
+                                Debug.LogError("uz nemas manu");
+                            }                           
 
                         }
                         else if (inventory[currentIndex].itemName.Equals("Earth"))
                         {
-                            earthScript.createEarthElement();
-                            useMana(25);
+                            Debug.LogError(inventory.Count);
+                            if (canUseElement == true && !ManaBar.isEmpty && PlayerMovement.playerOnGround == true)
+                            {
+
+                                anim.SetBool("EarthBall", true);                                
+                                player.useMana(25);
+                                Debug.LogError("pouzil si earth");
+                                playerUsingElement();
+                                canUseElement = false;
+                            }
+                            else if (ManaBar.isEmpty)
+                            {
+                                Debug.LogError("uz nemas manu");
+                            }
+
                         }
 
                     }
@@ -208,14 +226,16 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    
+
+   
+    /*
 
     void setManaToMax()
     {
-        if(currentMana == 0)
+        if(Player.currentMana == 0)
         {
-            currentMana = 100;
-            manaBar.setMana(currentMana);
+            Player.currentMana = 100;
+            manaBar.setMana(Player.currentMana);
             ManaBar.isEmpty = false;
         }
        
@@ -223,59 +243,36 @@ public class Inventory : MonoBehaviour
 
     void useMana(int mana)
     {
-        currentMana -= mana;
-        manaBar.setMana(currentMana);
+        Player.currentMana -= mana;
+        manaBar.setMana(Player.currentMana);
     }
 
-    void fillMana()
-    {
-        /*
-             currentMana += 25;
-             manaBar.setMana(currentMana);
-
-             if (currentMana > 0)
-         {
-             ManaBar.isEmpty = false;
-         }
-         */
-
-        if (currentMana < 100)
-        {
-            ManaBar.isEmpty = false;
-            currentMana += 25;
-            manaBar.setMana(currentMana);
-        }
-        else
-        {
-            ManaBar.isEmpty = true;
-        }
-
-    }
-
-
+    */
 
     public void SpawnWaterElement(Object water)
     {
-        // GameObject obj = Instantiate(waterElement, inventoryScript.shootpoint.position, inventoryScript.shootpoint.rotation);
+        
         GameObject obj = GameObject.Instantiate<GameObject>(waterball, shootpoint.position, shootpoint.rotation);
         Destroy(obj, 1);
+        StartCoroutine(CheckIfElementDestroyed(obj));
+        Invoke("playerStopUsingElement", 0.3f);
     }
 
     public void SpawnFireElement(Object fire)
     {
-        // GameObject obj = Instantiate(waterElement, inventoryScript.shootpoint.position, inventoryScript.shootpoint.rotation);
+       
         GameObject obj = GameObject.Instantiate<GameObject>(fireball, shootpoint.position, shootpoint.rotation);
         Destroy(obj, 1);
         StartCoroutine(CheckIfElementDestroyed(obj));
         Invoke("playerStopUsingElement", 0.3f);
-        //playerStopUsingElement();
+        
     }
 
     IEnumerator CheckIfElementDestroyed(GameObject element)
     {
         yield return new WaitForSeconds(1);
 
-        // Skontrolujte, ?i je objekt zni?ený
+        
         if (element == null)
         {
             canUseElement = true;
@@ -293,16 +290,10 @@ public class Inventory : MonoBehaviour
     public void SwitchTransition(Object nullobj)
     {
         Animator anim = GetComponent<Animator>();
+        //anim.SetBool("WindBall", false);
         anim.SetBool("WaterBall", false);
         anim.SetBool("FireBall", false);
-    }
-
-    public void loadElementScripts()
-    {
-        fireScript = GetComponent<FireElement>();
-        windScript = GetComponent<WindElement>();
-        waterScript = GetComponent<WaterElement>();
-        earthScript = GetComponent<EarthElement>();
+       //anim.SetBool("EarthBall", false);
     }
 
     public void addToInventory(Item.ItemData itemData)
