@@ -513,7 +513,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &885900216
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -596,8 +596,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cb6e2b71bb1ef04d825677c2504262b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 885900219}
-  player: {fileID: 0}
   jumpHeight: 40
   playerSpeed: 30
 --- !u!50 &885900219
@@ -1162,7 +1160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f23ca46d16cb949b677e6e45886264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1993979495}
+  player: {fileID: 0}
 --- !u!1 &1815679594
 GameObject:
   m_ObjectHideFlags: 0
@@ -1478,11 +1476,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!4 &1993979495 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1745774817489060844, guid: 3066b7d48d5c7b24ca26c2b339bbfc52, type: 3}
-  m_PrefabInstance: {fileID: 8852698825230346795}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3460070537531217343
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1821,6 +1814,10 @@ PrefabInstance:
     - target: {fileID: 6266626363400542079, guid: 3066b7d48d5c7b24ca26c2b339bbfc52, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6266626363400542079, guid: 3066b7d48d5c7b24ca26c2b339bbfc52, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

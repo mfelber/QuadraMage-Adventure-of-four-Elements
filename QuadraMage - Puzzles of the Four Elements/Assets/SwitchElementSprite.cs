@@ -8,7 +8,7 @@ public class SwitchElementSprite : MonoBehaviour
     Inventory inventoryScript;
     public Sprite water, fire, wind,earth;
 
-    // Start is called before the first frame update
+    
     void Start()
     {
 
@@ -20,7 +20,7 @@ public class SwitchElementSprite : MonoBehaviour
 
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))

@@ -25,14 +25,17 @@ public class Inventory : MonoBehaviour
     PlayerMovement playermovement;
 
     public GameObject windball;
+
     public GameObject waterball;    
     public GameObject fireball;
     public GameObject earthball;
 
-
+    
     
     public static bool isPlayerUsingElement;    
     public static bool canUseElement = true;
+
+    
 
     void Start()
     {
@@ -108,7 +111,7 @@ public class Inventory : MonoBehaviour
         }
         */
         Animator anim = GetComponent<Animator>();
-        if (!PauseMenu.isGamePaused)
+        if (!PauseMenu.isGamePaused && !Book.isBookOpen)
         {
             if(!PlayerMovement.PlayerIsMoving)
             {

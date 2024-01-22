@@ -32,6 +32,7 @@ public class Aim : MonoBehaviour
 
     PauseMenu pauseMenu;
     Inventory inventory;
+    Book book;
 
     public float maxZRot = 15;
     public float minZRot = -40;
@@ -53,7 +54,7 @@ public class Aim : MonoBehaviour
 
     void Update()
     {
-        if (!PauseMenu.isGamePaused)
+        if (!PauseMenu.isGamePaused && !Book.isBookOpen)
         {
             if (!Inventory.isPlayerUsingElement) { 
                 // Gun Rotation Function

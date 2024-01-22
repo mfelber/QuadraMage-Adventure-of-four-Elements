@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
 {
 
     PauseMenu pauseMenu;
+    Book book;
     Inventory inventory;
     
 
@@ -21,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     [Serialize] public float jumpHeight = 7f;
     [Serialize] public float playerSpeed = 3.5f;
 
-    
+   
     public static bool playerOnGround = true;
 
     bool playerFacingRight = true;
@@ -31,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
     private enum PlayerMovementStates { idle, running, jumping , falling}
     
 
+    
 
     private void Start()
     {
@@ -52,10 +54,11 @@ public class PlayerMovement : MonoBehaviour
         PlayerIsMoving = false;
     }
 
+      
 
     void Update()
     {
-        if (!PauseMenu.isGamePaused)
+        if (!PauseMenu.isGamePaused && !Book.isBookOpen)
         {
             Vector3 mouseP = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
