@@ -6,10 +6,10 @@ public class Inventory : MonoBehaviour
 
 {
 
-
+    public GameObject mana;
     //public int maxMana = 100;
     //public int currentMana;
-   // public ManaBar manaBar;
+    // public ManaBar manaBar;
     //public Player player;
 
     Player player;
@@ -40,7 +40,7 @@ public class Inventory : MonoBehaviour
     void Start()
     {
 
-
+        mana.SetActive(false);
         //currentMana = maxMana;
        // manaBar.setMaxMana(maxMana);
         
@@ -115,8 +115,13 @@ public class Inventory : MonoBehaviour
         {
             if(!PlayerMovement.PlayerIsMoving)
             {
+                if (inventory.Count > 0) {
+                    mana.SetActive(true);
+                    updateActualElement();
+                }                
                 if (Input.GetMouseButtonDown(0))
                 {
+
                     if (inventory.Count > 0){
                         
                         if (inventory[currentIndex].itemName.Equals("Wind"))

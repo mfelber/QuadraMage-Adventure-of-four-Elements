@@ -4,14 +4,30 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public static int maxMana = 100;
+    public static int maxMana = 100;   
     public static int currentMana;
     public ManaBar manaBar;
 
-    public GameObject player;
-
     
 
+    public GameObject player;
+
+    public int level = 1;
+    public int hiddenKey = 0;
+
+
+    public void SavePlayerData()
+    {
+        Save.SavePlayerData(this);
+    }
+
+    public void LoadPlayerData()
+    {
+        PlayerData data = Save.LoadPlayerSave();
+
+        level = data.level;
+        hiddenKey = data.hiddenKey;
+    }
     void Start()
     {
         currentMana = maxMana;
@@ -27,10 +43,7 @@ public class Player : MonoBehaviour
 
         }
 
-        if (currentMana > 100)
-        {
-            manaBar.setMana(100);
-        }
+        
     }
 
     public void useMana(int mana)
@@ -41,12 +54,12 @@ public class Player : MonoBehaviour
 
     void setManaToMax()
     {
-        if (currentMana == 0)
+        if (currentMana == 0 )
         {
             currentMana = 100;
             manaBar.setMana(currentMana);
             ManaBar.isEmpty = false;
         }
-
+       
     }
 }

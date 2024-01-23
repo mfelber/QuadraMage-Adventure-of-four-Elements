@@ -23,6 +23,13 @@ public class SwitchElementSprite : MonoBehaviour
     
     void Update()
     {
+
+        if (Inventory.inventory.Count >= 1)
+        {
+
+            GetComponent<SpriteRenderer>().sprite = wind;
+
+        }
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
 
