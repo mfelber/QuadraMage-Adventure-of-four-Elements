@@ -14,7 +14,7 @@ public class SwitchElementSprite : MonoBehaviour
 
 
         inventoryScript = GetComponent<Inventory>();
-        Debug.LogError(Inventory.inventory.Count);
+        //Debug.LogError(Inventory.inventory.Count);
         
 
 

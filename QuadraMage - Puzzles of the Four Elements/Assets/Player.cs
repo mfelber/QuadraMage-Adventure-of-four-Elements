@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -30,6 +31,8 @@ public class Player : MonoBehaviour
     }
     void Start()
     {
+
+        
         currentMana = maxMana;
         manaBar.setMaxMana(maxMana);
     }
@@ -61,5 +64,10 @@ public class Player : MonoBehaviour
             ManaBar.isEmpty = false;
         }
        
+    }
+
+    public int getValue()
+    {
+        return hiddenKey;
     }
 }
