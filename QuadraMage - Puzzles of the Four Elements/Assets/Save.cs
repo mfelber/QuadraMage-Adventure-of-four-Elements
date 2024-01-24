@@ -14,6 +14,7 @@ public static class Save {
 
         PlayerData data = new PlayerData(player);
         binaryFormatter.Serialize(fileStream,data);
+        Debug.Log(savePath);
         fileStream.Close();
     }
 

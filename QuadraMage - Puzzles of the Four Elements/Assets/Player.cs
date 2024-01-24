@@ -13,8 +13,10 @@ public class Player : MonoBehaviour
 
     public GameObject player;
 
-    public int level = 1;
-    public int hiddenKey = 0;
+    public int level;
+    public int hiddenKey;
+
+    private bool playerHasCollide = false;
 
 
     public void SavePlayerData()
@@ -24,17 +26,50 @@ public class Player : MonoBehaviour
 
     public void LoadPlayerData()
     {
+        //PlayerData data = Save.LoadPlayerSave();
+
+        //level = data.level;
+        //hiddenKey = data.hiddenKey;
+
+
         PlayerData data = Save.LoadPlayerSave();
 
-        level = data.level;
-        hiddenKey = data.hiddenKey;
+        if (data != null)
+        {
+            level = data.level;
+            hiddenKey = data.hiddenKey;
+            Debug.Log("Player data loaded. Level: " + level + ", Hidden Key: " + hiddenKey);
+        }
+        else
+        {
+            Debug.LogError("Failed to load player data.");
+        }
+
     }
     void Start()
     {
+        level = 1;
+        hiddenKey = 0;
 
-        
-        currentMana = maxMana;
+    currentMana = maxMana;
         manaBar.setMaxMana(maxMana);
+        
+
+        /*
+        if(level == 1)
+        {
+            SceneManager.LoadScene("New Scene", LoadSceneMode.Additive);
+        }
+        if(level == 2)
+        {
+            SceneManager.LoadScene("Scena2", LoadSceneMode.Additive);
+        }
+        
+        */
+        //LoadPlayerData();
+        //LoadLevelScene();
+        Debug.LogError(level);
+        
     }
 
     // Update is called once per frame
@@ -70,4 +105,50 @@ public class Player : MonoBehaviour
     {
         return hiddenKey;
     }
+
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (!playerHasCollide) // Pouze pokud ješt? nebyla kolize zpracována
+        {
+            Debug.LogError(gameObject);
+            if (collision.gameObject.CompareTag("Finish"))
+            {
+                level += 1;
+                hiddenKey++;
+                SavePlayerData();
+                playerHasCollide = true;
+                 
+            }
+            if (collision.gameObject.CompareTag("Test"))
+            {
+                //LoadPlayerData();
+                Debug.LogError(level);
+                playerHasCollide = true;
+            }
+
+           
+        } else
+        {
+            playerHasCollide = false;
+        }
+       
+    }
+
+    void LoadLevelScene()
+    {
+        string sceneName = "Scena" + level; // Predpokladáme, že scény majú názvy vo formáte "Level1", "Level2", at?.
+        if (SceneManager.GetSceneByName(sceneName) != null)
+        {
+            SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+        }
+        else
+        {
+            Debug.LogError("Scene not found: " + sceneName);
+        }
+    }
+
+
+
 }

@@ -50,7 +50,7 @@ public class Inventory : MonoBehaviour
 
         if (inventory.Count > 0)
         {
-            updateActualElement();
+           // updateActualElement();
         }
 
         if (waterball == null)
@@ -117,7 +117,7 @@ public class Inventory : MonoBehaviour
             {
                 if (inventory.Count > 0) {
                     mana.SetActive(true);
-                    updateActualElement();
+                    //updateActualElement();
                 }                
                 if (Input.GetMouseButtonDown(0))
                 {
@@ -259,11 +259,13 @@ public class Inventory : MonoBehaviour
 
     public void SpawnWaterElement(Object water)
     {
+     
         
-        GameObject obj = GameObject.Instantiate<GameObject>(waterball, shootpoint.position, shootpoint.rotation);
-        Destroy(obj, 1);
-        StartCoroutine(CheckIfElementDestroyed(obj));
-        Invoke("playerStopUsingElement", 0.3f);
+            GameObject obj = GameObject.Instantiate<GameObject>(waterball, shootpoint.position, shootpoint.rotation);
+            Destroy(obj, 1);
+            StartCoroutine(CheckIfElementDestroyed(obj));
+            Invoke("playerStopUsingElement", 0.3f);
+        
     }
 
     public void SpawnFireElement(Object fire)
@@ -316,7 +318,7 @@ public class Inventory : MonoBehaviour
         if (index >= 0 && index < inventory.Count)
         {
             currentIndex = index;
-            updateActualElement();
+            //updateActualElement();
 
         }
 
@@ -342,6 +344,7 @@ public class Inventory : MonoBehaviour
 
     }
 
+    /*
     private void updateActualElement()
     {
 
@@ -350,4 +353,5 @@ public class Inventory : MonoBehaviour
 
 
     }
+    */
 }

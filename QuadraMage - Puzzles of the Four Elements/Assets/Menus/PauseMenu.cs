@@ -26,6 +26,7 @@ public class PauseMenu : MonoBehaviour
             } 
             else
             {
+
                 PauseGame();
             }
         }
@@ -33,7 +34,7 @@ public class PauseMenu : MonoBehaviour
 
     public void PauseGame()
     {
-        pauseMenu?.SetActive(true);
+        pauseMenu.SetActive(true);
         Time.timeScale = 0f; // this will stop animation, and everything
         book.OpenBook();
         isGamePaused = true;
@@ -49,7 +50,7 @@ public class PauseMenu : MonoBehaviour
     public void GoToMainMenu()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("StartScreen");
+        SceneManager.LoadScene("Main Menu");
         
     }
 

@@ -25,13 +25,13 @@ public class ChangeMainQuestText : MonoBehaviour
             player = playerObject.GetComponent<Player>();
         }
 
-        if (sceneName == "New Scene")
+        if (sceneName == "Level1")
         {
             Debug.LogError("si v tejto scene" + sceneName);
-            MainQuest.text = player.getValue().ToString();
+            //MainQuest.text = player.getValue().ToString();
             MainQuest.text += "1.Collect Fire element";
         }
-        if (sceneName == "Scena1")
+        if (sceneName == "Scena2")
         {
             Debug.LogError("si v tejto scene" + sceneName);
             MainQuest.text += "2.Collect Water element";

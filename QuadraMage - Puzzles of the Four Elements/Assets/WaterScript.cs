@@ -22,38 +22,41 @@ public class WaterScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isrightFacing)
+        if (!PauseMenu.isGamePaused && !Book.isBookOpen)
         {
-         
-            if (spriteRenderer.flipX == true)
+            if (isrightFacing)
             {
-                spriteRenderer.flipX = false;
-            }
 
-          
-            if (spriteRenderer.flipY == true)
+                if (spriteRenderer.flipX == true)
+                {
+                    spriteRenderer.flipX = false;
+                }
+
+
+                if (spriteRenderer.flipY == true)
+                {
+                    spriteRenderer.flipY = false;
+                }
+
+
+                transform.Translate(new Vector3(speed * Time.deltaTime, 0, 0));
+            }
+            else
             {
-                spriteRenderer.flipY = false;
+
+                if (spriteRenderer.flipX == false)
+                {
+                    spriteRenderer.flipX = true;
+                }
+
+                if (spriteRenderer.flipY == false)
+                {
+                    spriteRenderer.flipY = true;
+                }
+
+
+                transform.Translate(new Vector3(-speed * Time.deltaTime, 0, 0));
             }
-
-           
-            transform.Translate(new Vector3(speed * Time.deltaTime, 0, 0));
-        }
-        else
-        {
-
-            if (spriteRenderer.flipX == false)
-            {
-                spriteRenderer.flipX = true;
-            }
-
-            if (spriteRenderer.flipY == false)
-            {
-                spriteRenderer.flipY = true;
-            }
-
-        
-            transform.Translate(new Vector3(-speed * Time.deltaTime, 0, 0));
         }
     }
 

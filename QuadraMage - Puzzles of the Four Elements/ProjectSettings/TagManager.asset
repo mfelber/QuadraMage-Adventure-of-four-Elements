@@ -13,6 +13,8 @@ TagManager:
   - Element
   - Cloud
   - Box
+  - HiddenKey
+  - Test
   layers:
   - Default
   - TransparentFX

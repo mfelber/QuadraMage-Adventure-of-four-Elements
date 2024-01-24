@@ -14,14 +14,18 @@ public class ParticleController : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
 
-            isOnCloud = true;
-            cloudParticles.Play();
-            
-           
-        }
+        if (!PauseMenu.isGamePaused && !Book.isBookOpen)
+        {
+            if (collision.gameObject.CompareTag("Player"))
+            {
+
+                isOnCloud = true;
+                cloudParticles.Play();
+
+
+            }
+       }
     }
 
  

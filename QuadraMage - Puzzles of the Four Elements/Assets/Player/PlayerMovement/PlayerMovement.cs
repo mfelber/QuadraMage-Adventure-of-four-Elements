@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
 {
 
     PauseMenu pauseMenu;
+    NewPauseMenu newPauseMenu;
     Book book;
     Inventory inventory;
     
@@ -54,11 +55,11 @@ public class PlayerMovement : MonoBehaviour
         PlayerIsMoving = false;
     }
 
-      
 
+   
     void Update()
     {
-        if (!PauseMenu.isGamePaused && !Book.isBookOpen)
+        if (!NewPauseMenu.isPauseMenuOpen | !Book.isBookOpen)
         {
             Vector3 mouseP = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
@@ -75,12 +76,12 @@ public class PlayerMovement : MonoBehaviour
                 playerIsNotMoving();
                 
             }
-            Player.velocity = new Vector2(playerMove * playerSpeed, Player.velocity.y);
+            Player.velocity = new Vector2(playerMove * playerSpeed , Player.velocity.y);
 
             if (Input.GetButtonDown("Jump") && playerOnGround)
             {
                // animator.SetBool("running", false);
-                Player.velocity = new Vector2(Player.velocity.x, jumpHeight);
+                Player.velocity = new Vector2(Player.velocity.x, jumpHeight );
                 playerOnGround = false;
                 
             } 
@@ -100,11 +101,22 @@ public class PlayerMovement : MonoBehaviour
             }
             }
 
+
+
+        }
             UpdateAnimation();
+
+        /*
+        if (PauseMenu.isGamePaused == true && playerOnGround == false)
+        {
+
         }
        
+        */
 
     }
+
+  
 
 
 
@@ -113,32 +125,38 @@ public class PlayerMovement : MonoBehaviour
         float verticalVelocity = Player.velocity.y;
         PlayerMovementStates state;
 
-        if (playerOnGround)
-        {
-            if (Mathf.Abs(playerMove) > 0.1f)
+      
+            if (playerOnGround)
             {
-                state = PlayerMovementStates.running;
-            }
-            else
-            {
-                state = PlayerMovementStates.idle;
-            }
-          
-        }
-        else
-        {
-            if (verticalVelocity > 0.1f)
-            {
-                state = PlayerMovementStates.jumping;
-            }
-            else
-            {
-                state = PlayerMovementStates.falling;
-            }
-        }
+                if (Mathf.Abs(playerMove) > 0.1f)
+                {
+                    state = PlayerMovementStates.running;
+                }
+                else
+                {
+                    state = PlayerMovementStates.idle;
+                }
 
-        animator.SetInteger("state", (int)state);
+            }
+            else
+            {
+                if (verticalVelocity > 0.1f)
+                {
+                    state = PlayerMovementStates.jumping;
+                }
+                else
+                {
+                    state = PlayerMovementStates.falling;
+                }
+            }
+
+            animator.SetInteger("state", (int)state);
+
+       
+
     }
+
+  
 
     void flip()
     {
