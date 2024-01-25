@@ -59,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
    
     void Update()
     {
-        if (!NewPauseMenu.isPauseMenuOpen | !Book.isBookOpen)
+        if (!NewPauseMenu.isPauseMenuOpen && !Book.isBookOpen)
         {
             Vector3 mouseP = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 

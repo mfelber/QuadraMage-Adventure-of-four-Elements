@@ -1,38 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using static Cinemachine.DocumentationSortingAttribute;
 
-public class Test : MonoBehaviour
+
+public class CheckForUnlockBonusLevels : MonoBehaviour
 {
 
-    public Button yourButton;
+    public Button bonusLevels;
+
+    
+
+    
 
     private int level;
     private int hiddenKey;
-    // Start is called before the first frame update
-    void Start()
-    {
-        LoadPlayerData();
-        Debug.LogError(level);
-        Debug.LogError(hiddenKey);
+    
+   
 
-        yourButton = GetComponentInChildren<Button>();
-        LoadLevelScene();
-    }
-
-    // Update is called once per frame
+    
     void Update()
     {
         
         if (hiddenKey == 0)
         {
-            yourButton.enabled = false;
+            bonusLevels.enabled = false;
         } else
         {
-            yourButton.enabled = true;
+            bonusLevels.enabled = true;
         }
     }
 
@@ -71,4 +68,11 @@ public class Test : MonoBehaviour
             Debug.LogError("Scene not found: " + sceneName);
         }
     }
+
+    private void OnHove()
+    {
+        Debug.Log("Si na mne");
+    }
+
+    
 }

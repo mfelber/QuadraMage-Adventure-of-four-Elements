@@ -18,7 +18,7 @@ public class Book : MonoBehaviour
 
     void Update()
     {
-        if (!PauseMenu.isGamePaused )
+        if (!NewPauseMenu.isPauseMenuOpen )
         {
             if (Input.GetKeyUp(KeyCode.B))
             {

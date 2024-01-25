@@ -22,6 +22,7 @@ public class Inventory : MonoBehaviour
    public Transform shootpoint;
 
     PauseMenu pauseMenu;
+    NewPauseMenu newPauseMenu;
     PlayerMovement playermovement;
 
     public GameObject windball;
@@ -111,7 +112,7 @@ public class Inventory : MonoBehaviour
         }
         */
         Animator anim = GetComponent<Animator>();
-        if (!PauseMenu.isGamePaused && !Book.isBookOpen)
+        if (!NewPauseMenu.isPauseMenuOpen && !Book.isBookOpen)
         {
             if(!PlayerMovement.PlayerIsMoving)
             {

@@ -19,6 +19,8 @@ public class Player : MonoBehaviour
     private bool playerHasCollide = false;
 
 
+    public static bool playerFinishTheGame = false;
+
     public void SavePlayerData()
     {
         Save.SavePlayerData(this);
@@ -51,7 +53,7 @@ public class Player : MonoBehaviour
         level = 1;
         hiddenKey = 0;
 
-    currentMana = maxMana;
+        currentMana = maxMana;
         manaBar.setMaxMana(maxMana);
         
 
@@ -69,6 +71,7 @@ public class Player : MonoBehaviour
         //LoadPlayerData();
         //LoadLevelScene();
         Debug.LogError(level);
+        
         
     }
 
@@ -125,8 +128,11 @@ public class Player : MonoBehaviour
             {
                 //LoadPlayerData();
                 Debug.LogError(level);
+                Debug.LogError(hiddenKey);
                 playerHasCollide = true;
             }
+
+            //TODO if collision compare tag final teleport = player finish the game = true
 
            
         } else

@@ -30,7 +30,8 @@ public class Aim : MonoBehaviour
 
     public GameObject shootPoint;
 
-    PauseMenu pauseMenu;
+    
+    NewPauseMenu newPauseMenu;
     Inventory inventory;
     Book book;
 
@@ -54,7 +55,7 @@ public class Aim : MonoBehaviour
 
     void Update()
     {
-        if (!PauseMenu.isGamePaused && !Book.isBookOpen)
+        if (!NewPauseMenu.isPauseMenuOpen && !Book.isBookOpen)
         {
             if (!Inventory.isPlayerUsingElement) { 
                 // Gun Rotation Function
