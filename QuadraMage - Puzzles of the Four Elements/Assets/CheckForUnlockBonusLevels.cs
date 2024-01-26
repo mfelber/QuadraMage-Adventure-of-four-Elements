@@ -11,25 +11,28 @@ public class CheckForUnlockBonusLevels : MonoBehaviour
 
     public Button bonusLevels;
 
-    
-
-    
+   
 
     private int level;
     private int hiddenKey;
-    
-   
 
-    
+
+
+    private void Start()
+    {
+       LoadPlayerData();
+    }
+
+
     void Update()
     {
-        
-        if (hiddenKey == 0)
-        {
-            bonusLevels.enabled = false;
-        } else
+       
+        if (hiddenKey > 0 ) // && player finish the game = true 
         {
             bonusLevels.enabled = true;
+        } else
+        {
+            bonusLevels.enabled = false;
         }
     }
 
@@ -58,7 +61,7 @@ public class CheckForUnlockBonusLevels : MonoBehaviour
 
     void LoadLevelScene()
     {
-        string sceneName = "Scena" + level; // Predpokladáme, že scény majú názvy vo formáte "Level1", "Level2", at?.
+        string sceneName = "Scena" + level; 
         if (SceneManager.GetSceneByName(sceneName) != null)
         {
             SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
@@ -69,10 +72,7 @@ public class CheckForUnlockBonusLevels : MonoBehaviour
         }
     }
 
-    private void OnHove()
-    {
-        Debug.Log("Si na mne");
-    }
+   
 
     
 }

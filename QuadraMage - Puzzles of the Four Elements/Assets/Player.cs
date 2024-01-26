@@ -13,8 +13,8 @@ public class Player : MonoBehaviour
 
     public GameObject player;
 
-    public int level;
-    public int hiddenKey;
+    public  int level;
+    public  int hiddenKey;
 
     private bool playerHasCollide = false;
 
