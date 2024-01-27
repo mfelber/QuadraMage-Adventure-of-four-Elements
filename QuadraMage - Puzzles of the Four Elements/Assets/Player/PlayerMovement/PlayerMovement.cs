@@ -168,7 +168,7 @@ public class PlayerMovement : MonoBehaviour
   
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Cloud"))
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Cloud") || collision.gameObject.CompareTag("EarthBlock"))
         {
             
             playerOnGround = true;

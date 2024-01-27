@@ -16,6 +16,7 @@ TagManager:
   - HiddenKey
   - Test
   - Tip
+  - EarthBlock
   layers:
   - Default
   - TransparentFX
