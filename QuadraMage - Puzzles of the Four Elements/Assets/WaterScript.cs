@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Profiling;
 
 public class WaterScript : MonoBehaviour
 {
@@ -22,8 +23,10 @@ public class WaterScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (!PauseMenu.isGamePaused && !Book.isBookOpen)
         {
+            Profiler.BeginSample("water");
             if (isrightFacing)
             {
 
@@ -58,6 +61,7 @@ public class WaterScript : MonoBehaviour
                 transform.Translate(new Vector3(-speed * Time.deltaTime, 0, 0));
             }
         }
+        Profiler.EndSample();
     }
 
     /*
