@@ -25,11 +25,10 @@ public class Inventory : MonoBehaviour
     NewPauseMenu newPauseMenu;
     PlayerMovement playermovement;
 
-    public GameObject windball;
-
-    public GameObject waterball;    
-    public GameObject fireball;
-    public GameObject earthball;
+    public GameObject Wind;
+    public GameObject Waterball;    
+    public GameObject Fireball;
+    public GameObject Earth;
 
     
     
@@ -54,11 +53,11 @@ public class Inventory : MonoBehaviour
            // updateActualElement();
         }
 
-        if (waterball == null)
+        if (Waterball == null)
         {
             Debug.LogError("nemas prefab");
         }
-        if (fireball == null)
+        if (Fireball == null)
         {
             Debug.LogError("nemas prefab fire ball");
         }
@@ -130,7 +129,7 @@ public class Inventory : MonoBehaviour
                             
                             if(canUseElement == true && !ManaBar.isEmpty && PlayerMovement.playerOnGround == true)
                             {
-                                anim.SetBool("WindBall", true);
+                                anim.SetBool("Wind", true);
                                 player.useMana(25);
                                 Debug.LogError("pouzil si wind");
                                 playerUsingElement();
@@ -185,7 +184,7 @@ public class Inventory : MonoBehaviour
                             if (canUseElement == true && !ManaBar.isEmpty && PlayerMovement.playerOnGround == true)
                             {
 
-                                anim.SetBool("EarthBall", true);                                
+                                anim.SetBool("Earth", true);                                
                                 player.useMana(25);
                                 Debug.LogError("pouzil si earth");
                                 playerUsingElement();
@@ -258,25 +257,42 @@ public class Inventory : MonoBehaviour
 
     */
 
-    public void SpawnWaterElement(Object water)
+    public void SpawnWindElement( Object windElement)
+    {
+        GameObject wind = GameObject.Instantiate<GameObject>(Wind, shootpoint.position, shootpoint.rotation);
+        Destroy(wind, 1);
+        StartCoroutine(CheckIfElementDestroyed(wind));
+        Invoke("playerStopUsingElement", 0.3f);
+    }
+
+    public void SpawnWaterElement(Object waterElement)
     {
      
         
-            GameObject obj = GameObject.Instantiate<GameObject>(waterball, shootpoint.position, shootpoint.rotation);
-            Destroy(obj, 1);
-            StartCoroutine(CheckIfElementDestroyed(obj));
+            GameObject water = GameObject.Instantiate<GameObject>(Waterball, shootpoint.position, shootpoint.rotation);
+            Destroy(water, 1);
+            StartCoroutine(CheckIfElementDestroyed(water));
             Invoke("playerStopUsingElement", 0.3f);
         
     }
 
-    public void SpawnFireElement(Object fire)
+    public void SpawnFireElement(Object fireElement)
     {
        
-        GameObject obj = GameObject.Instantiate<GameObject>(fireball, shootpoint.position, shootpoint.rotation);
-        Destroy(obj, 1);
-        StartCoroutine(CheckIfElementDestroyed(obj));
+        GameObject fire = GameObject.Instantiate<GameObject>(Fireball, shootpoint.position, shootpoint.rotation);
+        Destroy(fire, 1);
+        StartCoroutine(CheckIfElementDestroyed(fire));
         Invoke("playerStopUsingElement", 0.3f);
         
+    }
+
+    public void SwitchTransition(Object nullobj)
+    {
+        Animator anim = GetComponent<Animator>();
+        anim.SetBool("Wind", false);
+        anim.SetBool("WaterBall", false);
+        anim.SetBool("FireBall", false);
+        //anim.SetBool("EarthBall", false);
     }
 
     IEnumerator CheckIfElementDestroyed(GameObject element)
@@ -293,19 +309,11 @@ public class Inventory : MonoBehaviour
         {
             canUseElement = false;
         }
-
-        
+                
         
     }
 
-    public void SwitchTransition(Object nullobj)
-    {
-        Animator anim = GetComponent<Animator>();
-        //anim.SetBool("WindBall", false);
-        anim.SetBool("WaterBall", false);
-        anim.SetBool("FireBall", false);
-       //anim.SetBool("EarthBall", false);
-    }
+   
 
     public void addToInventory(Item.ItemData itemData)
     {
