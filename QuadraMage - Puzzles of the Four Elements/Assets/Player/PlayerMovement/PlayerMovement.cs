@@ -67,10 +67,16 @@ public class PlayerMovement : MonoBehaviour
             if (!Inventory.isPlayerUsingElement) 
             {
             playerMove = Input.GetAxisRaw("Horizontal");
+
+                if (playerMove == 0f)
+                {
+                    animator.SetBool("isRunning", false);
+                }
+
             if (playerMove > 0 || playerMove < 0)
             {
                 playerIsMoving();
-               
+                    animator.SetBool("isRunning", true);
             } else
             {
                 playerIsNotMoving();
@@ -80,11 +86,15 @@ public class PlayerMovement : MonoBehaviour
 
             if (Input.GetButtonDown("Jump") && playerOnGround)
             {
+                    animator.SetBool("isJumping", true);
                // animator.SetBool("running", false);
                 Player.velocity = new Vector2(Player.velocity.x, jumpHeight );
                 playerOnGround = false;
                 
-            } 
+            } else
+                {
+                    animator.SetBool("isJumping", false);
+                }
            
 
 
@@ -172,6 +182,7 @@ public class PlayerMovement : MonoBehaviour
         {
             
             playerOnGround = true;
+            animator.SetBool("isJumping", false);
         }
  
     }
