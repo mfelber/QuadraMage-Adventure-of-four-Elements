@@ -31,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
     public static bool PlayerIsMoving;
 
     private enum PlayerMovementStates { idle, running, jumping , falling}
+    private enum NewPlayerMovementStates { idle, running, jumping , falling, land }
     
 
     
@@ -68,15 +69,12 @@ public class PlayerMovement : MonoBehaviour
             {
             playerMove = Input.GetAxisRaw("Horizontal");
 
-                if (playerMove == 0f)
-                {
-                    animator.SetBool("isRunning", false);
-                }
+             
 
             if (playerMove > 0 || playerMove < 0)
             {
                 playerIsMoving();
-                    animator.SetBool("isRunning", true);
+                    
             } else
             {
                 playerIsNotMoving();
@@ -86,15 +84,12 @@ public class PlayerMovement : MonoBehaviour
 
             if (Input.GetButtonDown("Jump") && playerOnGround)
             {
-                    animator.SetBool("isJumping", true);
+                    
                // animator.SetBool("running", false);
                 Player.velocity = new Vector2(Player.velocity.x, jumpHeight );
                 playerOnGround = false;
                 
-            } else
-                {
-                    animator.SetBool("isJumping", false);
-                }
+            } 
            
 
 
@@ -134,17 +129,20 @@ public class PlayerMovement : MonoBehaviour
     {
         float verticalVelocity = Player.velocity.y;
         PlayerMovementStates state;
+        NewPlayerMovementStates states;
 
       
             if (playerOnGround)
             {
                 if (Mathf.Abs(playerMove) > 0.1f)
                 {
+                states = NewPlayerMovementStates.running;
                     state = PlayerMovementStates.running;
                 }
                 else
                 {
-                    state = PlayerMovementStates.idle;
+                states = NewPlayerMovementStates.idle;
+                state = PlayerMovementStates.idle;
                 }
 
             }
@@ -152,14 +150,20 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (verticalVelocity > 0.1f)
                 {
+
+                states = NewPlayerMovementStates.jumping;
                     state = PlayerMovementStates.jumping;
                 }
                 else
                 {
-                    state = PlayerMovementStates.falling;
-                }
-            }
 
+                states = NewPlayerMovementStates.falling;
+                state = PlayerMovementStates.falling;
+                }
+
+           
+        } 
+        
             animator.SetInteger("state", (int)state);
 
        
@@ -182,7 +186,7 @@ public class PlayerMovement : MonoBehaviour
         {
             
             playerOnGround = true;
-            animator.SetBool("isJumping", false);
+            
         }
  
     }
