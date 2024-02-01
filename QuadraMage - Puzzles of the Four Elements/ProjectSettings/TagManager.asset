@@ -17,6 +17,7 @@ TagManager:
   - Test
   - Tip
   - EarthBlock
+  - WindElementShot
   layers:
   - Default
   - TransparentFX

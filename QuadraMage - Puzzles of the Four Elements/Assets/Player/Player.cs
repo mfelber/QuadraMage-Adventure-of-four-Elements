@@ -122,7 +122,7 @@ public class Player : MonoBehaviour
     {
         if (!playerHasCollide) // Pouze pokud ješt? nebyla kolize zpracována
         {
-            Debug.LogError(gameObject);
+            
             if (collision.gameObject.CompareTag("Finish"))
             {
                 level += 1;                

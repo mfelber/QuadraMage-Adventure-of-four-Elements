@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 2132603291015212551}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.3729999, y: -0.411, z: -0.63544345}
+  m_LocalPosition: {x: 0.048, y: -0.069, z: -0.63544345}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4904,11 +4904,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4407828092988496031, guid: dff19ddcb19d8b347affc6b81b56f937, type: 3}
       propertyPath: m_Name
-      value: cloud_platform Variant
+      value: cloud_platformNew
       objectReference: {fileID: 0}
     - target: {fileID: 4407828092988496031, guid: dff19ddcb19d8b347affc6b81b56f937, type: 3}
       propertyPath: m_TagString
       value: Cloud
+      objectReference: {fileID: 0}
+    - target: {fileID: 5194528227731913601, guid: dff19ddcb19d8b347affc6b81b56f937, type: 3}
+      propertyPath: m_Size.x
+      value: 1.6185945
+      objectReference: {fileID: 0}
+    - target: {fileID: 5194528227731913601, guid: dff19ddcb19d8b347affc6b81b56f937, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.018067792
+      objectReference: {fileID: 0}
+    - target: {fileID: 5194528227731913601, guid: dff19ddcb19d8b347affc6b81b56f937, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 5194528227731913601, guid: dff19ddcb19d8b347affc6b81b56f937, type: 3}
       propertyPath: m_IsTrigger
@@ -4966,6 +4978,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8887611164377979222, guid: dff19ddcb19d8b347affc6b81b56f937, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 204984bc4e9555b4090ca5b4ba358714, type: 3}
     - target: {fileID: 9168302240288685527, guid: dff19ddcb19d8b347affc6b81b56f937, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -4973,6 +4989,14 @@ PrefabInstance:
     - target: {fileID: 9168302240288685527, guid: dff19ddcb19d8b347affc6b81b56f937, type: 3}
       propertyPath: m_IsTrigger
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9168302240288685527, guid: dff19ddcb19d8b347affc6b81b56f937, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 9168302240288685527, guid: dff19ddcb19d8b347affc6b81b56f937, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.67
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -5049,3 +5073,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   cloudParticles: {fileID: 7021142069959650300}
+  isOnCloud: 0
