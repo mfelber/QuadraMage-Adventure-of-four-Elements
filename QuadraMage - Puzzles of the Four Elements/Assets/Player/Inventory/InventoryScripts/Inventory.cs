@@ -131,7 +131,7 @@ public class Inventory : MonoBehaviour
                             {
                                 anim.SetBool("Wind", true);
                                 player.useMana(25);
-                                Debug.LogError("pouzil si wind");
+                               // Debug.LogError("pouzil si wind");
                                 playerUsingElement();
                                 canUseElement = false;
                             }  else if (ManaBar.isEmpty)

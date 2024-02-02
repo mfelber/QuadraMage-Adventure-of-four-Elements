@@ -170,7 +170,10 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-  
+    
+
+   
+
 
     void flip()
     {

@@ -18,6 +18,7 @@ TagManager:
   - Tip
   - EarthBlock
   - WindElementShot
+  - Platform
   layers:
   - Default
   - TransparentFX

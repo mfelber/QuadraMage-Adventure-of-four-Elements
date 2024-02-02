@@ -5,7 +5,7 @@ using UnityEngine;
 public class MovingPlatform : MonoBehaviour
 {
      
-
+    /*
     private void OnCollisionEnter2D(Collision2D collision)
     {
         collision.transform.SetParent(transform);
@@ -15,4 +15,5 @@ public class MovingPlatform : MonoBehaviour
     {
         collision.transform.SetParent(null);
     }
+    */
 }
