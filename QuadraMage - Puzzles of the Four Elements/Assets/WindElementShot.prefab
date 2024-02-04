@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1397693496898313930}
   - component: {fileID: 1410456849448520267}
   - component: {fileID: 4061089213826861516}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WindElementShot
   m_TagString: WindElementShot
   m_Icon: {fileID: 0}
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 8571103132933915876}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.354, y: 0, z: 0}
   m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

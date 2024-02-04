@@ -9,7 +9,7 @@ public class WindCollisionWheel : MonoBehaviour
     private float time = 0f;
     private bool movingToRight;
     private bool movingToLeft;
-    public float posxRight1;
+    [SerializeField]private float posxRight1;
     public float posxLeft1;
     public float posxRight2;
     public float posxLeft2;
