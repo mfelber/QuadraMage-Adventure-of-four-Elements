@@ -32,9 +32,10 @@ public class PlayerMovement : MonoBehaviour
 
     private enum PlayerMovementStates { idle, running, jumping , falling}
     private enum NewPlayerMovementStates { idle, running, jumping , falling, land }
-    
 
-    
+
+    private bool isInputEnabled = true;
+
 
     private void Start()
     {
@@ -42,6 +43,8 @@ public class PlayerMovement : MonoBehaviour
         Player = GetComponent<Rigidbody2D>();
         
         animator = GetComponent<Animator>();
+
+       
     }
 
 
@@ -53,14 +56,27 @@ public class PlayerMovement : MonoBehaviour
 
     public void playerIsNotMoving()
     {
+        
         PlayerIsMoving = false;
     }
 
+    
+    public void DisableInput()
+    {
+        
+        isInputEnabled = false;
+        Player.velocity = Vector2.zero;
+    }
 
-   
+    public void EnableInput()
+    {
+        isInputEnabled = true;
+    }
+
+
     void Update()
     {
-        if (!NewPauseMenu.isPauseMenuOpen && !Book.isBookOpen)
+        if (!NewPauseMenu.isPauseMenuOpen && !Book.isBookOpen && isInputEnabled)
         {
             Vector3 mouseP = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
