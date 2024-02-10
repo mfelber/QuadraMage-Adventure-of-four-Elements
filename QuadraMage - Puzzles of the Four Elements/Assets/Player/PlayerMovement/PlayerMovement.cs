@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     
     private Animator animator;
     
+    
 
     [Serialize] private float playerMove = 0f;
     [Serialize] public float jumpHeight = 7f;
@@ -34,8 +35,9 @@ public class PlayerMovement : MonoBehaviour
     private enum NewPlayerMovementStates { idle, running, jumping , falling, land }
 
 
-    private bool isInputEnabled = true;
+    public static bool isInputEnabled = true;
 
+   
 
     private void Start()
     {
@@ -43,8 +45,11 @@ public class PlayerMovement : MonoBehaviour
         Player = GetComponent<Rigidbody2D>();
         
         animator = GetComponent<Animator>();
+        
 
-       
+        isInputEnabled = true;
+
+
     }
 
 
@@ -61,11 +66,15 @@ public class PlayerMovement : MonoBehaviour
     }
 
     
-    public void DisableInput()
+    public void DesibleInput()
     {
         
         isInputEnabled = false;
         Player.velocity = Vector2.zero;
+        NewPlayerMovementStates states;
+        states = NewPlayerMovementStates.idle;
+
+
     }
 
     public void EnableInput()
@@ -73,9 +82,16 @@ public class PlayerMovement : MonoBehaviour
         isInputEnabled = true;
     }
 
+    private bool playerlimitedmoving = false;
+
 
     void Update()
     {
+
+       
+
+
+
         if (!NewPauseMenu.isPauseMenuOpen && !Book.isBookOpen && isInputEnabled)
         {
             Vector3 mouseP = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -135,6 +151,8 @@ public class PlayerMovement : MonoBehaviour
        
         */
 
+        
+
     }
 
   
@@ -144,8 +162,8 @@ public class PlayerMovement : MonoBehaviour
     private void UpdateAnimation()
     {
         float verticalVelocity = Player.velocity.y;
-        PlayerMovementStates state;
         NewPlayerMovementStates states;
+        PlayerMovementStates state;
 
       
             if (playerOnGround)
@@ -197,16 +215,22 @@ public class PlayerMovement : MonoBehaviour
         transform.Rotate(0f, 180f, 0f);     
 
     }
-    
+
+
   
+
+
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Cloud") || collision.gameObject.CompareTag("EarthBlock"))
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Cloud") || collision.gameObject.CompareTag("EarthBlock") )
         {
             
             playerOnGround = true;
             
         }
+
+       
+       
  
     }
 

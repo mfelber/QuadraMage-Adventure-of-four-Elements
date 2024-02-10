@@ -24,7 +24,7 @@ public class WindScript : MonoBehaviour
         } else
         {
             SpriteRenderer wind = GetComponent<SpriteRenderer>();
-            if(wind.flipX = false)
+            if(wind.flipX == false)
                 wind.flipX = true;
             transform.Translate(new Vector3(-speed * Time.deltaTime, 0, 0));
         }

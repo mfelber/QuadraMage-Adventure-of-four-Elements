@@ -9,11 +9,14 @@ public class ActivateCutScene : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
-        {
+       
+            if (collision.CompareTag("Player"))
+            {
 
-            playableDirector.Play();
-            GetComponent<BoxCollider2D>().enabled = false;
-        }
+                playableDirector.Play();
+                GetComponent<BoxCollider2D>().enabled = false;
+            }
+        
+        
     }
 }

@@ -5,8 +5,8 @@ using UnityEngine;
 public class WindCollisionWheel : MonoBehaviour
 {
     public Animator anim;
-    private bool moving = false;
-    private float time = 0f;
+    public static bool platformIsMoving = false;
+   
     private bool movingToRight;
     private bool movingToLeft;
     [SerializeField]private float posxRight1;
@@ -14,38 +14,104 @@ public class WindCollisionWheel : MonoBehaviour
     public float posxRight2;
     public float posxLeft2;
 
+
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("WindElementShot") && !moving)
+        if (collision.CompareTag("WindElementShot") && !platformIsMoving)
         {
-            Debug.Log("Collider entered!");
 
-            if (anim != null)
-            {
-                moving = true;
+           
+                platformIsMoving = true;
 
                 float xPosition = anim.transform.position.x;
 
                 if (xPosition >= posxRight1 && xPosition <= posxRight2)
                 {
-                    anim.SetBool("IsMovingToRight", true);
+                    MoveToRight();
+                    /*
+                    anim.SetBool("IsMovingToRight", true);                    
                     anim.SetBool("IsMovingToLeft", false);
                     Debug.LogError("Moving to the right!");
+                    Invoke("setmovingtofalse", 2);
+                    */
+                    //Debug.LogError(moving);
+
                 }
                 else if (xPosition >= posxLeft1 && xPosition <= posxLeft2)
                 {
-                    anim.SetBool("IsMovingToLeft", true);
+                    MoveToLeft();
+                    /*
+                    anim.SetBool("IsMovingToLeft", true);                    
                     anim.SetBool("IsMovingToRight", false);
                     Debug.LogError("Moving to the left!");
+                    */
+                    //Debug.LogError(moving);
                 }
-            }
+            
+          
+            
+
+           
         }
+       
+    }
+
+    
+    private void MoveToRight()
+    {
+        anim.SetBool("IsMovingToRight", true);
+        //anim.SetBool("IsMovingToLeft", false);
+        Debug.LogError("Moving to the right!");
+        
+        // Set moving to false after 2 seconds
+
+    }
+
+    private void MoveToLeft()
+    {
+        anim.SetBool("IsMovingToLeft", true);
+        //anim.SetBool("IsMovingToRight", false);
+        Debug.LogError("Moving to the left!");
+        
+        
+        
+
     }
 
 
+    private void Start()
+    {
+        platformIsMoving=false;
+    }
+
+
+
+
+
+    public void SetMovingToFalse()
+    {
+        platformIsMoving = false;
+    }
+
     private void Update()
     {
-        if (moving)
+
+        /*
+        if (platformIsMoving == false)
+        {
+            PlayerMovement.isInputEnabled = true;
+        }
+        else
+        {
+            PlayerMovement.isInputEnabled = false;
+        }
+        */
+        //Debug.LogError(PlayerMovement.isInputEnabled);
+        
+
+        if (platformIsMoving)
         {
             // Check the current playing animations
             AnimatorClipInfo[] clipInfo = anim.GetCurrentAnimatorClipInfo(0);
@@ -57,22 +123,34 @@ public class WindCollisionWheel : MonoBehaviour
                 foreach (AnimatorClipInfo info in clipInfo)
                 {
                     string currentAnimationName = info.clip.name;
-                    float currentAnimationTime = info.clip.length * info.weight; // Adjust the factor based on your needs
-                    Debug.Log("Current Animation: " + currentAnimationName );
+
+                    //Debug.Log("Current Animation: " + currentAnimationName);
 
                     // Example: Check if a specific animation is playing
                     if (currentAnimationName == "MovingPlatformToLeft")
                     {
-                        Debug.LogError("si v default");
+                        //Debug.LogError("si v default");
                         anim.SetBool("IsMovingToLeft", false);
                         anim.SetBool("IsMovingToRight", false);
-                        moving = false;
-                        // Do something based on the current animation state
+                        Invoke("SetMovingToFalse", 2);
+                        //platformIsMoving = false;
+                       
+
                     }
+                   
+                    
+
                 }
             }
 
-            // Add your update logic here
+
+
         }
+
+
+      
     }
+
+   
+
 }
