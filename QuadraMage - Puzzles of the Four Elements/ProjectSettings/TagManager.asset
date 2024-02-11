@@ -19,6 +19,7 @@ TagManager:
   - EarthBlock
   - WindElementShot
   - Platform
+  - Magnifer
   layers:
   - Default
   - TransparentFX

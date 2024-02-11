@@ -63,7 +63,7 @@ public class WindCollisionWheel : MonoBehaviour
     {
         anim.SetBool("IsMovingToRight", true);
         //anim.SetBool("IsMovingToLeft", false);
-        Debug.LogError("Moving to the right!");
+        //Debug.LogError("Moving to the right!");
         
         // Set moving to false after 2 seconds
 
@@ -73,13 +73,14 @@ public class WindCollisionWheel : MonoBehaviour
     {
         anim.SetBool("IsMovingToLeft", true);
         //anim.SetBool("IsMovingToRight", false);
-        Debug.LogError("Moving to the left!");
+        //Debug.LogError("Moving to the left!");
         
         
         
 
     }
 
+    
 
     private void Start()
     {
@@ -93,6 +94,8 @@ public class WindCollisionWheel : MonoBehaviour
     public void SetMovingToFalse()
     {
         platformIsMoving = false;
+        anim.SetBool("IsMovingToLeft", false);
+        anim.SetBool("IsMovingToRight", false);
     }
 
     private void Update()
@@ -130,9 +133,8 @@ public class WindCollisionWheel : MonoBehaviour
                     if (currentAnimationName == "MovingPlatformToLeft")
                     {
                         //Debug.LogError("si v default");
-                        anim.SetBool("IsMovingToLeft", false);
-                        anim.SetBool("IsMovingToRight", false);
-                        Invoke("SetMovingToFalse", 2);
+                        
+                        //Invoke("SetMovingToFalse", 2);
                         //platformIsMoving = false;
                        
 
