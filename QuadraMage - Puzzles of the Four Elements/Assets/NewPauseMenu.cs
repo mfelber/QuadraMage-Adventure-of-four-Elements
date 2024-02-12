@@ -35,6 +35,23 @@ public class NewPauseMenu : MonoBehaviour
         
     }
 
+
+    public void OpenPauseMenu()
+    {
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0f;
+        // book.OpenBook();
+        isPauseMenuOpen = true;
+    }
+
+    public void ClosePauseMenu()
+    {
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1f;
+
+        isPauseMenuOpen = false;
+    }
+
     /*
     public void ClosePauseMenu()
     {
@@ -52,21 +69,7 @@ public class NewPauseMenu : MonoBehaviour
     */
 
 
-    public void OpenPauseMenu()
-    {
-        pauseMenu.SetActive(true);
-        Time.timeScale = 0f;
-       // book.OpenBook();
-        isPauseMenuOpen = true;
-    }
 
-    public void ClosePauseMenu()
-    {
-        pauseMenu.SetActive(false);
-        Time.timeScale = 1f;
-        
-        isPauseMenuOpen = false;
-    }
 
     public void GoToMainMenu()
     {

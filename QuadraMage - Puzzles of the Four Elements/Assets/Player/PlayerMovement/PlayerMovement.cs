@@ -55,27 +55,20 @@ public class PlayerMovement : MonoBehaviour
 
     public void playerIsMoving()
     {
-
         PlayerIsMoving = true;
     }
 
     public void playerIsNotMoving()
     {
-
         PlayerIsMoving = false;
     }
 
 
     public void DesibleInput()
     {
-
         isInputEnabled = false;
         Player.velocity = Vector2.zero;
-        //NewPlayerMovementStates states;
-        //states = NewPlayerMovementStates.idle;
-
-
-
+        
     }
 
     public void EnableInput()
@@ -83,70 +76,74 @@ public class PlayerMovement : MonoBehaviour
         isInputEnabled = true;
     }
 
-    private bool playerlimitedmoving = false;
+    
 
 
     void Update()
     {
-
-        if (!NewPauseMenu.isPauseMenuOpen && !Book.isBookOpen && isInputEnabled )
-        {
-            Vector3 mouseP = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-
-            if (!Inventory.isPlayerUsingElement)
+       
+            if (!NewPauseMenu.isPauseMenuOpen && !Book.isBookOpen && isInputEnabled && !MovingPlatform.isChildOfPlatform)
             {
-                playerMove = Input.GetAxisRaw("Horizontal");
+                Vector3 mouseP = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
 
-
-                if (playerMove > 0 || playerMove < 0)
+                if (!Inventory.isPlayerUsingElement )
                 {
-                    playerIsMoving();
+                    playerMove = Input.GetAxisRaw("Horizontal");
 
-                } else
-                {
-                    playerIsNotMoving();
 
+
+                    if (playerMove > 0 || playerMove < 0)
+                    {
+                        playerIsMoving();
+
+                    }
+                    else
+                    {
+                        playerIsNotMoving();
+
+                    }
+                    Player.velocity = new Vector2(playerMove * playerSpeed, Player.velocity.y);
+
+                    if (Input.GetButtonDown("Jump") && playerOnGround)
+                    {
+
+                        // animator.SetBool("running", false);
+                        Player.velocity = new Vector2(Player.velocity.x, jumpHeight);
+                        playerOnGround = false;
+
+                    }
+
+
+
+                    if (mouseP.x < Player.transform.position.x && playerFacingRight)
+                    {
+                        flip();
+
+
+                    }
+                    else if (mouseP.x > Player.transform.position.x && !playerFacingRight)
+                    {
+                        flip();
+
+                    }
                 }
-                Player.velocity = new Vector2(playerMove * playerSpeed, Player.velocity.y);
-
-                if (Input.GetButtonDown("Jump") && playerOnGround)
-                {
-
-                    // animator.SetBool("running", false);
-                    Player.velocity = new Vector2(Player.velocity.x, jumpHeight);
-                    playerOnGround = false;
-
-                }
 
 
 
-                if (mouseP.x < Player.transform.position.x && playerFacingRight)
-                {
-                    flip();
+            }
+            UpdateAnimation();
 
+            /*
+            if (PauseMenu.isGamePaused == true && playerOnGround == false)
+            {
 
-                }
-                else if (mouseP.x > Player.transform.position.x && !playerFacingRight)
-                {
-                    flip();
-
-                }
             }
 
+            */
 
+        
 
-        }
-        UpdateAnimation();
-
-        /*
-        if (PauseMenu.isGamePaused == true && playerOnGround == false)
-        {
-
-        }
-       
-        */
 
 
 

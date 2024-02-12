@@ -8,7 +8,8 @@ using UnityEngine;
 public class MovingPlatform : MonoBehaviour
 {
 
-    public static bool onPlatform = false;
+    public bool IsonPlatformWhileMoving = false;
+    public static bool isChildOfPlatform;
     
 
 
@@ -22,7 +23,7 @@ public class MovingPlatform : MonoBehaviour
 
     private bool isAnimationEnabledLeft;
 
-    private bool playerOnPlatform = false;
+    public bool playerOnPlatform = false;
 
 
 
@@ -31,7 +32,7 @@ public class MovingPlatform : MonoBehaviour
     {
         
         animator = GetComponent<Animator>();
-        playerOnPlatform = false;
+        //playerOnPlatform = false;
         
     }
 
@@ -56,8 +57,8 @@ public class MovingPlatform : MonoBehaviour
 
     */
 
-    public bool movingtoright;
-    public bool movingtoleft;
+    private bool movingtoright;
+    private bool movingtoleft;
 
 
     /*
@@ -123,17 +124,37 @@ public class MovingPlatform : MonoBehaviour
             {
 
                 player.transform.SetParent(transform);
+                IsonPlatformWhileMoving = true;
             }
         } else
         {
+            IsonPlatformWhileMoving = false;
             GameObject player = GameObject.FindGameObjectWithTag("Player");
             if (player != null && player.transform.parent == transform)
             {
                 player.transform.SetParent(null);
+                
             }
         }
 
+        if (IsonPlatformWhileMoving)
+        {
+            isChildOfPlatform = true;
+            //Debug.LogError("Som child ked sa chybem" + isChildOfPlatform);
+        } else
+        {
+            isChildOfPlatform = false;
+            //Debug.LogError("niesom child ked sa chybem" + isChildOfPlatform);
+        }
+
+
+        //Debug.LogError(IsonPlatformWhileMoving);
+       
+
     }
+
+
+
 
 
     public void SetMovingToFalse()
