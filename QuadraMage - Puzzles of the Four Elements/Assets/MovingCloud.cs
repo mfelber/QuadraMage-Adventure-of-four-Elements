@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class MovingCloud : MonoBehaviour
 {
-    public GameObject MovingCloudPrefab;
-   
-    
-    
+    public GameObject MovingCloudPrefab;    
     public Rigidbody2D rb;
 
     private void Start()
@@ -17,22 +14,15 @@ public class MovingCloud : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
-    {
-
-        
+    {         
        
         if (collision.gameObject.CompareTag("WindElementShot") )
-        {
-          
-            rb.bodyType = RigidbodyType2D.Dynamic;
-           
+        {          
+            rb.bodyType = RigidbodyType2D.Dynamic;           
             Invoke("setToStatic", 0.5f);
             
-        }
+        }  
 
-        
-        
-        
     }
 
     public void setToStatic()

@@ -7,13 +7,11 @@ public class WindCollisionWheel : MonoBehaviour
     public Animator anim;
     public static bool platformIsMoving = false;
    
-    private bool movingToRight;
-    private bool movingToLeft;
-    [SerializeField]private float posxRight1;
     public float posxLeft1;
     public float posxRight2;
     public float posxLeft2;
 
+    [SerializeField]private float posxRight1;
 
 
 
@@ -74,10 +72,6 @@ public class WindCollisionWheel : MonoBehaviour
         anim.SetBool("IsMovingToLeft", true);
         //anim.SetBool("IsMovingToRight", false);
         //Debug.LogError("Moving to the left!");
-        
-        
-        
-
     }
 
     
@@ -87,10 +81,6 @@ public class WindCollisionWheel : MonoBehaviour
         platformIsMoving=false;
     }
 
-
-
-
-
     public void SetMovingToFalse()
     {
         platformIsMoving = false;
@@ -98,26 +88,16 @@ public class WindCollisionWheel : MonoBehaviour
         anim.SetBool("IsMovingToRight", false);
     }
 
+    /*
     private void Update()
     {
 
-        /*
-        if (platformIsMoving == false)
-        {
-            PlayerMovement.isInputEnabled = true;
-        }
-        else
-        {
-            PlayerMovement.isInputEnabled = false;
-        }
-        */
-        //Debug.LogError(PlayerMovement.isInputEnabled);
         
 
         if (platformIsMoving)
         {
             // Check the current playing animations
-            AnimatorClipInfo[] clipInfo = anim.GetCurrentAnimatorClipInfo(0);
+           // AnimatorClipInfo[] clipInfo = anim.GetCurrentAnimatorClipInfo(0);
 
             // Check if there's any clip info
             if (clipInfo.Length > 0)
@@ -152,7 +132,7 @@ public class WindCollisionWheel : MonoBehaviour
 
       
     }
-
+    */
    
 
 }

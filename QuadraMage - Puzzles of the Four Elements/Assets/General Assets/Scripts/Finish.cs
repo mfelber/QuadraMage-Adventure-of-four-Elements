@@ -7,14 +7,11 @@ public class Finish : MonoBehaviour
 {
 
     public Player player; 
-    // audiosource 
     void Start()
     {
-        //finish audio source
         GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
         if (playerObject != null)
         {
-            // Get the Player component from the playerObject
             player = playerObject.GetComponent<Player>();
         }
     }

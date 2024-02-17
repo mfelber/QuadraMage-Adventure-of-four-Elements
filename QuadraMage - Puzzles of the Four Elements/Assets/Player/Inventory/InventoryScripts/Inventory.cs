@@ -6,11 +6,11 @@ public class Inventory : MonoBehaviour
 
 {
 
-    public GameObject mana;
-    //public int maxMana = 100;
-    //public int currentMana;
-    // public ManaBar manaBar;
-    //public Player player;
+
+
+    PauseMenu pauseMenu;
+    NewPauseMenu newPauseMenu;
+    PlayerMovement playermovement; 
 
     Player player;
    
@@ -21,10 +21,7 @@ public class Inventory : MonoBehaviour
 
    public Transform shootpoint;
 
-    PauseMenu pauseMenu;
-    NewPauseMenu newPauseMenu;
-    PlayerMovement playermovement;
-
+    public GameObject mana;
     public GameObject Wind;
     public GameObject Waterball;    
     public GameObject Fireball;
@@ -41,8 +38,7 @@ public class Inventory : MonoBehaviour
     {
 
         mana.SetActive(false);
-        //currentMana = maxMana;
-       // manaBar.setMaxMana(maxMana);
+
         
         //if player has at least 1 element inventory than update actual element
 
@@ -65,15 +61,7 @@ public class Inventory : MonoBehaviour
 
     }
 
-    public void playerUsingElement()
-    {
-        isPlayerUsingElement = true;    
-    }
-    public void playerStopUsingElement()
-    {
-        isPlayerUsingElement = false;
-    }
-
+    
 
 
     void Update()
@@ -266,19 +254,16 @@ public class Inventory : MonoBehaviour
     }
 
     public void SpawnWaterElement(Object waterElement)
-    {
-     
-        
-            GameObject water = GameObject.Instantiate<GameObject>(Waterball, shootpoint.position, shootpoint.rotation);
-            Destroy(water, 1);
-            StartCoroutine(CheckIfElementDestroyed(water));
-            Invoke("playerStopUsingElement", 0.3f);
+    {             
+         GameObject water = GameObject.Instantiate<GameObject>(Waterball, shootpoint.position, shootpoint.rotation);
+         Destroy(water, 1);
+         StartCoroutine(CheckIfElementDestroyed(water));
+         Invoke("playerStopUsingElement", 0.3f);
         
     }
 
     public void SpawnFireElement(Object fireElement)
-    {
-       
+    {       
         GameObject fire = GameObject.Instantiate<GameObject>(Fireball, shootpoint.position, shootpoint.rotation);
         Destroy(fire, 1);
         StartCoroutine(CheckIfElementDestroyed(fire));
@@ -363,4 +348,15 @@ public class Inventory : MonoBehaviour
 
     }
     */
+
+
+    public void playerUsingElement()
+    {
+        isPlayerUsingElement = true;
+    }
+    public void playerStopUsingElement()
+    {
+        isPlayerUsingElement = false;
+    }
+
 }

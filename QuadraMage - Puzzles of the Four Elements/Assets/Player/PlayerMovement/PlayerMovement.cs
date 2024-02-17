@@ -15,7 +15,6 @@ public class PlayerMovement : MonoBehaviour
 
 
     [Serialize] Rigidbody2D Player;
-
     [SerializeField] private Animator animator;
 
 
@@ -25,17 +24,18 @@ public class PlayerMovement : MonoBehaviour
     [Serialize] public float playerSpeed = 3.5f;
 
 
+    private bool playerFacingRight = true;
+    private bool playerInmagnifer = false;
+
     public static bool playerOnGround = true;
-
-    bool playerFacingRight = true;
-
     public static bool PlayerIsMoving;
+    public static bool isInputEnabled = true;
+
 
     private enum PlayerMovementStates { idle, running, jumping, falling }
     private enum NewPlayerMovementStates { idle, running, jumping, falling, land }
 
 
-    public static bool isInputEnabled = true;
 
 
 
@@ -43,39 +43,13 @@ public class PlayerMovement : MonoBehaviour
     {
 
         Player = GetComponent<Rigidbody2D>();
-
         animator = GetComponent<Animator>();
-
-
         isInputEnabled = true;
 
-
     }
 
 
-    public void playerIsMoving()
-    {
-        PlayerIsMoving = true;
-    }
-
-    public void playerIsNotMoving()
-    {
-        PlayerIsMoving = false;
-    }
-
-
-    public void DesibleInput()
-    {
-        isInputEnabled = false;
-        Player.velocity = Vector2.zero;
-        
-    }
-
-    public void EnableInput()
-    {
-        isInputEnabled = true;
-    }
-
+   
     
 
 
@@ -96,62 +70,38 @@ public class PlayerMovement : MonoBehaviour
                     if (playerMove > 0 || playerMove < 0)
                     {
                         playerIsMoving();
-
                     }
                     else
                     {
                         playerIsNotMoving();
-
                     }
                     Player.velocity = new Vector2(playerMove * playerSpeed, Player.velocity.y);
 
                     if (Input.GetButtonDown("Jump") && playerOnGround)
                     {
-
-                        // animator.SetBool("running", false);
                         Player.velocity = new Vector2(Player.velocity.x, jumpHeight);
                         playerOnGround = false;
 
                     }
 
 
-
                     if (mouseP.x < Player.transform.position.x && playerFacingRight)
                     {
                         flip();
-
-
                     }
                     else if (mouseP.x > Player.transform.position.x && !playerFacingRight)
                     {
                         flip();
-
                     }
                 }
-
-
-
             }
+
             UpdateAnimation();
-
-            /*
-            if (PauseMenu.isGamePaused == true && playerOnGround == false)
-            {
-
-            }
-
-            */
-
-        
-
-
-
 
     }
 
 
 
-    public bool playerInmagnifer = false;
 
     private void UpdateAnimation()
     {
@@ -162,7 +112,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (playerInmagnifer == true)
         {
-
             states = NewPlayerMovementStates.idle;
             Invoke("outofMagnifer", 4.6f);
 
@@ -184,44 +133,19 @@ public class PlayerMovement : MonoBehaviour
         {
             if (verticalVelocity > 0.1f)
             {
-
                 states = NewPlayerMovementStates.jumping;
                 state = PlayerMovementStates.jumping;
             }
             else
             {
-
                 states = NewPlayerMovementStates.falling;
                 state = PlayerMovementStates.falling;
             }
 
-
         }
-
-
-
         //animator.SetInteger("state", (int)state);
         animator.SetInteger("state", (int)states);
-
-
-
     }
-
-    void outofMagnifer()
-    {
-        playerInmagnifer = false;
-    }
-
-
-
-
-
-
-
-
-
-
-
 
 
     void flip()
@@ -234,19 +158,12 @@ public class PlayerMovement : MonoBehaviour
    
 
 
-
-
-
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Cloud") || collision.gameObject.CompareTag("EarthBlock") )
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Cloud") || collision.gameObject.CompareTag("EarthBlock"))
         {
-            
             playerOnGround = true;
-            
         }
-
-        
       
     }
 
@@ -260,10 +177,31 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-   
+    public void playerIsMoving()
+    {
+        PlayerIsMoving = true;
+    }
+
+    public void playerIsNotMoving()
+    {
+        PlayerIsMoving = false;
+    }
 
 
+    public void DesibleInput()
+    {
+        isInputEnabled = false;
+        Player.velocity = Vector2.zero;
 
+    }
 
+    public void EnableInput()
+    {
+        isInputEnabled = true;
+    }
 
+    void outofMagnifer()
+    {
+        playerInmagnifer = false;
+    }
 }

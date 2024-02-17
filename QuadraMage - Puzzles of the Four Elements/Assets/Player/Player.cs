@@ -5,21 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+
+    private bool playerHasCollide = false;
+    public static bool playerFinishTheGame = false;
+
     public static int maxMana = 100;   
     public static int currentMana;
+
     public ManaBar manaBar;
-
-    
-
     public GameObject player;
 
     public  int level;
     public  int hiddenKey;
 
-    private bool playerHasCollide = false;
-
-
-    public static bool playerFinishTheGame = false;
 
     public void SavePlayerData()
     {
@@ -75,7 +73,6 @@ public class Player : MonoBehaviour
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (ManaBar.isEmpty)
@@ -120,7 +117,7 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!playerHasCollide) // Pouze pokud ješt? nebyla kolize zpracována
+        if (!playerHasCollide) 
         {
             
             if (collision.gameObject.CompareTag("Finish"))
@@ -159,7 +156,7 @@ public class Player : MonoBehaviour
 
     void LoadLevelScene()
     {
-        string sceneName = "Scena" + level; // Predpokladáme, že scény majú názvy vo formáte "Level1", "Level2", at?.
+        string sceneName = "Scena" + level; 
         if (SceneManager.GetSceneByName(sceneName) != null)
         {
             SceneManager.LoadScene(sceneName, LoadSceneMode.Single);

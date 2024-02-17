@@ -21,7 +21,6 @@ public class ChangeMainQuestText : MonoBehaviour
 
         if (playerObject != null)
         {
-            // Get the Player component from the playerObject
             player = playerObject.GetComponent<Player>();
         }
 
@@ -40,7 +39,6 @@ public class ChangeMainQuestText : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         

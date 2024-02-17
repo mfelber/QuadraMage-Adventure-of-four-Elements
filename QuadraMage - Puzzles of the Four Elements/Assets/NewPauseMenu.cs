@@ -52,25 +52,7 @@ public class NewPauseMenu : MonoBehaviour
         isPauseMenuOpen = false;
     }
 
-    /*
-    public void ClosePauseMenu()
-    {
-        pauseMenu.SetActive(true);
-        Time.timeScale = 0f;
-        isPauseMenuOpen = true;
-    }
-
-    public void OpenPauseMenu()
-    {
-        pauseMenu.SetActive(false);
-        Time.timeScale = 1f;
-        isPauseMenuOpen = false;
-    }
-    */
-
-
-
-
+  
     public void GoToMainMenu()
     {
         Time.timeScale = 1f;

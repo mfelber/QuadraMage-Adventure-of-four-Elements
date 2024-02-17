@@ -10,7 +10,6 @@ public class PlayerInventory : MonoBehaviour
     
     void Start()
     {
-        // get reference on script Inventory which is connected to Player
         inventory = GetComponent<Inventory>(); 
 
         if (inventory == null)

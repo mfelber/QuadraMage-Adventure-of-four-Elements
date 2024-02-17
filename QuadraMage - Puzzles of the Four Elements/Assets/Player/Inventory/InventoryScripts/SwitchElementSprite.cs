@@ -14,7 +14,6 @@ public class SwitchElementSprite : MonoBehaviour
 
 
         inventoryScript = GetComponent<Inventory>();
-        //Debug.LogError(Inventory.inventory.Count);
         
 
 
@@ -48,7 +47,6 @@ public class SwitchElementSprite : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
 
-            //changeElement(1);
             if (Inventory.inventory.Count >= 2)
             {
                 
@@ -64,7 +62,6 @@ public class SwitchElementSprite : MonoBehaviour
 
             if (Inventory.inventory.Count >= 3)
             {
-                //Debug.Log(inventory.Count);
                 
                 GetComponent<SpriteRenderer>().sprite = fire;
             }
