@@ -20,6 +20,7 @@ TagManager:
   - WindElementShot
   - Platform
   - Magnifer
+  - Obstacles
   layers:
   - Default
   - TransparentFX

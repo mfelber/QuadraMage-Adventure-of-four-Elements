@@ -57,11 +57,13 @@ public class NewPauseMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("Main Menu");
+        Inventory.inventory.Clear();
 
     }
 
     public void QuitGame()
     {
+        Inventory.inventory.Clear();
         Application.Quit();
     }
 

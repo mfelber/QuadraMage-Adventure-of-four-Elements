@@ -85,7 +85,10 @@ public class Player : MonoBehaviour
         // TODO check which level player playing, restart inventory to corrent level 
         if (Input.GetKeyUp(KeyCode.R))
         {
-            player.transform.position = new Vector3(-8.64f, 0f, 0f);
+            //player.transform.position = new Vector3(-8.64f, 0f, 0f);
+            Scene currentScene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(currentScene.name, LoadSceneMode.Single);
+            Inventory.inventory.Clear();
         }
 
         
@@ -125,6 +128,7 @@ public class Player : MonoBehaviour
                 level += 1;                
                 SavePlayerData();
                 playerHasCollide = true;
+                Inventory.inventory.Clear();
                  
             }
             if (collision.gameObject.CompareTag("Test"))
@@ -146,12 +150,29 @@ public class Player : MonoBehaviour
                 playerHasCollide = true;
             }
 
+           
+
         }
         else
         {
             playerHasCollide = false;
         }
        
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+
+        if (collision.gameObject.CompareTag("Obstacles"))
+        {
+            if (sceneName == "Level1Demo")
+            {
+                Invoke("setToSpawn",0.2f);
+               
+            }
+        }
     }
 
     void LoadLevelScene()
@@ -167,6 +188,9 @@ public class Player : MonoBehaviour
         }
     }
 
-
+    private void setToSpawn()
+    {
+        player.transform.position = new Vector3(-6.546f, -0.029f, 0);
+    }
 
 }

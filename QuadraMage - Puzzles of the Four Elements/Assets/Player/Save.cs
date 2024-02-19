@@ -21,6 +21,7 @@ public static class Save {
     public static PlayerData LoadPlayerSave()
     {
         string savePath = Application.persistentDataPath + "player.save";
+        Debug.Log(savePath);
         if (File.Exists(savePath))
         {
             BinaryFormatter binaryFormatter = new BinaryFormatter();
