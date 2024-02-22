@@ -190,7 +190,10 @@ public class Player : MonoBehaviour
 
     private void setToSpawn()
     {
-        player.transform.position = new Vector3(-6.546f, -0.029f, 0);
+        //player.transform.position = new Vector3(-6.546f, -0.029f, 0);
+        Scene currentScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(currentScene.name, LoadSceneMode.Single);
+        Inventory.inventory.Clear();
     }
 
 }
