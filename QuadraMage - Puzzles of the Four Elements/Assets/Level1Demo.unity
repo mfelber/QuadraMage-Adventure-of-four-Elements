@@ -1250,6 +1250,7 @@ MonoBehaviour:
   IsonPlatformWhileMoving: 0
   animator: {fileID: 163008833}
   playerOnPlatform: 0
+  movingtoright: 0
 --- !u!61 &163008838
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11736,7 +11737,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &829946997
 SpriteRenderer:
   m_ObjectHideFlags: 0
