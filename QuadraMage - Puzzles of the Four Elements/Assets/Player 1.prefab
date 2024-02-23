@@ -480,6 +480,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cb6e2b71bb1ef04d825677c2504262b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   jumpHeight: 5
   playerSpeed: 3.5
 --- !u!114 &373020803616974063
@@ -494,12 +495,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4753f328fe991741b0ea29006209d45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mana: {fileID: 0}
   shootpoint: {fileID: 8506766763423507431}
-  windball: {fileID: 0}
-  waterball: {fileID: 6060492787975864503, guid: ce839e2034fcc434199223898c2b0c5c, type: 3}
-  fireball: {fileID: 2634379982351695840, guid: 9acc034aa52396145ab60cf965f97815, type: 3}
-  earthball: {fileID: 0}
+  mana: {fileID: 0}
+  Wind: {fileID: 0}
+  Waterball: {fileID: 0}
+  Fireball: {fileID: 0}
+  Earth: {fileID: 0}
 --- !u!114 &1383624509285421730
 MonoBehaviour:
   m_ObjectHideFlags: 0

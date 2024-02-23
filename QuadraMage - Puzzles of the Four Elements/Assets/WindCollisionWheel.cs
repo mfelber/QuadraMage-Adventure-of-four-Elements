@@ -19,6 +19,7 @@ public class WindCollisionWheel : MonoBehaviour
     {
         if (collision.CompareTag("WindElementShot") && !platformIsMoving)
         {
+            Debug.LogError("trafil si ");
 
            
                 platformIsMoving = true;

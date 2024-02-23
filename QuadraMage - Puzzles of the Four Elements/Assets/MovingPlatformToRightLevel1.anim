@@ -183,14 +183,14 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 2.0166667
-    functionName: SetMovingToFalse
+    functionName: setMovingToRightToFalse
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 2.0166667
-    functionName: setMovingToRightToFalse
+    functionName: SetMovingToFalse
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

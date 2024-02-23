@@ -31,6 +31,11 @@ public class PlayerMovement : MonoBehaviour
     public static bool PlayerIsMoving;
     public static bool isInputEnabled = true;
 
+    CapsuleCollider2D bodyCollider;
+    BoxCollider2D feet;
+    CircleCollider2D feet2;
+   
+
 
     private enum PlayerMovementStates { idle, running, jumping, falling }
     private enum NewPlayerMovementStates { idle, running, jumping, falling, land }
@@ -44,6 +49,10 @@ public class PlayerMovement : MonoBehaviour
 
         Player = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        bodyCollider = GetComponent<CapsuleCollider2D>();
+        feet = GetComponent<BoxCollider2D>();
+        feet2 = GetComponent<CircleCollider2D>();
+       
         isInputEnabled = true;
 
     }
@@ -160,10 +169,14 @@ public class PlayerMovement : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Cloud") || collision.gameObject.CompareTag("EarthBlock"))
+        if (feet2.IsTouching (collision.collider))
         {
-            playerOnGround = true;
+            if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Cloud") || collision.gameObject.CompareTag("EarthBlock"))
+            {
+                playerOnGround = true;
+            }
         }
+       
       
     }
 

@@ -25,6 +25,8 @@ public class MovingPlatform : MonoBehaviour
 
     public bool playerOnPlatform = false;
 
+    public bool movingtoright;
+    private bool movingtoleft;
 
 
 
@@ -57,8 +59,7 @@ public class MovingPlatform : MonoBehaviour
 
     */
 
-    private bool movingtoright;
-    private bool movingtoleft;
+ 
 
 
     /*
