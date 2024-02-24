@@ -21,6 +21,7 @@ TagManager:
   - Platform
   - Magnifer
   - Obstacles
+  - Dragon
   layers:
   - Default
   - TransparentFX

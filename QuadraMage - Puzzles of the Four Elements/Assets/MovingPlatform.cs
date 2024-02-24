@@ -24,6 +24,7 @@ public class MovingPlatform : MonoBehaviour
     private bool isAnimationEnabledLeft;
 
     public bool playerOnPlatform = false;
+    //public bool boxOnPlatform = false;
 
     public bool movingtoright;
     private bool movingtoleft;
@@ -85,7 +86,16 @@ public class MovingPlatform : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             playerOnPlatform = true;
+            
         }
+
+        if (collision.gameObject.CompareTag("Box"))
+        {
+            //boxOnPlatform = true;
+            Debug.LogError("Box je na platforme");
+        }
+
+        
     }
 
 
@@ -94,10 +104,12 @@ public class MovingPlatform : MonoBehaviour
 
         collision.transform.SetParent(null);
         playerOnPlatform = false;
-           
-        
-        
-        
+        //boxOnPlatform=false;
+        Debug.LogError("uz neni");
+
+
+
+
     }
 
     private void Update()
@@ -110,33 +122,40 @@ public class MovingPlatform : MonoBehaviour
         movingtoleft = isAnimationEnabledLeft;
         movingtoright = isAnimationEnabledRight;
 
-       // Debug.LogError(movingtoright);
-      //  Debug.LogError(movingtoleft);
+        // Debug.LogError(movingtoright);
+        //  Debug.LogError(movingtoleft);
 
         //Debug.LogError("idem do lava state =" + isAnimationEnabledLeft);
         //Debug.LogError("idem do prava state =" + isAnimationEnabledRight);
 
 
-        if (playerOnPlatform &&( movingtoright == true || movingtoleft == true))
+        if (playerOnPlatform && (movingtoright == true || movingtoleft == true))
         {
             Debug.LogError("Animation is going");
             GameObject player = GameObject.FindGameObjectWithTag("Player");
+            
             if (player != null)
             {
 
                 player.transform.SetParent(transform);
+                
                 IsonPlatformWhileMoving = true;
             }
         } else
         {
             IsonPlatformWhileMoving = false;
             GameObject player = GameObject.FindGameObjectWithTag("Player");
+           
             if (player != null && player.transform.parent == transform)
             {
+               
                 player.transform.SetParent(null);
                 
             }
         }
+
+
+
 
         if (IsonPlatformWhileMoving)
         {

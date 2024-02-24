@@ -22,20 +22,27 @@ public class PlayerMovement : MonoBehaviour
     [Serialize] private float playerMove = 0f;
     [Serialize] public float jumpHeight = 7f;
     [Serialize] public float playerSpeed = 3.5f;
+    public float KnobBackForce;
+    public float HowMuchTimeIsLeft;
+    public float TimeOfKnockBack;
 
 
+
+    public bool knockBackFromR;
     private bool playerFacingRight = true;
     private bool playerInmagnifer = false;
 
     public static bool playerOnGround = true;
     public static bool PlayerIsMoving;
     public static bool isInputEnabled = true;
+    public bool knockBackIsGoing;
 
     CapsuleCollider2D bodyCollider;
     BoxCollider2D feet;
     CircleCollider2D feet2;
-   
+    Rigidbody2D rigidbody2D;
 
+    private bool isKnockbackInProgress = false;
 
     private enum PlayerMovementStates { idle, running, jumping, falling }
     private enum NewPlayerMovementStates { idle, running, jumping, falling, land }
@@ -52,16 +59,16 @@ public class PlayerMovement : MonoBehaviour
         bodyCollider = GetComponent<CapsuleCollider2D>();
         feet = GetComponent<BoxCollider2D>();
         feet2 = GetComponent<CircleCollider2D>();
-       
+        rigidbody2D = GetComponent<Rigidbody2D>();
         isInputEnabled = true;
 
     }
 
 
-   
+
+
+
     
-
-
     void Update()
     {
        
@@ -72,10 +79,43 @@ public class PlayerMovement : MonoBehaviour
 
                 if (!Inventory.isPlayerUsingElement )
                 {
-                    playerMove = Input.GetAxisRaw("Horizontal");
+                    if(HowMuchTimeIsLeft <= 0)
+                {
+                    if (knockBackIsGoing == false)
+                    {
+                        playerMove = Input.GetAxisRaw("Horizontal");
+                        Player.velocity = new Vector2(playerMove * playerSpeed, Player.velocity.y);
+                    }
+                    
+                } else
+                {
+                    if(knockBackFromR == true)
+                    {
+                        Player.velocity = new Vector2(-KnobBackForce,KnobBackForce);
+                        knockBackIsGoing = true;
+                        //Debug.LogError(knockBackIsGoing);
+                        playerOnGround = false;
+                        Invoke("knockbackOff",1.3f);
+                        
+                    }
+                    if (knockBackFromR == false)
+                    {
+                        Player.velocity = new Vector2(KnobBackForce, KnobBackForce);
+                        knockBackIsGoing=true;
+                        //Debug.LogError(knockBackIsGoing);
+                        playerOnGround = false;
+                        Invoke("knockbackOff", 1.3f);
 
 
+                    }
 
+                    HowMuchTimeIsLeft -= Time.deltaTime;
+                    
+                    //Debug.LogError(knockBackIsGoing);
+                }
+
+                    
+                    
                     if (playerMove > 0 || playerMove < 0)
                     {
                         playerIsMoving();
@@ -84,9 +124,8 @@ public class PlayerMovement : MonoBehaviour
                     {
                         playerIsNotMoving();
                     }
-                    Player.velocity = new Vector2(playerMove * playerSpeed, Player.velocity.y);
 
-                    if (Input.GetButtonDown("Jump") && playerOnGround)
+                if (Input.GetButtonDown("Jump") && playerOnGround)
                     {
                         Player.velocity = new Vector2(Player.velocity.x, jumpHeight);
                         playerOnGround = false;
@@ -108,7 +147,13 @@ public class PlayerMovement : MonoBehaviour
             UpdateAnimation();
 
     }
+    
+   
 
+    private void knockbackOff()
+    {
+        knockBackIsGoing = false;
+    }
 
 
 
@@ -171,7 +216,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (feet2.IsTouching (collision.collider))
         {
-            if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Cloud") || collision.gameObject.CompareTag("EarthBlock"))
+            if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Cloud") || collision.gameObject.CompareTag("EarthBlock") || collision.gameObject.CompareTag("Box"))
             {
                 playerOnGround = true;
             }

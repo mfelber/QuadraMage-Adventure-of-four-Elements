@@ -14,9 +14,12 @@ public class Player : MonoBehaviour
 
     public ManaBar manaBar;
     public GameObject player;
+    Rigidbody2D rigidbody2D;
+
 
     public  int level;
     public  int hiddenKey;
+
 
 
     public void SavePlayerData()
@@ -53,7 +56,8 @@ public class Player : MonoBehaviour
 
         currentMana = maxMana;
         manaBar.setMaxMana(maxMana);
-        
+        rigidbody2D = GetComponent<Rigidbody2D>();
+
 
         /*
         if(level == 1)
@@ -116,7 +120,7 @@ public class Player : MonoBehaviour
         return hiddenKey;
     }
 
-
+   
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -160,6 +164,9 @@ public class Player : MonoBehaviour
        
     }
 
+    public float silaOdrazeniaX = 10f;
+    public float silaOdrazeniaY = 2f;
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Scene currentScene = SceneManager.GetActiveScene();
@@ -170,9 +177,15 @@ public class Player : MonoBehaviour
             if (sceneName == "Level1Demo")
             {
                 Invoke("setToSpawn",0.2f);
-               
+
+            }
+            if (sceneName == "Level2Demo")
+            {
+                Invoke("setToSpawn", 0.2f);
+
             }
         }
+        
     }
 
     void LoadLevelScene()
