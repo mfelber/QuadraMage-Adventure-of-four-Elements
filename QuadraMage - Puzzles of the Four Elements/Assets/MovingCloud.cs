@@ -23,7 +23,10 @@ public class MovingCloud : MonoBehaviour
             
         }  
 
+        
     }
+
+    
 
     public void setToStatic()
     {

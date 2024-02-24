@@ -99,7 +99,7 @@ public class Inventory : MonoBehaviour
         }
         */
         Animator anim = GetComponent<Animator>();
-        if (!NewPauseMenu.isPauseMenuOpen && !Book.isBookOpen)
+        if (!NewPauseMenu.isPauseMenuOpen && !Book.isBookOpen && !MovingPlatform.isChildOfPlatform)
         {
             if(!PlayerMovement.PlayerIsMoving)
             {

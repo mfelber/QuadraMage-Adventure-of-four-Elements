@@ -5,25 +5,51 @@ using UnityEngine;
 public class Dragon : MonoBehaviour
 {
     public PlayerMovement PlayerMovement;
+    public Sprite sleepingDragon, awakeDragon;
 
+
+    private void Start()
+    {
+        GetComponent<SpriteRenderer>().sprite = sleepingDragon;
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.LogError("kolizia");
+            
             PlayerMovement.HowMuchTimeIsLeft = PlayerMovement.TimeOfKnockBack;
             if (collision.transform.position.x <= transform.position.x)
             {
                 PlayerMovement.knockBackFromR = true;
-                Debug.LogError("Z prava");
+                
             }
             if (collision.transform.position.x > transform.position.x)
             {
                 PlayerMovement.knockBackFromR = false;
-                Debug.LogError("Z lava");
+                
             }
         }
     }
-    
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        // maybe call invoke to start animation of opening eyes
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            GetComponent<SpriteRenderer>().sprite = awakeDragon;
+
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        // maybe call invoke to start animation of closing eyes
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            GetComponent<SpriteRenderer>().sprite = sleepingDragon;
+
+        }
+    }
 }

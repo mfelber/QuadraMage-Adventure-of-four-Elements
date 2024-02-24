@@ -55,7 +55,7 @@ public class Aim : MonoBehaviour
 
     void Update()
     {
-        if (!NewPauseMenu.isPauseMenuOpen && !Book.isBookOpen)
+        if (!NewPauseMenu.isPauseMenuOpen && !Book.isBookOpen && !MovingPlatform.isChildOfPlatform)
         {
             if (!Inventory.isPlayerUsingElement) { 
                 // Gun Rotation Function
