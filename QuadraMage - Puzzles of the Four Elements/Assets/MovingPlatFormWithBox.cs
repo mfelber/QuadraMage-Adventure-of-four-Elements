@@ -2,85 +2,57 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovingPlatFormWithBox : MonoBehaviour
+public class MovingPlatformWithObjects : MonoBehaviour
 {
     public Animator animator;
-    public GameObject box;
-    public GameObject gold;
-    public GameObject iron;
-    public GameObject wood;
-
 
     private bool isAnimationEnabledRight;
-    public bool IsonPlatformWhileMoving = false;
-
     private bool isAnimationEnabledLeft;
-    public bool boxOnPlatform = false;
 
-    private bool movingtoright;
-    private bool movingtoleft;
+    public bool isOnPlatformWhileMoving = false;
 
+    private bool movingToRight;
+    private bool movingToLeft;
 
-
-    void Start()
+    private void Start()
     {
-        animator = GetComponent<Animator>();    
+        animator = GetComponent<Animator>();
     }
-
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Box") )
+        if (collision.gameObject.CompareTag("Box") || collision.gameObject.CompareTag("Gold") ||
+            collision.gameObject.CompareTag("Iron") || collision.gameObject.CompareTag("Wood"))
         {
-            Debug.LogError("je");
-            boxOnPlatform = true;
-
+            Debug.Log("Object on platform");
+            isOnPlatformWhileMoving = true;
+            collision.transform.SetParent(transform);
         }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Box") ){
+        if (collision.gameObject.CompareTag("Box") || collision.gameObject.CompareTag("Gold") ||
+            collision.gameObject.CompareTag("Iron") || collision.gameObject.CompareTag("Wood"))
+        {
+            Debug.Log("Object exited platform");
             collision.transform.SetParent(null);
-            boxOnPlatform = false;
-            Debug.LogError("uz neni Box");
+            isOnPlatformWhileMoving = false;
         }
-        
     }
-
-    // Update is called once per frame
-    void Update()
+    /*
+    private void Update()
     {
         isAnimationEnabledRight = animator.GetBool("IsMovingToRight");
         isAnimationEnabledLeft = animator.GetBool("IsMovingToLeft");
 
-        movingtoleft = isAnimationEnabledLeft;
-        movingtoright = isAnimationEnabledRight;
+        movingToRight = isAnimationEnabledRight;
+        movingToLeft = isAnimationEnabledLeft;
 
-        if (boxOnPlatform && (movingtoright == true || movingtoleft == true))
+        if (isOnPlatformWhileMoving && (movingToRight || movingToLeft))
         {
-            Debug.LogError("Animation is going");
-            GameObject box = GameObject.FindGameObjectWithTag("Box");
-
-            if (box != null)
-            {
-
-                box.transform.SetParent(transform);
-
-                IsonPlatformWhileMoving = true;
-            }
-        }
-        else
-        {
-            IsonPlatformWhileMoving = false;
-            GameObject box = GameObject.FindGameObjectWithTag("Box");
-
-            if (box != null && box.transform.parent == transform)
-            {
-
-                box.transform.SetParent(null);
-
-            }
+            Debug.Log("Animation is active");
         }
     }
+    */
 }

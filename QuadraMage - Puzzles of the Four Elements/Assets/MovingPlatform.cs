@@ -89,6 +89,8 @@ public class MovingPlatform : MonoBehaviour
             
         }
 
+        
+
         /*
         if (collision.gameObject.CompareTag("Box"))
         {
@@ -96,7 +98,7 @@ public class MovingPlatform : MonoBehaviour
             Debug.LogError("Box je na platforme");
         }
         */
-        
+
     }
 
 
@@ -111,6 +113,7 @@ public class MovingPlatform : MonoBehaviour
 
         }
 
+        
 
 
 
@@ -135,7 +138,7 @@ public class MovingPlatform : MonoBehaviour
 
         if (playerOnPlatform && (movingtoright == true || movingtoleft == true))
         {
-            Debug.LogError("Animation is going");
+            //Debug.LogError("Animation is going");
             GameObject player = GameObject.FindGameObjectWithTag("Player");
             
             if (player != null)

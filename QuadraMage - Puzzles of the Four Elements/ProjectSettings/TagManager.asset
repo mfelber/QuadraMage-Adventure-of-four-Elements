@@ -22,6 +22,8 @@ TagManager:
   - Magnifer
   - Obstacles
   - Dragon
+  - Gold
+  - Tnt
   layers:
   - Default
   - TransparentFX

@@ -67,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-
+    
     
     void Update()
     {
@@ -89,6 +89,7 @@ public class PlayerMovement : MonoBehaviour
                     
                 } else
                 {
+                    
                     if(knockBackFromR == true)
                     {
                         Player.velocity = new Vector2(-KnobBackForce,KnobBackForce);
@@ -147,8 +148,11 @@ public class PlayerMovement : MonoBehaviour
             UpdateAnimation();
 
     }
+
     
-   
+
+    
+
 
     private void knockbackOff()
     {
