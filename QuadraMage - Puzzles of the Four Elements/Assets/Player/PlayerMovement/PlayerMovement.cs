@@ -12,10 +12,12 @@ public class PlayerMovement : MonoBehaviour
     NewPauseMenu newPauseMenu;
     Book book;
     Inventory inventory;
+   
 
 
-    [Serialize] Rigidbody2D Player;
+    [Serialize] Rigidbody2D playerRB;
     [SerializeField] private Animator animator;
+
 
 
 
@@ -45,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isKnockbackInProgress = false;
 
     private enum PlayerMovementStates { idle, running, jumping, falling }
-    private enum NewPlayerMovementStates { idle, running, jumping, falling, land }
+    public enum NewPlayerMovementStates { idle, running, jumping, falling, land }
 
 
 
@@ -54,12 +56,14 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
 
-        Player = GetComponent<Rigidbody2D>();
+        playerRB = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         bodyCollider = GetComponent<CapsuleCollider2D>();
         feet = GetComponent<BoxCollider2D>();
         feet2 = GetComponent<CircleCollider2D>();
         rigidbody2D = GetComponent<Rigidbody2D>();
+        
+       
         isInputEnabled = true;
 
     }
@@ -84,7 +88,7 @@ public class PlayerMovement : MonoBehaviour
                     if (knockBackIsGoing == false)
                     {
                         playerMove = Input.GetAxisRaw("Horizontal");
-                        Player.velocity = new Vector2(playerMove * playerSpeed, Player.velocity.y);
+                        playerRB.velocity = new Vector2(playerMove * playerSpeed, playerRB.velocity.y);
                     }
                     
                 } else
@@ -92,7 +96,7 @@ public class PlayerMovement : MonoBehaviour
                     
                     if(knockBackFromR == true)
                     {
-                        Player.velocity = new Vector2(-KnobBackForce,KnobBackForce);
+                        playerRB.velocity = new Vector2(-KnobBackForce,KnobBackForce);
                         knockBackIsGoing = true;
                         //Debug.LogError(knockBackIsGoing);
                         playerOnGround = false;
@@ -101,7 +105,7 @@ public class PlayerMovement : MonoBehaviour
                     }
                     if (knockBackFromR == false)
                     {
-                        Player.velocity = new Vector2(KnobBackForce, KnobBackForce);
+                        playerRB.velocity = new Vector2(KnobBackForce, KnobBackForce);
                         knockBackIsGoing=true;
                         //Debug.LogError(knockBackIsGoing);
                         playerOnGround = false;
@@ -128,24 +132,24 @@ public class PlayerMovement : MonoBehaviour
 
                 if (Input.GetButtonDown("Jump") && playerOnGround)
                     {
-                        Player.velocity = new Vector2(Player.velocity.x, jumpHeight);
+                        playerRB.velocity = new Vector2(playerRB.velocity.x, jumpHeight);
                         playerOnGround = false;
 
                     }
 
 
-                    if (mouseP.x < Player.transform.position.x && playerFacingRight)
+                    if (mouseP.x < playerRB.transform.position.x && playerFacingRight)
                     {
                         flip();
                     }
-                    else if (mouseP.x > Player.transform.position.x && !playerFacingRight)
+                    else if (mouseP.x > playerRB.transform.position.x && !playerFacingRight)
                     {
                         flip();
                     }
                 }
+             UpdateAnimation();
             }
 
-            UpdateAnimation();
 
     }
 
@@ -163,10 +167,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void UpdateAnimation()
     {
-        float verticalVelocity = Player.velocity.y;
+        float verticalVelocity = playerRB.velocity.y;
         NewPlayerMovementStates states;
         PlayerMovementStates state;
 
+
+       
 
         if (playerInmagnifer == true)
         {
@@ -205,6 +211,7 @@ public class PlayerMovement : MonoBehaviour
         animator.SetInteger("state", (int)states);
     }
 
+    
 
     void flip()
     {
@@ -253,7 +260,7 @@ public class PlayerMovement : MonoBehaviour
     public void DesibleInput()
     {
         isInputEnabled = false;
-        Player.velocity = Vector2.zero;
+        playerRB.velocity = Vector2.zero;
 
     }
 

@@ -24,6 +24,7 @@ TagManager:
   - Dragon
   - Gold
   - Tnt
+  - Barrel
   layers:
   - Default
   - TransparentFX
@@ -31,8 +32,8 @@ TagManager:
   - BackGround
   - Water
   - UI
-  - 
-  - 
+  - Player
+  - Enemy
   - 
   - 
   - 

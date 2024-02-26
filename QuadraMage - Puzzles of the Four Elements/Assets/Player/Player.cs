@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,8 +21,7 @@ public class Player : MonoBehaviour
     public  int level;
     public  int hiddenKey;
 
-
-
+    public CinemachineVirtualCamera vcam;
     public void SavePlayerData()
     {
         Save.SavePlayerData(this);
@@ -49,16 +49,20 @@ public class Player : MonoBehaviour
         }
 
     }
+
     void Start()
     {
         
         hiddenKey = 0;
-
+        
         currentMana = maxMana;
         manaBar.setMaxMana(maxMana);
         rigidbody2D = GetComponent<Rigidbody2D>();
+        
+        
+        
 
-
+        
         /*
         if(level == 1)
         {
@@ -76,6 +80,9 @@ public class Player : MonoBehaviour
         
         
     }
+
+    public static bool isPlayerHide;
+    public bool inRange;
 
     void Update()
     {
@@ -95,8 +102,39 @@ public class Player : MonoBehaviour
             Inventory.inventory.Clear();
         }
 
-        
+        if (inRange == true && Input.GetKeyDown(KeyCode.E))
+        {
+
+            if (isPlayerHide == false)
+            {
+                hidePlayer();
+            } else
+            {
+                unHidePlayer();
+            }
+
+
+
+        }
+        /*
+        if (inRange == true && Input.GetKeyDown(KeyCode.E))
+        {
+            if (isPlayerHide == true)
+            {
+                unHidePlayer();
+            }
+        }
+
+        */
+        if (isPlayerHide == true)
+        {
+            inRange = true;
+
+        }
+
     }
+
+    
 
     public void useMana(int mana)
     {
@@ -120,10 +158,42 @@ public class Player : MonoBehaviour
         return hiddenKey;
     }
 
-   
+
+    public void hidePlayer()
+    {
+
+        isPlayerHide = true;
+        player.transform.position = new Vector2(13.4f, 213.9617f);
+    
+        vcam.Follow = null;
+        
+
+
+    }
+
+    
+
+
+    public void unHidePlayer()
+    {
+
+        player.transform.position = new Vector2(12.84f, 66.92f);
+        vcam.Follow = player.transform;
+        isPlayerHide = false;
+
+
+    }
+
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.CompareTag("Barrel"))
+        {
+            inRange = true;
+
+        }
+
         if (!playerHasCollide) 
         {
             
@@ -162,6 +232,14 @@ public class Player : MonoBehaviour
             playerHasCollide = false;
         }
        
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Barrel"))
+        {
+            inRange = false;
+        }
     }
 
     public float silaOdrazeniaX = 10f;

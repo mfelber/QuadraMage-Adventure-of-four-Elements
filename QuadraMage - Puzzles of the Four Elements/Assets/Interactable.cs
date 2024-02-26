@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class Interactable : MonoBehaviour
 {
-    public bool inRange;
+    public  bool inRange;
     public KeyCode interactKey;
     public UnityEvent interact;
     public GameObject interactionMassage;
@@ -25,6 +25,8 @@ public class Interactable : MonoBehaviour
                 interact.Invoke();
             }
         }
+
+        Debug.LogError(inRange);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -34,8 +36,10 @@ public class Interactable : MonoBehaviour
 
             inRange = true;
             interactionMassage.SetActive(true);
-            Debug.Log("In range");
+            //Debug.Log("In range");
         }
+
+       
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -46,5 +50,6 @@ public class Interactable : MonoBehaviour
             interactionMassage.SetActive(false);
             Debug.Log("Not In range");
         }
+        
     }
 }

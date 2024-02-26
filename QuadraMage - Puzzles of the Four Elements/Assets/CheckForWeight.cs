@@ -31,7 +31,7 @@ public class CheckForWeight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.LogError(llava.getWeight);
+        //Debug.LogError(llava.getWeight);
         float weightLeft = llava.getWeight;
         float weightRight = rightPlatform.getWeight;
 
