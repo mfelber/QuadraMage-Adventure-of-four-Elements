@@ -77,16 +77,12 @@ public class CheckForWeight : MonoBehaviour
         float weightRight = rightPlatform.getWeight;
         
 
-        if (weightLeft == weightRight)
-        {
-            balance = Balance.equals;
-        }
-
+        
         if (weightLeft > weightRight)
         {
             balance = Balance.leftMore;
         }
-
+        
         if (weightRight > weightLeft)
         {
             balance = Balance.RightMore;

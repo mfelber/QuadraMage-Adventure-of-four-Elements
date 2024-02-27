@@ -44,8 +44,18 @@ public class Lava : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Gold"))
         {
+            Rigidbody2D gold = collision.gameObject.GetComponent<Rigidbody2D>();
+            if(gold != null)
+            {
+                float boxweight = gold.mass;
+                weight += boxweight;
+                Debug.Log("Hmotnost boxu je: " + boxweight);
+            }
+        }
+        if (collision.gameObject.CompareTag("Box"))
+        {
             Rigidbody2D box = collision.gameObject.GetComponent<Rigidbody2D>();
-            if(box != null)
+            if (box != null)
             {
                 float boxweight = box.mass;
                 weight += boxweight;
@@ -78,15 +88,34 @@ public class Lava : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Gold"))
         {
-            GameObject box = GameObject.FindGameObjectWithTag("Gold");
-            Rigidbody2D boxRigidbody = collision.gameObject.GetComponent<Rigidbody2D>();
+            GameObject gold = GameObject.FindGameObjectWithTag("Gold");
+            Rigidbody2D goldBox = collision.gameObject.GetComponent<Rigidbody2D>();
 
            // box.transform.SetParent(transform);
+
+            if (goldBox != null)
+            {
+                // Získání hmotnosti hrá?e z komponenty Rigidbody2D
+                
+                float goldWeight = goldBox.mass;
+                weight -= goldWeight;
+                // Zde m?žete použít hodnotu playerWeight podle pot?eby
+                Debug.Log("Hmotnost boxu je: " + goldWeight);
+            }
+        }
+
+
+        if (collision.gameObject.CompareTag("Box"))
+        {
+            GameObject box = GameObject.FindGameObjectWithTag("Box");
+            Rigidbody2D boxRigidbody = collision.gameObject.GetComponent<Rigidbody2D>();
+
+            // box.transform.SetParent(transform);
 
             if (boxRigidbody != null)
             {
                 // Získání hmotnosti hrá?e z komponenty Rigidbody2D
-                
+
                 float boxweight = boxRigidbody.mass;
                 weight -= boxweight;
                 // Zde m?žete použít hodnotu playerWeight podle pot?eby

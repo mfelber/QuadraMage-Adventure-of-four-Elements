@@ -36,6 +36,29 @@ public class RightPlatform : MonoBehaviour
                 Debug.LogError("Objekt hrá?e neobsahuje komponentu Rigidbody2D.");
             }
         }
+
+        if (collision.gameObject.CompareTag("Gold"))
+        {
+            Rigidbody2D gold = collision.gameObject.GetComponent<Rigidbody2D>();
+            if (gold != null)
+            {
+                float boxweight = gold.mass;
+                weight += boxweight;
+                Debug.Log("Hmotnost boxu je: " + boxweight);
+            }
+        }
+        if (collision.gameObject.CompareTag("Box"))
+        {
+            GameObject boxx = GameObject.FindGameObjectWithTag("Box");
+            Rigidbody2D box = collision.gameObject.GetComponent<Rigidbody2D>();
+            if (box != null)
+            {
+                float boxweight = box.mass;
+                weight += boxweight;
+                Debug.Log("Hmotnost boxu je: " + boxweight);
+            }
+            boxx.transform.SetParent(transform);
+        }
     }
 
 
@@ -54,9 +77,44 @@ public class RightPlatform : MonoBehaviour
                 // Zde m?žete použít hodnotu playerWeight podle pot?eby
                 Debug.Log("Hmotnost hrá?e je: " + playerWeight);
             }
-            else
+            
+        }
+
+
+        if (collision.gameObject.CompareTag("Gold"))
+        {
+            GameObject gold = GameObject.FindGameObjectWithTag("Gold");
+            Rigidbody2D goldBox = collision.gameObject.GetComponent<Rigidbody2D>();
+
+            // box.transform.SetParent(transform);
+
+            if (goldBox != null)
             {
-                Debug.LogError("Objekt hrá?e neobsahuje komponentu Rigidbody2D.");
+                // Získání hmotnosti hrá?e z komponenty Rigidbody2D
+
+                float goldWeight = goldBox.mass;
+                weight -= goldWeight;
+                // Zde m?žete použít hodnotu playerWeight podle pot?eby
+                Debug.Log("Hmotnost boxu je: " + goldWeight);
+            }
+        }
+
+
+        if (collision.gameObject.CompareTag("Box"))
+        {
+            GameObject box = GameObject.FindGameObjectWithTag("Box");
+            Rigidbody2D boxRigidbody = collision.gameObject.GetComponent<Rigidbody2D>();
+
+            // box.transform.SetParent(transform);
+
+            if (boxRigidbody != null)
+            {
+                // Získání hmotnosti hrá?e z komponenty Rigidbody2D
+
+                float boxweight = boxRigidbody.mass;
+                weight -= boxweight;
+                // Zde m?žete použít hodnotu playerWeight podle pot?eby
+                Debug.Log("Hmotnost boxu je: " + boxweight);
             }
         }
     }
