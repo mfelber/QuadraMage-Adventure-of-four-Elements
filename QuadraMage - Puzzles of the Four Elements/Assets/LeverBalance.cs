@@ -21,7 +21,7 @@ public class LeverBalance : MonoBehaviour
         {
             ActivateLever();
         }
-        Debug.LogError(isLeverOn);
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

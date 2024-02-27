@@ -99,13 +99,13 @@ public class RightPlatform : MonoBehaviour
             Rigidbody2D boxRigidbody = collision.gameObject.GetComponent<Rigidbody2D>();
             //GameObject box = GameObject.FindGameObjectWithTag("Box");
             //box.transform.SetParent(null);
-            collision.transform.SetParent(null);
 
             if (boxRigidbody != null)
             {
                 float boxweight = boxRigidbody.mass;
                 weight -= boxweight;               
             }
+            collision.transform.SetParent(null);
         }
     }
 
