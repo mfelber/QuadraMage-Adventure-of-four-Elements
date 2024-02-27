@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
     public  int hiddenKey;
 
     public CinemachineVirtualCamera vcam;
+    public GameObject interactionMassage;
     public void SavePlayerData()
     {
         Save.SavePlayerData(this);
@@ -53,6 +54,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         
+
         hiddenKey = 0;
         
         currentMana = maxMana;
@@ -81,8 +83,9 @@ public class Player : MonoBehaviour
         
     }
 
-    public static bool isPlayerHide;
+    public bool isPlayerHide;
     public bool inRange;
+    public static bool inRangeOfLever;
 
     void Update()
     {
@@ -113,24 +116,15 @@ public class Player : MonoBehaviour
                 unHidePlayer();
             }
 
-
-
         }
-        /*
-        if (inRange == true && Input.GetKeyDown(KeyCode.E))
-        {
-            if (isPlayerHide == true)
-            {
-                unHidePlayer();
-            }
-        }
-
-        */
+        
         if (isPlayerHide == true)
         {
             inRange = true;
 
         }
+
+        
 
     }
 
@@ -188,10 +182,17 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Barrel"))
+        if (collision.gameObject.CompareTag("Barrel") )
         {
             inRange = true;
+            interactionMassage.SetActive(true);
 
+        }
+
+        if (collision.gameObject.CompareTag("Lever"))
+        {
+            inRangeOfLever = true;
+            interactionMassage.SetActive(true);
         }
 
         if (!playerHasCollide) 
@@ -236,9 +237,16 @@ public class Player : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Barrel"))
+        if (collision.gameObject.CompareTag("Barrel") )
         {
             inRange = false;
+            interactionMassage.SetActive(false);
+        }
+
+        if (collision.gameObject.CompareTag("Lever"))
+        {
+            inRangeOfLever = false;
+            interactionMassage.SetActive(false);
         }
     }
 

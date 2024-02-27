@@ -47,10 +47,7 @@ public class Dragon : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            takeDamage(25);
-        }
+        
     }
 
 

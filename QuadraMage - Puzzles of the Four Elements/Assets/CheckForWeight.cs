@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.VersionControl.Asset;
+
 
 public class CheckForWeight : MonoBehaviour
 {
@@ -77,16 +77,22 @@ public class CheckForWeight : MonoBehaviour
         float weightRight = rightPlatform.getWeight;
         
 
-        
-        if (weightLeft > weightRight)
+        if(LeverBalance.isLeverOn)
         {
-            balance = Balance.leftMore;
+            if (weightLeft > weightRight)
+            {
+                balance = Balance.leftMore;
+            }
+
+            if (weightRight > weightLeft)
+            {
+                balance = Balance.RightMore;
+            }
+
         }
-        
-        if (weightRight > weightLeft)
-        {
-            balance = Balance.RightMore;
-        }
+
+
+
 
         Leftanimator.SetInteger("state", (int)balance);
         Rightanimator.SetInteger("state", (int)balance);
