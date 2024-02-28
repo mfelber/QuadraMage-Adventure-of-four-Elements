@@ -166,11 +166,8 @@ public class Player : MonoBehaviour
         if (!canbereloaded)
         {
             yield return new WaitForSeconds(1f);
-            canbereloaded = true;
-
-            // Stop any ongoing CheckForManaLoad coroutine
-            StopCoroutine("CheckForManaLoad");
-            
+            canbereloaded = true;            
+            StopCoroutine("CheckForManaLoad");    
 
             StartCoroutine(CheckForManaLoad());
         }

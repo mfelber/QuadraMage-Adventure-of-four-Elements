@@ -7547,7 +7547,7 @@ Transform:
   m_GameObject: {fileID: 462707940}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.92, y: 0.04, z: 0}
+  m_LocalPosition: {x: 33.2, y: 0.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7701,6 +7701,7 @@ MonoBehaviour:
   interactionMassage: {fileID: 829946996}
   isPlayerHide: 0
   inRange: 0
+  canbereloaded: 0
   silaOdrazeniaX: 10
   silaOdrazeniaY: 2
 --- !u!70 &462707949
@@ -15093,6 +15094,7 @@ MonoBehaviour:
   interactionMassage: {fileID: 0}
   isPlayerHide: 0
   inRange: 0
+  canbereloaded: 0
   silaOdrazeniaX: 10
   silaOdrazeniaY: 2
 --- !u!114 &565569991
@@ -26061,6 +26063,7 @@ GameObject:
   - component: {fileID: 1084170825}
   - component: {fileID: 1084170824}
   - component: {fileID: 1084170827}
+  - component: {fileID: 1084170828}
   m_Layer: 0
   m_Name: StrangerIntavenr
   m_TagString: Dragon
@@ -26193,7 +26196,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questDialogue:
-    questName: 
     dialogueLines:
     - character:
         name: 
@@ -26211,6 +26213,48 @@ MonoBehaviour:
         name: 
         icon: {fileID: 0}
       line: 
+--- !u!114 &1084170828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084170823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 198899d51ec6e8a4b93afb7beaae001d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quests:
+  - id: 1
+    name: Dragon Fear
+    dialogueLines:
+    - character:
+        name: Stranger
+        icon: {fileID: 21300000, guid: 334bf9f29c2550943baa64249a64e0da, type: 3}
+      line: sagfdasgda
+    - character:
+        name: Player
+        icon: {fileID: -431850654, guid: a7dae2a4e3137284eb6f964515792964, type: 3}
+      line: jdhafhsgdfahgs
+    - character:
+        name: 
+        icon: {fileID: 0}
+      line: 
+    - character:
+        name: 
+        icon: {fileID: 0}
+      line: 
+    - character:
+        name: 
+        icon: {fileID: 0}
+      line: 
+  - id: 0
+    name: 
+    dialogueLines: []
+  - id: 0
+    name: 
+    dialogueLines: []
 --- !u!1001 &1088626120
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26362,7 +26406,7 @@ Transform:
   m_GameObject: {fileID: 1088949124}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.92, y: 3.68, z: -10}
+  m_LocalPosition: {x: 33.2, y: 4.44, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -35544,7 +35588,7 @@ Transform:
   m_GameObject: {fileID: 1795734061}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.92, y: 3.68, z: -10}
+  m_LocalPosition: {x: 33.2, y: 4.44, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

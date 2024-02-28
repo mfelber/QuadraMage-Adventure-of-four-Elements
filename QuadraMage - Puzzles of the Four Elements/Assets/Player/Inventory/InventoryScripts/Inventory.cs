@@ -60,40 +60,7 @@ public class Inventory : MonoBehaviour
 
     void Update()
     {
-
        
-
-        /*
-
-        if (ManaBar.isEmpty)
-        {
-            Invoke("setManaToMax", 3);
-            
-        }
-
-        if (Player.currentMana > 100)
-        {
-            manaBar.setMana(100);
-        }
-        */
-
-        /*
-        else if (currentMana == 75)
-        {
-            manaBar.setMana(100);
-            currentMana = 100;
-        }
-        else if (currentMana == 50)
-        {
-            manaBar.setMana(75);
-            currentMana = 75;
-        }
-        else if (currentMana == 25)
-        {
-            manaBar.setMana(50);
-            currentMana = 50;
-        }
-        */
         Animator anim = GetComponent<Animator>();
         if (!NewPauseMenu.isPauseMenuOpen && !Book.isBookOpen && !MovingPlatform.isChildOfPlatform)
         {
@@ -128,7 +95,7 @@ public class Inventory : MonoBehaviour
                         else if (inventory[currentIndex].itemName.Equals("Water"))
                         {                                                       
                             Debug.LogError(inventory.Count);
-                            if (canUseElement == true && !ManaBar.isEmpty && PlayerMovement.playerOnGround == true)
+                            if (canUseElement == true && !ManaBar.isEmpty && PlayerMovement.playerOnGround == true && Player.manaIsLoaded == true)
                             {
 
                                 anim.SetBool("WaterBall", true);
@@ -147,7 +114,7 @@ public class Inventory : MonoBehaviour
                         {
 
                             Debug.LogError(inventory.Count);
-                            if (canUseElement == true && !ManaBar.isEmpty && PlayerMovement.playerOnGround == true)
+                            if (canUseElement == true && !ManaBar.isEmpty && PlayerMovement.playerOnGround == true && Player.manaIsLoaded == true)
                             {
 
                                 anim.SetBool("FireBall", true);
@@ -165,7 +132,7 @@ public class Inventory : MonoBehaviour
                         else if (inventory[currentIndex].itemName.Equals("Earth"))
                         {
                             Debug.LogError(inventory.Count);
-                            if (canUseElement == true && !ManaBar.isEmpty && PlayerMovement.playerOnGround == true)
+                            if (canUseElement == true && !ManaBar.isEmpty && PlayerMovement.playerOnGround == true && Player.manaIsLoaded == true)
                             {
 
                                 anim.SetBool("Earth", true);                                

@@ -25,7 +25,7 @@ public class DialogueLine
 [System.Serializable]
 public class Dialogue
 {
-    public string questName;
+    
     public List<DialogueLine> dialogueLines = new List<DialogueLine>();
 }
 public class DialogTrigger : MonoBehaviour
