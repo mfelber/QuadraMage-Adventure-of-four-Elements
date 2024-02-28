@@ -86,15 +86,22 @@ public class Player : MonoBehaviour
 
 
     }
-
+  
     public bool canbereloaded = false;
+    public static bool manaIsLoaded = true;
 
     void Update()
     {
         
         if (ManaBar.isEmpty)
         {
+            //Invoke("setManaToMax", 3);
+           // StopCoroutine("CheckForManaLoad");
+            //StopCoroutine("setToCanBeReloaded");
+            //StartCoroutine(setManaTomax());
+
             StartCoroutine(setToCanBeReloaded());
+
 
         }
         
@@ -105,9 +112,21 @@ public class Player : MonoBehaviour
             
         }
 
-        Debug.LogError(canbereloaded);
+        /*
+        if (Inventory.isPlayerUsingElement == true && currentMana < maxMana)
+        {
 
-        
+            StopCoroutine("CheckForManaLoad");
+            StopCoroutine("setToCanBeReloaded");
+
+        }
+
+        */
+
+        //Debug.LogError(canbereloaded);
+       
+
+
 
 
         // TODO check which level player playing, restart inventory to corrent level 
@@ -146,45 +165,56 @@ public class Player : MonoBehaviour
     {
         if (!canbereloaded)
         {
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(1f);
             canbereloaded = true;
 
             // Stop any ongoing CheckForManaLoad coroutine
             StopCoroutine("CheckForManaLoad");
+            
 
             StartCoroutine(CheckForManaLoad());
         }
     }
 
+
+    
     IEnumerator CheckForManaLoad()
     {
         if (canbereloaded)
         {
             Debug.Log("reloadujem neprazdnu manu");
-            yield return new WaitForSeconds(10);
+            yield return new WaitForSeconds(5);
 
-            currentMana = maxMana;
-            manaBar.setMana(maxMana);
-
+            currentMana = 100;
+            manaBar.setMana(currentMana);
             canbereloaded = false;
-            Debug.Log("Reloaded mana");
-            Debug.Log("Still in the coroutine");
-        }
-
-        if (canbereloaded && ManaBar.isEmpty)
-        {
-            Debug.Log("reloadujem prazdnu manu");
-            yield return new WaitForSeconds(10);
-
-            currentMana = maxMana;
-            manaBar.setMana(maxMana);
-
-            canbereloaded = false;
+            manaIsLoaded = false;
             ManaBar.isEmpty = false;
-            Debug.Log("Reloaded mana");
-            Debug.Log("Still in the coroutine");
+            StopCoroutine("setToCanBeReloaded");
+            Invoke("manaIsLoadedfun",1.5f);
+           
         }
+
+        
     }
+
+    IEnumerator setManaTomax()
+    {
+        yield return new WaitForSeconds(3);
+        manaIsLoaded = false;
+        currentMana = 100;
+        manaBar.setMana(currentMana);
+        ManaBar.isEmpty = false;
+        Invoke("manaIsLoadedfun", 1.5f);
+
+    }
+
+
+    public void manaIsLoadedfun()
+    {
+        manaIsLoaded = true;    
+    }
+
 
 
 
@@ -214,13 +244,9 @@ public class Player : MonoBehaviour
 
     public void hidePlayer()
     {
-
         isPlayerHide = true;
-        player.transform.position = new Vector2(13.4f, 213.9617f);
-    
-        vcam.Follow = null;
-        
-
+        player.transform.position = new Vector2(13.4f, 213.9617f);    
+        vcam.Follow = null;      
 
     }
 
