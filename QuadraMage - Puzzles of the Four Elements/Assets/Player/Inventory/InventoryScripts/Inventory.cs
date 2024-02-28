@@ -5,9 +5,6 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 
 {
-
-
-
     PauseMenu pauseMenu;
     NewPauseMenu newPauseMenu;
     PlayerMovement playermovement; 
@@ -32,15 +29,12 @@ public class Inventory : MonoBehaviour
     public static bool isPlayerUsingElement;    
     public static bool canUseElement = true;
 
-    
+    public bool playerNotUsingElement;
 
     void Start()
     {
 
         mana.SetActive(false);
-
-        
-        //if player has at least 1 element inventory than update actual element
 
         player = GetComponent<Player>();
 
@@ -62,11 +56,13 @@ public class Inventory : MonoBehaviour
     }
 
     
-
+    
 
     void Update()
-    {      
-        
+    {
+
+       
+
         /*
 
         if (ManaBar.isEmpty)
@@ -222,21 +218,13 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    
 
-   
+    
+
+    
+
     /*
-
-    void setManaToMax()
-    {
-        if(Player.currentMana == 0)
-        {
-            Player.currentMana = 100;
-            manaBar.setMana(Player.currentMana);
-            ManaBar.isEmpty = false;
-        }
-       
-    }
-
     void useMana(int mana)
     {
         Player.currentMana -= mana;
@@ -353,10 +341,11 @@ public class Inventory : MonoBehaviour
     public void playerUsingElement()
     {
         isPlayerUsingElement = true;
-    }
+       }
     public void playerStopUsingElement()
     {
         isPlayerUsingElement = false;
+        
     }
 
 }
