@@ -15,26 +15,26 @@ public class DialogueLine
 {
     public DialogueCharacter character;
     [TextArea(3, 10)]
-    public string line;
+     public string line;
 }
 
 
 
 [System.Serializable]
 public class Dialogue
-{    
-    public List<DialogueLine> dialogueLines = new List<DialogueLine>();
+{
+    [SerializeField] public List<DialogueLine> dialogueLines = new List<DialogueLine>();
 }
 public class DialogTrigger : MonoBehaviour
 {
-    
-    public GameObject GameObject;
-     public Dialogue dialogues;
+    QuestManager questManager;
+
+    public Dialogue dialogues;
 
 
     private void Start()
     {
-        //GameObject.SetActive(false);
+        questManager = FindObjectOfType<QuestManager>();
     }
     private void TriggerDialogue()
     {
@@ -45,6 +45,11 @@ public class DialogTrigger : MonoBehaviour
     private void Update()
     {
         if (Player.inRangeOfNPC && Input.GetKeyDown(KeyCode.E))
+        {
+            TriggerDialogue();
+        }
+
+        if (WoodBridge.infrontOfBridge && questManager.isQuest3comp == false)
         {
             TriggerDialogue();
         }

@@ -69,15 +69,19 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
+    private void FixedUpdate()
+    {
+        
+    }
 
 
-    
-    
+
+
     void Update()
     {
        
 
-        if (!NewPauseMenu.isPauseMenuOpen && !Book.isBookOpen && isInputEnabled && !MovingPlatform.isChildOfPlatform )
+        if (!NewPauseMenu.isPauseMenuOpen && !Book.isBookOpen && isInputEnabled && !MovingPlatform.isChildOfPlatform && !DialogManager.isDialgueActive )
             {
                 Vector3 mouseP = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
@@ -228,7 +232,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (feet2.IsTouching (collision.collider))
         {
-            if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Cloud") || collision.gameObject.CompareTag("EarthBlock") || collision.gameObject.CompareTag("Box"))
+            if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Cloud") || collision.gameObject.CompareTag("EarthBlock") || collision.gameObject.CompareTag("Box") )
             {
                 playerOnGround = true;
             }

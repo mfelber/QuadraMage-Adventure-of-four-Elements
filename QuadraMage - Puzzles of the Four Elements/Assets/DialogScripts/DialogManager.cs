@@ -15,7 +15,7 @@ public class DialogManager : MonoBehaviour
 
     private Queue<DialogueLine> lines;
 
-    public bool isDialgueActive = false;
+    public static bool isDialgueActive = false;
     public float typingSpeed = 0.2f;
     public Animator animator;
 

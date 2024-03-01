@@ -8,10 +8,11 @@ public class QuestItem : MonoBehaviour
     Player player;
     QuestManager questManager;
 
+    /*
     public GameObject Gold;
     public GameObject Iron;
     public GameObject Wood;
-
+    */
 
     private void Start()
     {
@@ -25,9 +26,9 @@ public class QuestItem : MonoBehaviour
         
             if (collision.gameObject.CompareTag("Gold"))
             {
-                questManager.quest1Completed();
+                questManager.quest1Completed();         
             
-                Gold.SetActive(false);
+               // Gold.SetActive(false);
             
         }
         
@@ -37,7 +38,7 @@ public class QuestItem : MonoBehaviour
             {
                 questManager.quest2Completed();
 
-                Iron.SetActive(false);
+                //Iron.SetActive(false);
 
         }
 
@@ -45,7 +46,7 @@ public class QuestItem : MonoBehaviour
             if (collision.gameObject.CompareTag("Wood"))
             {
                 questManager.quest3Completed();
-                Wood.SetActive(false);
+                //Wood.SetActive(false);
         }
 
     }
