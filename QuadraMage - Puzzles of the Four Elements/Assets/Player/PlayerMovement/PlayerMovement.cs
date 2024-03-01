@@ -69,13 +69,11 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-    private void FixedUpdate()
-    {
-        
-    }
 
 
-
+    private float verticalMovement;
+    private bool inRangeOfLadder;
+    private bool climbing;
 
     void Update()
     {
@@ -86,7 +84,24 @@ public class PlayerMovement : MonoBehaviour
                 Vector3 mouseP = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
 
-                if (!Inventory.isPlayerUsingElement )
+            verticalMovement = Input.GetAxis("Vertical");
+
+            if (inRangeOfLadder && Mathf.Abs(verticalMovement) > 0)
+            {
+                climbing = true;
+            }
+
+            if (climbing)
+            {
+                playerRB.gravityScale = 0f;
+                playerRB.velocity = new Vector2(playerRB.velocity.x, verticalMovement * playerSpeed);
+            }
+            else
+            {
+                playerRB.gravityScale = 1f;
+            }
+
+            if (!Inventory.isPlayerUsingElement )
                 {
                     if(HowMuchTimeIsLeft <= 0)
                 {
@@ -94,6 +109,7 @@ public class PlayerMovement : MonoBehaviour
                     {
                         playerMove = Input.GetAxisRaw("Horizontal");
                         playerRB.velocity = new Vector2(playerMove * playerSpeed, playerRB.velocity.y);
+                       
                     }
                     
                 } else
@@ -134,6 +150,7 @@ public class PlayerMovement : MonoBehaviour
                     {
                         playerIsNotMoving();
                     }
+                    
 
                 if (Input.GetButtonDown("Jump") && playerOnGround)
                     {
@@ -179,7 +196,7 @@ public class PlayerMovement : MonoBehaviour
 
        
 
-        if (playerInmagnifer == true)
+        if (playerInmagnifer == true || climbing == true)
         {
             states = NewPlayerMovementStates.idle;
             Invoke("outofMagnifer", 4.6f);
@@ -249,6 +266,21 @@ public class PlayerMovement : MonoBehaviour
             playerInmagnifer = true;
         }
 
+        if (collision.gameObject.CompareTag("Ladder"))
+        {
+            Debug.LogError("si v range");
+            inRangeOfLadder = true;
+        }
+
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ladder"))
+        {
+            inRangeOfLadder = false;
+            climbing = false;
+        }
     }
 
     public void playerIsMoving()
