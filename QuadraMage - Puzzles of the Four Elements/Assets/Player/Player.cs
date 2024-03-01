@@ -23,10 +23,13 @@ public class Player : MonoBehaviour
 
     public CinemachineVirtualCamera vcam;
     public GameObject interactionMassage;
+
+    public int quest;
     public void SavePlayerData()
     {
         Save.SavePlayerData(this);
     }
+
 
     public void LoadPlayerData()
     {
@@ -54,11 +57,12 @@ public class Player : MonoBehaviour
     public bool isPlayerHide;
     public bool inRange;
     public static bool inRangeOfLever;
+    public static bool inRangeOfNPC;
 
     void Start()
     {
 
-
+        quest = 1;
         hiddenKey = 0;
 
         currentMana = maxMana;
@@ -159,7 +163,15 @@ public class Player : MonoBehaviour
 
         
 
+
+
     }
+
+   
+
+    
+
+
 
     IEnumerator setToCanBeReloaded()
     {
@@ -277,6 +289,18 @@ public class Player : MonoBehaviour
             interactionMassage.SetActive(true);
         }
 
+        if (collision.gameObject.CompareTag("NPC"))
+        {
+            inRangeOfNPC = true;
+            interactionMassage.SetActive(true);
+        }
+
+        if (collision.gameObject.CompareTag("NPC2"))
+        {
+            inRangeOfNPC = true;
+            interactionMassage.SetActive(true);
+        }
+
         if (!playerHasCollide) 
         {
             
@@ -328,6 +352,11 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Lever"))
         {
             inRangeOfLever = false;
+            interactionMassage.SetActive(false);
+        }
+        if (collision.gameObject.CompareTag("NPC"))
+        {
+            inRangeOfNPC = false;
             interactionMassage.SetActive(false);
         }
     }

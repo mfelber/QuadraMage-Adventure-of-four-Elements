@@ -29,6 +29,9 @@ TagManager:
   - Lever
   - Iron
   - Wood
+  - WorkBench
+  - NPC
+  - NPC2
   layers:
   - Default
   - TransparentFX

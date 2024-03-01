@@ -76,7 +76,8 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
        
-            if (!NewPauseMenu.isPauseMenuOpen && !Book.isBookOpen && isInputEnabled && !MovingPlatform.isChildOfPlatform)
+
+        if (!NewPauseMenu.isPauseMenuOpen && !Book.isBookOpen && isInputEnabled && !MovingPlatform.isChildOfPlatform )
             {
                 Vector3 mouseP = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
@@ -85,7 +86,7 @@ public class PlayerMovement : MonoBehaviour
                 {
                     if(HowMuchTimeIsLeft <= 0)
                 {
-                    if (knockBackIsGoing == false)
+                    if (knockBackIsGoing == false )
                     {
                         playerMove = Input.GetAxisRaw("Horizontal");
                         playerRB.velocity = new Vector2(playerMove * playerSpeed, playerRB.velocity.y);

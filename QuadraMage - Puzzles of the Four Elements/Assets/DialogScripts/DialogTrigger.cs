@@ -13,7 +13,6 @@ public class DialogueCharacter
 [System.Serializable]
 public class DialogueLine
 {
-
     public DialogueCharacter character;
     [TextArea(3, 10)]
     public string line;
@@ -21,29 +20,48 @@ public class DialogueLine
 
 
 
-
 [System.Serializable]
 public class Dialogue
-{
-    
+{    
     public List<DialogueLine> dialogueLines = new List<DialogueLine>();
 }
 public class DialogTrigger : MonoBehaviour
 {
+    
+    public GameObject GameObject;
+     public Dialogue dialogues;
 
-    public Dialogue questDialogue;
 
-    public void TriggerDialogue()
+    private void Start()
     {
-        DialogManager.instance.StartDialogue(questDialogue);
+        //GameObject.SetActive(false);
+    }
+    private void TriggerDialogue()
+    {
+        DialogManager.instance.StartDialogue(dialogues);
+       
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void Update()
     {
-        Debug.LogError("kolizia hraca s strangerom");
-        if (collision.gameObject.CompareTag("Player"))
+        if (Player.inRangeOfNPC && Input.GetKeyDown(KeyCode.E))
         {
             TriggerDialogue();
         }
+        
     }
+
+
+    /*
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+                TriggerDialogue();
+            
+        }
+    }
+    
+   */
+    
 }
