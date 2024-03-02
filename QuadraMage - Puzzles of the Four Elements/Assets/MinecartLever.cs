@@ -18,6 +18,7 @@ public class MinecartLever : MonoBehaviour
         {
             activateMinecartLever();
         }
+        
     }
 
     public void activateMinecartLever()
@@ -33,6 +34,12 @@ public class MinecartLever : MonoBehaviour
     {
         minecartAnimator.SetBool("go", false);
         leverIsActive = false;
+        Invoke("inRange", 3.2f);
+        
+    }
+
+    public void inRange()
+    {
         Player.inRangeOfLever = true;
     }
 }

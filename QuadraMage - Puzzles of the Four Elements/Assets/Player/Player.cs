@@ -161,7 +161,13 @@ public class Player : MonoBehaviour
 
         }
 
-        
+        if (inRangeOfLever == false)
+        {
+            interactionMassage.SetActive(false);
+        } else
+        {
+            interactionMassage.SetActive(true);
+        }
 
 
 
