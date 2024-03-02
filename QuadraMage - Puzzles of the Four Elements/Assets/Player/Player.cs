@@ -295,11 +295,7 @@ public class Player : MonoBehaviour
             interactionMassage.SetActive(true);
         }
 
-        if (collision.gameObject.CompareTag("NPC2"))
-        {
-            inRangeOfNPC = true;
-            interactionMassage.SetActive(true);
-        }
+        
 
         if (!playerHasCollide) 
         {

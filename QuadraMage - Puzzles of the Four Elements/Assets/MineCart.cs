@@ -51,7 +51,14 @@ public class MineCart : MonoBehaviour
             //playerRigidbody.gravityScale = 3;
         }
 
+        //Invoke("cartgoBack", 1.5f);
+        
 
+    }
+
+    public void cartgoBack()
+    {
+        animator.SetBool("go", false);
     }
 
     public void collider()
