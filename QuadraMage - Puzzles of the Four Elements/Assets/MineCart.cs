@@ -7,29 +7,56 @@ public class MineCart : MonoBehaviour
 
    public  Animator animator;
     bool onplatform;
-    public Transform Transform;
+    [SerializeField] Transform gold;
+    [SerializeField] private BoxCollider2D boxCollider2D;
+
+    private void Start()
+    {
+        
+        boxCollider2D = GetComponent<BoxCollider2D>();
+       
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Gold"))
         {
-            Transform = collision.transform;
-            Transform.SetParent(transform);
-            animator.SetBool("go", true);
+            gold = collision.transform;
+            gold.SetParent(transform);
+            onplatform = true;    
 
 
         }
     }
 
 
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if(onplatform == true)
+        {
+            gold.SetParent(null);
+            onplatform = false;
+        }
+        
+    }
+
 
     public void outofplatform ()
     {
-        Transform.SetParent(null);
-        Rigidbody2D playerRigidbody = Transform.gameObject.GetComponent<Rigidbody2D>();
+        if (onplatform == true) {
+            Rigidbody2D playerRigidbody = gold.gameObject.GetComponent<Rigidbody2D>();
+            boxCollider2D.enabled = false;
+            playerRigidbody.AddForce(new Vector2(20f, 10f), ForceMode2D.Impulse);
+            Invoke("collider", 1.2f);
+            //playerRigidbody.gravityScale = 3;
+        }
 
-        playerRigidbody.AddForce(new Vector2(20f, 10f), ForceMode2D.Impulse);
 
+    }
+
+    public void collider()
+    {
+        boxCollider2D.enabled = true;
     }
 
 }

@@ -28,7 +28,7 @@ public class LeverBalance : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("WindElementShot"))
         {
-            Debug.LogError("kolizia");
+            //Debug.LogError("kolizia");
             ActivateLever();
         }
     }
