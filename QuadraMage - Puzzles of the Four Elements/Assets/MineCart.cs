@@ -9,11 +9,13 @@ public class MineCart : MonoBehaviour
     bool onplatform;
     [SerializeField] Transform gold;
     [SerializeField] private BoxCollider2D boxCollider2D;
+   
 
     private void Start()
     {
         
         boxCollider2D = GetComponent<BoxCollider2D>();
+        
        
     }
 
@@ -32,12 +34,16 @@ public class MineCart : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if(onplatform == true)
+        Debug.LogError("uz nie som");
+
+        if (collision.gameObject.CompareTag("Gold"))
         {
-            gold.SetParent(null);
-            onplatform = false;
+            if (onplatform == true)
+            {
+                gold.SetParent(null);
+                onplatform = false;
+            }
         }
-        
     }
 
 

@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
     CircleCollider2D feet2;
     Rigidbody2D rigidbody2D;
 
-    private bool isKnockbackInProgress = false;
+    //private bool isKnockbackInProgress = false;
 
     private enum PlayerMovementStates { idle, running, jumping, falling }
     public enum NewPlayerMovementStates { idle, running, jumping, falling, land }

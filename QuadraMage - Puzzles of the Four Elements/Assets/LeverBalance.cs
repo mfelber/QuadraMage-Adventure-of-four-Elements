@@ -6,12 +6,14 @@ public class LeverBalance : MonoBehaviour
 {
     public Sprite off, on;
     public static bool isLeverOn;
+    public GameObject arrow;
 
     void Start()
     {
         GetComponent<SpriteRenderer>().sprite = on;  
         isLeverOn = true;
-        Invoke("DeactivateLever", 2.2f);  
+        Invoke("DeactivateLever", 2.2f);
+        arrow.SetActive(true);
     }
 
    
@@ -20,6 +22,15 @@ public class LeverBalance : MonoBehaviour
         if (Player.inRangeOfLever && Input.GetKeyDown(KeyCode.E))
         {
             ActivateLever();
+        }
+
+        if (isLeverOn == true)
+        {
+            arrow.SetActive(false);
+        } else
+        {
+            arrow.SetActive(true);
+
         }
         
     }

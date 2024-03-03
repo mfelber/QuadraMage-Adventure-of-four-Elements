@@ -33,6 +33,7 @@ TagManager:
   - NPC
   - NPC2
   - Ladder
+  - MineCartLever
   layers:
   - Default
   - TransparentFX

@@ -25,6 +25,8 @@ public class Player : MonoBehaviour
     public GameObject interactionMassage;
 
     public int quest;
+
+   
     public void SavePlayerData()
     {
         Save.SavePlayerData(this);
@@ -57,6 +59,7 @@ public class Player : MonoBehaviour
     public bool isPlayerHide;
     public bool inRange;
     public static bool inRangeOfLever;
+    public static bool inRangeOfMineCartLever;
     public static bool inRangeOfNPC;
 
     void Start()
@@ -69,8 +72,7 @@ public class Player : MonoBehaviour
         manaBar.setMaxMana(maxMana);
         rigidbody2D = GetComponent<Rigidbody2D>();
         canbereloaded = false;
-
-
+       
 
 
         /*
@@ -161,16 +163,9 @@ public class Player : MonoBehaviour
 
         }
 
-        if (inRangeOfLever == false)
-        {
-            interactionMassage.SetActive(false);
-        } else
-        {
-            interactionMassage.SetActive(true);
-        }
+       
 
-
-
+       
     }
 
    
@@ -197,7 +192,7 @@ public class Player : MonoBehaviour
     {
         if (canbereloaded)
         {
-            Debug.Log("reloadujem neprazdnu manu");
+            //Debug.Log("reloadujem neprazdnu manu");
             yield return new WaitForSeconds(5);
 
             currentMana = 100;
@@ -289,11 +284,21 @@ public class Player : MonoBehaviour
 
         }
 
-        if (collision.gameObject.CompareTag("Lever"))
+        
+            if (collision.gameObject.CompareTag("Lever"))
+            {
+                inRangeOfLever = true;
+                //interactionMassage.SetActive(true);
+            }
+
+
+        if (collision.gameObject.CompareTag("MineCartLever"))
         {
-            inRangeOfLever = true;
-            interactionMassage.SetActive(true);
+            inRangeOfMineCartLever = true;
+            //interactionMassage.SetActive(true);
         }
+
+
 
         if (collision.gameObject.CompareTag("NPC"))
         {
@@ -350,12 +355,19 @@ public class Player : MonoBehaviour
             inRange = false;
             interactionMassage.SetActive(false);
         }
+               
+            if (collision.gameObject.CompareTag("Lever"))
+            {
+                inRangeOfLever = false;
+                //interactionMassage.SetActive(false);
+            }
 
-        if (collision.gameObject.CompareTag("Lever"))
+        if (collision.gameObject.CompareTag("MineCartLever"))
         {
-            inRangeOfLever = false;
-            interactionMassage.SetActive(false);
+            inRangeOfMineCartLever = false;
+            //interactionMassage.SetActive(true);
         }
+
         if (collision.gameObject.CompareTag("NPC"))
         {
             inRangeOfNPC = false;
