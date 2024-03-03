@@ -8,6 +8,7 @@ public class BlackSmith : MonoBehaviour
     private enum BlackSmithStates { idle, patrol, warning}
     [SerializeField] private Animator blackSmithAnimator;
     BlackSmithStates states;
+    public PlayerMovement PlayerMovement;
     void Start()
     {
 
@@ -34,5 +35,24 @@ public class BlackSmith : MonoBehaviour
 
         blackSmithAnimator.SetInteger("state", (int)states);
         
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("kolizia");
+            PlayerMovement.HowMuchTimeIsLeft = PlayerMovement.TimeOfKnockBack;
+            if (collision.transform.position.x <= transform.position.x)
+            {
+                PlayerMovement.knockBackFromR = true;
+
+            }
+            if (collision.transform.position.x > transform.position.x)
+            {
+                PlayerMovement.knockBackFromR = false;
+
+            }
+        }
     }
 }
