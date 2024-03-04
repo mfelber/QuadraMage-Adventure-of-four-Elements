@@ -16,6 +16,11 @@ public class QuestManager : MonoBehaviour
     public GameObject questItem2;
     public GameObject questItem3;
 
+
+    public GameObject Quest3;
+
+    
+
     
 
     public bool isQuest1comp;
@@ -35,6 +40,8 @@ public class QuestManager : MonoBehaviour
       StrangerQuest2.SetActive(false);
       StrangerQuest3.SetActive(false);
 
+
+        Quest3.SetActive(false);
 
         //questItem2.SetActive(false);
         //questItem3.SetActive(false);
@@ -58,6 +65,7 @@ public class QuestManager : MonoBehaviour
             StrangerQuest3.SetActive(true);            
             questItem2.SetActive(false);
             questItem3.SetActive(true);
+            Quest3.SetActive(true);
 
         }
         if (isQuest3comp)

@@ -31,9 +31,10 @@ TagManager:
   - Wood
   - WorkBench
   - NPC
-  - NPC2
   - Ladder
   - MineCartLever
+  - cage
+  - smoke
   layers:
   - Default
   - TransparentFX
