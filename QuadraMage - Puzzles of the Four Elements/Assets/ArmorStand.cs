@@ -22,15 +22,26 @@ public class ArmorStand : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+            spriteRenderer.color = Color.red;
+        }
+       
+
+        if (collision.gameObject.CompareTag("WindElementShot"))
+        {
 
             isPlayerMoveWithArmorStand = true;
         }
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+       
+
+        if (collision.gameObject.CompareTag("WindElementShot"))
         {
+
             isPlayerMoveWithArmorStand = false;
         }
     }

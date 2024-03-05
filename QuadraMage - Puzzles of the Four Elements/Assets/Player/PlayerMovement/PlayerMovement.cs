@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
 
 
     public bool knockBackFromR;
-    private bool playerFacingRight = true;
+    public static bool playerFacingRight = true;
     private bool playerInmagnifer = false;
 
     public static bool playerOnGround = true;
@@ -238,7 +238,8 @@ public class PlayerMovement : MonoBehaviour
     void flip()
     {
         playerFacingRight = !playerFacingRight;
-        transform.Rotate(0f, 180f, 0f);     
+        transform.Rotate(0f, 180f, 0f);
+        
 
     }
 

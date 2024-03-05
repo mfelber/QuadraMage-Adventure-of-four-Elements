@@ -72,8 +72,8 @@ public class Player : MonoBehaviour
         manaBar.setMaxMana(maxMana);
         rigidbody2D = GetComponent<Rigidbody2D>();
         canbereloaded = false;
-       
 
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Elements"));
 
         /*
         if(level == 1)
@@ -307,10 +307,7 @@ public class Player : MonoBehaviour
             interactionMassage.SetActive(true);
         }
 
-        if(collision.gameObject.CompareTag("ArmorStands"))
-        {
-
-        }
+        
 
         
 

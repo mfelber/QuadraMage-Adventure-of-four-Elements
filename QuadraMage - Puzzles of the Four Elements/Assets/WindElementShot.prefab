@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1397693496898313930}
   - component: {fileID: 1410456849448520267}
   - component: {fileID: 4061089213826861516}
-  m_Layer: 3
+  m_Layer: 9
   m_Name: WindElementShot
   m_TagString: WindElementShot
   m_Icon: {fileID: 0}

@@ -9,6 +9,7 @@ public class BlackSmith : MonoBehaviour
     [SerializeField] private Animator blackSmithAnimator;
     BlackSmithStates states;
     public PlayerMovement PlayerMovement;
+    public Animator anim;
     void Start()
     {
 
@@ -18,6 +19,13 @@ public class BlackSmith : MonoBehaviour
     void Update()
     {
         checkForStates();
+        if (ArmorStand.isPlayerMoveWithArmorStand)
+        {
+            blackSmithAnimator.SetBool("check", true);
+        } else
+        {
+            blackSmithAnimator.SetBool("check", false);
+        }
 
     }
 
