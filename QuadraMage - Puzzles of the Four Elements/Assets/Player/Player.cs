@@ -307,6 +307,11 @@ public class Player : MonoBehaviour
             interactionMassage.SetActive(true);
         }
 
+        if(collision.gameObject.CompareTag("ArmorStands"))
+        {
+
+        }
+
         
 
         if (!playerHasCollide) 
@@ -374,6 +379,8 @@ public class Player : MonoBehaviour
             inRangeOfNPC = false;
             interactionMassage.SetActive(false);
         }
+
+
     }
 
     public float silaOdrazeniaX = 10f;

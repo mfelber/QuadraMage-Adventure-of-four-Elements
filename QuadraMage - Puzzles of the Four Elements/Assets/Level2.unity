@@ -223,7 +223,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &13714565
 Transform:
   m_ObjectHideFlags: 0
@@ -23483,7 +23483,7 @@ GameObject:
   - component: {fileID: 663375741}
   m_Layer: 8
   m_Name: Armor stand
-  m_TagString: Untagged
+  m_TagString: ArmorStand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

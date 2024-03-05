@@ -35,6 +35,7 @@ TagManager:
   - MineCartLever
   - cage
   - smoke
+  - ArmorStand
   layers:
   - Default
   - TransparentFX
