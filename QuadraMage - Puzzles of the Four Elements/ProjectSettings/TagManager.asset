@@ -36,6 +36,8 @@ TagManager:
   - cage
   - smoke
   - ArmorStand
+  - Enemy
+  - OneWayPlatform
   layers:
   - Default
   - TransparentFX

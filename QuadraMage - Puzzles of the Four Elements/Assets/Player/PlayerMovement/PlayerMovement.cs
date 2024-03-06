@@ -72,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
 
 
     private float verticalMovement;
-    private bool inRangeOfLadder;
+    public static bool inRangeOfLadder;
     private bool climbing;
 
     void Update()
@@ -250,7 +250,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (feet2.IsTouching (collision.collider))
         {
-            if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Cloud") || collision.gameObject.CompareTag("EarthBlock") || collision.gameObject.CompareTag("Box") )
+            if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Cloud") || collision.gameObject.CompareTag("EarthBlock") || collision.gameObject.CompareTag("Box") || collision.gameObject.CompareTag("OneWayPlatform"))
             {
                 playerOnGround = true;
             }
