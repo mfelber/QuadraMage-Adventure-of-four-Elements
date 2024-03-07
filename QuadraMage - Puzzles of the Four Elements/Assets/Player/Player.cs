@@ -307,6 +307,11 @@ public class Player : MonoBehaviour
             interactionMassage.SetActive(true);
         }
 
+        if (collision.gameObject.CompareTag("camera"))
+        {
+            StartCoroutine(ZmenOrthoSizeSmooth(10f, 2f));
+            //vcam.m_Lens.OrthographicSize = 10;
+        }
         
 
         
@@ -351,6 +356,24 @@ public class Player : MonoBehaviour
        
     }
 
+    IEnumerator ZmenOrthoSizeSmooth(float novaHodnota, float cas)
+    {
+        float pociatocnaHodnota = vcam.m_Lens.OrthographicSize;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < cas)
+        {
+            vcam.m_Lens.OrthographicSize = Mathf.Lerp(pociatocnaHodnota, novaHodnota, elapsedTime / cas);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        
+        vcam.m_Lens.OrthographicSize = novaHodnota;
+    }
+
+
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Barrel") )
@@ -375,6 +398,11 @@ public class Player : MonoBehaviour
         {
             inRangeOfNPC = false;
             interactionMassage.SetActive(false);
+        }
+        if (collision.gameObject.CompareTag("camera"))
+        {
+            StartCoroutine(ZmenOrthoSizeSmooth(5.3f, 2f));
+            //vcam.m_Lens.OrthographicSize = 5.3f;
         }
 
 

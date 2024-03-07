@@ -5,6 +5,8 @@ using UnityEngine;
 public class fire : MonoBehaviour
 {
     public PlayerMovement PlayerMovement;
+
+    /*
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.CompareTag("WindElementShot"))
@@ -12,7 +14,7 @@ public class fire : MonoBehaviour
             Destroy(gameObject);  
         }
     }
-
+    */
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))

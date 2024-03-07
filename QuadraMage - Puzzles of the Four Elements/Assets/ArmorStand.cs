@@ -31,19 +31,25 @@ public class ArmorStand : MonoBehaviour
         {
 
             isPlayerMoveWithArmorStand = true;
+            Invoke("stop", 2);
         }
 
     }
 
+    public void stop () {
+        isPlayerMoveWithArmorStand = false;
+        }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
        
-
+        /*
         if (collision.gameObject.CompareTag("WindElementShot"))
         {
 
             isPlayerMoveWithArmorStand = false;
         }
+        */
     }
 
     /*

@@ -18,7 +18,7 @@ public class BlackSmith : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        checkForStates();
+       // checkForStates();
         if (ArmorStand.isPlayerMoveWithArmorStand)
         {
             blackSmithAnimator.SetBool("check", true);
