@@ -15,6 +15,11 @@ public class fire : MonoBehaviour
         }
     }
     */
+
+    private void Start()
+    {
+        Physics2D.IgnoreLayerCollision(9, 10);
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))

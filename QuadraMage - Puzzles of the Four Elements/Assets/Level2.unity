@@ -6946,7 +6946,7 @@ GameObject:
   - component: {fileID: 231037967}
   - component: {fileID: 231037966}
   - component: {fileID: 231037965}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fire (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7319,7 +7319,7 @@ GameObject:
   - component: {fileID: 239166006}
   - component: {fileID: 239166005}
   - component: {fileID: 239166004}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fire (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7348,7 +7348,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 239166002}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -22447,7 +22447,7 @@ GameObject:
   - component: {fileID: 579474024}
   - component: {fileID: 579474023}
   - component: {fileID: 579474022}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fire (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22476,7 +22476,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 579474020}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -42866,7 +42866,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1315354954}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -47628,7 +47628,7 @@ GameObject:
   - component: {fileID: 1525503768}
   - component: {fileID: 1525503770}
   - component: {fileID: 1525503771}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59613,7 +59613,7 @@ GameObject:
   - component: {fileID: 2058984803}
   - component: {fileID: 2058984802}
   - component: {fileID: 2058984801}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fire (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
