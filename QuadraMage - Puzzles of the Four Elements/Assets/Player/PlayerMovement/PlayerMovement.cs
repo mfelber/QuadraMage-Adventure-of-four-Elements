@@ -78,6 +78,8 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
        
+        
+
 
         if (!NewPauseMenu.isPauseMenuOpen && !Book.isBookOpen && isInputEnabled && !MovingPlatform.isChildOfPlatform && !DialogManager.isDialgueActive )
             {
