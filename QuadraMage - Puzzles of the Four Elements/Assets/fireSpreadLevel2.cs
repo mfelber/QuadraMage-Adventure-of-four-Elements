@@ -27,6 +27,7 @@ public class fireSpreadLevel2 : MonoBehaviour
         {
             Animator.SetBool("spread", true);
             StartCoroutine(spreadFire(2f));
+            Destroy(collision);
             //Invoke("back", 2.3f);
             //fire1.SetActive(true);
             //fire2.SetActive(true);
@@ -48,8 +49,8 @@ public class fireSpreadLevel2 : MonoBehaviour
         }
         */
         // Po?káme 2 sekundy a potom aktivujeme kameru s plynulým efektom
-        fire1.gameObject.SetActive(true);
-        fire2.gameObject.SetActive(true);
+        //fire1.gameObject.SetActive(true);
+        //fire2.gameObject.SetActive(true);
         Animator.SetBool("spread", false);
     }
 

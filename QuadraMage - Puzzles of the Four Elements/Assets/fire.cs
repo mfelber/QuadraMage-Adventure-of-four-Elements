@@ -5,6 +5,7 @@ using UnityEngine;
 public class fire : MonoBehaviour
 {
     public PlayerMovement PlayerMovement;
+    private Animator animator;  
 
     /*
     private void OnTriggerEnter2D(Collider2D collision)
