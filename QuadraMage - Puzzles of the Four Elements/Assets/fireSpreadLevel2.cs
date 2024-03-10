@@ -11,8 +11,8 @@ public class fireSpreadLevel2 : MonoBehaviour
     public Animator Animator;
     void Start()
     {
-        fire1.SetActive(false);
-        fire2.SetActive(false);
+        //fire1.SetActive(false);
+        //fire2.SetActive(false);
     }
 
     // Update is called once per frame
