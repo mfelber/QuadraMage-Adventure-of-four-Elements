@@ -15917,7 +15917,7 @@ Transform:
   m_GameObject: {fileID: 462707940}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 154.93, y: 89.64, z: 0}
+  m_LocalPosition: {x: -86.53, y: 16.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -41665,9 +41665,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198899d51ec6e8a4b93afb7beaae001d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StrangerQuest1: {fileID: 278532455}
-  StrangerQuest2: {fileID: 1196779458}
-  StrangerQuest3: {fileID: 404897992}
+  NPCQuest1: {fileID: 0}
+  NPCQuest2: {fileID: 0}
+  NPCQuest3: {fileID: 0}
   questItem1: {fileID: 1374065359}
   questItem2: {fileID: 15491764}
   questItem3: {fileID: 68994308}
@@ -43204,7 +43204,7 @@ Transform:
   m_GameObject: {fileID: 1088949124}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 154.93, y: 93.28, z: -10}
+  m_LocalPosition: {x: -86.53, y: 19.76, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -61994,7 +61994,7 @@ Transform:
   m_GameObject: {fileID: 1795734061}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 154.93, y: 93.28, z: -10}
+  m_LocalPosition: {x: -86.53, y: 19.76, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -65733,9 +65733,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198899d51ec6e8a4b93afb7beaae001d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StrangerQuest1: {fileID: 0}
-  StrangerQuest2: {fileID: 0}
-  StrangerQuest3: {fileID: 0}
+  NPCQuest1: {fileID: 0}
+  NPCQuest2: {fileID: 0}
+  NPCQuest3: {fileID: 0}
   questItem1: {fileID: 0}
   questItem2: {fileID: 0}
   questItem3: {fileID: 0}

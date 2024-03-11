@@ -40,7 +40,7 @@ public class Dragon : MonoBehaviour
         if (collision.gameObject.CompareTag("Tnt"))
         {
             health.SetActive(true);
-            Destroy(collision.gameObject,0.1f);
+            Destroy(collision.gameObject);
             takeDamage(25);
         }
     }

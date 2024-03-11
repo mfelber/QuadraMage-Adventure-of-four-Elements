@@ -8,9 +8,9 @@ public class QuestManager : MonoBehaviour
     //public List<Quest> quests = new List<Quest>();
 
 
-    public GameObject StrangerQuest1;
-    public GameObject StrangerQuest2;
-    public GameObject StrangerQuest3;
+    public GameObject NPCQuest1;
+    public GameObject NPCQuest2;
+    public GameObject NPCQuest3;
 
     public GameObject questItem1;
     public GameObject questItem2;
@@ -36,9 +36,9 @@ public class QuestManager : MonoBehaviour
        isQuest2comp = false;
        isQuest3comp = false;
 
-      StrangerQuest1.SetActive(true);
-      StrangerQuest2.SetActive(false);
-      StrangerQuest3.SetActive(false);
+      NPCQuest1.SetActive(true);
+      NPCQuest2.SetActive(false);
+      NPCQuest3.SetActive(false);
 
 
         Quest3.SetActive(false);
@@ -52,8 +52,8 @@ public class QuestManager : MonoBehaviour
     {
         if (isQuest1comp)
         {            
-            StrangerQuest1.SetActive(false);
-            StrangerQuest2.SetActive(true);
+            NPCQuest1.SetActive(false);
+            NPCQuest2.SetActive(true);
             questItem1.SetActive(false);
             questItem2.SetActive(true);
            
@@ -61,8 +61,8 @@ public class QuestManager : MonoBehaviour
         }
         if (isQuest2comp)
         {
-            StrangerQuest2.SetActive(false);
-            StrangerQuest3.SetActive(true);            
+            NPCQuest2.SetActive(false);
+            NPCQuest3.SetActive(true);            
             questItem2.SetActive(false);
             questItem3.SetActive(true);
             Quest3.SetActive(true);
