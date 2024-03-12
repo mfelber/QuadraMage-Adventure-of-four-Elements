@@ -39,6 +39,8 @@ TagManager:
   - Enemy
   - OneWayPlatform
   - camera
+  - Tavern
+  - GunPowder
   layers:
   - Default
   - TransparentFX

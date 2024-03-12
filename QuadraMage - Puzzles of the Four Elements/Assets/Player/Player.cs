@@ -274,7 +274,7 @@ public class Player : MonoBehaviour
 
     }
 
-
+    public static bool inTaver = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -311,6 +311,11 @@ public class Player : MonoBehaviour
         {
             StartCoroutine(ZmenOrthoSizeSmooth(10f, 2f));
             //vcam.m_Lens.OrthographicSize = 10;
+        }
+
+        if (collision.gameObject.CompareTag("Tavern"))
+        {
+            inTaver = true;
         }
         
 
@@ -405,6 +410,10 @@ public class Player : MonoBehaviour
             //vcam.m_Lens.OrthographicSize = 5.3f;
         }
 
+        if (collision.gameObject.CompareTag("Tavern"))
+        {
+            inTaver = false;
+        }
 
     }
 

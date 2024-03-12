@@ -75,6 +75,8 @@ public class PlayerMovement : MonoBehaviour
     public static bool inRangeOfLadder;
     private bool climbing;
 
+
+    [SerializeField] private Transform groundCheckPos;
     void Update()
     {
        
@@ -152,7 +154,16 @@ public class PlayerMovement : MonoBehaviour
                     {
                         playerIsNotMoving();
                     }
-                    
+
+
+                /*
+                 *  if (Input.GetButtonDown("Jump") && playerOnGround)
+                {
+                    playerRB.velocity = new Vector2(playerRB.velocity.x, jumpHeight);
+                    playerOnGround = false;
+
+                }
+                 */
 
                 if (Input.GetButtonDown("Jump") && playerOnGround)
                     {
@@ -172,12 +183,15 @@ public class PlayerMovement : MonoBehaviour
                     }
                 }
              UpdateAnimation();
-            }
 
+            
+
+
+        }
+
+        //Debug.Log(playerOnGround);
 
     }
-
-    
 
     
 
@@ -256,14 +270,39 @@ public class PlayerMovement : MonoBehaviour
             {
                 playerOnGround = true;
             }
-        }
+
+            
+        } 
        
       
     }
 
+    /*
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (!feet2.IsTouching(collision.collider))
+        {
+            StopAllCoroutines();
+            StartCoroutine(NotTouching());
+            
+        }
+
+    }
+    */
+    IEnumerator NotTouching()
+    {
+        yield return new WaitForSeconds(0.050f);
+        playerOnGround = false;
+
+    }
+
+
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
+        
         if (collision.gameObject.CompareTag("Magnifer"))
         {
             playerInmagnifer = true;
@@ -275,7 +314,13 @@ public class PlayerMovement : MonoBehaviour
             inRangeOfLadder = true;
         }
 
-    }
+       
+        
+
+
+
+
+        }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -284,6 +329,9 @@ public class PlayerMovement : MonoBehaviour
             inRangeOfLadder = false;
             climbing = false;
         }
+
+        
+
     }
 
     public void playerIsMoving()

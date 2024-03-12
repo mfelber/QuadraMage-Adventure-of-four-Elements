@@ -45,8 +45,15 @@ public class QuestItem : MonoBehaviour
        
             if (collision.gameObject.CompareTag("Wood"))
             {
-                questManager.quest3Completed();
-                //Wood.SetActive(false);
+                questManager.quest2Completed();
+            Destroy(collision.gameObject);
+            //Wood.SetActive(false);
+        }
+
+            if (collision.gameObject.CompareTag("GunPowder"))
+        {
+            questManager.quest1Completed();
+            Destroy(collision.gameObject);
         }
 
     }
