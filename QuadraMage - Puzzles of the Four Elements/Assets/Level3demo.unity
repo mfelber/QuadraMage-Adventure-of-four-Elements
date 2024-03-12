@@ -8046,7 +8046,7 @@ Transform:
   m_GameObject: {fileID: 462707940}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.4, y: 1.1, z: 0}
+  m_LocalPosition: {x: 18.53, y: 0.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9114,7 +9114,7 @@ Transform:
   m_GameObject: {fileID: 501856266}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 41.54, y: 0.27, z: 0}
+  m_LocalPosition: {x: 37.06, y: 1.65, z: 0}
   m_LocalScale: {x: 0.5353, y: 0.5353, z: 0.5353}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18197,8 +18197,8 @@ Transform:
   m_GameObject: {fileID: 661160389}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 22.05, y: 0.6229, z: 0}
-  m_LocalScale: {x: 4.8728285, y: 2.76711, z: 1}
+  m_LocalPosition: {x: 24.66, y: -1.06, z: 0}
+  m_LocalScale: {x: 4.1472645, y: 0.8132537, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -18215,6 +18215,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f637ffa9e5127845933e6d4cbb515b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lifetime: 5
+  bubblesPrefab: {fileID: 4472851509643393442, guid: 7f896f162f661bc4bba3722fa1a7e25c, type: 3}
+  spawnInterval: 3
 --- !u!1 &665331282
 GameObject:
   m_ObjectHideFlags: 0
@@ -25734,7 +25737,7 @@ Transform:
   m_GameObject: {fileID: 1088949124}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.4, y: 4.7400002, z: -10}
+  m_LocalPosition: {x: 18.53, y: 3.69, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -34546,7 +34549,7 @@ Transform:
   m_GameObject: {fileID: 1795734061}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.4, y: 4.7400002, z: -10}
+  m_LocalPosition: {x: 18.53, y: 3.69, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -35441,6 +35444,7 @@ GameObject:
   - component: {fileID: 1895966730}
   - component: {fileID: 1895966729}
   - component: {fileID: 1895966728}
+  - component: {fileID: 1895966732}
   m_Layer: 5
   m_Name: Health
   m_TagString: Untagged
@@ -35531,6 +35535,27 @@ RectTransform:
   m_AnchoredPosition: {x: 0.32, y: 9.25}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &1895966732
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895966727}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 975b73abe53061543bee3bcbed4582f8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1897903799
 GameObject:
   m_ObjectHideFlags: 0

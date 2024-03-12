@@ -45,7 +45,7 @@ public class QuestItem : MonoBehaviour
        
             if (collision.gameObject.CompareTag("Wood"))
             {
-                questManager.quest2Completed();
+                questManager.quest3Completed();
             Destroy(collision.gameObject);
             //Wood.SetActive(false);
         }
@@ -55,6 +55,7 @@ public class QuestItem : MonoBehaviour
             questManager.quest1Completed();
             Destroy(collision.gameObject);
         }
+
 
     }
 
