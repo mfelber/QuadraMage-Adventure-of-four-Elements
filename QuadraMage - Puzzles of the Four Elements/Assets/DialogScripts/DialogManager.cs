@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class DialogManager : MonoBehaviour
 {
     public static DialogManager instance;
+    QuestManager questManager;
 
     public Image characterIcon;
     public TextMeshProUGUI charactername;
@@ -27,7 +28,10 @@ public class DialogManager : MonoBehaviour
         }
 
         lines = new Queue<DialogueLine>();
+        questManager = FindObjectOfType<QuestManager>();
     }
+
+   
 
 
     public void StartDialogue(Dialogue dialogue)
@@ -58,6 +62,7 @@ public class DialogManager : MonoBehaviour
         charactername.text = currentiLine.character.name;
 
         StopAllCoroutines();
+        //StopCoroutine(TypeSentence(currentiLine));
         StartCoroutine(TypeSentence(currentiLine));
     }
 
@@ -79,5 +84,9 @@ public class DialogManager : MonoBehaviour
         
         isDialgueActive = false;
         animator.Play("hide");
+
+        
+            
+        
     }
 }

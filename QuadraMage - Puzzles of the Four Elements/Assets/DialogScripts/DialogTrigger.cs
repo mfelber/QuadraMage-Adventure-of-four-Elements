@@ -47,6 +47,9 @@ public class DialogTrigger : MonoBehaviour
         if (Player.inRangeOfNPC && Input.GetKeyDown(KeyCode.E))
         {
             TriggerDialogue();
+            
+           
+           
         }
 
         if (WoodBridge.infrontOfBridge && questManager.isQuest3comp == false)

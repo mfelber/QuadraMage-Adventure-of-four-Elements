@@ -9,7 +9,7 @@ public class QuestManager : MonoBehaviour
 
 
    public GameObject NPCQuest1;
-     public GameObject NPCQuest2;
+    public GameObject NPCQuest2;
     public GameObject NPCQuest3;
 
     [SerializeField] private GameObject questItem1;
@@ -32,17 +32,19 @@ public class QuestManager : MonoBehaviour
     [SerializeField] private bool npc3Vis;
 
     public int questNumber;
+    public bool acceptFirstQuest;
     
 
     void Start()
     {
 
         questNumber = 1;
+        acceptFirstQuest = false;
        isQuest1comp = false;
        isQuest2comp = false;
        isQuest3comp = false;
 
-        NPCQuest1.SetActive(true);
+        NPCQuest1.SetActive(false);
         NPCQuest2.SetActive(false);
         NPCQuest3.SetActive(false);
 
