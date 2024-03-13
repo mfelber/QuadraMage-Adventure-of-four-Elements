@@ -85,7 +85,7 @@ public class DialogManager : MonoBehaviour
         isDialgueActive = false;
         animator.Play("hide");
 
-        
+        questManager.acceptFirstQuest = true;
             
         
     }

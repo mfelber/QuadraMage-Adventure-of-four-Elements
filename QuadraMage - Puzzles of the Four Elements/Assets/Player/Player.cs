@@ -26,7 +26,8 @@ public class Player : MonoBehaviour
 
     public int quest;
 
-   
+    public bool inRangeOfTnt;
+
     public void SavePlayerData()
     {
         Save.SavePlayerData(this);
@@ -72,7 +73,7 @@ public class Player : MonoBehaviour
         manaBar.setMaxMana(maxMana);
         rigidbody2D = GetComponent<Rigidbody2D>();
         canbereloaded = false;
-
+        inRangeOfTnt = false;
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Elements"));
 
         /*
@@ -318,7 +319,12 @@ public class Player : MonoBehaviour
             inTaver = true;
         }
         
-
+        /*
+        if(collision.gameObject.CompareTag("Tnt"))
+        {
+            inRangeOfTnt = true;
+        }
+        */
         
 
         if (!playerHasCollide) 
@@ -414,7 +420,12 @@ public class Player : MonoBehaviour
         {
             inTaver = false;
         }
-
+        /*
+        if (collision.gameObject.CompareTag("Tnt"))
+        {
+            inRangeOfTnt = false;
+        }
+        */
     }
 
     public float silaOdrazeniaX = 10f;
