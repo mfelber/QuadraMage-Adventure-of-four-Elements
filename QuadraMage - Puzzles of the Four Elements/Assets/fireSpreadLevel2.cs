@@ -27,18 +27,18 @@ public class fireSpreadLevel2 : MonoBehaviour
         {
             Animator.SetBool("spread", true);
             StartCoroutine(spreadFire(2f));
-            Destroy(collision);
+            Destroy(collision.gameObject);
             //Invoke("back", 2.3f);
             //fire1.SetActive(true);
             //fire2.SetActive(true);
         }
     }
 
-    IEnumerator spreadFire(float cas)
+    IEnumerator spreadFire(float time)
     {
-        // Predpokladáme, že kamera je deaktivovaná na za?iatku
+        
        
-        yield return new WaitForSeconds(cas);
+        yield return new WaitForSeconds(time);
         //float elapsedTime = 0f;
 
         /*
@@ -48,7 +48,7 @@ public class fireSpreadLevel2 : MonoBehaviour
             elapsedTime += Time.deltaTime;
         }
         */
-        // Po?káme 2 sekundy a potom aktivujeme kameru s plynulým efektom
+        
         //fire1.gameObject.SetActive(true);
         //fire2.gameObject.SetActive(true);
         Animator.SetBool("spread", false);

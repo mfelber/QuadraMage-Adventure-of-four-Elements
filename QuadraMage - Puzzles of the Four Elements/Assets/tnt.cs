@@ -15,7 +15,7 @@ public class tnt : MonoBehaviour
     void Start()
     {
        player = FindObjectOfType<Player>();
-        time = 5;
+        time = 10;
         tntIsActive = false;
 
        // tntGameObject = GetComponent<GameObject>();
@@ -42,7 +42,7 @@ public class tnt : MonoBehaviour
             tntIsActive = false;
             Destroy(gameObject);
         }
-        Debug.Log(time);
+        //Debug.Log(time);
     }
 
    

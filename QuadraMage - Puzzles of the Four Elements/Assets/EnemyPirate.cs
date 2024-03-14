@@ -41,14 +41,25 @@ public class EnemyPirate : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
+            Debug.Log("Kolizia");
             animator.SetBool("go", true);
         }
+
+        if (collision.gameObject.CompareTag("FireSpread"))
+        {
+           // Debug.LogError("kolizia ohen + pirat");
+            animator.SetBool("overBoardPirate3", true);
+        }
+
+        
 
         if (collision.gameObject.name == tntObjectName)
         {
             Debug.Log("kolizia");
             pirateNearTnt =true;
         }
+
+       
 
     }
 
@@ -74,6 +85,8 @@ public class EnemyPirate : MonoBehaviour
         if (collision.gameObject.CompareTag("WindElementShot"))
         {
             animator.SetBool("pirateOverBoard", true);
+            animator.SetBool("overBoardPirate3", true);
+            Destroy(collision.gameObject);
         }
 
         if (collision.gameObject.CompareTag("Player"))

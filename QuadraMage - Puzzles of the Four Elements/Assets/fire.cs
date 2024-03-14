@@ -25,7 +25,7 @@ public class fire : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("kolizia");
+            //Debug.Log("kolizia");
             PlayerMovement.HowMuchTimeIsLeft = PlayerMovement.TimeOfKnockBack;
             if (collision.transform.position.x <= transform.position.x)
             {
