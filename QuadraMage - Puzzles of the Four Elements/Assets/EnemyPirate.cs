@@ -86,6 +86,7 @@ public class EnemyPirate : MonoBehaviour
         {
             animator.SetBool("pirateOverBoard", true);
             animator.SetBool("overBoardPirate3", true);
+            animator.SetBool("overBoardPirate4", true);
             Destroy(collision.gameObject);
         }
 
