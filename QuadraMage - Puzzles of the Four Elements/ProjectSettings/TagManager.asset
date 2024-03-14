@@ -42,6 +42,9 @@ TagManager:
   - Tavern
   - GunPowder
   - FireSpread
+  - FirstQuest
+  - SecondQuest
+  - seaHorse
   layers:
   - Default
   - TransparentFX

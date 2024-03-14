@@ -30,11 +30,13 @@ public class DialogTrigger : MonoBehaviour
     QuestManager questManager;
 
     public Dialogue dialogues;
+    private Player player;
 
 
     private void Start()
     {
         questManager = FindObjectOfType<QuestManager>();
+        player = FindObjectOfType<Player>();
     }
     private void TriggerDialogue()
     {
@@ -46,10 +48,22 @@ public class DialogTrigger : MonoBehaviour
     {
         if (Player.inRangeOfNPC && Input.GetKeyDown(KeyCode.E))
         {
+            TriggerDialogue();       
+           
+           
+        }
+
+        
+        if(player.nearofNpcFirstQuest && Input.GetKeyDown(KeyCode.E))
+        {
             TriggerDialogue();
-            
-           
-           
+            questManager.acceptFirstQuest = true;
+        }
+
+        if (player.nearofNpcSecondQuest && Input.GetKeyDown(KeyCode.E))
+        {
+            TriggerDialogue();
+            questManager.acceptSecondQuest = true;
         }
 
         if (WoodBridge.infrontOfBridge && questManager.isQuest3comp == false)

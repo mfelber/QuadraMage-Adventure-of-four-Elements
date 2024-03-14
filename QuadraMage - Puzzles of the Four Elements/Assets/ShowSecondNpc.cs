@@ -5,15 +5,19 @@ using UnityEngine;
 public class ShowSecondNpc : MonoBehaviour
 {
     [SerializeField] private GameObject Npc;
-    [SerializeField] private GameObject NpcQuest;
+    [SerializeField] private GameObject NpcQuest1;
+    [SerializeField] private GameObject NpcQuest1Thanks;
     private QuestManager questManager;
+    private PoseidonQuestManager poseidonQuestManager;
     private int presiel;
     void Start()
     {
         Npc.SetActive(true);
-        NpcQuest.SetActive(false);
+        NpcQuest1.SetActive(false);
         questManager = FindObjectOfType<QuestManager>();
-        presiel = 0;
+        poseidonQuestManager = FindObjectOfType<PoseidonQuestManager>();
+
+
     }
 
     // Update is called once per frame
@@ -26,10 +30,12 @@ public class ShowSecondNpc : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            if(questManager.getQuestNumber == 2)
+           
+
+            if (questManager.getQuestNumber == 2)
             {
                 
-                NpcQuest.SetActive(true);
+                NpcQuest1.SetActive(true);
                 Npc.SetActive(false);
                 questManager.NPCQuest2.SetActive(false);
 
@@ -37,9 +43,16 @@ public class ShowSecondNpc : MonoBehaviour
             {
                 Npc.SetActive(true);
             }
-            
-            
+
+            if (poseidonQuestManager.poseidonMarmaidQuestCom == true)
+            {
+                NpcQuest1Thanks.SetActive(true);
+                NpcQuest1.SetActive(false);
+            }
+
         }
+
+
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -48,7 +61,7 @@ public class ShowSecondNpc : MonoBehaviour
             if (questManager.getQuestNumber == 2)
             {
 
-                NpcQuest.SetActive(false);
+                NpcQuest1.SetActive(false);
                 //Poseidon.SetActive(false);
                 //questManager.NPCQuest2.SetActive(true);
 
@@ -58,6 +71,11 @@ public class ShowSecondNpc : MonoBehaviour
                 Npc.SetActive(false);
             }
 
+            if (poseidonQuestManager.poseidonMarmaidQuestCom == true)
+            {
+
+                NpcQuest1Thanks.SetActive(false);
+            } 
 
         }
     }

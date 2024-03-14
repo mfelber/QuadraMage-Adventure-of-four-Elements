@@ -33,6 +33,7 @@ public class QuestManager : MonoBehaviour
 
     public int questNumber;
     public bool acceptFirstQuest;
+    public bool acceptSecondQuest;
     
 
     void Start()
@@ -58,8 +59,8 @@ public class QuestManager : MonoBehaviour
 
         Quest3.SetActive(false);
 
-        //questItem2.SetActive(false);
-        //questItem3.SetActive(false);
+        questItem2.SetActive(false);
+        questItem3.SetActive(false);
 
     }
 
@@ -68,6 +69,7 @@ public class QuestManager : MonoBehaviour
         if (isQuest1comp && NPCQuest1.activeSelf)
         {
             
+            questItem1.SetActive(false);
                 npc2Vis = true;
             //Destroy(NPCQuest1);
             
@@ -75,7 +77,6 @@ public class QuestManager : MonoBehaviour
             
             NPCQuest2.SetActive(true);
             npc1Vis = false;        
-            questItem1.SetActive(false);
             questItem2.SetActive(true);
            
            
@@ -94,14 +95,14 @@ public class QuestManager : MonoBehaviour
             
             
             NPCQuest3.SetActive(true);
-            setInVisibleNPC2();
-            setVisibleNPC3();
+            //setInVisibleNPC2();
+            //setVisibleNPC3();
             //NPCQuest2.SetActive(false);
            
             //NPCQuest3.SetActive(true);            
             questItem2.SetActive(false);
-            //questItem3.SetActive(true);
-            //Quest3.SetActive(true);
+            questItem3.SetActive(true);
+            Quest3.SetActive(true);
 
         }
         if (isQuest3comp && questNumber == 3)

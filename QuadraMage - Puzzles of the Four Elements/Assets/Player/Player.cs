@@ -28,6 +28,11 @@ public class Player : MonoBehaviour
 
     public bool inRangeOfTnt;
 
+    private PoseidonQuestManager poseidonQuestManager;
+    public bool nearofNpcFirstQuest;
+    public bool nearofNpcSecondQuest;
+
+
     public void SavePlayerData()
     {
         Save.SavePlayerData(this);
@@ -75,7 +80,7 @@ public class Player : MonoBehaviour
         canbereloaded = false;
         inRangeOfTnt = false;
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Elements"));
-
+        poseidonQuestManager = FindObjectOfType<PoseidonQuestManager>();
         /*
         if(level == 1)
         {
@@ -318,14 +323,32 @@ public class Player : MonoBehaviour
         {
             inTaver = true;
         }
+
         
+        if(collision.gameObject.CompareTag("FirstQuest"))
+        {
+            inRangeOfNPC = true;
+            nearofNpcFirstQuest = true;
+            interactionMassage.SetActive(true);
+        }
+
+        if (collision.gameObject.CompareTag("SecondQuest"))
+        {
+            inRangeOfNPC = true;
+            nearofNpcSecondQuest = true;
+            interactionMassage.SetActive(true);
+        }
+
+
+
+
         /*
         if(collision.gameObject.CompareTag("Tnt"))
         {
             inRangeOfTnt = true;
         }
         */
-        
+
 
         if (!playerHasCollide) 
         {
@@ -426,6 +449,22 @@ public class Player : MonoBehaviour
             inRangeOfTnt = false;
         }
         */
+
+        
+        if (collision.gameObject.CompareTag("FirstQuest"))
+        {
+            inRangeOfNPC = false;
+            nearofNpcFirstQuest = false;
+            interactionMassage.SetActive(false);
+        }
+
+        if (collision.gameObject.CompareTag("SecondQuest"))
+        {
+            inRangeOfNPC = false;
+            nearofNpcSecondQuest = false;
+            interactionMassage.SetActive(false);
+        }
+
     }
 
     public float silaOdrazeniaX = 10f;

@@ -37,8 +37,8 @@ public class QuestItem : MonoBehaviour
             if (collision.gameObject.CompareTag("Iron"))
             {
                 questManager.quest2Completed();
-
-                //Iron.SetActive(false);
+            //Destroy(collision.gameObject);
+            //Iron.SetActive(false);
 
         }
 
@@ -46,14 +46,14 @@ public class QuestItem : MonoBehaviour
             if (collision.gameObject.CompareTag("Wood"))
             {
                 questManager.quest3Completed();
-            Destroy(collision.gameObject);
+           // Destroy(collision.gameObject);
             //Wood.SetActive(false);
         }
 
             if (collision.gameObject.CompareTag("GunPowder"))
         {
             questManager.quest1Completed();
-            Destroy(collision.gameObject);
+            //Destroy(collision.gameObject);
         }
 
 

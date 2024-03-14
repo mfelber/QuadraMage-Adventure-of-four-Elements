@@ -6,7 +6,7 @@ public class teleportToPoseidon : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] Animator transition;
-    private GameObject player;
+    [SerializeField] private GameObject player;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -23,11 +23,25 @@ public class teleportToPoseidon : MonoBehaviour
         StartCoroutine(teleport());
     }
 
+    public void teleportPlayerToShip()
+    {
+        StartCoroutine(teleportToShip());
+    }
+
     IEnumerator teleport()
     {
         transition.SetTrigger("EndTransition");
         yield return new WaitForSeconds(1);
         player.transform.position = new Vector2(-50.57f, 60.34f);
+        transition.SetTrigger("StartTransition");
+
+    }
+
+    IEnumerator teleportToShip()
+    {
+        transition.SetTrigger("EndTransition");
+        yield return new WaitForSeconds(1);
+        player.transform.position = new Vector2(-186.12f, 191.88f);
         transition.SetTrigger("StartTransition");
 
     }

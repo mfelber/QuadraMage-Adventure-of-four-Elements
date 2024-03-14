@@ -85,7 +85,8 @@ public class DialogManager : MonoBehaviour
         isDialgueActive = false;
         animator.Play("hide");
 
-        questManager.acceptFirstQuest = true;
+        // pridat podmienku a dat to do hraca ze ak hovori so strangerom
+        //questManager.acceptFirstQuest = true;
             
         
     }

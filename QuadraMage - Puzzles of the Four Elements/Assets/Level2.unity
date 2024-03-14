@@ -1173,7 +1173,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 8.130167, y: 3.7538705}
+  m_Offset: {x: 11.957956, y: 3.7538705}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1184,7 +1184,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 11.630711, y: 8.507747}
+  m_Size: {x: 19.28629, y: 8.507747}
   m_EdgeRadius: 0
 --- !u!4 &46029643
 Transform:
@@ -10240,7 +10240,7 @@ GameObject:
   - component: {fileID: 278532460}
   m_Layer: 0
   m_Name: StrangerQuest1
-  m_TagString: NPC
+  m_TagString: FirstQuest
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13751,7 +13751,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &404897993
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16057,7 +16057,7 @@ Transform:
   m_GameObject: {fileID: 462707940}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 29.29, y: 0.38, z: 0}
+  m_LocalPosition: {x: 44.36, y: 1.26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -16211,6 +16211,8 @@ MonoBehaviour:
   vcam: {fileID: 1088949125}
   interactionMassage: {fileID: 829946996}
   quest: 0
+  inRangeOfTnt: 0
+  nearofNpcFirstQuest: 0
   isPlayerHide: 0
   inRange: 0
   canbereloaded: 0
@@ -24780,6 +24782,8 @@ MonoBehaviour:
   vcam: {fileID: 0}
   interactionMassage: {fileID: 0}
   quest: 0
+  inRangeOfTnt: 0
+  nearofNpcFirstQuest: 0
   isPlayerHide: 0
   inRange: 0
   canbereloaded: 0
@@ -26573,12 +26577,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 599807903}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25.92, y: 0.14, z: 0}
-  m_LocalScale: {x: 0.7904, y: 0.7118, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1693963324}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &600534987
 GameObject:
@@ -41821,6 +41825,7 @@ MonoBehaviour:
   npc2Vis: 0
   npc3Vis: 0
   questNumber: 0
+  acceptFirstQuest: 0
 --- !u!4 &1030787644
 Transform:
   m_ObjectHideFlags: 0
@@ -43350,7 +43355,7 @@ Transform:
   m_GameObject: {fileID: 1088949124}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 29.29, y: 4.02, z: -10}
+  m_LocalPosition: {x: 44.36, y: 4.9, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -45624,7 +45629,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1196779459
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -57399,7 +57404,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Npc: {fileID: 1139009375}
-  NpcQuest: {fileID: 1764324338}
+  NpcQuest1: {fileID: 0}
+  NpcQuest1Thanks: {fileID: 0}
 --- !u!61 &1605021850
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -59372,6 +59378,53 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3719dd361256743469d23f26b168a1b9, type: 3}
+--- !u!1 &1693963322
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1693963324}
+  - component: {fileID: 1693963323}
+  m_Layer: 0
+  m_Name: Quest1ItemsSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1693963323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693963322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4b94cfda83537944b26e87ac8b81ad6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quest1Items:
+  - {fileID: 599807903}
+--- !u!4 &1693963324
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693963322}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 43.64, y: 0.14, z: 0}
+  m_LocalScale: {x: 0.7904, y: 0.7118, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 599807907}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1699859023 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3644526773300180022, guid: 655d5ddcbf8ede94c84d1ca105333a21, type: 3}
@@ -62432,7 +62485,7 @@ Transform:
   m_GameObject: {fileID: 1795734061}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 29.29, y: 4.02, z: -10}
+  m_LocalPosition: {x: 44.36, y: 4.9, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -66185,6 +66238,7 @@ MonoBehaviour:
   npc2Vis: 0
   npc3Vis: 0
   questNumber: 0
+  acceptFirstQuest: 0
 --- !u!1 &1906541664
 GameObject:
   m_ObjectHideFlags: 0
@@ -72492,7 +72546,7 @@ SceneRoots:
   - {fileID: 1703299268}
   - {fileID: 1633242597}
   - {fileID: 66756250}
-  - {fileID: 599807907}
+  - {fileID: 1693963324}
   - {fileID: 356566065}
   - {fileID: 1335212682}
   - {fileID: 405211067}
