@@ -50,7 +50,7 @@ public class SwitchElementSprite : MonoBehaviour
             if (Inventory.inventory.Count >= 2)
             {
                 
-                GetComponent<SpriteRenderer>().sprite = water;
+                GetComponent<SpriteRenderer>().sprite = earth;
             }
 
 
@@ -63,17 +63,23 @@ public class SwitchElementSprite : MonoBehaviour
             if (Inventory.inventory.Count >= 3)
             {
                 
-                GetComponent<SpriteRenderer>().sprite = fire;
+                GetComponent<SpriteRenderer>().sprite = water;
             }
 
 
 
 
         }
+        
         else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            
+            if (Inventory.inventory.Count >= 4)
+            {
+
+                GetComponent<SpriteRenderer>().sprite = fire;
+            }
         }
+        
     }
 
     

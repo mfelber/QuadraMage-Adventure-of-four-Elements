@@ -60,7 +60,7 @@ public class Inventory : MonoBehaviour
 
     void Update()
     {
-       
+        Debug.Log(isPlayerUsingElement);
         Animator anim = GetComponent<Animator>();
         if (!NewPauseMenu.isPauseMenuOpen && !Book.isBookOpen && !MovingPlatform.isChildOfPlatform)
         {
@@ -80,6 +80,7 @@ public class Inventory : MonoBehaviour
                             
                             if(canUseElement == true && !ManaBar.isEmpty && PlayerMovement.playerOnGround == true && Player.manaIsLoaded == true && Player.inTaver == false)
                             {
+                                Debug.LogError(inventory.Count);
                                 anim.SetBool("Wind", true);
                                 player.useMana(25);
                                // Debug.LogError("pouzil si wind");
@@ -101,7 +102,7 @@ public class Inventory : MonoBehaviour
                                 anim.SetBool("WaterBall", true);
                                 //useMana(25);
                                 player.useMana(25);
-                                Debug.LogError("pouzil si water");
+                                
                                 playerUsingElement();
                                 canUseElement = false;
                             } else if (ManaBar.isEmpty)
@@ -119,7 +120,7 @@ public class Inventory : MonoBehaviour
 
                                 anim.SetBool("FireBall", true);
                                 player.useMana(25);
-                                Debug.LogError("pouzil si fire");
+                                
                                 playerUsingElement();
                                 canUseElement = false;
                             }
@@ -137,7 +138,7 @@ public class Inventory : MonoBehaviour
 
                                 anim.SetBool("Earth", true);                                
                                 player.useMana(25);
-                                Debug.LogError("pouzil si earth");
+                               
                                 playerUsingElement();
                                 canUseElement = false;
                             }
@@ -157,7 +158,7 @@ public class Inventory : MonoBehaviour
             }
             
 
-
+            
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
 
@@ -181,7 +182,7 @@ public class Inventory : MonoBehaviour
             {
                 changeElement(3);
             }
-
+            
         }
     }
 
@@ -204,16 +205,20 @@ public class Inventory : MonoBehaviour
     {
         GameObject wind = GameObject.Instantiate<GameObject>(Wind, shootpoint.position, shootpoint.rotation);
         Destroy(wind, 1);
+        StopAllCoroutines();
         StartCoroutine(CheckIfElementDestroyed(wind));
-        Invoke("playerStopUsingElement", 0.3f);
+        StartCoroutine(playerStopUsingElement());
+       // Invoke("playerStopUsingElement", 0.3f);
     }
 
     public void SpawnWaterElement(Object waterElement)
     {             
          GameObject water = GameObject.Instantiate<GameObject>(Waterball, shootpoint.position, shootpoint.rotation);
-         Destroy(water, 1);
-         StartCoroutine(CheckIfElementDestroyed(water));
-         Invoke("playerStopUsingElement", 0.3f);
+         Destroy(water, 1f);
+        StopAllCoroutines();
+        StartCoroutine(CheckIfElementDestroyed(water));
+        StartCoroutine(playerStopUsingElement());
+       // Invoke("playerStopUsingElement", 0.3f);
         
     }
 
@@ -221,24 +226,65 @@ public class Inventory : MonoBehaviour
     {       
         GameObject fire = GameObject.Instantiate<GameObject>(Fireball, shootpoint.position, shootpoint.rotation);
         Destroy(fire, 1);
+       // StopAllCoroutines();
         StartCoroutine(CheckIfElementDestroyed(fire));
-        Invoke("playerStopUsingElement", 0.3f);
+        StartCoroutine(playerStopUsingElement());
+      //  Invoke("playerStopUsingElement", 0.3f);
         
     }
 
-    public void SwitchTransition(Object nullobj)
+    public void SpawnEarthElement(Object fireElement)
+    {
+        GameObject fire = GameObject.Instantiate<GameObject>(Earth, shootpoint.position, shootpoint.rotation);
+        Destroy(fire, 1);
+        // StopAllCoroutines();
+        StartCoroutine(CheckIfElementDestroyed(fire));
+        StartCoroutine(playerStopUsingElement());
+        //  Invoke("playerStopUsingElement", 0.3f);
+
+    }
+
+    public void SwitchTransitionWind(Object nullobj)
     {
         Animator anim = GetComponent<Animator>();
         anim.SetBool("Wind", false);
+       
+    }
+    public void SwitchTransitionWaterBall(Object nullobj)
+    {
+        Animator anim = GetComponent<Animator>();     
         anim.SetBool("WaterBall", false);
+        
+    }
+
+    public void SwitchTransitionFireBall(Object nullobj)
+    {
+        Animator anim = GetComponent<Animator>();        
         anim.SetBool("FireBall", false);
-        //anim.SetBool("EarthBall", false);
+        
+    }
+
+    public void SwitchTransitionEarth(Object nullobj)
+    {
+        Animator anim = GetComponent<Animator>();
+        anim.SetBool("Earth", false);
+
+    }
+
+
+    IEnumerator playerStopUsingElement()
+    {
+        
+        yield return new WaitForSeconds(0.3f);
+
+        isPlayerUsingElement = false;
+
     }
 
     IEnumerator CheckIfElementDestroyed(GameObject element)
     {
-        yield return new WaitForSeconds(1);
 
+        yield return new WaitForSeconds(1f);
         
         if (element == null)
         {
@@ -259,6 +305,7 @@ public class Inventory : MonoBehaviour
     {
         inventory.Add(itemData);
         Debug.Log("Element " + itemData.itemName + " is added to your inventory");
+        Debug.Log(inventory.Count);
 
     }
 
@@ -309,10 +356,12 @@ public class Inventory : MonoBehaviour
     {
         isPlayerUsingElement = true;
        }
+
+    /*
     public void playerStopUsingElement()
     {
         isPlayerUsingElement = false;
         
     }
-
+    */
 }

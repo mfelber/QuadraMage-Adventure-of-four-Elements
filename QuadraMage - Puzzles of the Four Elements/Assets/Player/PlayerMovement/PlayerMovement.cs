@@ -83,7 +83,7 @@ public class PlayerMovement : MonoBehaviour
         
 
 
-        if (!NewPauseMenu.isPauseMenuOpen && !Book.isBookOpen && isInputEnabled && !MovingPlatform.isChildOfPlatform && !DialogManager.isDialgueActive )
+        if (!Inventory.isPlayerUsingElement && !NewPauseMenu.isPauseMenuOpen && !Book.isBookOpen && isInputEnabled && !MovingPlatform.isChildOfPlatform && !DialogManager.isDialgueActive )
             {
                 Vector3 mouseP = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
@@ -105,7 +105,8 @@ public class PlayerMovement : MonoBehaviour
                 playerRB.gravityScale = 1f;
             }
 
-            if (!Inventory.isPlayerUsingElement )
+            if (!Inventory.isPlayerUsingElement)
+                Debug.Log(Inventory.isPlayerUsingElement);
                 {
                     if(HowMuchTimeIsLeft <= 0)
                 {
@@ -182,11 +183,11 @@ public class PlayerMovement : MonoBehaviour
                         flip();
                     }
                 }
-             UpdateAnimation();
 
             
 
 
+             UpdateAnimation();
         }
 
         //Debug.Log(playerOnGround);

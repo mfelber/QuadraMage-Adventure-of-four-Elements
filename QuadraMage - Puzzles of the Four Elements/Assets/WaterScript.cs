@@ -24,9 +24,8 @@ public class WaterScript : MonoBehaviour
     void Update()
     {
 
-        if (!PauseMenu.isGamePaused && !Book.isBookOpen)
-        {
-            Profiler.BeginSample("water");
+       
+            
             if (isrightFacing)
             {
 
@@ -60,8 +59,8 @@ public class WaterScript : MonoBehaviour
 
                 transform.Translate(new Vector3(-speed * Time.deltaTime, 0, 0));
             }
-        }
-        Profiler.EndSample();
+        
+        
     }
 
     /*

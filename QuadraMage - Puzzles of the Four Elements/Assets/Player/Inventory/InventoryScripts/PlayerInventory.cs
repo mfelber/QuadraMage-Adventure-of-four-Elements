@@ -7,10 +7,13 @@ public class PlayerInventory : MonoBehaviour
 {
     private Inventory inventory;
     
+
+    
     
     void Start()
     {
         inventory = GetComponent<Inventory>(); 
+        
 
         if (inventory == null)
         {
@@ -22,7 +25,7 @@ public class PlayerInventory : MonoBehaviour
     {
         if (other.CompareTag("Wind") || other.CompareTag("Fire") || other.CompareTag("Water") || other.CompareTag("Earth"))
         {
-
+            
             Item.ItemData itemData = other.GetComponent<Item>().itemData;
             inventory.addToInventory(itemData);
             Destroy(other.gameObject);
