@@ -50,9 +50,9 @@ public class MineCart : MonoBehaviour
     public void outofplatform ()
     {
         if (onplatform == true) {
-            Rigidbody2D playerRigidbody = gold.gameObject.GetComponent<Rigidbody2D>();
+            Rigidbody2D goldRB = gold.gameObject.GetComponent<Rigidbody2D>();
             boxCollider2D.enabled = false;
-            playerRigidbody.AddForce(new Vector2(20f, 10f), ForceMode2D.Impulse);
+            goldRB.AddForce(new Vector2(20f, 10f), ForceMode2D.Impulse);
             Invoke("collider", 1.2f);
             //playerRigidbody.gravityScale = 3;
         }
