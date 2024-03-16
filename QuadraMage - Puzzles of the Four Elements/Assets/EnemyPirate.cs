@@ -19,10 +19,7 @@ public class EnemyPirate : MonoBehaviour
 
         // Tnt = FindObjectOfType<tnt>();
         Tnt = tntObject.GetComponent<tnt>();
-        if (Tnt == null)
-        {
-            Debug.LogError("TNT object not found!");
-        }
+       
         pirateNearTnt = false;
     }
 

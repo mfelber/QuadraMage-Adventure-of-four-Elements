@@ -267,7 +267,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (feet2.IsTouching (collision.collider))
         {
-            if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Cloud") || collision.gameObject.CompareTag("EarthBlock") || collision.gameObject.CompareTag("Box") || collision.gameObject.CompareTag("OneWayPlatform"))
+            if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Cloud") || collision.gameObject.CompareTag("EarthBlock") || collision.gameObject.CompareTag("Box") || collision.gameObject.CompareTag("OneWayPlatform")|| collision.gameObject.CompareTag("Bridge"))
             {
                 playerOnGround = true;
             }

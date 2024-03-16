@@ -10,22 +10,25 @@ public class tnt : MonoBehaviour
     public bool tntIsActive;
     public bool playerNearTnt;
     //[SerializeField]private GameObject tntPrefab;
+    QuestManager questManager;
 
-    
+
+
     void Start()
     {
        player = FindObjectOfType<Player>();
-        time = 10;
+        time = 5;
         tntIsActive = false;
+        questManager = FindObjectOfType<QuestManager>();
 
-       // tntGameObject = GetComponent<GameObject>();
-        
+        // tntGameObject = GetComponent<GameObject>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (playerNearTnt && Input.GetKeyDown(KeyCode.E))
+        if (playerNearTnt && Input.GetKeyDown(KeyCode.E) && questManager.acceptFirstQuest == true)
         {
             tntIsActive = true;
         }
@@ -41,11 +44,19 @@ public class tnt : MonoBehaviour
         {
             tntIsActive = false;
             Destroy(gameObject);
+           // gameObject.SetActive(false);
         }
         //Debug.Log(time);
     }
 
-   
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Luster"))
+        {
+            tntIsActive = true;
+        }
+    }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class rope : MonoBehaviour
+public class rockController : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject ropePrefab;
     void Start()
     {
         
@@ -19,12 +18,9 @@ public class rope : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // earthELemntShot
-        if(collision.gameObject.CompareTag("WindElementShot"))
+        if (collision.gameObject.CompareTag("Wood"))
         {
-            Destroy(ropePrefab,0.5f);
+            Destroy(collision.gameObject);
         }
     }
-
-
 }

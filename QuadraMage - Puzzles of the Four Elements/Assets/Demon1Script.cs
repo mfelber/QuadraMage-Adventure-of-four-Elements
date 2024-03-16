@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class rope : MonoBehaviour
+public class Demon1Script : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public GameObject ropePrefab;
+    public Animator deamonAnimator;
     void Start()
     {
         
@@ -19,12 +18,16 @@ public class rope : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // earthELemntShot
+        // mozno aj voda nieco spravi a aj zem ?
         if(collision.gameObject.CompareTag("WindElementShot"))
         {
-            Destroy(ropePrefab,0.5f);
+            deamonAnimator.SetBool("hit", true);
+            Invoke("hitToFalse",2);
         }
     }
 
-
+    public void hitToFalse()
+    {
+        deamonAnimator.SetBool("hit", false);
+    }
 }

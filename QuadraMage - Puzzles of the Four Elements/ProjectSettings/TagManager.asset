@@ -45,6 +45,9 @@ TagManager:
   - FirstQuest
   - SecondQuest
   - seaHorse
+  - Luster
+  - Bridge
+  - Rock
   layers:
   - Default
   - TransparentFX
