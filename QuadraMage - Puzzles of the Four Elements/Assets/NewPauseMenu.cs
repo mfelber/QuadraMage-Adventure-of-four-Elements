@@ -1,6 +1,7 @@
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -31,7 +32,7 @@ public class NewPauseMenu : MonoBehaviour
                 //ClosePauseMenu();
             }
         }
-
+        Debug.Log(isPauseMenuOpen);
         
     }
 
@@ -65,6 +66,17 @@ public class NewPauseMenu : MonoBehaviour
     {
         Inventory.inventory.Clear();
         Application.Quit();
+    }
+
+    public void RestartLevel()
+    {
+       
+        Scene currentScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(currentScene.name, LoadSceneMode.Single);
+        Inventory.inventory.Clear();
+        Debug.Log(Inventory.inventory.Count());        
+        isPauseMenuOpen = false;
+        Time.timeScale = 1f;
     }
 
 }

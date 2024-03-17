@@ -20,6 +20,7 @@ public class LoadLevel : MonoBehaviour
 
     public void LoadSpecificLevel()
     {
-        SceneManager.LoadScene("Level2");
+        SceneManager.LoadScene("Level4");
+        NewPauseMenu.isPauseMenuOpen = false;
     }
 }

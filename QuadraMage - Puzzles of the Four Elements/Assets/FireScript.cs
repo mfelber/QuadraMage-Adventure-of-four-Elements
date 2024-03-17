@@ -54,4 +54,21 @@ public class FireScript : MonoBehaviour
             transform.Translate(new Vector3(-speed * Time.deltaTime, 0, 0));
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Wood"))
+        {
+            Destroy(gameObject);
+            Destroy(collision.gameObject);
+        }
+
+        /*
+        if (collision.gameObject.CompareTag("Bridge"))
+        {
+            Destroy(gameObject);
+            Destroy(collision.gameObject);
+        }
+        */
+    }
 }

@@ -48,6 +48,7 @@ TagManager:
   - Luster
   - Bridge
   - Rock
+  - WaterElementShot
   layers:
   - Default
   - TransparentFX
@@ -63,7 +64,7 @@ TagManager:
   - Fluids
   - Bubbles
   - Ground
-  - 
+  - Lava
   - 
   - 
   - 

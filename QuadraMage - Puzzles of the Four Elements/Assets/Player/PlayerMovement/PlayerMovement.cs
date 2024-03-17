@@ -190,7 +190,7 @@ public class PlayerMovement : MonoBehaviour
              UpdateAnimation();
         }
 
-        //Debug.Log(playerOnGround);
+        Debug.LogError(playerOnGround);
 
     }
 
@@ -267,7 +267,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (feet2.IsTouching (collision.collider))
         {
-            if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Cloud") || collision.gameObject.CompareTag("EarthBlock") || collision.gameObject.CompareTag("Box") || collision.gameObject.CompareTag("OneWayPlatform")|| collision.gameObject.CompareTag("Bridge"))
+            if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Cloud") || collision.gameObject.CompareTag("EarthBlock") || collision.gameObject.CompareTag("Box") || collision.gameObject.CompareTag("OneWayPlatform")|| collision.gameObject.CompareTag("Bridge") )
             {
                 playerOnGround = true;
             }
@@ -309,14 +309,23 @@ public class PlayerMovement : MonoBehaviour
             playerInmagnifer = true;
         }
 
-        if (collision.gameObject.CompareTag("Ladder"))
+        
+
+        if (feet2.IsTouching(collision))
         {
-            Debug.LogError("si v range");
-            inRangeOfLadder = true;
+            if (collision.gameObject.CompareTag("Ladder"))
+            {
+                Debug.LogError("si v range");
+                inRangeOfLadder = true;
+                playerOnGround = true;
+
+            }
+            
         }
 
-       
-        
+
+
+
 
 
 
@@ -329,9 +338,11 @@ public class PlayerMovement : MonoBehaviour
         {
             inRangeOfLadder = false;
             climbing = false;
+            
+
         }
 
-        
+
 
     }
 

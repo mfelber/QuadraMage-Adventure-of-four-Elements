@@ -8,9 +8,11 @@ public class QuestItem : MonoBehaviour
     Player player;
     QuestManager questManager;
 
+
+    //public GameObject Gold;
     /*
-    public GameObject Gold;
     public GameObject Iron;
+
     public GameObject Wood;
     */
 
@@ -28,7 +30,7 @@ public class QuestItem : MonoBehaviour
             {
                 questManager.quest1Completed();         
             
-               // Gold.SetActive(false);
+             //  Gold.SetActive(false);
             
         }
         

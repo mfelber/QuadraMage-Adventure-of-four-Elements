@@ -6,15 +6,25 @@ public class DemonScript : MonoBehaviour
 {
     public Animator demonAnimator;
     public PlayerMovement PlayerMovement;
+    public bool playerInRange;
     void Start()
     {
-        
+        playerInRange = false;
     }
 
     
     void Update()
     {
         
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            demonAnimator.SetBool("playerInRange", true);
+            playerInRange = true;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

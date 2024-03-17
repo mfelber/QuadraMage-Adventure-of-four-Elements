@@ -11,6 +11,7 @@ public class tnt : MonoBehaviour
     public bool playerNearTnt;
     //[SerializeField]private GameObject tntPrefab;
     QuestManager questManager;
+   
 
 
 
@@ -20,6 +21,7 @@ public class tnt : MonoBehaviour
         time = 5;
         tntIsActive = false;
         questManager = FindObjectOfType<QuestManager>();
+        
 
         // tntGameObject = GetComponent<GameObject>();
 
@@ -38,8 +40,7 @@ public class tnt : MonoBehaviour
             time -= Time.deltaTime;
         }
             
-
-
+        
         if(time < 0)
         {
             tntIsActive = false;

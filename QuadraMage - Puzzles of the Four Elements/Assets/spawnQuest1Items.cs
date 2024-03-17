@@ -6,6 +6,7 @@ public class spawnQuest1Items : MonoBehaviour
 {
     private QuestManager questManager;
     //[SerializeField] GameObject box;
+    public int removeItem;
 
     public List<GameObject> questItems = new List<GameObject>();
     void Start()
@@ -27,6 +28,7 @@ public class spawnQuest1Items : MonoBehaviour
             {
                 questItems[i].SetActive(true);
             }
+            questItems.RemoveAt(removeItem);
         }
 
        

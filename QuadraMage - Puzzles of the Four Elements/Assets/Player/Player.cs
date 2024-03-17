@@ -80,6 +80,8 @@ public class Player : MonoBehaviour
         canbereloaded = false;
         inRangeOfTnt = false;
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Elements"));
+       // Physics2D.IgnoreLayerCollision(6,14);
+
         poseidonQuestManager = FindObjectOfType<PoseidonQuestManager>();
         /*
         if(level == 1)
@@ -142,6 +144,7 @@ public class Player : MonoBehaviour
 
 
         // TODO check which level player playing, restart inventory to corrent level 
+        /*
         if (Input.GetKeyUp(KeyCode.R))
         {
             //player.transform.position = new Vector3(-8.64f, 0f, 0f);
@@ -149,7 +152,7 @@ public class Player : MonoBehaviour
             SceneManager.LoadScene(currentScene.name, LoadSceneMode.Single);
             Inventory.inventory.Clear();
         }
-
+        */
         if (inRange == true && Input.GetKeyDown(KeyCode.E))
         {
 
@@ -284,6 +287,9 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
+        
+
         if (collision.gameObject.CompareTag("Barrel") )
         {
             inRange = true;
@@ -472,24 +478,23 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Scene currentScene = SceneManager.GetActiveScene();
-        string sceneName = currentScene.name;
+        //Scene currentScene = SceneManager.GetActiveScene();
+        //string sceneName = currentScene.name;
 
         if (collision.gameObject.CompareTag("Obstacles"))
         {
-            if (sceneName == "Level1Demo")
-            {
+            
+
+           
                 Invoke("setToSpawn",0.2f);
 
-            }
-            if (sceneName == "Level2Demo")
-            {
-                Invoke("setToSpawn", 0.2f);
+            
 
-            }
         }
         
     }
+
+    
 
     void LoadLevelScene()
     {
@@ -510,6 +515,7 @@ public class Player : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currentScene.name, LoadSceneMode.Single);
         Inventory.inventory.Clear();
+
     }
 
 }

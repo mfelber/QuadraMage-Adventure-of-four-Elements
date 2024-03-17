@@ -78,7 +78,7 @@ public class Inventory : MonoBehaviour
                         if (inventory[currentIndex].itemName.Equals("Wind"))
                         {
                             
-                            if(canUseElement == true && !ManaBar.isEmpty && PlayerMovement.playerOnGround == true && Player.manaIsLoaded == true && Player.inTaver == false)
+                            if(canUseElement == true && !ManaBar.isEmpty && PlayerMovement.playerOnGround == true && Player.manaIsLoaded == true && Player.inTaver == false )
                             {
                                 Debug.LogError(inventory.Count);
                                 anim.SetBool("Wind", true);
