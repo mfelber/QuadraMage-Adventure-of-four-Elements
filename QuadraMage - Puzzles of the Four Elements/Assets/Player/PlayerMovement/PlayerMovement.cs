@@ -85,6 +85,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (!Inventory.isPlayerUsingElement && !NewPauseMenu.isPauseMenuOpen && !Book.isBookOpen && isInputEnabled && !MovingPlatform.isChildOfPlatform && !DialogManager.isDialgueActive )
             {
+
+            
                 Vector3 mouseP = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
 
@@ -174,7 +176,8 @@ public class PlayerMovement : MonoBehaviour
                     }
 
 
-                    if (mouseP.x < playerRB.transform.position.x && playerFacingRight)
+
+                if (mouseP.x < playerRB.transform.position.x && playerFacingRight)
                     {
                         flip();
                     }
@@ -190,8 +193,9 @@ public class PlayerMovement : MonoBehaviour
              UpdateAnimation();
         }
 
-        Debug.LogError(playerOnGround);
-
+        Debug.Log(" pozeram sa do prava" + playerFacingRight);
+       
+        
     }
 
     

@@ -14,6 +14,7 @@ public class FinallBoss : MonoBehaviour
         {
             gameObjects[i].SetActive(false);
         }
+        collider = GetComponent<BoxCollider2D>();
         collider.enabled = false;
     }
 

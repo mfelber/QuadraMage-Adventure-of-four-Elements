@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class fallingRock : MonoBehaviour
+public class Devil : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public Rigidbody2D rigidbody2D;
+    public GameObject firstHornDown;
+    public bool firstHornDownBool;
     void Start()
     {
-        
+        firstHornDown.SetActive(false);
     }
 
     // Update is called once per frame
@@ -19,9 +19,10 @@ public class fallingRock : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("WindElementShot"))
+        if (collision.gameObject.CompareTag("Rock"))
         {
-            rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
+            firstHornDown.SetActive(true);
+            firstHornDownBool = true;
         }
     }
 }

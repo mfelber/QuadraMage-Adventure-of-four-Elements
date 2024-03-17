@@ -9,12 +9,14 @@ public class NewPauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
     //private Book book;
+    Inventory inventory;    
 
     public static bool isPauseMenuOpen;
     void Start()
     {
        // book = GetComponent<Book>();
         pauseMenu.SetActive(false);
+        inventory = FindObjectOfType<Inventory>();
     }
 
     // Update is called once per frame
@@ -58,23 +60,34 @@ public class NewPauseMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("Main Menu");
-        Inventory.inventory.Clear();
+        inventory.inventory.Clear();
+        Inventory.canUseElement = true;
 
     }
 
     public void QuitGame()
     {
-        Inventory.inventory.Clear();
+        inventory.inventory.Clear();
+        Inventory.canUseElement = true;
         Application.Quit();
     }
+
+   
 
     public void RestartLevel()
     {
        
         Scene currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currentScene.name, LoadSceneMode.Single);
-        Inventory.inventory.Clear();
-        Debug.Log(Inventory.inventory.Count());        
+        inventory.inventory.Clear();
+        Inventory.canUseElement = true;
+        // Debug.Log(inventory.inventory.Count);
+        // Vector3 mouseP = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        PlayerMovement.playerFacingRight = true;
+        // Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        //mousePos = new Vector2(120, mousePos.y);
+
+        
         isPauseMenuOpen = false;
         Time.timeScale = 1f;
     }

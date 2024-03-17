@@ -11,7 +11,7 @@ public class Inventory : MonoBehaviour
 
     Player player;
    
-    public static List<Item.ItemData> inventory = new List<Item.ItemData>();
+    public List<Item.ItemData> inventory = new List<Item.ItemData>();
 
     private int currentIndex = 0;
 
@@ -60,7 +60,7 @@ public class Inventory : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(isPlayerUsingElement);
+        Debug.Log( "Can use elemnt :" + canUseElement);
         Animator anim = GetComponent<Animator>();
         if (!NewPauseMenu.isPauseMenuOpen && !Book.isBookOpen && !MovingPlatform.isChildOfPlatform)
         {

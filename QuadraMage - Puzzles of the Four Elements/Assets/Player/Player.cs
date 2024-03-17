@@ -32,7 +32,7 @@ public class Player : MonoBehaviour
     public bool nearofNpcFirstQuest;
     public bool nearofNpcSecondQuest;
 
-
+    Inventory inventory;
     public void SavePlayerData()
     {
         Save.SavePlayerData(this);
@@ -73,7 +73,7 @@ public class Player : MonoBehaviour
 
         quest = 1;
         hiddenKey = 0;
-
+        inventory = FindObjectOfType<Inventory>();
         currentMana = maxMana;
         manaBar.setMaxMana(maxMana);
         rigidbody2D = GetComponent<Rigidbody2D>();
@@ -364,7 +364,7 @@ public class Player : MonoBehaviour
                 level += 1;                
                 SavePlayerData();
                 playerHasCollide = true;
-                Inventory.inventory.Clear();
+                inventory.inventory.Clear();
                  
             }
             if (collision.gameObject.CompareTag("Test"))
@@ -514,7 +514,14 @@ public class Player : MonoBehaviour
         //player.transform.position = new Vector3(-6.546f, -0.029f, 0);
         Scene currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currentScene.name, LoadSceneMode.Single);
-        Inventory.inventory.Clear();
+        inventory.inventory.Clear();
+        GameObject[] allObjects = GameObject.FindObjectsOfType<GameObject>();
+        foreach (GameObject obj in allObjects)
+        {
+            
+
+            Destroy(obj);
+        }
 
     }
 

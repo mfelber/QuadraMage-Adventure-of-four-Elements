@@ -13,7 +13,7 @@ public class SwitchElementSprite : MonoBehaviour
     {
 
 
-        inventoryScript = GetComponent<Inventory>();
+        inventoryScript = FindObjectOfType<Inventory>();
         
 
 
@@ -35,7 +35,7 @@ public class SwitchElementSprite : MonoBehaviour
 
             //TODO pridat podmienky na zmenenie sprite palicky
 
-            if (Inventory.inventory.Count >= 1)
+            if (inventoryScript.inventory.Count >= 1)
             {
                 
                 GetComponent<SpriteRenderer>().sprite = wind;
@@ -47,7 +47,7 @@ public class SwitchElementSprite : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
 
-            if (Inventory.inventory.Count >= 2)
+            if (inventoryScript.inventory.Count >= 2)
             {
                 
                 GetComponent<SpriteRenderer>().sprite = earth;
@@ -60,7 +60,7 @@ public class SwitchElementSprite : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
 
-            if (Inventory.inventory.Count >= 3)
+            if (inventoryScript.inventory.Count >= 3)
             {
                 
                 GetComponent<SpriteRenderer>().sprite = water;
@@ -73,7 +73,7 @@ public class SwitchElementSprite : MonoBehaviour
         
         else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            if (Inventory.inventory.Count >= 4)
+            if (inventoryScript.inventory.Count >= 4)
             {
 
                 GetComponent<SpriteRenderer>().sprite = fire;
