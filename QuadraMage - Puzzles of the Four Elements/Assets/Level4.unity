@@ -684,6 +684,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstHornDown: {fileID: 1607382569}
+  firstHornDownBool: 0
 --- !u!1 &22538497
 GameObject:
   m_ObjectHideFlags: 0
@@ -12112,6 +12113,7 @@ GameObject:
   - component: {fileID: 574600028}
   - component: {fileID: 574600027}
   - component: {fileID: 574600030}
+  - component: {fileID: 574600031}
   m_Layer: 13
   m_Name: mali suter
   m_TagString: Ground
@@ -12126,7 +12128,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 574600026}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -12225,7 +12227,7 @@ Transform:
   m_GameObject: {fileID: 574600026}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 223.39, y: -1.57, z: 0}
+  m_LocalPosition: {x: 223.39, y: -1.62, z: 0}
   m_LocalScale: {x: 0.50900334, y: 1.7576541, z: 0.2175264}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12252,6 +12254,48 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!68 &574600031
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 574600026}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.52943814, y: -0.2216621}
+  - {x: 0.016611475, y: 0.49447703}
+  - {x: 0.49019724, y: -0.2216621}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &575711158
 GameObject:
   m_ObjectHideFlags: 0
@@ -31540,6 +31584,7 @@ GameObject:
   - component: {fileID: 1749315110}
   - component: {fileID: 1749315109}
   - component: {fileID: 1749315108}
+  - component: {fileID: 1749315112}
   m_Layer: 13
   m_Name: Square (46)
   m_TagString: OneWayPlatform
@@ -31581,7 +31626,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1749315107}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -31680,7 +31725,7 @@ Transform:
   m_GameObject: {fileID: 1749315107}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 222.6237, y: 3.5, z: 0}
+  m_LocalPosition: {x: 222.6237, y: 3.58, z: 0}
   m_LocalScale: {x: 4.9414415, y: 0.3959797, z: 0.1472688}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -31688,6 +31733,50 @@ Transform:
   - {fileID: 160376380}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!68 &1749315112
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749315107}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 0.16027808, y: 0.47997776}
+  - {x: 0.10258359, y: -0.49140576}
+  - {x: 0.10258362, y: -0.49140576}
+  - {x: 0.15989234, y: 0.4716298}
+  - {x: 0.20915475, y: -0.47720334}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &1751532999
 GameObject:
   m_ObjectHideFlags: 0
@@ -31976,9 +32065,12 @@ MonoBehaviour:
   stoneFromAbove: {fileID: 1749315107}
   playerInRangeOfDevil: 0
   PlayerMovement: {fileID: 462707943}
-  alreadyFirstSmash: 0
+  smashFirstTime: 0
+  smashSecondTime: 0
   attackStop: 0
   player: {fileID: 0}
+  troops: []
+  ground: {fileID: 0}
 --- !u!95 &1759148109
 Animator:
   serializedVersion: 5
