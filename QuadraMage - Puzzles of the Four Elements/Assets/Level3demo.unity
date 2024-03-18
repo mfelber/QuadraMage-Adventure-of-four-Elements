@@ -766,7 +766,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 451f098644d56c64c90f26e62c89baed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidbody2D: {fileID: 54181402}
 --- !u!1 &56395800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1354,6 +1353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4b94cfda83537944b26e87ac8b81ad6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  removeItem: 0
   questItems:
   - {fileID: 1485380965}
   - {fileID: 1163044910}
@@ -8653,7 +8653,7 @@ Transform:
   m_GameObject: {fileID: 462707940}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.5, y: 1.4, z: 0}
+  m_LocalPosition: {x: -195.4, y: 227.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8781,6 +8781,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4753f328fe991741b0ea29006209d45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: []
   shootpoint: {fileID: 898420411}
   mana: {fileID: 483151572}
   Wind: {fileID: 8571103132933915876, guid: 4726a4213094eeb40b210979b491ab31, type: 3}
@@ -16547,6 +16548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4753f328fe991741b0ea29006209d45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: []
   shootpoint: {fileID: 466131632}
   mana: {fileID: 483151572}
   Wind: {fileID: 8571103132933915876, guid: 4726a4213094eeb40b210979b491ab31, type: 3}
@@ -27108,7 +27110,7 @@ Transform:
   m_GameObject: {fileID: 1088949124}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.5, y: 5.04, z: -10}
+  m_LocalPosition: {x: -195.4, y: 231.14, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -33119,7 +33121,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 451f098644d56c64c90f26e62c89baed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidbody2D: {fileID: 1508300258}
 --- !u!1 &1508480270
 GameObject:
   m_ObjectHideFlags: 0
@@ -36967,7 +36968,7 @@ Transform:
   m_GameObject: {fileID: 1795734061}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.5, y: 5.04, z: -10}
+  m_LocalPosition: {x: -195.4, y: 231.14, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -38921,7 +38922,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 451f098644d56c64c90f26e62c89baed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidbody2D: {fileID: 1939332478}
 --- !u!1 &1944503504
 GameObject:
   m_ObjectHideFlags: 0
@@ -39251,7 +39251,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 451f098644d56c64c90f26e62c89baed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidbody2D: {fileID: 1949028478}
 --- !u!1 &1949995189
 GameObject:
   m_ObjectHideFlags: 0

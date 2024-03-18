@@ -8,6 +8,7 @@ public class rockDestroyPlatform : MonoBehaviour
     void Start()
     {
         Physics2D.IgnoreLayerCollision(13, 16);
+        Physics2D.IgnoreLayerCollision(6, 16);
     }
 
     // Update is called once per frame

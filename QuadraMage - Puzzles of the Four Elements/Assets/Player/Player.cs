@@ -321,10 +321,17 @@ public class Player : MonoBehaviour
 
         if (collision.gameObject.CompareTag("camera"))
         {
-            StartCoroutine(ZmenOrthoSizeSmooth(10f, 2f));
+            StartCoroutine(ChangeOrthoSizePirateShip(10f, 2f));
             //vcam.m_Lens.OrthographicSize = 10;
         }
 
+        /*
+        if (collision.gameObject.CompareTag("FinalBosscamera"))
+        {
+            StartCoroutine(ChangeOrthoSizeFinalBoss(8.5f, 2f));
+            //vcam.m_Lens.OrthographicSize = 10;
+        }
+        */
         if (collision.gameObject.CompareTag("Tavern"))
         {
             inTaver = true;
@@ -396,21 +403,23 @@ public class Player : MonoBehaviour
        
     }
 
-    IEnumerator ZmenOrthoSizeSmooth(float novaHodnota, float cas)
+    IEnumerator ChangeOrthoSizePirateShip(float newValue, float time)
     {
-        float pociatocnaHodnota = vcam.m_Lens.OrthographicSize;
+        float startingValue = vcam.m_Lens.OrthographicSize;
         float elapsedTime = 0f;
 
-        while (elapsedTime < cas)
+        while (elapsedTime < time)
         {
-            vcam.m_Lens.OrthographicSize = Mathf.Lerp(pociatocnaHodnota, novaHodnota, elapsedTime / cas);
+            vcam.m_Lens.OrthographicSize = Mathf.Lerp(startingValue, newValue, elapsedTime / time);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
         
-        vcam.m_Lens.OrthographicSize = novaHodnota;
+        vcam.m_Lens.OrthographicSize = newValue;
     }
+
+    
 
 
 
@@ -441,7 +450,7 @@ public class Player : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("camera"))
         {
-            StartCoroutine(ZmenOrthoSizeSmooth(5.3f, 2f));
+            StartCoroutine(ChangeOrthoSizePirateShip(5.3f, 2f));
             //vcam.m_Lens.OrthographicSize = 5.3f;
         }
 

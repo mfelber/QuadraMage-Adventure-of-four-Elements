@@ -49,6 +49,7 @@ TagManager:
   - Bridge
   - Rock
   - WaterElementShot
+  - FinalBosscamera
   layers:
   - Default
   - TransparentFX

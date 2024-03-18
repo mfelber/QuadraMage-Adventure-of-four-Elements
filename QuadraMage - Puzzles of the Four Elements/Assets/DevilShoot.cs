@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,10 +20,13 @@ public class DevilShoot : MonoBehaviour
     public bool smashFirstTime;
     public bool smashSecondTime;
     public bool attackStop;
-    public GameObject player;
+   
     public List<GameObject> troops;
-    public Animator ground;
+    public Animator ground1;
+    public Animator ground2;
     Devil devil;
+    float newTimer = 0;
+    public CinemachineVirtualCamera vcam;
     void Start()
     {
         
@@ -46,7 +50,7 @@ public class DevilShoot : MonoBehaviour
         }
         */
 
-        Debug.Log(attackStop);
+      //  Debug.Log(attackStop);
         
 
         
@@ -56,12 +60,12 @@ public class DevilShoot : MonoBehaviour
 
             timer += Time.deltaTime;
 
-            /*
+            
             if (attackStop == false)
             {
                 Devilanimator.SetBool("attack", true);
             }
-            */
+            
            
 
             if (smashFirstTime == false)
@@ -72,6 +76,7 @@ public class DevilShoot : MonoBehaviour
                     attackStop = true;
                     Devilanimator.SetBool("attack", false);
                     smashFirstTime = true;
+                    StartCoroutine(ChangeOrthoSizeFinalBoss(8.5f,2));
                     Invoke("firstSmashAttack", 0.1f);
                    
                     
@@ -80,26 +85,31 @@ public class DevilShoot : MonoBehaviour
                     
                     
                     //RockAnimator4.Play("Fall");
-                    StartCoroutine(resetAnimations());
+                   // StartCoroutine(resetAnimations());
                 }
-            } 
-                Devilanimator.SetBool("attack", true);
-            
 
-            
                 
-           
 
-
+            } 
+               
             
+        }
 
-
-
+        if (devil.firstHornDownBool == true)
+        {
+            
+            newTimer += Time.deltaTime;
+            Debug.Log(newTimer);
+            if (newTimer > 10)
+            {
+                Devilanimator.SetBool("secondSmashAttack", true);
+                StartCoroutine(startPostSmashAnimations());
+            }
         }
 
 
 
-        
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -148,6 +158,7 @@ public class DevilShoot : MonoBehaviour
 
     public void smash()
     {
+        attackStop = false;
         Rigidbody2D rb2 = stoneFromAbove.GetComponent<Rigidbody2D>();
         rb2.bodyType = RigidbodyType2D.Dynamic;
         Invoke("ContinueSmash", 0.1f);
@@ -171,7 +182,7 @@ public class DevilShoot : MonoBehaviour
 
     IEnumerator resetAnimations()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
 
         /*
         if (RockAnimator.GetBool("rocks") == true)
@@ -187,7 +198,21 @@ public class DevilShoot : MonoBehaviour
 
 
     }
+    
 
+        IEnumerator startPostSmashAnimations()
+    {
+        yield return new WaitForSeconds(2);
+
+        ground1.Play("groundCrack2");
+        ground2.Play("groundSecondCrack2");
+        StartCoroutine(ChangeOrthoSizeFinalBoss(5.3f,2));
+        
+       
+       
+
+
+    }
     IEnumerator secondSmash()
     {
         yield return new WaitForSeconds(10);
@@ -197,8 +222,22 @@ public class DevilShoot : MonoBehaviour
         Invoke("secondSmash", 0.1f);
     }
 
-   
-                    
-                        
+
+    IEnumerator ChangeOrthoSizeFinalBoss(float newValue, float time)
+    {
+        float startingValue = vcam.m_Lens.OrthographicSize;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < time)
+        {
+            vcam.m_Lens.OrthographicSize = Mathf.Lerp(startingValue, newValue, elapsedTime / time);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+
+        vcam.m_Lens.OrthographicSize = newValue;
+    }
+
 }
 
