@@ -34,7 +34,7 @@ public class NewPauseMenu : MonoBehaviour
                 //ClosePauseMenu();
             }
         }
-        Debug.Log(isPauseMenuOpen);
+        //Debug.Log(isPauseMenuOpen);
         
     }
 

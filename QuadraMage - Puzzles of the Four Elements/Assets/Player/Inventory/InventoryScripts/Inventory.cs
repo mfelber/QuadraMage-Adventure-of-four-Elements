@@ -60,7 +60,7 @@ public class Inventory : MonoBehaviour
 
     void Update()
     {
-        Debug.Log( "Can use elemnt :" + canUseElement);
+        //Debug.Log( "Can use elemnt :" + canUseElement);
         Animator anim = GetComponent<Animator>();
         if (!NewPauseMenu.isPauseMenuOpen && !Book.isBookOpen && !MovingPlatform.isChildOfPlatform)
         {

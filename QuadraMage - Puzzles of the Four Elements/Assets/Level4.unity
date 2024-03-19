@@ -8943,7 +8943,9 @@ MonoBehaviour:
   TimeOfKnockBack: 0.2
   knockBackFromR: 0
   knockBackIsGoing: 0
-  groundCheckPos: {fileID: 0}
+  Ground:
+    serializedVersion: 2
+    m_Bits: 8192
 --- !u!61 &462707944
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11386,7 +11388,9 @@ MonoBehaviour:
   TimeOfKnockBack: 0
   knockBackFromR: 0
   knockBackIsGoing: 0
-  groundCheckPos: {fileID: 0}
+  Ground:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!212 &565569980
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -289,6 +289,17 @@ public class Player : MonoBehaviour
     {
 
         
+        if (collision.gameObject.CompareTag("Obstacles"))
+        {
+
+
+
+            Invoke("setToSpawn", 0.1f);
+
+
+
+        }
+        
 
         if (collision.gameObject.CompareTag("Barrel") )
         {
@@ -485,6 +496,8 @@ public class Player : MonoBehaviour
     public float silaOdrazeniaX = 10f;
     public float silaOdrazeniaY = 2f;
 
+    
+    /*
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //Scene currentScene = SceneManager.GetActiveScene();
@@ -495,13 +508,15 @@ public class Player : MonoBehaviour
             
 
            
-                Invoke("setToSpawn",0.2f);
+                Invoke("setToSpawn",0.1f);
 
             
 
         }
         
     }
+    
+    */
 
     
 
@@ -524,6 +539,8 @@ public class Player : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currentScene.name, LoadSceneMode.Single);
         inventory.inventory.Clear();
+        Inventory.canUseElement = true;
+        Inventory.isPlayerUsingElement = false;
         GameObject[] allObjects = GameObject.FindObjectsOfType<GameObject>();
         foreach (GameObject obj in allObjects)
         {

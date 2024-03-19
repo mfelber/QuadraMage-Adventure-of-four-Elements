@@ -1353,7 +1353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4b94cfda83537944b26e87ac8b81ad6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  removeItem: 0
+  removeItem: 13
   questItems:
   - {fileID: 1485380965}
   - {fileID: 1163044910}
@@ -1367,8 +1367,9 @@ MonoBehaviour:
   - {fileID: 430844520}
   - {fileID: 960224011}
   - {fileID: 963334083}
-  - {fileID: 1944503504}
   - {fileID: 1071830424}
+  - {fileID: 1944503504}
+  - {fileID: 1627440194}
 --- !u!4 &112811999
 Transform:
   m_ObjectHideFlags: 0
@@ -8653,7 +8654,7 @@ Transform:
   m_GameObject: {fileID: 462707940}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -195.4, y: 227.5, z: 0}
+  m_LocalPosition: {x: -1.8, y: 2.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8684,7 +8685,9 @@ MonoBehaviour:
   TimeOfKnockBack: 0.2
   knockBackFromR: 0
   knockBackIsGoing: 0
-  groundCheckPos: {fileID: 0}
+  Ground:
+    serializedVersion: 2
+    m_Bits: 8192
 --- !u!61 &462707944
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16411,7 +16414,9 @@ MonoBehaviour:
   TimeOfKnockBack: 0
   knockBackFromR: 0
   knockBackIsGoing: 0
-  groundCheckPos: {fileID: 0}
+  Ground:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!212 &565569980
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -27110,7 +27115,7 @@ Transform:
   m_GameObject: {fileID: 1088949124}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -195.4, y: 231.14, z: -10}
+  m_LocalPosition: {x: -1.8, y: 6.04, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -36968,7 +36973,7 @@ Transform:
   m_GameObject: {fileID: 1795734061}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -195.4, y: 231.14, z: -10}
+  m_LocalPosition: {x: -1.8, y: 6.04, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

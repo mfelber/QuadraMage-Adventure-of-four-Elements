@@ -51,7 +51,8 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-
+    public static extern long SetCursorPos(int x, int y);
+        [SerializeField] private Transform _newMousePosition;
 
     private void Start()
     {
@@ -62,10 +63,13 @@ public class PlayerMovement : MonoBehaviour
         feet = GetComponent<BoxCollider2D>();
         feet2 = GetComponent<CircleCollider2D>();
         rigidbody2D = GetComponent<Rigidbody2D>();
-        
-       
+
+        playerFacingRight = true;
         isInputEnabled = true;
 
+       
+
+       
     }
 
 
@@ -75,8 +79,12 @@ public class PlayerMovement : MonoBehaviour
     public static bool inRangeOfLadder;
     private bool climbing;
 
+    [SerializeField] private LayerMask Ground;
 
-    [SerializeField] private Transform groundCheckPos;
+
+
+    
+
     void Update()
     {
        
@@ -168,6 +176,15 @@ public class PlayerMovement : MonoBehaviour
                 }
                  */
 
+                    /*
+                if (isGrounded() == true)
+                {
+                    playerOnGround  = true;
+                } else
+                {
+                    playerOnGround = false;
+                }
+                    */
                 if (Input.GetButtonDown("Jump") && playerOnGround)
                     {
                         playerRB.velocity = new Vector2(playerRB.velocity.x, jumpHeight);
@@ -193,9 +210,14 @@ public class PlayerMovement : MonoBehaviour
              UpdateAnimation();
         }
 
-        Debug.Log(" pozeram sa do prava" + playerFacingRight);
+        Debug.LogError("pozeram do prava" + playerFacingRight);
+        Debug.LogError("pozeram do lava" + !playerFacingRight);
+
+
+
        
-        
+
+
     }
 
     
@@ -265,8 +287,14 @@ public class PlayerMovement : MonoBehaviour
     }
 
    
+    private bool isGrounded()
+    {
+       return Physics2D.BoxCast(feet2.bounds.center, feet2.bounds.size, 0f, Vector2.down, 0.1f, Ground);
+       
+      
+    }
 
-
+    
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (feet2.IsTouching (collision.collider))
@@ -282,6 +310,10 @@ public class PlayerMovement : MonoBehaviour
       
     }
 
+    
+
+
+    
     /*
     private void OnCollisionExit2D(Collision2D collision)
     {
