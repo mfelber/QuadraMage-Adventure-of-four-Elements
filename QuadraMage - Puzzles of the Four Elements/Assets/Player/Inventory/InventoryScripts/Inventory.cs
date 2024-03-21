@@ -304,8 +304,8 @@ public class Inventory : MonoBehaviour
     public void addToInventory(Item.ItemData itemData)
     {
         inventory.Add(itemData);
-        Debug.Log("Element " + itemData.itemName + " is added to your inventory");
-        Debug.Log(inventory.Count);
+       // Debug.Log("Element " + itemData.itemName + " is added to your inventory");
+      //  Debug.Log(inventory.Count);
 
     }
 

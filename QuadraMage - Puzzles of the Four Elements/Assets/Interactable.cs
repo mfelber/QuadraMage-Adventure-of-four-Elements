@@ -26,7 +26,7 @@ public class Interactable : MonoBehaviour
             }
         }
 
-        Debug.LogError(inRange);
+        //Debug.LogError(inRange);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

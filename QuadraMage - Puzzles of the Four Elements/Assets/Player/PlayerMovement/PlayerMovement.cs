@@ -116,7 +116,7 @@ public class PlayerMovement : MonoBehaviour
             }
 
             if (!Inventory.isPlayerUsingElement)
-                Debug.Log(Inventory.isPlayerUsingElement);
+                //Debug.Log(Inventory.isPlayerUsingElement);
                 {
                     if(HowMuchTimeIsLeft <= 0)
                 {
@@ -176,7 +176,7 @@ public class PlayerMovement : MonoBehaviour
                 }
                  */
 
-                    /*
+                    
                 if (isGrounded() == true)
                 {
                     playerOnGround  = true;
@@ -184,7 +184,7 @@ public class PlayerMovement : MonoBehaviour
                 {
                     playerOnGround = false;
                 }
-                    */
+                    
                 if (Input.GetButtonDown("Jump") && playerOnGround)
                     {
                         playerRB.velocity = new Vector2(playerRB.velocity.x, jumpHeight);
@@ -210,8 +210,8 @@ public class PlayerMovement : MonoBehaviour
              UpdateAnimation();
         }
 
-        Debug.LogError("pozeram do prava" + playerFacingRight);
-        Debug.LogError("pozeram do lava" + !playerFacingRight);
+        //Debug.LogError("pozeram do prava" + playerFacingRight);
+       // Debug.LogError("pozeram do lava" + !playerFacingRight);
 
 
 
