@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5958d21c66e710942bf58c49f67e2467
+guid: 7cb1b3e2618814d428c184b88015624e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 300
+  spritePixelsToUnits: 250
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: groundLevel1_0
+      name: GrassAsset_0
       rect:
         serializedVersion: 2
-        x: 1117
-        y: 871
-        width: 624
-        height: 624
+        x: 1740
+        y: 1055
+        width: 358
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,29 +137,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ff5943fc1fa977419c4d2f7a0a341e8
-      internalID: 796542827
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: groundLevel1_1
-      rect:
-        serializedVersion: 2
-        x: 1713
-        y: 805
-        width: 7
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d789d7f78de037845b1e51d6c205dd15
-      internalID: -1217589260
+      spriteID: c87ef93ee4a59cd4182699b05c08e513
+      internalID: -1505282838
       vertices: []
       indices: 
       edges: []
@@ -175,8 +154,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      groundLevel1_0: 796542827
-      groundLevel1_1: -1217589260
+      GrassAsset_0: -1505282838
   mipmapLimitGroupName: 
   pSDRemoveMatte: 1
   userData: 
