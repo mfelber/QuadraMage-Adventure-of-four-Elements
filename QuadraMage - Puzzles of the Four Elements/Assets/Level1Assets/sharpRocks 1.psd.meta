@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7cb1b3e2618814d428c184b88015624e
+guid: 38df8898f3257fe4c8e92dee08dc5064
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 250
+  spritePixelsToUnits: 300
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GrassAsset_0
+      name: sharpRocks 1_0
       rect:
         serializedVersion: 2
-        x: 1740
-        y: 1055
-        width: 358
-        height: 50
+        x: 904
+        y: 251
+        width: 638
+        height: 1115
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 164f13ceda1204a4ab32f8650c7ae0b2
-      internalID: 1647545330
+      spriteID: 44a6124b23c150d47a39590e25a234e3
+      internalID: 660511175
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GrassAsset_1
+      name: sharpRocks 1_1
       rect:
         serializedVersion: 2
-        x: 1742
-        y: 932
-        width: 330
-        height: 50
+        x: 1835
+        y: 1003
+        width: 734
+        height: 890
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,50 +158,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f3df1762f77bbc4d812ab2bde9c1b26
-      internalID: -336993786
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GrassAsset_2
-      rect:
-        serializedVersion: 2
-        x: 2100
-        y: 952
-        width: 4
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 16c4a62bfd00c5343b1c4e62763e90b8
-      internalID: -214445438
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GrassAsset_3
-      rect:
-        serializedVersion: 2
-        x: 1742
-        y: 812
-        width: 370
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 47c4720bf6b16ac4e9a7b83f0457e1ed
-      internalID: -774163939
+      spriteID: 3bc81a56ecf47d840bfffa08c6dcd775
+      internalID: -2145806627
       vertices: []
       indices: 
       edges: []
@@ -217,10 +175,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      GrassAsset_0: 1647545330
-      GrassAsset_1: -336993786
-      GrassAsset_2: -214445438
-      GrassAsset_3: -774163939
+      sharpRocks 1_0: 660511175
+      sharpRocks 1_1: -2145806627
   mipmapLimitGroupName: 
   pSDRemoveMatte: 1
   userData: 
