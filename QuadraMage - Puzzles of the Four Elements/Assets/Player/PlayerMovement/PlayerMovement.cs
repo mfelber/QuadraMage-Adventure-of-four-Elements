@@ -100,10 +100,11 @@ public class PlayerMovement : MonoBehaviour
 
             verticalMovement = Input.GetAxis("Vertical");
 
-            if (inRangeOfLadder && Mathf.Abs(verticalMovement) > 0)
+            if (inRangeOfLadder && Mathf.Abs(verticalMovement) > 0 )
             {
                 climbing = true;
-            }
+               
+            } 
 
             if (climbing)
             {
@@ -211,7 +212,9 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //Debug.LogError("pozeram do prava" + playerFacingRight);
-       // Debug.LogError("pozeram do lava" + !playerFacingRight);
+        // Debug.LogError("pozeram do lava" + !playerFacingRight);
+
+        //Debug.LogError(playerOnGround);
 
 
 
@@ -287,7 +290,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
    
-    private bool isGrounded()
+    public bool isGrounded()
     {
        return Physics2D.BoxCast(feet2.bounds.center, feet2.bounds.size, 0f, Vector2.down, 0.1f, Ground);
        
@@ -347,17 +350,16 @@ public class PlayerMovement : MonoBehaviour
 
         
 
-        if (feet2.IsTouching(collision))
-        {
+     
             if (collision.gameObject.CompareTag("Ladder"))
             {
                 Debug.LogError("si v range");
                 inRangeOfLadder = true;
-                playerOnGround = true;
+            
 
             }
             
-        }
+        
 
 
 
@@ -374,7 +376,7 @@ public class PlayerMovement : MonoBehaviour
         {
             inRangeOfLadder = false;
             climbing = false;
-            
+           
 
         }
 
