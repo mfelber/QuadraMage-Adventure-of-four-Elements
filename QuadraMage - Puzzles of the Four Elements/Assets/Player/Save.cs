@@ -14,14 +14,14 @@ public static class Save {
 
         PlayerData data = new PlayerData(player);
         binaryFormatter.Serialize(fileStream,data);
-        Debug.Log(savePath);
+        Debug.LogError(savePath);
         fileStream.Close();
     }
 
     public static PlayerData LoadPlayerSave()
     {
         string savePath = Application.persistentDataPath + "player.save";
-        Debug.Log(savePath);
+        Debug.LogError(savePath);
         if (File.Exists(savePath))
         {
             BinaryFormatter binaryFormatter = new BinaryFormatter();

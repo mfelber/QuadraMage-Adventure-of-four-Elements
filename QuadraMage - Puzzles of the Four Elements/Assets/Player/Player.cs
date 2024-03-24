@@ -70,7 +70,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-
+       // playerHasCollide = false;
         quest = 1;
         hiddenKey = 0;
         inventory = FindObjectOfType<Inventory>();
@@ -94,9 +94,9 @@ public class Player : MonoBehaviour
         }
         
         */
-        //LoadPlayerData();
+        LoadPlayerData();
         //LoadLevelScene();
-        Debug.LogError(level);
+       
 
 
     }
@@ -106,7 +106,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        
+        //Debug.LogError(playerHasCollide);
         if (ManaBar.isEmpty)
         {
             //Invoke("setManaToMax", 3);
@@ -379,17 +379,18 @@ public class Player : MonoBehaviour
             
             if (collision.gameObject.CompareTag("Finish"))
             {
-                level += 1;                
-                SavePlayerData();
+                //level += 1;                
+                //SavePlayerData();
                 playerHasCollide = true;
                 inventory.inventory.Clear();
+                //Invoke("noCollide",1);
                  
             }
             if (collision.gameObject.CompareTag("Test"))
             {
-                //LoadPlayerData();
+                LoadPlayerData();
                 Debug.LogError(level);
-                Debug.LogError(hiddenKey);
+                //Debug.LogError(hiddenKey);
                 playerHasCollide = true;
             }
 
@@ -414,6 +415,8 @@ public class Player : MonoBehaviour
        
     }
 
+   
+
     IEnumerator ChangeOrthoSizePirateShip(float newValue, float time)
     {
         float startingValue = vcam.m_Lens.OrthographicSize;
@@ -436,6 +439,16 @@ public class Player : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+
+        if (collision.gameObject.CompareTag("Finish"))
+        {
+            //level += 1;                
+            //SavePlayerData();
+            playerHasCollide = false;
+            
+
+        }
+
         if (collision.gameObject.CompareTag("Barrel") )
         {
             inRange = false;

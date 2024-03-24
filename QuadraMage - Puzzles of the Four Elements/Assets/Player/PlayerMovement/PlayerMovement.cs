@@ -44,15 +44,13 @@ public class PlayerMovement : MonoBehaviour
     CircleCollider2D feet2;
     Rigidbody2D rigidbody2D;
 
-    //private bool isKnockbackInProgress = false;
-
     private enum PlayerMovementStates { idle, running, jumping, falling }
     public enum NewPlayerMovementStates { idle, running, jumping, falling, land }
 
 
 
-    public static extern long SetCursorPos(int x, int y);
-        [SerializeField] private Transform _newMousePosition;
+    
+   
 
     private void Start()
     {
@@ -65,9 +63,7 @@ public class PlayerMovement : MonoBehaviour
         rigidbody2D = GetComponent<Rigidbody2D>();
 
         playerFacingRight = true;
-        isInputEnabled = true;
-
-       
+        isInputEnabled = true;      
 
        
     }

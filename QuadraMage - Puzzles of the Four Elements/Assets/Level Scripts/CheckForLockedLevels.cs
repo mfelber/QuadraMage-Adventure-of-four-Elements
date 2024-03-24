@@ -29,22 +29,23 @@ public class CheckForLockedLevels : MonoBehaviour
         if (level == 1)
         {
             level1.enabled = true;
-        } 
-        
+        }
+
+        /*
         if (level != 2)
         {
             level2.enabled = false;
         }
-        else
+        else if (level > 1)
         {
             level2.enabled = true;
         }
-
+       
         if (level != 3)
         {
             level3.enabled = false;
         }
-        else
+        else 
         {
             level3.enabled = true;
         }
@@ -52,7 +53,7 @@ public class CheckForLockedLevels : MonoBehaviour
         {
             level4.enabled = false;
         }
-        else
+        else 
         {
             level4.enabled = true;
         }
@@ -60,11 +61,37 @@ public class CheckForLockedLevels : MonoBehaviour
         {
             level5.enabled = false;
         }
-        else
+        else 
         {
             level5.enabled = true;
         }
-        
+         */
+
+        if (level > 1)
+        {
+            level2.enabled = true;
+        } else
+        {
+            level2.enabled = false;
+        }
+        if (level > 2)
+        {
+            level3.enabled = true;
+        }
+        else
+        {
+            level3.enabled = false;
+        }
+        if (level > 3)
+        {
+            level4.enabled = true;
+        }
+        else
+        {
+            level4.enabled = false;
+        }
+
+
 
     }
 

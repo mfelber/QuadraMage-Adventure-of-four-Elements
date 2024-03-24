@@ -15,5 +15,6 @@ public class WandPickUp : MonoBehaviour
         wandIsPickedUp = true;
         Destroy(gameObject);
         playPickUpScene.Play();
+
     }
 }

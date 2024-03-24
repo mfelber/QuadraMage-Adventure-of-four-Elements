@@ -55,7 +55,7 @@ public class Aim : MonoBehaviour
 
     void Update()
     {
-        if (!NewPauseMenu.isPauseMenuOpen && !Book.isBookOpen && !MovingPlatform.isChildOfPlatform)
+        if (!NewPauseMenu.isPauseMenuOpen && !Book.isBookOpen && !MovingPlatform.isChildOfPlatform && PlayerMovement.isInputEnabled == true)
         {
             if (!Inventory.isPlayerUsingElement)
             {
