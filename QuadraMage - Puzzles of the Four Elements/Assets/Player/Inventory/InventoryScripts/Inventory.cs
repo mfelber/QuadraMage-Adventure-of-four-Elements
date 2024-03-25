@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Inventory : MonoBehaviour
 
@@ -54,6 +55,47 @@ public class Inventory : MonoBehaviour
 
         playermovement = FindObjectOfType<PlayerMovement>();
 
+
+        string sceneName = SceneManager.GetActiveScene().name;
+
+        
+        if (sceneName == "Level2")
+        {
+            Item.ItemData wind = new Item.ItemData();
+            wind.itemName = "Wind";
+            inventory.Add(wind);           
+
+        }
+        
+        if (sceneName == "Level3")
+        {
+            Item.ItemData wind = new Item.ItemData();
+            Item.ItemData earth = new Item.ItemData();
+            wind.itemName = "Wind";
+            earth.itemName = "Earth";
+            inventory.Add(wind);
+            inventory.Add(earth);
+
+        }
+
+        if (sceneName == "Level4")
+        {
+            Item.ItemData wind = new Item.ItemData();
+            Item.ItemData earth = new Item.ItemData();
+            Item.ItemData water = new Item.ItemData();
+            
+            wind.itemName = "Wind";
+            earth.itemName = "Earth";
+            water.itemName = "Water";
+            
+            inventory.Add(wind);
+            inventory.Add(earth);
+            inventory.Add(water);
+            
+
+
+
+        }
 
     }
 
@@ -327,16 +369,18 @@ public class Inventory : MonoBehaviour
 
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            Debug.Log("este si neziskal vodny element");
+            Debug.Log("este si neziskal zemny element");
+           
         }
 
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            Debug.Log("este si neziskal ohnivy element");
+            Debug.Log("este si neziskal vodny element");
+            
         }
         else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            Debug.Log("este si neziskal zemny element");
+            Debug.Log("este si neziskal ohnivy element");
         }
 
 

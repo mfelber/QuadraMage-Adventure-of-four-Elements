@@ -14,9 +14,13 @@ public class SwitchElementSprite : MonoBehaviour
 
 
         inventoryScript = FindObjectOfType<Inventory>();
+
         
-
-
+        if (inventoryScript.inventory.Count >= 1)
+        {
+            GetComponent<SpriteRenderer>().sprite = wind;
+        }
+        
     }
 
     
@@ -30,6 +34,8 @@ public class SwitchElementSprite : MonoBehaviour
 
         }
         */
+
+       
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
 

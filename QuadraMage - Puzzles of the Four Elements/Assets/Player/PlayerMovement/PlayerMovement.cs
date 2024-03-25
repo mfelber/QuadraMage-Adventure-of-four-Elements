@@ -349,7 +349,7 @@ public class PlayerMovement : MonoBehaviour
      
             if (collision.gameObject.CompareTag("Ladder"))
             {
-                Debug.LogError("si v range");
+               
                 inRangeOfLadder = true;
             
 

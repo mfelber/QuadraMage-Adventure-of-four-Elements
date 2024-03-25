@@ -48,7 +48,7 @@ public class Interactable : MonoBehaviour
         {
             inRange = false;
             interactionMassage.SetActive(false);
-            Debug.Log("Not In range");
+            //Debug.Log("Not In range");
         }
         
     }
