@@ -18,10 +18,12 @@ public class JumpPad : MonoBehaviour
     */
 
     public Animator animator;
+    
 
     private void Start()
     {
         animator = GetComponent<Animator>();
+      
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -43,6 +45,10 @@ public class JumpPad : MonoBehaviour
         }
     }
     */
+
+   
+
+   
     private void playerJump()
     {
         animator.SetBool("PlayerOnPad", false);

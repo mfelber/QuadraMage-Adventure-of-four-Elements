@@ -33,6 +33,7 @@ public class Player : MonoBehaviour
     public bool nearofNpcSecondQuest;
 
     Inventory inventory;
+    public GameObject Wand;
     public void SavePlayerData()
     {
         Save.SavePlayerData(this);
@@ -80,7 +81,14 @@ public class Player : MonoBehaviour
         canbereloaded = false;
         inRangeOfTnt = false;
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Elements"));
-       // Physics2D.IgnoreLayerCollision(6,14);
+
+        string sceneName = SceneManager.GetActiveScene().name;
+
+        if (sceneName == "Level1")
+        {
+            Wand.SetActive(false);
+        }
+        // Physics2D.IgnoreLayerCollision(6,14);
 
         poseidonQuestManager = FindObjectOfType<PoseidonQuestManager>();
         /*
@@ -97,6 +105,7 @@ public class Player : MonoBehaviour
         LoadPlayerData();
         //LoadLevelScene();
        
+        
 
 
     }
@@ -119,6 +128,12 @@ public class Player : MonoBehaviour
 
         }
         
+        if(inventory.inventory.Count >= 1)
+        {
+            Wand.SetActive(true);
+        }
+        
+
         if (Inventory.isPlayerUsingElement == false && currentMana < maxMana)
         {
             
