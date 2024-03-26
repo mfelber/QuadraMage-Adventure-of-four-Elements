@@ -20,6 +20,7 @@ public class QuestItem : MonoBehaviour
     {
         player = GetComponent<Player>();
         questManager = FindObjectOfType<QuestManager>();
+       
     }
 
 

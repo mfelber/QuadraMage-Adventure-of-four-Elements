@@ -81,7 +81,7 @@ public class Player : MonoBehaviour
         canbereloaded = false;
         inRangeOfTnt = false;
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Elements"));
-
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("WorkBench"));
         string sceneName = SceneManager.GetActiveScene().name;
 
         if (sceneName == "Level1")
@@ -103,7 +103,7 @@ public class Player : MonoBehaviour
         
         */
         LoadPlayerData();
-        //LoadLevelScene();
+       
        
         
 
@@ -115,13 +115,10 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        //Debug.LogError(playerHasCollide);
+      
         if (ManaBar.isEmpty)
         {
-            //Invoke("setManaToMax", 3);
-           // StopCoroutine("CheckForManaLoad");
-            //StopCoroutine("setToCanBeReloaded");
-            //StartCoroutine(setManaTomax());
+          
 
             StartCoroutine(setToCanBeReloaded());
 
@@ -141,33 +138,13 @@ public class Player : MonoBehaviour
             
         }
 
-        /*
-        if (Inventory.isPlayerUsingElement == true && currentMana < maxMana)
-        {
-
-            StopCoroutine("CheckForManaLoad");
-            StopCoroutine("setToCanBeReloaded");
-
-        }
-
-        */
-
-        //Debug.LogError(canbereloaded);
+        
        
 
 
 
 
-        // TODO check which level player playing, restart inventory to corrent level 
-        /*
-        if (Input.GetKeyUp(KeyCode.R))
-        {
-            //player.transform.position = new Vector3(-8.64f, 0f, 0f);
-            Scene currentScene = SceneManager.GetActiveScene();
-            SceneManager.LoadScene(currentScene.name, LoadSceneMode.Single);
-            Inventory.inventory.Clear();
-        }
-        */
+        
         if (inRange == true && Input.GetKeyDown(KeyCode.E))
         {
 
@@ -348,7 +325,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("camera"))
         {
             StartCoroutine(ChangeOrthoSizePirateShip(10f, 2f));
-            //vcam.m_Lens.OrthographicSize = 10;
+           
         }
 
         /*
@@ -377,17 +354,6 @@ public class Player : MonoBehaviour
             nearofNpcSecondQuest = true;
             interactionMassage.SetActive(true);
         }
-
-
-
-
-        /*
-        if(collision.gameObject.CompareTag("Tnt"))
-        {
-            inRangeOfTnt = true;
-        }
-        */
-
 
         if (!playerHasCollide) 
         {

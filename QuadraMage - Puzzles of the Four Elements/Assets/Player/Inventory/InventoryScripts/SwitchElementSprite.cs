@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SwitchElementSprite : MonoBehaviour
 {
@@ -35,7 +36,20 @@ public class SwitchElementSprite : MonoBehaviour
         }
         */
 
-       
+
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+
+        if (sceneName == "Level1")
+        {
+            if (inventoryScript.inventory.Count == 1)
+            {
+                GetComponent<SpriteRenderer>().sprite = wind;
+            }
+
+        }
+
+
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
 
