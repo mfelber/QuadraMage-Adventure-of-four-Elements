@@ -304,9 +304,18 @@ public class PlayerMovement : MonoBehaviour
             }
 
             
-        } 
-       
-      
+        }
+
+        if (feet2.IsTouching(collision.collider))
+        {
+            if(collision.gameObject.CompareTag("MushRoom"))
+            {
+                playerRB.AddForce(Vector2.up * 1, ForceMode2D.Impulse);
+
+            }
+        }
+
+        
     }
 
     

@@ -50,6 +50,7 @@ TagManager:
   - Rock
   - WaterElementShot
   - FinalBosscamera
+  - MushRoom
   layers:
   - Default
   - TransparentFX

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Dragon : MonoBehaviour
 {
     public PlayerMovement PlayerMovement;
-    public Sprite sleepingDragon, awakeDragon;
+    public Sprite sleepingDragon, deadDragon;
     public int maxDragonhealth = 100;
     public int currentHealth;
     public DragonHealthBar healthBar;

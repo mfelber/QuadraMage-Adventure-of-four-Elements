@@ -11,7 +11,12 @@ public class WindCollisionWheel : MonoBehaviour
     public float posxRight2;
     public float posxLeft2;
 
+    public GameObject RightIdle, RightSail;
+    public GameObject LeftIdle, LeftSail;
+
     [SerializeField]private float posxRight1;
+
+
 
 
 
@@ -57,13 +62,16 @@ public class WindCollisionWheel : MonoBehaviour
        
     }
 
-    
+    public bool movingtoRight;
+    public bool movingtoLeft;
     private void MoveToRight()
     {
         anim.SetBool("IsMovingToRight", true);
+        movingtoRight = true;
+
         //anim.SetBool("IsMovingToLeft", false);
         //Debug.LogError("Moving to the right!");
-        
+
         // Set moving to false after 2 seconds
 
     }
@@ -71,23 +79,53 @@ public class WindCollisionWheel : MonoBehaviour
     private void MoveToLeft()
     {
         anim.SetBool("IsMovingToLeft", true);
+        movingtoLeft = true;
+
         //anim.SetBool("IsMovingToRight", false);
         //Debug.LogError("Moving to the left!");
     }
 
-    
+
+   
 
     private void Start()
     {
         platformIsMoving=false;
+        RightIdle.SetActive(true);
+        RightSail.SetActive(false);
+        LeftIdle.SetActive(false);
+        LeftSail.SetActive(false);
+
     }
 
     public void SetMovingToFalse()
     {
+       
         platformIsMoving = false;
         anim.SetBool("IsMovingToLeft", false);
         anim.SetBool("IsMovingToRight", false);
+       
     }
+
+    public void rightSail()
+    {
+        RightSail.SetActive(true);
+        RightIdle.SetActive(false);
+        LeftSail.SetActive(false);
+        LeftIdle.SetActive(false);
+    }
+
+    public void leftSail()
+    {
+        RightSail.SetActive(false);
+        RightIdle.SetActive(false);
+        LeftSail.SetActive(true);
+        LeftIdle.SetActive(false);
+    }
+
+
+
+
 
     /*
     private void Update()
@@ -134,6 +172,6 @@ public class WindCollisionWheel : MonoBehaviour
       
     }
     */
-   
+
 
 }

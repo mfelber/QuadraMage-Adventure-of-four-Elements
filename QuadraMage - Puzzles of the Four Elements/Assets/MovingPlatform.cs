@@ -28,6 +28,7 @@ public class MovingPlatform : MonoBehaviour
 
     public bool movingtoright;
     private bool movingtoleft;
+    WindCollisionWheel windCollisionWheel;
 
 
 
@@ -35,6 +36,7 @@ public class MovingPlatform : MonoBehaviour
     {
         
         animator = GetComponent<Animator>();
+        windCollisionWheel = FindObjectOfType<WindCollisionWheel>();
         //playerOnPlatform = false;
         
     }
@@ -123,18 +125,35 @@ public class MovingPlatform : MonoBehaviour
     {
        
 
+
+
+
         isAnimationEnabledRight = animator.GetBool("IsMovingToRight");
         isAnimationEnabledLeft = animator.GetBool("IsMovingToLeft");
 
         movingtoleft = isAnimationEnabledLeft;
         movingtoright = isAnimationEnabledRight;
 
+
+       
         // Debug.LogError(movingtoright);
         //  Debug.LogError(movingtoleft);
 
         //Debug.LogError("idem do lava state =" + isAnimationEnabledLeft);
         //Debug.LogError("idem do prava state =" + isAnimationEnabledRight);
 
+
+        if(movingtoright)
+        {
+            windCollisionWheel.rightSail();
+        } 
+
+        if (movingtoleft)
+        {
+            windCollisionWheel.leftSail();
+        } 
+
+        
 
         if (playerOnPlatform && (movingtoright == true || movingtoleft == true))
         {
@@ -166,10 +185,12 @@ public class MovingPlatform : MonoBehaviour
 
         if (IsonPlatformWhileMoving)
         {
+           // PlayerMovement.isInputEnabled = false;
             isChildOfPlatform = true;
             //Debug.LogError("Som child ked sa chybem" + isChildOfPlatform);
         } else
         {
+           // PlayerMovement.isInputEnabled = true;
             isChildOfPlatform = false;
             //Debug.LogError("niesom child ked sa chybem" + isChildOfPlatform);
         }
@@ -178,6 +199,19 @@ public class MovingPlatform : MonoBehaviour
         //Debug.LogError(IsonPlatformWhileMoving);
        
 
+    }
+
+
+    public void flipSailLeft()
+    {
+        windCollisionWheel.LeftIdle.SetActive(true);
+        windCollisionWheel.RightSail.SetActive(false);
+    }
+
+    public void flipSailRight()
+    {
+        windCollisionWheel.RightIdle.SetActive(true);
+        windCollisionWheel.LeftSail.SetActive(false);
     }
 
 
