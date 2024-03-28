@@ -5,6 +5,7 @@ using UnityEngine;
 public class RightPlatform : MonoBehaviour
 {
     public float weight;
+    public bool boxOnPlatform;
     void Start()
     {
         weight = 0;
@@ -36,6 +37,7 @@ public class RightPlatform : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Iron"))
         {
+            boxOnPlatform = true;
             Rigidbody2D iron = collision.gameObject.GetComponent<Rigidbody2D>();
             //GameObject ironBox = GameObject.FindGameObjectWithTag("Iron");
             //ironBox.transform.SetParent(transform); 
@@ -49,6 +51,7 @@ public class RightPlatform : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Box"))
         {
+            boxOnPlatform = true;
             GameObject boxx = GameObject.FindGameObjectWithTag("Box");
             //boxx.transform.SetParent(transform);
             collision.transform.SetParent(transform);
@@ -57,6 +60,20 @@ public class RightPlatform : MonoBehaviour
             {
                 float boxweight = box.mass;
                 weight += boxweight;                
+            }
+        }
+
+        if (collision.gameObject.CompareTag("Wood"))
+        {
+            boxOnPlatform = true;
+            GameObject boxx = GameObject.FindGameObjectWithTag("Wood");
+            //boxx.transform.SetParent(transform);
+            collision.transform.SetParent(transform);
+            Rigidbody2D box = collision.gameObject.GetComponent<Rigidbody2D>();
+            if (box != null)
+            {
+                float boxweight = box.mass;
+                weight += boxweight;
             }
         }
     }
@@ -82,6 +99,7 @@ public class RightPlatform : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Iron"))
         {
+            boxOnPlatform = false;
             Rigidbody2D ironBox = collision.gameObject.GetComponent<Rigidbody2D>();
             //GameObject iron = GameObject.FindGameObjectWithTag("Iron");
             //iron.transform.SetParent(null);
@@ -96,6 +114,7 @@ public class RightPlatform : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Box"))
         {
+            boxOnPlatform = false;
             Rigidbody2D boxRigidbody = collision.gameObject.GetComponent<Rigidbody2D>();
             //GameObject box = GameObject.FindGameObjectWithTag("Box");
             //box.transform.SetParent(null);
@@ -107,10 +126,29 @@ public class RightPlatform : MonoBehaviour
             }
             collision.transform.SetParent(null);
         }
+
+        if (collision.gameObject.CompareTag("Wood"))
+        {
+            boxOnPlatform = false;
+            Rigidbody2D boxRigidbody = collision.gameObject.GetComponent<Rigidbody2D>();
+            //GameObject box = GameObject.FindGameObjectWithTag("Box");
+            //box.transform.SetParent(null);
+
+            if (boxRigidbody != null)
+            {
+                float boxweight = boxRigidbody.mass;
+                weight -= boxweight;
+            }
+            collision.transform.SetParent(null);
+        }
+
+
     }
 
     void Update()
     {
         
     }
+
+    
 }
