@@ -29,7 +29,7 @@ public class cabinWood : MonoBehaviour
 
     IEnumerator fallMainWood()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.05f);
         mainWood.SetBool("fall", true);
     }
 }

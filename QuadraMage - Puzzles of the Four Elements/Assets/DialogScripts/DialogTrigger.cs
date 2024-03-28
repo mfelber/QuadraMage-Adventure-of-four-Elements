@@ -28,6 +28,7 @@ public class Dialogue
 public class DialogTrigger : MonoBehaviour
 {
     QuestManager questManager;
+    PlayerMovement playerMovement;
 
     public Dialogue dialogues;
     private Player player;
@@ -37,6 +38,7 @@ public class DialogTrigger : MonoBehaviour
     {
         questManager = FindObjectOfType<QuestManager>();
         player = FindObjectOfType<Player>();
+        playerMovement = FindObjectOfType<PlayerMovement>();
     }
     private void TriggerDialogue()
     {
@@ -71,6 +73,7 @@ public class DialogTrigger : MonoBehaviour
             TriggerDialogue();
         }
         
+      
     }
 
 

@@ -9742,7 +9742,7 @@ Transform:
   m_GameObject: {fileID: 501856266}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 37.06, y: 1.65, z: 0}
+  m_LocalPosition: {x: 36.37, y: 1.38, z: 0}
   m_LocalScale: {x: 0.5353, y: 0.5353, z: 0.5353}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15578,7 +15578,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerMovement: {fileID: 0}
   sleepingDragon: {fileID: 21300000, guid: 4c7a80114dc01a94a91e37e657755093, type: 3}
-  awakeDragon: {fileID: 21300000, guid: c326df9df4dcc4a4382d591ac148e436, type: 3}
+  deadDragon: {fileID: 0}
   maxDragonhealth: 100
   currentHealth: 0
   healthBar: {fileID: 1073606302}
@@ -39941,7 +39941,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerMovement: {fileID: 462707943}
   sleepingDragon: {fileID: 0}
-  awakeDragon: {fileID: 0}
+  deadDragon: {fileID: 0}
   maxDragonhealth: 100
   currentHealth: 0
   healthBar: {fileID: 1073606302}

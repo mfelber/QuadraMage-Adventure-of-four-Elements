@@ -33,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
     public bool knockBackFromR;
     public static bool playerFacingRight = true;
     private bool playerInmagnifer = false;
+   
 
     public static bool playerOnGround = true;
     public static bool PlayerIsMoving;
@@ -83,9 +84,9 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-       
-        
 
+
+        
 
         if (!Inventory.isPlayerUsingElement && !NewPauseMenu.isPauseMenuOpen && !Book.isBookOpen && isInputEnabled && !MovingPlatform.isChildOfPlatform && !DialogManager.isDialgueActive )
             {
