@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +10,8 @@ public class MineCart : MonoBehaviour
     bool onplatform;
     [SerializeField] Transform gold;
     [SerializeField] private BoxCollider2D boxCollider2D;
-   
+    
+
 
     private void Start()
     {
@@ -23,6 +25,7 @@ public class MineCart : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Gold"))
         {
+            Debug.LogError("som");
             gold = collision.transform;
             gold.SetParent(transform);
             onplatform = true;    

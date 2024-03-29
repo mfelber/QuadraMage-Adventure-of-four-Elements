@@ -271,6 +271,7 @@ public class Player : MonoBehaviour
         player.transform.position = new Vector2(12.84f, 66.92f);
         vcam.Follow = player.transform;
         isPlayerHide = false;
+        
 
 
     }

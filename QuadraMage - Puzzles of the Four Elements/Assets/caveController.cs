@@ -21,7 +21,8 @@ public class caveController : MonoBehaviour
         //  cave1.SetActive(true);
         // cave2.SetActive(true);
         // background.SetActive(true);
-        background.SetActive(false);    
+        background.SetActive(false);
+        
     }
 
     // Update is called once per frame
@@ -34,11 +35,13 @@ public class caveController : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-        //    spriteRenderer.enabled = false;
-        background.SetActive(true);
+            background.SetActive(true);
+            //    spriteRenderer.enabled = false;
+            //background.SetActive(true);
             cave1.Play("cave");
             cave2.Play("cave");
-            backGround.Play("cave");
+            cave3.Play("cave");
+            backGround.Play("backGroundTransitionLevel2CaveFadeIn");
             
 
             //spriteRenderer.enabled = true;
@@ -55,7 +58,8 @@ public class caveController : MonoBehaviour
             //background.SetActive(false);
             cave1.Play("caveUnFade");
             cave2.Play("caveUnFade");
-            backGround.Play("caveUnFade");
+            cave3.Play("caveUnFade");
+            //backGround.Play("caveUnFade");
 
             //spriteRenderer.enabled = false;
 

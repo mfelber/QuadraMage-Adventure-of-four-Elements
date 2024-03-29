@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,9 @@ public class MinecartLever : MonoBehaviour
     public GameObject arrow;
    // public Sprite leverOn, leverOff;
     public GameObject leverOn, leverOff;
+    public CinemachineVirtualCamera vcam;
+    public Transform player;
+    public Transform minecart;
     void Start()
     {
         //arrow = GetComponent<Animator>();
@@ -45,6 +49,7 @@ public class MinecartLever : MonoBehaviour
         leverIsActive = true;
         
         minecartAnimator.SetBool("go", true);
+        vcam.Follow = minecart;
        /// GetComponent<SpriteRenderer>().sprite = leverOn;
 
 
@@ -56,15 +61,18 @@ public class MinecartLever : MonoBehaviour
     public void deactivateLever()
     {
         
-        minecartAnimator.SetBool("go", false);         
+        minecartAnimator.SetBool("go", false); 
+        
         StartCoroutine(leverisActive());
         
     }
 
     IEnumerator leverisActive ()
     {
+        yield return new WaitForSeconds(2f);
+        vcam.Follow = player;
         yield return new WaitForSeconds(3f);
-        
+       
         leverIsActive = false;
         leverOn.SetActive(false);
         leverOff.SetActive(true);
