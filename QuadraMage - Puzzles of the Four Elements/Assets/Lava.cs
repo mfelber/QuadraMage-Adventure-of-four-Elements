@@ -24,12 +24,13 @@ public class Lava : MonoBehaviour
     {
         get { return weight; }
     }
+    public static bool playerOnPlat;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player") )
         {
-            
+            playerOnPlat = true;
             Rigidbody2D playerRigidbody = collision.gameObject.GetComponent<Rigidbody2D>();
             //GameObject player = GameObject.FindGameObjectWithTag("Player");
             //player.transform.SetParent(transform);
@@ -98,7 +99,7 @@ public class Lava : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-
+            playerOnPlat = false;
             Rigidbody2D playerRigidbody = collision.gameObject.GetComponent<Rigidbody2D>();
             GameObject player = GameObject.FindGameObjectWithTag("Player");
             player.transform.parent = null;

@@ -4,22 +4,26 @@ using UnityEngine;
 
 public class LeverBalance : MonoBehaviour
 {
-    public Sprite off, on;
     public static bool isLeverOn;
     public GameObject arrow;
+    public GameObject LeverOff, LeverOn;
 
     void Start()
     {
-        GetComponent<SpriteRenderer>().sprite = on;  
+        arrow.SetActive(true);
+        LeverOn.SetActive(true);
+        LeverOff.SetActive(false);
         isLeverOn = true;
         Invoke("DeactivateLever", 2.2f);
-        arrow.SetActive(true);
+
+        //GetComponent<SpriteRenderer>().sprite = on;  
+        
     }
 
    
     void Update()
     {
-        if (Player.inRangeOfLever && Input.GetKeyDown(KeyCode.E))
+        if (Player.inRangeOfLever && Input.GetKeyDown(KeyCode.E) && isLeverOn == false)
         {
             ActivateLever();
         }
@@ -27,12 +31,30 @@ public class LeverBalance : MonoBehaviour
         if (isLeverOn == true)
         {
             arrow.SetActive(false);
+            LeverOn.SetActive(true);
+            LeverOff.SetActive(false);
         } else
         {
             arrow.SetActive(true);
+            LeverOn.SetActive(false);
+            LeverOff.SetActive(true);
 
         }
+
+      
+        if (PlayerMovement.isInputEnabled == false)
+        {
+            Invoke("enableInput", 1.9f);
+        }
         
+        
+        Debug.LogError(isLeverOn);
+        
+    }
+
+    public void enableInput()
+    {
+        PlayerMovement.isInputEnabled = true;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -55,13 +77,33 @@ public class LeverBalance : MonoBehaviour
     private void ActivateLever()
     {
         isLeverOn = true;
-        GetComponent<SpriteRenderer>().sprite = on;
+        LeverOn.SetActive(true);
+        LeverOff.SetActive(false);
+        //GetComponent<SpriteRenderer>().sprite = on;
         Invoke("DeactivateLever", 2.2f);
     }
 
+
+
     private void DeactivateLever()
     {
-        GetComponent<SpriteRenderer>().sprite = off;
-        isLeverOn = false;
+        //GetComponent<SpriteRenderer>().sprite = off;
+
+        
+        StartCoroutine(leverisActive());
     }
+
+
+
+    IEnumerator leverisActive()
+    {
+        
+        yield return new WaitForSeconds(2f);
+        isLeverOn = false;
+        LeverOn.SetActive(false);
+        LeverOff.SetActive(true);
+        // GetComponent<SpriteRenderer>().sprite = leverOff;
+    }
+
+
 }

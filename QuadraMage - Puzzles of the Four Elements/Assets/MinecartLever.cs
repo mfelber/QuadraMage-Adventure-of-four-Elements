@@ -14,6 +14,7 @@ public class MinecartLever : MonoBehaviour
     public CinemachineVirtualCamera vcam;
     public Transform player;
     public Transform minecart;
+    
     void Start()
     {
         //arrow = GetComponent<Animator>();
@@ -50,6 +51,7 @@ public class MinecartLever : MonoBehaviour
         
         minecartAnimator.SetBool("go", true);
         vcam.Follow = minecart;
+        PlayerMovement.isInputEnabled = false;  
        /// GetComponent<SpriteRenderer>().sprite = leverOn;
 
 
@@ -71,6 +73,7 @@ public class MinecartLever : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         vcam.Follow = player;
+        PlayerMovement.isInputEnabled = true;
         yield return new WaitForSeconds(3f);
        
         leverIsActive = false;

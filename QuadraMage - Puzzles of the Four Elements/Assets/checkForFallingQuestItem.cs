@@ -24,9 +24,17 @@ public class checkForFallingQuestItem : MonoBehaviour
         {
             if (collision.gameObject.CompareTag("Iron"))
             {
-                collision.transform.position = new Vector2(43.2f, 67.8f);
+                collision.transform.position = new Vector2(5.308025f, 23.71198f);
             }
         }
-        
+
+        if (rightPlatform.boxOnPlatform == false)
+        {
+            if (collision.gameObject.CompareTag("Wood"))
+            {
+                collision.transform.position = new Vector2(31.65f, 23.83f);
+            }
+        }
+
     }
 }

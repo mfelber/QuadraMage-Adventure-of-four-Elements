@@ -12,6 +12,7 @@ public class CheckForWeight : MonoBehaviour
     public Animator Rightanimator;
     Lava llava;
     RightPlatform rightPlatform;
+    LeverBalance leverBalance;
 
     private enum Balance { equals, leftMore, RightMore}
     Balance balance;
@@ -20,10 +21,12 @@ public class CheckForWeight : MonoBehaviour
     {
         llava = lava.GetComponent<Lava>();
         rightPlatform = prava.GetComponent<RightPlatform>();
+        leverBalance = FindObjectOfType<LeverBalance>();
         if (llava == null)
         {
             Debug.LogError("Skript Lava nebyl nalezen na objektu lava.");
         }
+
     }
     private bool addedOnce = false;
     private bool isMoved = false;
@@ -92,11 +95,48 @@ public class CheckForWeight : MonoBehaviour
         }
 
 
+        
+        if (LeverBalance.isLeverOn && RightPlatform.playerOnPlat == true)
+        {
+            PlayerMovement.isInputEnabled = false;
+             
+        }
+
+        if (LeverBalance.isLeverOn && Lava.playerOnPlat == true)
+        {
+            PlayerMovement.isInputEnabled = false;
+
+        }
+
+
+
+        /*
+        else
+        {
+            Invoke("enableInput", 0.2f);
+            PlayerMovement.isInputEnabled = true;
+            //StartCoroutine(enableInput());
+
+        }
+        */
+
 
 
         Leftanimator.SetInteger("state", (int)balance);
         Rightanimator.SetInteger("state", (int)balance);
     }
+
+
+
+    
+    /*
+    IEnumerator enableInput()
+    {
+        yield return new WaitForSeconds(2f);
+        PlayerMovement.isInputEnabled = true;
+    }
+    */
+
 
     public void setMoved()
     {

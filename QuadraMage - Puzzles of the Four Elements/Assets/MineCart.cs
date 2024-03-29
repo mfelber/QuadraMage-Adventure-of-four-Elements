@@ -25,7 +25,7 @@ public class MineCart : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Gold"))
         {
-            Debug.LogError("som");
+            //Debug.LogError("som");
             gold = collision.transform;
             gold.SetParent(transform);
             onplatform = true;    
