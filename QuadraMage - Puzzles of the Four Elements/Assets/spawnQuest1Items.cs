@@ -8,7 +8,9 @@ public class spawnQuest1Items : MonoBehaviour
     //[SerializeField] GameObject box;
     public int removeItem;
 
-    public List<GameObject> questItems = new List<GameObject>();
+   [SerializeField] private List<GameObject> questItems = new List<GameObject>();
+    
+    
     void Start()
     {
         questManager = FindObjectOfType<QuestManager>();
@@ -16,12 +18,16 @@ public class spawnQuest1Items : MonoBehaviour
         for (int i = 0; i < questItems.Count; i++)
         {
             questItems[i].SetActive(false);
-        }   
+        }
+
+        
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         if(questManager.acceptFirstQuest == true)
         {
             for (int i = 0; i < questItems.Count; i++)
@@ -30,7 +36,10 @@ public class spawnQuest1Items : MonoBehaviour
             }
             questItems.RemoveAt(removeItem);
         }
-
+        
        
+
+
+
     }
 }

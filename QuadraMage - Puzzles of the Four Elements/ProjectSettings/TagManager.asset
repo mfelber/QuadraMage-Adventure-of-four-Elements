@@ -51,6 +51,7 @@ TagManager:
   - WaterElementShot
   - FinalBosscamera
   - MushRoom
+  - ThirdQuest
   layers:
   - Default
   - TransparentFX
@@ -65,12 +66,12 @@ TagManager:
   - Fire
   - Fluids
   - Bubbles
-  - Ground
+  - WorkBench
   - Lava
   - FirstAttack
   - OtherRocks
-  - WorkBench
-  - 
+  - Ground
+  - item
   - 
   - 
   - 

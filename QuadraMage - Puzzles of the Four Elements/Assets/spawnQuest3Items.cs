@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class spawnQuest2Items : MonoBehaviour
+public class spawnQuest3Items : MonoBehaviour
 {
     private QuestManager questManager;
     private PoseidonQuestManager poseidonQuestManager;
@@ -20,11 +20,10 @@ public class spawnQuest2Items : MonoBehaviour
             questItems[i].SetActive(false);
         }
     }
-
     // Update is called once per frame
     void Update()
     {
-        if (questManager.acceptSecondQuest == true)
+        if (questManager.acceptThirdQuest == true)
         {
             for (int i = 0; i < questItems.Count; i++)
             {
@@ -34,13 +33,6 @@ public class spawnQuest2Items : MonoBehaviour
             questItems.RemoveAt(removeItem);
         }
 
-        if (poseidonQuestManager.poseidonMarmaidQuestCom == true)
-        {
-            for (int i = 0; i < questItems.Count; i++)
-            {
-                questItems[i].SetActive(false);
-            }
-        }
 
 
     }

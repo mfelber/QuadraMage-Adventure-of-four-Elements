@@ -68,6 +68,12 @@ public class DialogTrigger : MonoBehaviour
             questManager.acceptSecondQuest = true;
         }
 
+        if (player.nearofNpcThirdQuest && Input.GetKeyDown(KeyCode.E))
+        {
+            TriggerDialogue();
+            questManager.acceptThirdQuest = true;
+        }
+
         if (WoodBridge.infrontOfBridge && questManager.isQuest3comp == false)
         {
             TriggerDialogue();

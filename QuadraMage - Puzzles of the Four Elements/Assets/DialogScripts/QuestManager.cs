@@ -34,6 +34,7 @@ public class QuestManager : MonoBehaviour
     public int questNumber;
     public bool acceptFirstQuest;
     public bool acceptSecondQuest;
+    public bool acceptThirdQuest;
     
 
     void Start()
@@ -41,6 +42,7 @@ public class QuestManager : MonoBehaviour
 
         questNumber = 1;
         acceptFirstQuest = false;
+        
        isQuest1comp = false;
        isQuest2comp = false;
        isQuest3comp = false;
@@ -69,7 +71,7 @@ public class QuestManager : MonoBehaviour
         if (isQuest1comp && NPCQuest1.activeSelf)
         {
             
-            questItem1.SetActive(false);
+            //questItem1.SetActive(false);
                 npc2Vis = true;
             //Destroy(NPCQuest1);
             
@@ -77,7 +79,7 @@ public class QuestManager : MonoBehaviour
             
             NPCQuest2.SetActive(true);
             npc1Vis = false;        
-            questItem2.SetActive(true);
+            //questItem2.SetActive(true);
            
            
 
@@ -100,14 +102,14 @@ public class QuestManager : MonoBehaviour
             //NPCQuest2.SetActive(false);
            
             //NPCQuest3.SetActive(true);            
-            questItem2.SetActive(false);
+            //questItem2.SetActive(false);
             questItem3.SetActive(true);
             Quest3.SetActive(true);
 
         }
         if (isQuest3comp && questNumber == 3)
         {
-            questItem3.SetActive(false);
+            //questItem3.SetActive(false);
         }
 
         //Debug.Log("npc 1 visible"+ npc1Vis);
@@ -178,6 +180,7 @@ public class QuestManager : MonoBehaviour
     {
         
         isQuest1comp = true;
+        questItem1.SetActive(false);
         questNumber++;
         
     }
@@ -185,11 +188,14 @@ public class QuestManager : MonoBehaviour
     public void quest2Completed()
     {
         isQuest2comp = true;
+        questItem2.SetActive(false);
         questNumber++;
     }
     public void quest3Completed()
     {
         isQuest3comp = true;
+        questItem3.SetActive(false);
+        questNumber++;
     }
 
 

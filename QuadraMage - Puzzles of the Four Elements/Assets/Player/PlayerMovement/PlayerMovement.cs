@@ -77,6 +77,7 @@ public class PlayerMovement : MonoBehaviour
     private bool climbing;
 
     [SerializeField] private LayerMask Ground;
+    [SerializeField] private LayerMask Item;
 
 
 
@@ -289,9 +290,11 @@ public class PlayerMovement : MonoBehaviour
    
     public bool isGrounded()
     {
-       return Physics2D.BoxCast(feet2.bounds.center, feet2.bounds.size, 0f, Vector2.down, 0.1f, Ground);
-       
-      
+        return Physics2D.BoxCast(feet2.bounds.center, feet2.bounds.size, 0f, Vector2.down, 0.1f, Ground);
+            
+
+
+
     }
 
     
@@ -299,7 +302,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (feet2.IsTouching (collision.collider))
         {
-            if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Cloud") || collision.gameObject.CompareTag("EarthBlock") || collision.gameObject.CompareTag("Box") || collision.gameObject.CompareTag("OneWayPlatform")|| collision.gameObject.CompareTag("Bridge") )
+            if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Cloud") || collision.gameObject.CompareTag("EarthBlock") || collision.gameObject.CompareTag("Box") || collision.gameObject.CompareTag("OneWayPlatform")|| collision.gameObject.CompareTag("Bridge"))
             {
                 playerOnGround = true;
             }

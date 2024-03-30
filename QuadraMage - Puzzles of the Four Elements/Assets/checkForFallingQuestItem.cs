@@ -36,5 +36,13 @@ public class checkForFallingQuestItem : MonoBehaviour
             }
         }
 
+        if (rightPlatform.boxOnPlatform == false)
+        {
+            if (collision.gameObject.CompareTag("Gold"))
+            {
+                collision.transform.position = new Vector2(-94.14f, 12f);
+            }
+        }
+
     }
 }

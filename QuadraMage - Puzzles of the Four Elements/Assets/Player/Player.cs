@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
     private PoseidonQuestManager poseidonQuestManager;
     public bool nearofNpcFirstQuest;
     public bool nearofNpcSecondQuest;
+    public bool nearofNpcThirdQuest;
 
     Inventory inventory;
     public GameObject Wand;
@@ -356,6 +357,13 @@ public class Player : MonoBehaviour
             interactionMassage.SetActive(true);
         }
 
+        if (collision.gameObject.CompareTag("ThirdQuest"))
+        {
+            inRangeOfNPC = true;
+            nearofNpcThirdQuest = true;
+            interactionMassage.SetActive(true);
+        }
+
         if (!playerHasCollide) 
         {
             
@@ -483,6 +491,13 @@ public class Player : MonoBehaviour
         {
             inRangeOfNPC = false;
             nearofNpcSecondQuest = false;
+            interactionMassage.SetActive(false);
+        }
+
+        if (collision.gameObject.CompareTag("ThirdQuest"))
+        {
+            inRangeOfNPC = false;
+            nearofNpcThirdQuest = false;
             interactionMassage.SetActive(false);
         }
 
