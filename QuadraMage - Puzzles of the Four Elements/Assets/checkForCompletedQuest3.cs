@@ -5,19 +5,20 @@ using UnityEngine;
 public class checkForCompletedQuest3 : MonoBehaviour
 {
     private QuestManager questManager;
-    public GameObject completedQ3, notCompletedQ3, lever, leverBlock, leverBlock2;
+    public GameObject notCompletedQ3WithoutDialogue, completedQ3, notCompletedQ3, lever, leverBlock, leverBlock2;
     public Animator woodLogAnimator;
 
     // Start is called before the first frame update
     void Start()
     {
-        questManager = FindObjectOfType<QuestManager>();
-        notCompletedQ3.SetActive(false);
+        notCompletedQ3WithoutDialogue.SetActive(true);
+        notCompletedQ3.SetActive(false);       
         completedQ3.SetActive(false);
         lever.SetActive(false);
         leverBlock.SetActive(false);
         leverBlock2.SetActive(false);
-
+        questManager = FindObjectOfType<QuestManager>();
+        
     }
 
     // Update is called once per frame
