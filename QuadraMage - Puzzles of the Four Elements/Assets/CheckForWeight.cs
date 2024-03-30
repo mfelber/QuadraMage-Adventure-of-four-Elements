@@ -13,7 +13,7 @@ public class CheckForWeight : MonoBehaviour
     Lava llava;
     RightPlatform rightPlatform;
     LeverBalance leverBalance;
-
+    bool balanceLaucnch;
     private enum Balance { equals, leftMore, RightMore}
     Balance balance;
 
@@ -26,6 +26,7 @@ public class CheckForWeight : MonoBehaviour
         {
             Debug.LogError("Skript Lava nebyl nalezen na objektu lava.");
         }
+        balanceLaucnch = true;
 
     }
     private bool addedOnce = false;
@@ -74,6 +75,7 @@ public class CheckForWeight : MonoBehaviour
        
     }
 
+    
     public void UpdateBalance()
     {
         float weightLeft = llava.getWeight;
@@ -85,6 +87,7 @@ public class CheckForWeight : MonoBehaviour
             if (weightLeft > weightRight)
             {
                 balance = Balance.leftMore;
+                balanceLaucnch = false;
             }
 
             if (weightRight > weightLeft)
@@ -92,39 +95,37 @@ public class CheckForWeight : MonoBehaviour
                 balance = Balance.RightMore;
             }
 
+            
         }
-
 
         
-        if (LeverBalance.isLeverOn && RightPlatform.playerOnPlat == true)
+        if (LeverBalance.isLeverOn && balanceLaucnch == false && weightLeft == weightRight)
         {
-            PlayerMovement.isInputEnabled = false;
-             
-        }
-
-        if (LeverBalance.isLeverOn && Lava.playerOnPlat == true)
-        {
-            PlayerMovement.isInputEnabled = false;
-
+            leverBalance.DeactivateLeverEqualWeights();
         }
 
 
 
-        /*
-        else
-        {
-            Invoke("enableInput", 0.2f);
-            PlayerMovement.isInputEnabled = true;
-            //StartCoroutine(enableInput());
-
-        }
-        */
 
 
 
-        Leftanimator.SetInteger("state", (int)balance);
+            /*
+            else
+            {
+                Invoke("enableInput", 0.2f);
+                PlayerMovement.isInputEnabled = true;
+                //StartCoroutine(enableInput());
+
+            }
+            */
+
+
+
+            Leftanimator.SetInteger("state", (int)balance);
         Rightanimator.SetInteger("state", (int)balance);
     }
+
+
 
 
 

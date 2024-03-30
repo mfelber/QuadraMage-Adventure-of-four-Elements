@@ -7,6 +7,7 @@ public class LeverBalance : MonoBehaviour
     public static bool isLeverOn;
     public GameObject arrow;
     public GameObject LeverOff, LeverOn;
+    
 
     void Start()
     {
@@ -41,12 +42,12 @@ public class LeverBalance : MonoBehaviour
 
         }
 
-      
+      /*
         if (PlayerMovement.isInputEnabled == false)
         {
             Invoke("enableInput", 1.9f);
         }
-        
+        */
         
         Debug.LogError(isLeverOn);
         
@@ -93,6 +94,22 @@ public class LeverBalance : MonoBehaviour
         StartCoroutine(leverisActive());
     }
 
+
+    public void DeactivateLeverEqualWeights()
+    {
+        StartCoroutine(leverisActiveEqual());
+    }
+
+
+    IEnumerator leverisActiveEqual()
+    {
+
+        yield return new WaitForSeconds(0.3f);
+        isLeverOn = false;
+        LeverOn.SetActive(false);
+        LeverOff.SetActive(true);
+        // GetComponent<SpriteRenderer>().sprite = leverOff;
+    }
 
 
     IEnumerator leverisActive()
