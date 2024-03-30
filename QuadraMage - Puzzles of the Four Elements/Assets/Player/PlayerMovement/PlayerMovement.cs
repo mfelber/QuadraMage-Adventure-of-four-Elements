@@ -77,7 +77,7 @@ public class PlayerMovement : MonoBehaviour
     private bool climbing;
 
     [SerializeField] private LayerMask Ground;
-    [SerializeField] private LayerMask Item;
+    
 
 
 
@@ -89,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
 
         
 
-        if (!Inventory.isPlayerUsingElement && !NewPauseMenu.isPauseMenuOpen && !Book.isBookOpen && isInputEnabled && !MovingPlatform.isChildOfPlatform && !DialogManager.isDialgueActive )
+        if (!Inventory.isPlayerUsingElement && !NewPauseMenu.isPauseMenuOpen && !Book.isBookOpen && isInputEnabled && !MovingPlatform.isChildOfPlatform && !DialogManager.isDialgueActive)
             {
 
             

@@ -5,14 +5,19 @@ using UnityEngine;
 public class checkForCompletedQuest3 : MonoBehaviour
 {
     private QuestManager questManager;
-    public GameObject completedQ3, notCompletedQ3, lever;
+    public GameObject completedQ3, notCompletedQ3, lever, leverBlock, leverBlock2;
+    public Animator woodLogAnimator;
+
     // Start is called before the first frame update
     void Start()
     {
         questManager = FindObjectOfType<QuestManager>();
-        notCompletedQ3.SetActive(true);
+        notCompletedQ3.SetActive(false);
         completedQ3.SetActive(false);
         lever.SetActive(false);
+        leverBlock.SetActive(false);
+        leverBlock2.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -20,9 +25,43 @@ public class checkForCompletedQuest3 : MonoBehaviour
     {
         if (questManager.isQuest3comp == true)
         {
+           
+            if (Player.inRangeOfNPC && Input.GetKeyDown(KeyCode.E))
+            {
+                
+                lever.SetActive(true);
+                woodLogAnimator.Play("woodLogLeverDownLevel2");
+            }
+        }
+
+        if(DialogManager.isDialgueActive)
+        {
+            leverBlock.SetActive(true);
+            leverBlock2.SetActive(true);
+        } else
+        {
+            leverBlock.SetActive(false);
+            leverBlock2.SetActive(false);
+        }
+        
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (questManager.isQuest3comp == true)
+        {
             notCompletedQ3.SetActive(false);
             completedQ3.SetActive(true);
-            lever.SetActive(true);
+        } else
+        {
+            notCompletedQ3.SetActive(true);
+            completedQ3.SetActive(false);
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        notCompletedQ3.SetActive(false);
+        completedQ3.SetActive(false);
     }
 }

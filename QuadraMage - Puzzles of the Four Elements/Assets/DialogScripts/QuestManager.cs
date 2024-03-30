@@ -189,6 +189,7 @@ public class QuestManager : MonoBehaviour
     {
         isQuest2comp = true;
         questItem2.SetActive(false);
+        Quest3.SetActive(true);
         questNumber++;
     }
     public void quest3Completed()

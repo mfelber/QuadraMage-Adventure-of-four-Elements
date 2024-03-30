@@ -69,10 +69,18 @@ public class Player : MonoBehaviour
     public static bool inRangeOfLever;
     public static bool inRangeOfMineCartLever;
     public static bool inRangeOfNPC;
+    public static bool infrontOfTavern = false;
+    public static bool infrontOfDoors = false;
+    public static bool inBulding = false;
 
+    public bool canbereloaded = false;
+    public static bool manaIsLoaded = true;
     void Start()
     {
        // playerHasCollide = false;
+       inBulding = false;
+        infrontOfTavern = false;
+        infrontOfDoors = false;
         quest = 1;
         hiddenKey = 0;
         inventory = FindObjectOfType<Inventory>();
@@ -111,11 +119,29 @@ public class Player : MonoBehaviour
 
     }
   
-    public bool canbereloaded = false;
-    public static bool manaIsLoaded = true;
+   
 
     void Update()
     {
+
+
+        if (infrontOfTavern && Input.GetKeyDown(KeyCode.E))
+        {
+            inBulding = true;
+        } 
+
+        if (infrontOfDoors && Input.GetKeyDown(KeyCode.E))
+        {
+            inBulding = false;
+        }
+
+        if (inBulding == false)
+        {
+            Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"),true);
+        } else
+        {
+            Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"), false);
+        }
       
         if (ManaBar.isEmpty)
         {
@@ -277,7 +303,7 @@ public class Player : MonoBehaviour
 
     }
 
-    public static bool inTaver = false;
+ 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -339,11 +365,20 @@ public class Player : MonoBehaviour
         */
         if (collision.gameObject.CompareTag("Tavern"))
         {
-            inTaver = true;
+            //inTaver = true;
+            infrontOfTavern = true;
+            interactionMassage.SetActive(true);
         }
 
-        
-        if(collision.gameObject.CompareTag("FirstQuest"))
+        if (collision.gameObject.CompareTag("InBuilding"))
+        {
+            //inTaver = true;
+            infrontOfDoors = true;
+            interactionMassage.SetActive(true);
+        }
+
+
+        if (collision.gameObject.CompareTag("FirstQuest"))
         {
             inRangeOfNPC = true;
             nearofNpcFirstQuest = true;
@@ -470,7 +505,17 @@ public class Player : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Tavern"))
         {
-            inTaver = false;
+            //inTaver = false;
+            infrontOfTavern = false;
+            interactionMassage.SetActive(false);
+
+        }
+
+        if (collision.gameObject.CompareTag("InBuilding"))
+        {
+            //inTaver = true;
+            infrontOfDoors = false;
+            interactionMassage.SetActive(false);
         }
         /*
         if (collision.gameObject.CompareTag("Tnt"))
@@ -479,7 +524,7 @@ public class Player : MonoBehaviour
         }
         */
 
-        
+
         if (collision.gameObject.CompareTag("FirstQuest"))
         {
             inRangeOfNPC = false;

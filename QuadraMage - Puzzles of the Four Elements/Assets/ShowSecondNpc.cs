@@ -14,6 +14,7 @@ public class ShowSecondNpc : MonoBehaviour
     {
         Npc.SetActive(true);
         NpcQuest1.SetActive(false);
+        NpcQuest1Thanks.SetActive(false);
         questManager = FindObjectOfType<QuestManager>();
         poseidonQuestManager = FindObjectOfType<PoseidonQuestManager>();
 

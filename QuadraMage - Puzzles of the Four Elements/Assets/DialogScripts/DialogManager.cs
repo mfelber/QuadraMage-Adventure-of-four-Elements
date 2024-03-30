@@ -37,6 +37,7 @@ public class DialogManager : MonoBehaviour
     public void StartDialogue(Dialogue dialogue)
     {
         isDialgueActive = true;
+        
 
         animator.Play("show");
         lines.Clear();
@@ -83,6 +84,7 @@ public class DialogManager : MonoBehaviour
     {
         
         isDialgueActive = false;
+       
         animator.Play("hide");
 
         // pridat podmienku a dat to do hraca ze ak hovori so strangerom
