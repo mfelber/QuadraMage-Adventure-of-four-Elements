@@ -11,8 +11,8 @@ public class checkForCompletedQuest3 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        notCompletedQ3WithoutDialogue.SetActive(true);
-        notCompletedQ3.SetActive(false);       
+        notCompletedQ3.SetActive(false);
+        notCompletedQ3WithoutDialogue.SetActive(false);       
         completedQ3.SetActive(false);
         lever.SetActive(false);
         leverBlock.SetActive(false);
@@ -49,20 +49,28 @@ public class checkForCompletedQuest3 : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (questManager.isQuest3comp == true)
+        if (collision.gameObject.CompareTag("Player"))
         {
-            notCompletedQ3.SetActive(false);
-            completedQ3.SetActive(true);
-        } else
-        {
-            notCompletedQ3.SetActive(true);
-            completedQ3.SetActive(false);
+            if (questManager.isQuest3comp == true)
+            {
+                notCompletedQ3.SetActive(false);
+                completedQ3.SetActive(true);
+            }
+            else
+            {
+                notCompletedQ3.SetActive(true);
+                completedQ3.SetActive(false);
+            }
         }
+        
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        notCompletedQ3.SetActive(false);
-        completedQ3.SetActive(false);
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            notCompletedQ3.SetActive(false);
+            completedQ3.SetActive(false);
+        }
     }
 }

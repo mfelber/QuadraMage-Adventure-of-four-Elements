@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class spawnQuest2Items : MonoBehaviour
 {
@@ -24,6 +25,10 @@ public class spawnQuest2Items : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+
         if (questManager.acceptSecondQuest == true)
         {
             for (int i = 0; i < questItems.Count; i++)
@@ -34,13 +39,19 @@ public class spawnQuest2Items : MonoBehaviour
             questItems.RemoveAt(removeItem);
         }
 
-        if (poseidonQuestManager.poseidonMarmaidQuestCom == true)
+
+
+        if(sceneName == "Level 3")
         {
-            for (int i = 0; i < questItems.Count; i++)
+            if (poseidonQuestManager.poseidonMarmaidQuestCom == true)
             {
-                questItems[i].SetActive(false);
+                for (int i = 0; i < questItems.Count; i++)
+                {
+                    questItems[i].SetActive(false);
+                }
             }
         }
+        
 
 
     }

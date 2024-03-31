@@ -252,6 +252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42c94a8c871f7f045993303ef66731e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  removeItem: 0
   questItems:
   - {fileID: 1419737129}
 --- !u!1 &22538497
@@ -8814,6 +8815,7 @@ MonoBehaviour:
   inRangeOfTnt: 0
   nearofNpcFirstQuest: 0
   nearofNpcSecondQuest: 0
+  nearofNpcThirdQuest: 0
   Wand: {fileID: 0}
   isPlayerHide: 0
   inRange: 0
@@ -16596,6 +16598,7 @@ MonoBehaviour:
   inRangeOfTnt: 0
   nearofNpcFirstQuest: 0
   nearofNpcSecondQuest: 0
+  nearofNpcThirdQuest: 0
   Wand: {fileID: 0}
   isPlayerHide: 0
   inRange: 0
@@ -26092,6 +26095,7 @@ MonoBehaviour:
   questNumber: 1
   acceptFirstQuest: 0
   acceptSecondQuest: 0
+  acceptThirdQuest: 0
 --- !u!4 &1030787644
 Transform:
   m_ObjectHideFlags: 0
@@ -38803,6 +38807,7 @@ MonoBehaviour:
   questNumber: 0
   acceptFirstQuest: 0
   acceptSecondQuest: 0
+  acceptThirdQuest: 0
 --- !u!1 &1912685541
 GameObject:
   m_ObjectHideFlags: 0
