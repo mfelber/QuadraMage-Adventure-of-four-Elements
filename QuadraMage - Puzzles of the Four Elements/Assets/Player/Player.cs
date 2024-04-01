@@ -35,6 +35,7 @@ public class Player : MonoBehaviour
 
     Inventory inventory;
     public GameObject Wand;
+    ActivateCutScene activateCutScene;
     public void SavePlayerData()
     {
         Save.SavePlayerData(this);
@@ -100,6 +101,7 @@ public class Player : MonoBehaviour
         // Physics2D.IgnoreLayerCollision(6,14);
 
         poseidonQuestManager = FindObjectOfType<PoseidonQuestManager>();
+        activateCutScene = FindObjectOfType<ActivateCutScene>();
         /*
         if(level == 1)
         {
@@ -124,6 +126,7 @@ public class Player : MonoBehaviour
     void Update()
     {
 
+        
 
         if (infrontOfTavern && Input.GetKeyDown(KeyCode.E))
         {
@@ -311,11 +314,9 @@ public class Player : MonoBehaviour
         
         if (collision.gameObject.CompareTag("Obstacles"))
         {
-
-
-
+            
             Invoke("setToSpawn", 0.1f);
-
+           
 
 
         }
@@ -593,6 +594,7 @@ public class Player : MonoBehaviour
         //player.transform.position = new Vector3(-6.546f, -0.029f, 0);
         Scene currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currentScene.name, LoadSceneMode.Single);
+       // activateCutScene.firstRun = true;
         inventory.inventory.Clear();
         Inventory.canUseElement = true;
         Inventory.isPlayerUsingElement = false;

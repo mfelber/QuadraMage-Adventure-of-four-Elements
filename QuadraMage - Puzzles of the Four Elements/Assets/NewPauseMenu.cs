@@ -9,7 +9,8 @@ public class NewPauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
     //private Book book;
-    Inventory inventory;    
+    Inventory inventory;
+    ActivateCutScene activateCutScene;
 
     public static bool isPauseMenuOpen;
     void Start()
@@ -17,6 +18,7 @@ public class NewPauseMenu : MonoBehaviour
        // book = GetComponent<Book>();
         pauseMenu.SetActive(false);
         inventory = FindObjectOfType<Inventory>();
+        activateCutScene = FindObjectOfType<ActivateCutScene>();
     }
 
     // Update is called once per frame
@@ -62,6 +64,7 @@ public class NewPauseMenu : MonoBehaviour
         SceneManager.LoadScene("Main Menu");
         inventory.inventory.Clear();
         Inventory.canUseElement = true;
+       
 
     }
 
@@ -69,6 +72,7 @@ public class NewPauseMenu : MonoBehaviour
     {
         inventory.inventory.Clear();
         Inventory.canUseElement = true;
+        
         Application.Quit();
     }
 

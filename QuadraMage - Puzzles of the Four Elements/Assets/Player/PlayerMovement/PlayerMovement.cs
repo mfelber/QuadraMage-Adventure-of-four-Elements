@@ -64,8 +64,9 @@ public class PlayerMovement : MonoBehaviour
         rigidbody2D = GetComponent<Rigidbody2D>();
 
         playerFacingRight = true;
-        isInputEnabled = true;      
+        isInputEnabled = true;
 
+        
        
     }
 

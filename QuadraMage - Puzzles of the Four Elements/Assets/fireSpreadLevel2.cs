@@ -26,7 +26,7 @@ public class fireSpreadLevel2 : MonoBehaviour
         if (collision.gameObject.CompareTag("WindElementShot"))
         {
             Animator.SetBool("spread", true);
-            StartCoroutine(spreadFire(2f));
+            StartCoroutine(spreadFire(0.7f));
             Destroy(collision.gameObject);
             //Invoke("back", 2.3f);
             //fire1.SetActive(true);

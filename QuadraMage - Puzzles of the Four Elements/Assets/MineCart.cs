@@ -10,15 +10,16 @@ public class MineCart : MonoBehaviour
     bool onplatform;
     [SerializeField] Transform gold;
     [SerializeField] private BoxCollider2D boxCollider2D;
-    
+    MinecartHanging minecartHanging;
+
 
 
     private void Start()
     {
         
         boxCollider2D = GetComponent<BoxCollider2D>();
-        
-       
+        minecartHanging = FindObjectOfType<MinecartHanging>();
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -74,5 +75,11 @@ public class MineCart : MonoBehaviour
     {
         boxCollider2D.enabled = true;
     }
+
+    public void minecartHangingFalse()
+    {
+        minecartHanging.minecartHanging = false;
+    }
+
 
 }

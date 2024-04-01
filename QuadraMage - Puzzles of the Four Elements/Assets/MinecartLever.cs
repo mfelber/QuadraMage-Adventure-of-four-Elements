@@ -7,13 +7,15 @@ public class MinecartLever : MonoBehaviour
 {
     public Animator minecartAnimator;
    
-    public bool leverIsActive;
+    private bool leverIsActive;
     public GameObject arrow;
    // public Sprite leverOn, leverOff;
-    public GameObject leverOn, leverOff;
+    [SerializeField] private GameObject leverOn, leverOff;
     public CinemachineVirtualCamera vcam;
     public Transform player;
     public Transform minecart;
+    bool nearLever;
+    MinecartHanging minecartHanging;
     
     void Start()
     {
@@ -21,16 +23,17 @@ public class MinecartLever : MonoBehaviour
         arrow.SetActive(true);
         leverOn.SetActive(false);
         leverOff.SetActive(true);
+        minecartHanging = FindObjectOfType<MinecartHanging>();
+        
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Player.inRangeOfMineCartLever == true && Input.GetKeyDown(KeyCode.E) && leverIsActive == false)
+        if (nearLever == true && Input.GetKeyDown(KeyCode.E) && leverIsActive == false && minecartHanging.minecartHanging == false)
         {
-            activateMinecartLever();
-            
+            activateMinecartLever();            
         }
 
         if (leverIsActive == false)
@@ -45,13 +48,18 @@ public class MinecartLever : MonoBehaviour
 
     public void activateMinecartLever()
     {
+        
         leverOn.SetActive(true);
         leverOff.SetActive(false);
         leverIsActive = true;
         
-        minecartAnimator.SetBool("go", true);
-        vcam.Follow = minecart;
-        PlayerMovement.isInputEnabled = false;  
+        if (minecartHanging.minecartHanging == false)
+        {
+            minecartAnimator.SetBool("go", true);
+            vcam.Follow = minecart;
+            PlayerMovement.isInputEnabled = false;
+        }
+       
        /// GetComponent<SpriteRenderer>().sprite = leverOn;
 
 
@@ -62,23 +70,33 @@ public class MinecartLever : MonoBehaviour
 
     public void deactivateLever()
     {
-        
-        minecartAnimator.SetBool("go", false); 
-        
+        if (minecartHanging.minecartHanging == false)
+        {
+            minecartAnimator.SetBool("go", false);
+        }
         StartCoroutine(leverisActive());
         
     }
 
     IEnumerator leverisActive ()
     {
-        yield return new WaitForSeconds(2f);
-        vcam.Follow = player;
-        PlayerMovement.isInputEnabled = true;
-        yield return new WaitForSeconds(3f);
+        if (minecartHanging.minecartHanging == false)
+        {
+            yield return new WaitForSeconds(2f);
+            vcam.Follow = player;
+            PlayerMovement.isInputEnabled = true;
+            yield return new WaitForSeconds(3f);
+
+            leverIsActive = false;
+            leverOn.SetActive(false);
+            leverOff.SetActive(true);
+        } else
+        {
+            leverIsActive = false;
+            leverOn.SetActive(false);
+            leverOff.SetActive(true);
+        }
        
-        leverIsActive = false;
-        leverOn.SetActive(false);
-        leverOff.SetActive(true);
         // GetComponent<SpriteRenderer>().sprite = leverOff;
     }
 
@@ -86,6 +104,23 @@ public class MinecartLever : MonoBehaviour
     public bool getLever
     {
         get { return leverIsActive; }
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            nearLever = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            nearLever = false;
+        }
     }
 
    
