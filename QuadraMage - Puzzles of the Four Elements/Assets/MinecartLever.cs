@@ -31,7 +31,7 @@ public class MinecartLever : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (nearLever == true && Input.GetKeyDown(KeyCode.E) && leverIsActive == false && minecartHanging.minecartHanging == false)
+        if (nearLever == true && Input.GetKeyDown(KeyCode.E) && leverIsActive == false)
         {
             activateMinecartLever();            
         }

@@ -23701,7 +23701,7 @@ Transform:
   m_GameObject: {fileID: 462707940}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -74.31, y: 12.37, z: 0}
+  m_LocalPosition: {x: -73.69, y: 11.95, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -35757,7 +35757,6 @@ GameObject:
   m_Component:
   - component: {fileID: 592521782}
   - component: {fileID: 592521781}
-  - component: {fileID: 592521784}
   m_Layer: 13
   m_Name: Minecart_2
   m_TagString: Ground
@@ -35832,33 +35831,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1869334569}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &592521784
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 592521780}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!1001 &593536591
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -61557,7 +61529,7 @@ Transform:
   m_GameObject: {fileID: 1088949124}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -74.31, y: 16.01, z: -10}
+  m_LocalPosition: {x: -73.69, y: 15.59, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -61731,7 +61703,7 @@ Transform:
   m_GameObject: {fileID: 1089416500}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -23.2, y: 27, z: 0}
+  m_LocalPosition: {x: -20.13, y: 25.72, z: 0}
   m_LocalScale: {x: 0.7904, y: 0.7118, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -81294,7 +81266,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f84d66752d44f35468cb3960ed79cde9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aniamtor: {fileID: 0}
+  minecartHanging: 0
+  aniamtor: {fileID: 1869334566}
   leverOn: {fileID: 355637557}
   LeverOff: {fileID: 1773956013}
 --- !u!61 &1553889094
@@ -90586,7 +90559,7 @@ Transform:
   m_GameObject: {fileID: 1795734061}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -74.31, y: 16.01, z: -10}
+  m_LocalPosition: {x: -73.69, y: 15.59, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -93858,7 +93831,7 @@ Transform:
   m_GameObject: {fileID: 1869334564}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -66.200005, y: 12.331, z: 0}
+  m_LocalPosition: {x: -66.2, y: 21.574, z: 0}
   m_LocalScale: {x: 1.8518916, y: 1.1030099, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
