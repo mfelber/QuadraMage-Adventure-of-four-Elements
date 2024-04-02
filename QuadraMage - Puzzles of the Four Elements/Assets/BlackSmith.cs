@@ -9,31 +9,66 @@ public class BlackSmith : MonoBehaviour
     [SerializeField] private Animator blackSmithAnimator;
     BlackSmithStates states;
     public PlayerMovement PlayerMovement;
-    public Animator anim;
+   // public Animator anim;
+    QuestManager questManager;
+    Equipment equipment;
     void Start()
     {
-
+        questManager = FindObjectOfType<QuestManager>();
+        equipment = FindObjectOfType<Equipment>();
     }
 
     // Update is called once per frame
     void Update()
     {
-       // checkForStates();
-        if (ArmorStand.isPlayerMoveWithArmorStand)
+       
+       if (questManager.acceptSecondQuest == true)
         {
-            blackSmithAnimator.SetBool("check", true);
+            Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"),false);
+            Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Elements"), LayerMask.NameToLayer("Enemy"),false);
+            if (equipment.isPlayerMoveEquipmentWithWind)
+            {
+                blackSmithAnimator.SetBool("check", true);
+            }
+            else
+            {
+                blackSmithAnimator.SetBool("check", false);
+            }
+
+            
         } else
         {
-            blackSmithAnimator.SetBool("check", false);
+            Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"), true);
+            Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Elements"), LayerMask.NameToLayer("Enemy"), true);
+        }
+
+        if (equipment.isPlayerMoveEquipment)
+        {
+            blackSmithAnimator.SetBool("warning", true);
+        }
+        else
+        {
+            blackSmithAnimator.SetBool("warning", false);
+        }
+
+        if (equipment.eqfall)
+        {
+            Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"), true);
+            Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Elements"), LayerMask.NameToLayer("Enemy"), true);
         }
 
     }
 
+
+    public void eqfall()
+    {
+        equipment.eqfall = true;
+    }
     public void checkForStates()
     {
        
 
-        if (ArmorStand.isPlayerMoveWithArmorStand)
+        if (equipment.isPlayerMoveEquipmentWithWind)
         {
             states = BlackSmithStates.patrol;
         } else
@@ -47,19 +82,23 @@ public class BlackSmith : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (questManager.acceptSecondQuest == true)
         {
-            Debug.Log("kolizia");
-            PlayerMovement.HowMuchTimeIsLeft = PlayerMovement.TimeOfKnockBack;
-            if (collision.transform.position.x <= transform.position.x)
-            {
-                PlayerMovement.knockBackFromR = true;
 
-            }
-            if (collision.transform.position.x > transform.position.x)
+            if (collision.gameObject.CompareTag("Player"))
             {
-                PlayerMovement.knockBackFromR = false;
 
+                PlayerMovement.HowMuchTimeIsLeft = PlayerMovement.TimeOfKnockBack;
+                if (collision.transform.position.x <= transform.position.x)
+                {
+                    PlayerMovement.knockBackFromR = true;
+
+                }
+                if (collision.transform.position.x > transform.position.x)
+                {
+                    PlayerMovement.knockBackFromR = false;
+
+                }
             }
         }
     }

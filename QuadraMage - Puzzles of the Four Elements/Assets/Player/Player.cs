@@ -298,7 +298,7 @@ public class Player : MonoBehaviour
     public void unHidePlayer()
     {
 
-        player.transform.position = new Vector2(-3.265331f, 23.71198f);
+        player.transform.position = new Vector2(-2.215332f, 23.71198f);
         vcam.Follow = player.transform;
         isPlayerHide = false;
         

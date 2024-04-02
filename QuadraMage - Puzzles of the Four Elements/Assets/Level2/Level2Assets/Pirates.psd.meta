@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0b02ae4008d24c4429e40a617a317c85
+guid: 27f2d6ca575f82d46ab25954a7390faa
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 250
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -123,442 +123,358 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BlackSmith + Barrel_0
+      name: Pirates_0
       rect:
         serializedVersion: 2
-        x: 571
-        y: 1087
-        width: 1647
-        height: 1073
+        x: 1019
+        y: 1704
+        width: 266
+        height: 249
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b80dadf52317e1c438c22f3d85fe9c12
-      internalID: 702873226
+      spriteID: 4d2344ead0fb9484eb1a30cf85d79a24
+      internalID: -1394113705
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BlackSmith + Barrel_1
+      name: Pirates_1
       rect:
         serializedVersion: 2
-        x: 2953
-        y: 1891
-        width: 51
-        height: 148
-      alignment: 9
-      pivot: {x: 0.6449669, y: 0.91325337}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4c43038cfdaa4da47986a2f03f590fc2
-      internalID: 838634539
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BlackSmith + Barrel_2
-      rect:
-        serializedVersion: 2
-        x: 3012
-        y: 1915
-        width: 65
-        height: 185
-      alignment: 9
-      pivot: {x: 0.46242863, y: 0.07770864}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f0ba500d9c018ce4a8aefae38e3bcaa3
-      internalID: -785339648
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BlackSmith + Barrel_3
-      rect:
-        serializedVersion: 2
-        x: 3164
-        y: 1368
-        width: 613
-        height: 792
+        x: 1564
+        y: 1724
+        width: 267
+        height: 208
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 467b80b9a7e72234b899a3c078ee83d1
-      internalID: -739572354
+      spriteID: 25008e03799ed3c4fa74b0cc6e661475
+      internalID: -1196709672
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BlackSmith + Barrel_4
+      name: Pirates_2
       rect:
         serializedVersion: 2
-        x: 2240
-        y: 1828
+        x: 2079
+        y: 1690
+        width: 253
+        height: 266
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38b53c6bd4100fc47bd602ae325a62c5
+      internalID: 1844909426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirates_3
+      rect:
+        serializedVersion: 2
+        x: 2564
+        y: 1724
+        width: 275
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b99e2504e8a8ac54ca16d2b84ad63b49
+      internalID: 405695961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirates_4
+      rect:
+        serializedVersion: 2
+        x: 3179
+        y: 1330
+        width: 134
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 837df580f9b70d94283f25b257398f47
+      internalID: -650053840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirates_5
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 1556
         width: 4
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b6e4f9fd4320acc429660586d1a1c8df
-      internalID: 482992180
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BlackSmith + Barrel_5
-      rect:
-        serializedVersion: 2
-        x: 2490
-        y: 1296
-        width: 391
-        height: 336
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 610b9f3e470e1d14298c96dfd60e4bf2
-      internalID: 225411677
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BlackSmith + Barrel_6
-      rect:
-        serializedVersion: 2
-        x: 2844
-        y: 1292
-        width: 12
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c4fd41acede3b8948962d14c1a3cdb28
-      internalID: -999061701
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BlackSmith + Barrel_7
-      rect:
-        serializedVersion: 2
-        x: 3182
-        y: 516
-        width: 595
-        height: 792
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fe0c67c351c50f24fa1a100ff93c9f3a
-      internalID: 1289879106
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BlackSmith + Barrel_8
-      rect:
-        serializedVersion: 2
-        x: 150
-        y: 826
-        width: 295
-        height: 398
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 52e265bf756ba9e4ab39fa0f4d6c2720
-      internalID: -2132511776
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BlackSmith + Barrel_9
-      rect:
-        serializedVersion: 2
-        x: 751
-        y: 921
-        width: 97
-        height: 63
-      alignment: 9
-      pivot: {x: 0.07668847, y: 0.8189494}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a22e95ee5f6c8ce4f9222e3e483bc28a
-      internalID: 872095200
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BlackSmith + Barrel_10
-      rect:
-        serializedVersion: 2
-        x: 1855
-        y: 192
-        width: 93
-        height: 865
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1ca765ab95a8edd4caefd55a6a495318
-      internalID: 1859353646
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BlackSmith + Barrel_11
-      rect:
-        serializedVersion: 2
-        x: 2336
-        y: 863
-        width: 252
-        height: 161
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8e94208d59e656c46ad4d1163f05c7db
-      internalID: 880046432
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BlackSmith + Barrel_13
-      rect:
-        serializedVersion: 2
-        x: 1020
-        y: 788
-        width: 170
-        height: 108
-      alignment: 9
-      pivot: {x: 0.95588523, y: 0.8404654}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8fc925f1b85b2444db0617b2805822ec
-      internalID: -990210486
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BlackSmith + Barrel_14
-      rect:
-        serializedVersion: 2
-        x: 652
-        y: 684
-        width: 128
-        height: 156
-      alignment: 9
-      pivot: {x: 0.35917282, y: 0.93179363}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 38c033f0da01db746b53079ba1e8f39b
-      internalID: 960025918
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BlackSmith + Barrel_21
-      rect:
-        serializedVersion: 2
-        x: 856
-        y: 532
-        width: 120
-        height: 154
-      alignment: 9
-      pivot: {x: 0.5553421, y: 0.9435619}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ddafa8a50cf6f8b4e90d977a4b4e2e22
-      internalID: -1294193205
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BlackSmith + Barrel_24
-      rect:
-        serializedVersion: 2
-        x: 2230
-        y: 440
-        width: 368
-        height: 124
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 228a546e38bb14045ad54fbdf57f4430
-      internalID: 2071873695
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BlackSmith + Barrel_25
-      rect:
-        serializedVersion: 2
-        x: 2630
-        y: 440
-        width: 368
-        height: 124
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 60b4650f7a1698d4f8faa23c395dbe44
-      internalID: 1764387457
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BlackSmith + Barrel_26
-      rect:
-        serializedVersion: 2
-        x: 2244
-        y: 288
-        width: 370
-        height: 124
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cddfe7f36fba0c24eb97d1ff30c83ce2
-      internalID: 1788993727
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BlackSmith + Barrel_27
-      rect:
-        serializedVersion: 2
-        x: 2646
-        y: 288
-        width: 368
-        height: 124
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f130a73c99106ee43a10584f0593ed38
-      internalID: -1413442563
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BlackSmith + Barrel_28
-      rect:
-        serializedVersion: 2
-        x: 1876
-        y: 188
-        width: 4
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cb51830aad04cd54dbec6c5f5b041312
-      internalID: -1610114126
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BlackSmith + Barrel_29
-      rect:
-        serializedVersion: 2
-        x: 1892
-        y: 192
-        width: 12
         height: 4
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e742275c3119544f9312a57baee3db5
-      internalID: 269829888
+      spriteID: 69bdb492f007bbe4aabad2bd86cabfc1
+      internalID: -1597090589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirates_6
+      rect:
+        serializedVersion: 2
+        x: 3264
+        y: 1556
+        width: 8
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb7d5aadef7c1a34794846f294dde0b7
+      internalID: -959489745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirates_7
+      rect:
+        serializedVersion: 2
+        x: 3280
+        y: 1556
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6d60827de90a4c428f5e5cd1f02aba3
+      internalID: 672717372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirates_8
+      rect:
+        serializedVersion: 2
+        x: 2136
+        y: 1132
+        width: 288
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ef7db85e6cb6fd409c65568671e8cb7
+      internalID: 619134165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirates_9
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 830
+        width: 110
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 946a9443643a048458f40d2db7d910d9
+      internalID: -1817681967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirates_10
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 831
+        width: 107
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e39e7b3a1325a6646b9f25838dbd5a03
+      internalID: -2050163679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirates_11
+      rect:
+        serializedVersion: 2
+        x: 1236
+        y: 900
+        width: 98
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09f6baa5b4683d24890607cbd24e37ff
+      internalID: 208364342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirates_12
+      rect:
+        serializedVersion: 2
+        x: 1443
+        y: 855
+        width: 107
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a6a257b72a3bf644a072458433a3bfb
+      internalID: 1166111175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirates_13
+      rect:
+        serializedVersion: 2
+        x: 3203
+        y: 556
+        width: 134
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd7b06a245388414993f09879500e13f
+      internalID: -247813495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirates_14
+      rect:
+        serializedVersion: 2
+        x: 3216
+        y: 780
+        width: 16
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5922cac7d56d3394cae03ff67a6190e2
+      internalID: 1509913879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirates_15
+      rect:
+        serializedVersion: 2
+        x: 2840
+        y: 432
+        width: 50
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf44b70dd930a8644ada007d976aa3e4
+      internalID: 192298268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pirates_16
+      rect:
+        serializedVersion: 2
+        x: 2804
+        y: 211
+        width: 136
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 712e680830c072142a0b0e5fc5fac556
+      internalID: 2014409086
       vertices: []
       indices: 
       edges: []
@@ -574,36 +490,23 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      BlackSmith + Barrel_0: 702873226
-      BlackSmith + Barrel_1: 838634539
-      BlackSmith + Barrel_10: 1859353646
-      BlackSmith + Barrel_11: 880046432
-      BlackSmith + Barrel_12: -2114057434
-      BlackSmith + Barrel_13: -990210486
-      BlackSmith + Barrel_14: 960025918
-      BlackSmith + Barrel_15: 697647471
-      BlackSmith + Barrel_16: -2120820388
-      BlackSmith + Barrel_17: -117362673
-      BlackSmith + Barrel_18: -150584112
-      BlackSmith + Barrel_19: 1118511361
-      BlackSmith + Barrel_2: -785339648
-      BlackSmith + Barrel_20: -1423631145
-      BlackSmith + Barrel_21: -1294193205
-      BlackSmith + Barrel_22: -952491349
-      BlackSmith + Barrel_23: 1619103591
-      BlackSmith + Barrel_24: 2071873695
-      BlackSmith + Barrel_25: 1764387457
-      BlackSmith + Barrel_26: 1788993727
-      BlackSmith + Barrel_27: -1413442563
-      BlackSmith + Barrel_28: -1610114126
-      BlackSmith + Barrel_29: 269829888
-      BlackSmith + Barrel_3: -739572354
-      BlackSmith + Barrel_4: 482992180
-      BlackSmith + Barrel_5: 225411677
-      BlackSmith + Barrel_6: -999061701
-      BlackSmith + Barrel_7: 1289879106
-      BlackSmith + Barrel_8: -2132511776
-      BlackSmith + Barrel_9: 872095200
+      Pirates_0: -1394113705
+      Pirates_1: -1196709672
+      Pirates_10: -2050163679
+      Pirates_11: 208364342
+      Pirates_12: 1166111175
+      Pirates_13: -247813495
+      Pirates_14: 1509913879
+      Pirates_15: 192298268
+      Pirates_16: 2014409086
+      Pirates_2: 1844909426
+      Pirates_3: 405695961
+      Pirates_4: -650053840
+      Pirates_5: -1597090589
+      Pirates_6: -959489745
+      Pirates_7: 672717372
+      Pirates_8: 619134165
+      Pirates_9: -1817681967
   mipmapLimitGroupName: 
   pSDRemoveMatte: 1
   userData: 

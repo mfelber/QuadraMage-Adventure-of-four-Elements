@@ -9,10 +9,11 @@ public class fireSpreadLevel2 : MonoBehaviour
    // public GameObject fire3;
     //public GameObject fire4;
     public Animator Animator;
+    [SerializeField] Animator waterTank;
     void Start()
     {
-        //fire1.SetActive(false);
-        //fire2.SetActive(false);
+        fire1.SetActive(false);
+        fire2.SetActive(false);
     }
 
     // Update is called once per frame
@@ -29,8 +30,7 @@ public class fireSpreadLevel2 : MonoBehaviour
             StartCoroutine(spreadFire(0.7f));
             Destroy(collision.gameObject);
             //Invoke("back", 2.3f);
-            //fire1.SetActive(true);
-            //fire2.SetActive(true);
+            
         }
     }
 
@@ -39,6 +39,8 @@ public class fireSpreadLevel2 : MonoBehaviour
         
        
         yield return new WaitForSeconds(time);
+        fire1.SetActive(true);
+        fire2.SetActive(true);
         //float elapsedTime = 0f;
 
         /*
@@ -48,15 +50,23 @@ public class fireSpreadLevel2 : MonoBehaviour
             elapsedTime += Time.deltaTime;
         }
         */
-        
+
         //fire1.gameObject.SetActive(true);
         //fire2.gameObject.SetActive(true);
         Animator.SetBool("spread", false);
+        Invoke("fall", 3);
     }
 
 
     public void back ()
     {
         Animator.SetBool("spread", false);
+    }
+
+    public void fall()
+    {
+        waterTank.Play("waterTankWithWaterFall");
+        fire1.SetActive(false);
+        fire2.SetActive(false);
     }
 }
