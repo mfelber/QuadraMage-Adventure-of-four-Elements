@@ -29,8 +29,8 @@ public class spawnQuest3Items : MonoBehaviour
             {
                 questItems[i].SetActive(true);
 
+            questItems.RemoveAt(0);
             }
-            questItems.RemoveAt(removeItem);
         }
 
 

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 77e241f86e22acf4087be2209f61d506
+guid: d7a857c60028b0e4098c38f0018b9130
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 250
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cauldron_0
+      name: Totems_0
       rect:
         serializedVersion: 2
-        x: 299
-        y: 1858
-        width: 287
-        height: 174
+        x: 984
+        y: 668
+        width: 385
+        height: 836
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 53cb5dc38766b5d4382ddd5837fca8b0
-      internalID: 275330637
+      spriteID: c4ce8dac48d9b8a4b8363592c433bc99
+      internalID: 1433436315
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cauldron_1
+      name: Totems_1
       rect:
         serializedVersion: 2
-        x: 3016
-        y: 1858
-        width: 561
-        height: 191
+        x: 1771
+        y: 648
+        width: 397
+        height: 837
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,50 +158,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 473769939d2d843449034959b63c1dc9
-      internalID: 667910466
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cauldron_2
-      rect:
-        serializedVersion: 2
-        x: 1288
-        y: 664
-        width: 1223
-        height: 1080
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 11cad02a435c89d459204c63b6a07e41
-      internalID: 1903708203
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cauldron_3
-      rect:
-        serializedVersion: 2
-        x: 2140
-        y: 156
-        width: 1113
-        height: 404
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f9d1f469f03a65c488420ab9dbff3cb1
-      internalID: 1138626473
+      spriteID: 84f31f0b03f73874bb43ce0ea802e59f
+      internalID: -1431571411
       vertices: []
       indices: 
       edges: []
@@ -217,10 +175,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Cauldron_0: 275330637
-      Cauldron_1: 667910466
-      Cauldron_2: 1903708203
-      Cauldron_3: 1138626473
+      Totems_0: 1433436315
+      Totems_1: -1431571411
   mipmapLimitGroupName: 
   pSDRemoveMatte: 1
   userData: 

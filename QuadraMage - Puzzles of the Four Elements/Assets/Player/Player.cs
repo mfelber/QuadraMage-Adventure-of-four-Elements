@@ -92,6 +92,7 @@ public class Player : MonoBehaviour
         inRangeOfTnt = false;
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Elements"));
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("WorkBench"));
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Fluids"));
         string sceneName = SceneManager.GetActiveScene().name;
 
         if (sceneName == "Level1")
