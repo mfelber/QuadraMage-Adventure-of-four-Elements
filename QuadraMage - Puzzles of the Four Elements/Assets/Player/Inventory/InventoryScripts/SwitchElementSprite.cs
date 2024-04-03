@@ -20,6 +20,9 @@ public class SwitchElementSprite : MonoBehaviour
         if (inventoryScript.inventory.Count >= 1)
         {
             GetComponent<SpriteRenderer>().sprite = wind;
+        } else
+        {
+            GetComponent<SpriteRenderer>().sprite = null;
         }
         
     }

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 27f2d6ca575f82d46ab25954a7390faa
+guid: 4ec4bf197e4cec941aefb886cd51a4f0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Pirates_0
+      name: cauldronWater_1
       rect:
         serializedVersion: 2
-        x: 1019
-        y: 1704
-        width: 266
-        height: 249
+        x: 606
+        y: 1076
+        width: 514
+        height: 664
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d2344ead0fb9484eb1a30cf85d79a24
-      internalID: -1394113705
+      spriteID: 9ebfe4e04f5bb864eb39df0a1fe87453
+      internalID: -565181306
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pirates_1
+      name: cauldronWater_2
       rect:
         serializedVersion: 2
-        x: 1564
-        y: 1724
-        width: 267
-        height: 208
+        x: 1292
+        y: 528
+        width: 1224
+        height: 1076
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25008e03799ed3c4fa74b0cc6e661475
-      internalID: -1196709672
+      spriteID: a3bf00421d78ee841842b982811a1088
+      internalID: -1872782058
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pirates_2
+      name: cauldronWater_3
       rect:
         serializedVersion: 2
-        x: 2079
-        y: 1690
-        width: 253
-        height: 266
+        x: 2670
+        y: 1496
+        width: 323
+        height: 108
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 38b53c6bd4100fc47bd602ae325a62c5
-      internalID: 1844909426
+      spriteID: ed15ed4f54473e545a7430e64530ad4e
+      internalID: 455041614
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pirates_3
+      name: cauldronWater_4
       rect:
         serializedVersion: 2
-        x: 2564
-        y: 1724
-        width: 275
-        height: 225
+        x: 2668
+        y: 1319
+        width: 325
+        height: 125
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,20 +200,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b99e2504e8a8ac54ca16d2b84ad63b49
-      internalID: 405695961
+      spriteID: 3ede0b99d1fb6c549a22babd9c8e016f
+      internalID: 258421238
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pirates_4
+      name: cauldronWater_5
       rect:
         serializedVersion: 2
-        x: 3179
-        y: 1330
-        width: 134
-        height: 230
+        x: 2672
+        y: 1134
+        width: 271
+        height: 122
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,20 +221,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 837df580f9b70d94283f25b257398f47
-      internalID: -650053840
+      spriteID: 28dccce483990eb4c8cde1d9cff525bf
+      internalID: -1242216510
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pirates_5
+      name: cauldronWater_6
       rect:
         serializedVersion: 2
-        x: 3240
-        y: 1556
-        width: 4
-        height: 4
+        x: 2702
+        y: 942
+        width: 209
+        height: 83
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,20 +242,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69bdb492f007bbe4aabad2bd86cabfc1
-      internalID: -1597090589
+      spriteID: 369a5b20312523240950de35fd252bfb
+      internalID: 852103643
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pirates_6
+      name: cauldronWater_7
       rect:
         serializedVersion: 2
-        x: 3264
-        y: 1556
-        width: 8
-        height: 4
+        x: 2672
+        y: 764
+        width: 155
+        height: 92
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -263,20 +263,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb7d5aadef7c1a34794846f294dde0b7
-      internalID: -959489745
+      spriteID: 095ece5eac5517f439339012f7e1efb2
+      internalID: -278946126
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pirates_7
+      name: cauldronWater_8
       rect:
         serializedVersion: 2
-        x: 3280
-        y: 1556
-        width: 4
-        height: 4
+        x: 2699
+        y: 650
+        width: 63
+        height: 55
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -284,20 +284,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a6d60827de90a4c428f5e5cd1f02aba3
-      internalID: 672717372
+      spriteID: 2e4b5214d542af1479fd752b98ff2fa1
+      internalID: -1755635339
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pirates_8
+      name: cauldronWater_9
       rect:
         serializedVersion: 2
-        x: 2136
-        y: 1132
-        width: 288
-        height: 262
+        x: 2699
+        y: 564
+        width: 29
+        height: 40
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -305,104 +305,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ef7db85e6cb6fd409c65568671e8cb7
-      internalID: 619134165
+      spriteID: 366997856a015574395b447227500204
+      internalID: -543293228
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pirates_9
+      name: cauldronWater_10
       rect:
         serializedVersion: 2
-        x: 670
-        y: 830
-        width: 110
-        height: 132
-      alignment: 9
-      pivot: {x: 0.6744501, y: 0.96408266}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 946a9443643a048458f40d2db7d910d9
-      internalID: -1817681967
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pirates_10
-      rect:
-        serializedVersion: 2
-        x: 811
-        y: 831
-        width: 107
-        height: 132
-      alignment: 9
-      pivot: {x: 0.4586136, y: 0.9473086}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e39e7b3a1325a6646b9f25838dbd5a03
-      internalID: -2050163679
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pirates_11
-      rect:
-        serializedVersion: 2
-        x: 1236
-        y: 900
-        width: 98
-        height: 63
-      alignment: 9
-      pivot: {x: 0.88872296, y: 0.7674541}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 09f6baa5b4683d24890607cbd24e37ff
-      internalID: 208364342
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pirates_12
-      rect:
-        serializedVersion: 2
-        x: 1443
-        y: 854
-        width: 107
-        height: 101
-      alignment: 9
-      pivot: {x: 0.10289387, y: 0.9206966}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0a6a257b72a3bf644a072458433a3bfb
-      internalID: 1166111175
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pirates_13
-      rect:
-        serializedVersion: 2
-        x: 3203
-        y: 556
-        width: 134
-        height: 228
+        x: 1532
+        y: 524
+        width: 12
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -410,71 +326,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd7b06a245388414993f09879500e13f
-      internalID: -247813495
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pirates_14
-      rect:
-        serializedVersion: 2
-        x: 3216
-        y: 780
-        width: 16
-        height: 4
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5922cac7d56d3394cae03ff67a6190e2
-      internalID: 1509913879
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pirates_15
-      rect:
-        serializedVersion: 2
-        x: 2840
-        y: 432
-        width: 50
-        height: 4
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cf44b70dd930a8644ada007d976aa3e4
-      internalID: 192298268
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pirates_16
-      rect:
-        serializedVersion: 2
-        x: 2804
-        y: 211
-        width: 136
-        height: 195
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 712e680830c072142a0b0e5fc5fac556
-      internalID: 2014409086
+      spriteID: 38e209256a6f82e4c8d2eff6897341f6
+      internalID: -319063659
       vertices: []
       indices: 
       edges: []
@@ -490,23 +343,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Pirates_0: -1394113705
-      Pirates_1: -1196709672
-      Pirates_10: -2050163679
-      Pirates_11: 208364342
-      Pirates_12: 1166111175
-      Pirates_13: -247813495
-      Pirates_14: 1509913879
-      Pirates_15: 192298268
-      Pirates_16: 2014409086
-      Pirates_2: 1844909426
-      Pirates_3: 405695961
-      Pirates_4: -650053840
-      Pirates_5: -1597090589
-      Pirates_6: -959489745
-      Pirates_7: 672717372
-      Pirates_8: 619134165
-      Pirates_9: -1817681967
+      cauldronWater_0: -1597711301
+      cauldronWater_1: -565181306
+      cauldronWater_10: -319063659
+      cauldronWater_2: -1872782058
+      cauldronWater_3: 455041614
+      cauldronWater_4: 258421238
+      cauldronWater_5: -1242216510
+      cauldronWater_6: 852103643
+      cauldronWater_7: -278946126
+      cauldronWater_8: -1755635339
+      cauldronWater_9: -543293228
   mipmapLimitGroupName: 
   pSDRemoveMatte: 1
   userData: 

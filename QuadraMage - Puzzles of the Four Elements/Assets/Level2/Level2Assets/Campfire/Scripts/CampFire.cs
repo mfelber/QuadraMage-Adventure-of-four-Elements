@@ -30,6 +30,7 @@ public class CampFire : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("WindElementShot"))
         {
+            Destroy(collision.gameObject);  
             stage++;
             // mozno carateen ked bude animacia ze ju postupne pustim
             if (stage == 2)

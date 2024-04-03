@@ -4443,6 +4443,9 @@ MonoBehaviour:
   nearofNpcSecondQuest: 0
   nearofNpcThirdQuest: 0
   Wand: {fileID: 2026641372}
+  b2enabled: 0
+  b3enabled: 0
+  b4enabled: 0
   isPlayerHide: 0
   inRange: 0
   canbereloaded: 0
@@ -6593,6 +6596,9 @@ MonoBehaviour:
   nearofNpcSecondQuest: 0
   nearofNpcThirdQuest: 0
   Wand: {fileID: 0}
+  b2enabled: 0
+  b3enabled: 0
+  b4enabled: 0
   isPlayerHide: 0
   inRange: 0
   canbereloaded: 0
