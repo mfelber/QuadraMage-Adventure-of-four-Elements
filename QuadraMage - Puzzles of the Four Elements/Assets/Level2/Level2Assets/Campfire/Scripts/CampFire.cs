@@ -6,12 +6,17 @@ using UnityEngine;
 public class CampFire : MonoBehaviour
 {
 
-    public Sprite tiny , small, medium, large;
+    public GameObject tiny , small, medium, large;
     int stage;
 
     void Start()
     {
-        GetComponent<SpriteRenderer>().sprite = tiny;
+        //GetComponent<SpriteRenderer>().sprite = tiny;
+        tiny.SetActive(true);
+        small.SetActive(false);
+        medium.SetActive(false);
+        large.SetActive(false);
+
         stage = 1;
     }
 
@@ -29,15 +34,22 @@ public class CampFire : MonoBehaviour
             // mozno carateen ked bude animacia ze ju postupne pustim
             if (stage == 2)
             {
-                GetComponent<SpriteRenderer>().sprite = small;
+                tiny.SetActive(false);
+                small.SetActive(true);
+                
             }
             if (stage == 3)
             {
-                GetComponent<SpriteRenderer>().sprite = medium;
+                
+                small.SetActive(false);
+                medium.SetActive(true);
+                
             }
             if(stage == 4)
             {
-                GetComponent<SpriteRenderer>().sprite = large;
+                //small.SetActive(false);
+                medium.SetActive(false);
+                large.SetActive(true);
             }
         }
     }

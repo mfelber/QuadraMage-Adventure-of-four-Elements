@@ -36,6 +36,10 @@ public class Player : MonoBehaviour
     Inventory inventory;
     public GameObject Wand;
     ActivateCutScene activateCutScene;
+
+    public bool b2enabled;
+    public bool b3enabled;
+    public bool b4enabled;
     public void SavePlayerData()
     {
         Save.SavePlayerData(this);

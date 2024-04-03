@@ -20,6 +20,8 @@ public class CheckForLockedLevels : MonoBehaviour
        
     }
 
+    //public bool b1enabled;
+    
     
 
     // Update is called once per frame

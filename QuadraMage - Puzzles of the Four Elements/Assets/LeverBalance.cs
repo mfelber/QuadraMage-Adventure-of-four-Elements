@@ -49,7 +49,7 @@ public class LeverBalance : MonoBehaviour
         }
         */
         
-        Debug.LogError(isLeverOn);
+        //Debug.LogError(isLeverOn);
         
     }
 
