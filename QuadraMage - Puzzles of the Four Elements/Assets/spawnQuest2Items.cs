@@ -29,15 +29,20 @@ public class spawnQuest2Items : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
 
-        if (questManager.acceptSecondQuest == true)
-        {
-            for (int i = 0; i < questItems.Count; i++)
+    
+            if (questManager.acceptSecondQuest == true)
             {
-                questItems[i].SetActive(true);
+                if (questItems.Count > 0)
+                {
+                    for (int i = 0; i < questItems.Count; i++)
+                    {
+                        questItems[i].SetActive(true);
 
+                    }
+                    questItems.RemoveAt(removeItem);
+                }
             }
-            questItems.RemoveAt(removeItem);
-        }
+        
 
 
 

@@ -10,7 +10,7 @@ public class ShowLumberJack : MonoBehaviour
     private QuestManager questManager;
     void Start()
     {
-        Npc.SetActive(true);
+        Npc.SetActive(false);
         NpcQuest1.SetActive(false);
        
         questManager = FindObjectOfType<QuestManager>();

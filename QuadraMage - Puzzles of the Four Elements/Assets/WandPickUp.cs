@@ -24,4 +24,9 @@ public class WandPickUp : MonoBehaviour
         playPickUpScene.Play();
         wind.SetActive(true);
     }
+
+    public void pickUpEarth()
+    {
+        wind.SetActive(true);
+    }
 }

@@ -10,21 +10,32 @@ public class fireSpreadLevel2 : MonoBehaviour
     //public GameObject fire4;
     public Animator Animator;
     [SerializeField] Animator waterTank;
+    QuestManager questManager;
+    public GameObject fireSpreadObject;
     void Start()
     {
         fire1.SetActive(false);
         fire2.SetActive(false);
+        questManager = FindObjectOfType<QuestManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        /*
+        if (questManager.acceptThirdQuest)
+        {
+            fireSpreadObject.transform.position = new Vector2(30.84f, 23.57f);
+        } else
+        {
+            fireSpreadObject.transform.position = new Vector2(30.84f, 36.87f);
+        }
+            */
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("WindElementShot"))
+        if (collision.gameObject.CompareTag("WindElementShot") && questManager.acceptThirdQuest == true)
         {
             Animator.SetBool("spread", true);
             StartCoroutine(spreadFire(0.7f));

@@ -107,7 +107,7 @@ public class QuestManager : MonoBehaviour
             Quest3.SetActive(true);
 
         }
-        if (isQuest3comp && questNumber == 3)
+        if (isQuest3comp && questNumber >= 3)
         {
             //questItem3.SetActive(false);
         }
@@ -189,13 +189,14 @@ public class QuestManager : MonoBehaviour
     {
         isQuest2comp = true;
         questItem2.SetActive(false);
-        Quest3.SetActive(true);
+        //Quest3.SetActive(true);
         questNumber++;
     }
     public void quest3Completed()
     {
         isQuest3comp = true;
         questItem3.SetActive(false);
+        NPCQuest3.SetActive(false);
         questNumber++;
     }
 

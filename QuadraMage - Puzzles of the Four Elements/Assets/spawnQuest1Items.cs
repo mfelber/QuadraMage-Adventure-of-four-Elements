@@ -30,11 +30,14 @@ public class spawnQuest1Items : MonoBehaviour
         
         if(questManager.acceptFirstQuest == true)
         {
-            for (int i = 0; i < questItems.Count; i++)
+            if (questItems.Count > 0)
             {
-                questItems[i].SetActive(true);
+                for (int i = 0; i < questItems.Count; i++)
+                {
+                    questItems[i].SetActive(true);
+                }
+                questItems.RemoveAt(removeItem);
             }
-            questItems.RemoveAt(removeItem);
         }
         
        

@@ -8,6 +8,7 @@ public class MinecartHanging : MonoBehaviour
     public Animator aniamtor;
     bool playerNear;
     public GameObject leverOn, LeverOff;
+    QuestManager questManager;
 
     void Start()
     {
@@ -16,20 +17,24 @@ public class MinecartHanging : MonoBehaviour
         minecartHanging = true;
         leverOn.SetActive(false);
         LeverOff.SetActive(true);
+        questManager = FindObjectOfType<QuestManager>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (playerNear && Input.GetKey(KeyCode.E))
-        {
-            //Destroy(minecartRB);
-            aniamtor.SetBool("fall",true);
-            leverOn.SetActive(true);
-            LeverOff.SetActive(false);
-            
+        if (questManager.acceptFirstQuest) {
+            if (playerNear && Input.GetKey(KeyCode.E))
+            {
+                //Destroy(minecartRB);
+                aniamtor.SetBool("fall", true);
+                leverOn.SetActive(true);
+                LeverOff.SetActive(false);
+
+            }
         }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

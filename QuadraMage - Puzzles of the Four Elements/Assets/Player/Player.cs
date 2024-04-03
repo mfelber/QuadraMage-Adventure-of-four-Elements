@@ -97,6 +97,7 @@ public class Player : MonoBehaviour
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Elements"));
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("WorkBench"));
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Fluids"));
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Block"));
         string sceneName = SceneManager.GetActiveScene().name;
 
         if (sceneName == "Level1")
@@ -143,14 +144,19 @@ public class Player : MonoBehaviour
             inBulding = false;
         }
 
+        
         if (inBulding == false)
         {
-            Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"),true);
+            
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("NPC"),true);
         } else
         {
-            Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"), false);
+            Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("NPC"), false);
+            
         }
-      
+        
+        Debug.LogError(inBulding);
+
         if (ManaBar.isEmpty)
         {
           

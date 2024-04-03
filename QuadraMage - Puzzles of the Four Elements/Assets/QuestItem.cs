@@ -20,7 +20,8 @@ public class QuestItem : MonoBehaviour
     {
         player = GetComponent<Player>();
         questManager = FindObjectOfType<QuestManager>();
-       
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("item"), LayerMask.NameToLayer("Block"));
+
     }
 
 
