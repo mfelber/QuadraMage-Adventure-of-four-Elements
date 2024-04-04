@@ -20,7 +20,7 @@ public class rope : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // earthELemntShot
-        if(collision.gameObject.CompareTag("WindElementShot"))
+        if(collision.gameObject.CompareTag("EarthElementShot"))
         {
             Destroy(ropePrefab);
         }

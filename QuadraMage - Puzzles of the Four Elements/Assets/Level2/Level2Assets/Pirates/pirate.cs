@@ -5,11 +5,11 @@ using UnityEngine;
 public class pirate : MonoBehaviour
 {
 
-    public int health;
+    
     public PlayerMovement PlayerMovement;
     void Start()
     {
-        health = 100;
+        
     }
 
     // Update is called once per frame
@@ -22,7 +22,7 @@ public class pirate : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("cage"))
         {
-            health -= 25;
+            Destroy(gameObject);  
         }
         if (collision.gameObject.CompareTag("Player"))
         {

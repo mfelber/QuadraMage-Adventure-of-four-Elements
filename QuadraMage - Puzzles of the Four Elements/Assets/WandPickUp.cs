@@ -28,5 +28,6 @@ public class WandPickUp : MonoBehaviour
     public void pickUpEarth()
     {
         wind.SetActive(true);
+        Destroy(wand);
     }
 }

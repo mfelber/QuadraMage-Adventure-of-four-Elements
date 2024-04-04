@@ -1,0 +1,332 @@
+fileFormatVersion: 2
+guid: f9732188a0a71d9448569846b11fbe16
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 500
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: earthElementShot_3
+      rect:
+        serializedVersion: 2
+        x: 1738
+        y: 1531
+        width: 286
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5d6070f32c966e479b32ebaf1b4aea3
+      internalID: -1110803203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: earthElementShot_4
+      rect:
+        serializedVersion: 2
+        x: 2281
+        y: 1530
+        width: 319
+        height: 156
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f367cd190b9a76741bc668ebc0613885
+      internalID: 1925131794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: earthElementShot_5
+      rect:
+        serializedVersion: 2
+        x: 2756
+        y: 1524
+        width: 376
+        height: 161
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93c58af77063c134c8ccb4e7a7e2a1ae
+      internalID: 1402212740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: earthElementShot_6
+      rect:
+        serializedVersion: 2
+        x: 847
+        y: 1534
+        width: 142
+        height: 148
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50882e1ba2c6f5b47b9a15f6f4d3b3ff
+      internalID: -176259657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: earthElementShot_9
+      rect:
+        serializedVersion: 2
+        x: 1319
+        y: 1532
+        width: 202
+        height: 142
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abbf1e9edbee73941ac87d653952383a
+      internalID: -1646419799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: earthElementShot_32
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 1147
+        width: 329
+        height: 157
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 996602c9f4a17fc4aa4d8ca92a67ab26
+      internalID: 1843826858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: earthElementShot_35
+      rect:
+        serializedVersion: 2
+        x: 1258
+        y: 1149
+        width: 263
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e246085412348bf4b9173faf2452b9fc
+      internalID: -1237319534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      earthElementShot_0: -1492760119
+      earthElementShot_1: -2067016935
+      earthElementShot_10: -1109577389
+      earthElementShot_11: -1127593674
+      earthElementShot_12: -1748665272
+      earthElementShot_13: 1807509503
+      earthElementShot_14: 1628468638
+      earthElementShot_15: -1043581598
+      earthElementShot_16: -351087777
+      earthElementShot_17: -1394762512
+      earthElementShot_18: 1631305431
+      earthElementShot_19: 1217697233
+      earthElementShot_2: -335214536
+      earthElementShot_20: -1875518532
+      earthElementShot_21: 1512083186
+      earthElementShot_22: -1144860817
+      earthElementShot_23: -1239490676
+      earthElementShot_24: 259451027
+      earthElementShot_25: -9391963
+      earthElementShot_26: -1229815595
+      earthElementShot_27: -1295906295
+      earthElementShot_28: 760707978
+      earthElementShot_29: 1017954006
+      earthElementShot_3: -1110803203
+      earthElementShot_30: -1561648811
+      earthElementShot_31: 1445553214
+      earthElementShot_32: 1843826858
+      earthElementShot_33: -1220256762
+      earthElementShot_34: 715585875
+      earthElementShot_35: -1237319534
+      earthElementShot_36: 170898300
+      earthElementShot_37: -1958934197
+      earthElementShot_38: 128976893
+      earthElementShot_39: 1605797843
+      earthElementShot_4: 1925131794
+      earthElementShot_40: 244612496
+      earthElementShot_41: -1038509744
+      earthElementShot_42: -181062842
+      earthElementShot_43: -2040816033
+      earthElementShot_44: -713609046
+      earthElementShot_5: 1402212740
+      earthElementShot_6: -176259657
+      earthElementShot_7: -250805152
+      earthElementShot_8: -1319642494
+      earthElementShot_9: -1646419799
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

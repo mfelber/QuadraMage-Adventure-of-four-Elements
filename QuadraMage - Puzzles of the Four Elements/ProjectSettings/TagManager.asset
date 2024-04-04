@@ -53,6 +53,8 @@ TagManager:
   - MushRoom
   - ThirdQuest
   - InBuilding
+  - FireElementShot
+  - EarthElementShot
   layers:
   - Default
   - TransparentFX
