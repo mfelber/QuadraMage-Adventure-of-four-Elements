@@ -21,6 +21,9 @@ public class QuestItem : MonoBehaviour
         player = GetComponent<Player>();
         questManager = FindObjectOfType<QuestManager>();
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("item"), LayerMask.NameToLayer("Block"));
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("item"), LayerMask.NameToLayer("Enemy"));
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("item"), LayerMask.NameToLayer("Fluids"));
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("item"), LayerMask.NameToLayer("WaterTank"));
 
     }
 
