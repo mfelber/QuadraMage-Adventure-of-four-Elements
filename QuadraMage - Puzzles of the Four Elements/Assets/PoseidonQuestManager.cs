@@ -9,16 +9,33 @@ public class PoseidonQuestManager : MonoBehaviour
     public GameObject PoseidonNPCQuest2;
     public bool poseidonMarmaidQuestCom;
     [SerializeField] private List<GameObject> questItems = new List<GameObject>();
+    QuestManager questManager;
+    public bool acceptSaveMarmaid;
     void Start()
     {
         poseidonMarmaidQuestCom = false;
+        questManager = FindObjectOfType<QuestManager>();
         PoseidonNPCQuest1.SetActive(false);
         PoseidonNPCQuest2.SetActive(false);
+        acceptSaveMarmaid = false;
+
+        for (int i = 0; i < questItems.Count; i++)
+        {
+            questItems[i].SetActive(false);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+
+            if (acceptSaveMarmaid )
+        {
+            for (int i = 0; i < questItems.Count; i++)
+            {
+                questItems[i].SetActive(true);
+            }
+        }
       
             if (poseidonMarmaidQuestCom == true)
             {

@@ -32,13 +32,14 @@ public class DialogTrigger : MonoBehaviour
 
     public Dialogue dialogues;
     private Player player;
-
+    PoseidonQuestManager poseidonQuestManager;
 
     private void Start()
     {
         questManager = FindObjectOfType<QuestManager>();
         player = FindObjectOfType<Player>();
         playerMovement = FindObjectOfType<PlayerMovement>();
+        poseidonQuestManager = FindObjectOfType<PoseidonQuestManager>();
     }
     private void TriggerDialogue()
     {
@@ -50,13 +51,20 @@ public class DialogTrigger : MonoBehaviour
     {
         if (Player.inRangeOfNPC && Input.GetKeyDown(KeyCode.E))
         {
-            TriggerDialogue();       
-           
+            TriggerDialogue();   
+            
            
         }
 
         
-        if(player.nearofNpcFirstQuest && Input.GetKeyDown(KeyCode.E))
+        if(player.nearofPoseidonQuest && Input.GetKeyDown(KeyCode.E))
+        {
+            TriggerDialogue();
+            poseidonQuestManager.acceptSaveMarmaid = true;
+        }
+
+
+        if (player.nearofNpcFirstQuest && Input.GetKeyDown(KeyCode.E))
         {
             TriggerDialogue();
             questManager.acceptFirstQuest = true;
@@ -66,6 +74,7 @@ public class DialogTrigger : MonoBehaviour
         {
             TriggerDialogue();
             questManager.acceptSecondQuest = true;
+
         }
 
         if (player.nearofNpcThirdQuest && Input.GetKeyDown(KeyCode.E))
@@ -78,6 +87,8 @@ public class DialogTrigger : MonoBehaviour
         {
             TriggerDialogue();
         }
+
+
         
       
     }

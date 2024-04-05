@@ -25241,7 +25241,7 @@ Transform:
   m_GameObject: {fileID: 462707940}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -52, y: 15.5, z: 0}
+  m_LocalPosition: {x: -20.4, y: 14.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -25402,6 +25402,7 @@ MonoBehaviour:
   nearofNpcFirstQuest: 0
   nearofNpcSecondQuest: 0
   nearofNpcThirdQuest: 0
+  nearofPoseidonQuest: 0
   Wand: {fileID: 2026641372}
   b2enabled: 0
   b3enabled: 0
@@ -36059,6 +36060,7 @@ MonoBehaviour:
   nearofNpcFirstQuest: 0
   nearofNpcSecondQuest: 0
   nearofNpcThirdQuest: 0
+  nearofPoseidonQuest: 0
   Wand: {fileID: 0}
   b2enabled: 0
   b3enabled: 0
@@ -65388,7 +65390,7 @@ Transform:
   m_GameObject: {fileID: 1088949124}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -52, y: 19.14, z: -10}
+  m_LocalPosition: {x: -20.4, y: 18.14, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -96392,7 +96394,7 @@ Transform:
   m_GameObject: {fileID: 1795734061}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -52, y: 19.14, z: -10}
+  m_LocalPosition: {x: -20.4, y: 18.14, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

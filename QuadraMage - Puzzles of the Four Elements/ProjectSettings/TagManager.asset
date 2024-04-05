@@ -55,6 +55,7 @@ TagManager:
   - InBuilding
   - FireElementShot
   - EarthElementShot
+  - PoseidonQuest
   layers:
   - Default
   - TransparentFX

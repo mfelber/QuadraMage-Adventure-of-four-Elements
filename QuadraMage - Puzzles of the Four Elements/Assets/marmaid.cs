@@ -25,7 +25,7 @@ public class marmaid : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         
-            if (collision.gameObject.CompareTag("Player") && poseidonQuestManager.poseidonMarmaidQuestCom == false)
+            if (collision.gameObject.CompareTag("EarthElementShot") && poseidonQuestManager.poseidonMarmaidQuestCom == false)
                  {
           
                 TeleportToPoseidon.teleportPlayer();
