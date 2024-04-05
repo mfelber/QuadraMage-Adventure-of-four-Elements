@@ -46,16 +46,7 @@ public class spawnQuest2Items : MonoBehaviour
 
 
 
-        if(sceneName == "Level 3")
-        {
-            if (poseidonQuestManager.poseidonMarmaidQuestCom == true)
-            {
-                for (int i = 0; i < questItems.Count; i++)
-                {
-                    questItems[i].SetActive(false);
-                }
-            }
-        }
+        
         
 
 

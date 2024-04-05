@@ -33,7 +33,7 @@ public class ShowSecondNpc : MonoBehaviour
         {
            
 
-            if (questManager.getQuestNumber == 2)
+            if (questManager.acceptSecondQuest)
             {
                 
                 NpcQuest1.SetActive(true);
@@ -59,7 +59,7 @@ public class ShowSecondNpc : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            if (questManager.getQuestNumber == 2)
+            if (questManager.acceptSecondQuest)
             {
 
                 NpcQuest1.SetActive(false);
