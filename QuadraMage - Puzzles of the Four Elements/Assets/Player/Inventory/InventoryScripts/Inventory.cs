@@ -9,6 +9,7 @@ public class Inventory : MonoBehaviour
     PauseMenu pauseMenu;
     NewPauseMenu newPauseMenu;
     PlayerMovement playermovement; 
+    PoseidonQuestManager poseidonQuestManager;
 
     Player player;
    
@@ -34,6 +35,7 @@ public class Inventory : MonoBehaviour
 
     void Start()
     {
+        
 
         mana.SetActive(false);
 
@@ -69,6 +71,7 @@ public class Inventory : MonoBehaviour
         
         if (sceneName == "Level3")
         {
+            poseidonQuestManager = FindObjectOfType<PoseidonQuestManager>();
             Item.ItemData wind = new Item.ItemData();
             Item.ItemData earth = new Item.ItemData();
             wind.itemName = "Wind";
@@ -104,6 +107,20 @@ public class Inventory : MonoBehaviour
 
     void Update()
     {
+
+        string sceneName = SceneManager.GetActiveScene().name;
+
+        if (sceneName == "Level3")
+        {
+            if (poseidonQuestManager.acceptSaveMarmaid)
+            {
+                Item.ItemData water = new Item.ItemData();
+                water.itemName = "Water";
+                inventory.Add(water);
+            }           
+
+        }
+
         //Debug.Log( "Can use elemnt :" + canUseElement);
         Animator anim = GetComponent<Animator>();
         if (!NewPauseMenu.isPauseMenuOpen && !Book.isBookOpen && !MovingPlatform.isChildOfPlatform)
@@ -140,7 +157,7 @@ public class Inventory : MonoBehaviour
                         else if (inventory[currentIndex].itemName.Equals("Water"))
                         {                                                       
                             Debug.LogError(inventory.Count);
-                            if (canUseElement == true && !ManaBar.isEmpty && PlayerMovement.playerOnGround == true && Player.manaIsLoaded == true)
+                            if (canUseElement == true && !ManaBar.isEmpty && playermovement.isGrounded() == true && Player.manaIsLoaded == true && Player.inBulding == false && PlayerMovement.isInputEnabled == true && !DialogManager.isDialgueActive)
                             {
 
                                 anim.SetBool("WaterBall", true);
@@ -159,7 +176,7 @@ public class Inventory : MonoBehaviour
                         {
 
                             Debug.LogError(inventory.Count);
-                            if (canUseElement == true && !ManaBar.isEmpty && PlayerMovement.playerOnGround == true && Player.manaIsLoaded == true)
+                            if (canUseElement == true && !ManaBar.isEmpty && playermovement.isGrounded() == true && Player.manaIsLoaded == true && Player.inBulding == false && PlayerMovement.isInputEnabled == true && !DialogManager.isDialgueActive)
                             {
 
                                 anim.SetBool("FireBall", true);
@@ -177,7 +194,7 @@ public class Inventory : MonoBehaviour
                         else if (inventory[currentIndex].itemName.Equals("Earth"))
                         {
                             Debug.LogError(inventory.Count);
-                            if (canUseElement == true && !ManaBar.isEmpty && PlayerMovement.playerOnGround == true && Player.manaIsLoaded == true)
+                            if (canUseElement == true && !ManaBar.isEmpty && playermovement.isGrounded() == true && Player.manaIsLoaded == true && Player.inBulding == false && PlayerMovement.isInputEnabled == true && !DialogManager.isDialgueActive)
                             {
 
                                 anim.SetBool("Earth", true);                                

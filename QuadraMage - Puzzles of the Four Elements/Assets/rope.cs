@@ -6,9 +6,10 @@ public class rope : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject ropePrefab;
+    public bool ropeDestroyed;
     void Start()
     {
-        
+        ropeDestroyed = false;
     }
 
     // Update is called once per frame
@@ -22,7 +23,9 @@ public class rope : MonoBehaviour
         // earthELemntShot
         if(collision.gameObject.CompareTag("EarthElementShot"))
         {
-            Destroy(ropePrefab);
+            //Destroy(ropePrefab);
+            ropePrefab.SetActive(false);
+            ropeDestroyed = true;
         }
     }
 

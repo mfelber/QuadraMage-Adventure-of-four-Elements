@@ -131,7 +131,7 @@ TextureImporter:
         width: 201
         height: 1750
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -139,48 +139,6 @@ TextureImporter:
       bones: []
       spriteID: a9511d63ffeeb70499ca79fb2e2b2740
       internalID: -331415310
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: OctopusTentacle_1
-      rect:
-        serializedVersion: 2
-        x: 1848
-        y: 308
-        width: 4
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d094127ce07760946abaeaa5c08d1b6b
-      internalID: -1564027979
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: OctopusTentacle_2
-      rect:
-        serializedVersion: 2
-        x: 1812
-        y: 268
-        width: 36
-        height: 36
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4b2b910a5df4e1a4baa31849db1591dd
-      internalID: -1050653021
       vertices: []
       indices: 
       edges: []

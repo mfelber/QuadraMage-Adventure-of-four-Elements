@@ -32,7 +32,7 @@ public class teleportToPoseidon : MonoBehaviour
     {
         transition.SetTrigger("EndTransition");
         yield return new WaitForSeconds(1);
-        player.transform.position = new Vector2(-50.57f, 60.34f);
+        player.transform.position = new Vector2(-10.89f, 14.70694f);
         transition.SetTrigger("StartTransition");
 
     }
@@ -41,7 +41,7 @@ public class teleportToPoseidon : MonoBehaviour
     {
         transition.SetTrigger("EndTransition");
         yield return new WaitForSeconds(1);
-        player.transform.position = new Vector2(-186.12f, 191.88f);
+        player.transform.position = new Vector2(-34.4793f, 30.21073f);
         transition.SetTrigger("StartTransition");
 
     }

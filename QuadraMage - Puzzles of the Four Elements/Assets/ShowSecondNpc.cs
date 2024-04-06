@@ -49,6 +49,7 @@ public class ShowSecondNpc : MonoBehaviour
             {
                 NpcQuest1Thanks.SetActive(true);
                 NpcQuest1.SetActive(false);
+                Npc.SetActive(false);
             }
 
         }
@@ -76,6 +77,8 @@ public class ShowSecondNpc : MonoBehaviour
             {
 
                 NpcQuest1Thanks.SetActive(false);
+                NpcQuest1.SetActive(false);
+                Npc.SetActive(false);
             } 
 
         }
