@@ -16,11 +16,13 @@ public class craneHand : MonoBehaviour
    // public Rigidbody2D rop3;
     public Rigidbody2D tntBox;
     rope ropeScript;
+    public bool animationGoing;
     
 
     void Start()
     {
         craneNotdefault = true;
+        animationGoing = false;
         ropeScript = FindAnyObjectByType<rope>();
         
     }
@@ -42,6 +44,17 @@ public class craneHand : MonoBehaviour
         
 
         
+    }
+
+    public void animationIsGoing()
+    {
+        animationGoing = true;
+    }
+
+
+    public void animationIsStoped()
+    {
+        animationGoing = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
