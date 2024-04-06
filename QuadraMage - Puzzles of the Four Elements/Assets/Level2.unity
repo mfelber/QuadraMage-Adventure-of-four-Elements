@@ -4194,6 +4194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ropePrefab: {fileID: 85934548}
+  ropeDestroyed: 0
 --- !u!1 &87651963
 GameObject:
   m_ObjectHideFlags: 0
@@ -4858,6 +4859,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ropePrefab: {fileID: 98142692}
+  ropeDestroyed: 0
 --- !u!1 &98542993
 GameObject:
   m_ObjectHideFlags: 0
@@ -5555,6 +5557,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ropePrefab: {fileID: 105635324}
+  ropeDestroyed: 0
 --- !u!1 &107815851
 GameObject:
   m_ObjectHideFlags: 0
@@ -21560,6 +21563,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ropePrefab: {fileID: 398203077}
+  ropeDestroyed: 0
 --- !u!233 &398203080
 HingeJoint2D:
   m_ObjectHideFlags: 0
@@ -25241,7 +25245,7 @@ Transform:
   m_GameObject: {fileID: 462707940}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -57.4, y: 13.3, z: 0}
+  m_LocalPosition: {x: -19.36, y: 23.97, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -60277,6 +60281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ropePrefab: {fileID: 977468527}
+  ropeDestroyed: 0
 --- !u!1 &978103540
 GameObject:
   m_ObjectHideFlags: 0
@@ -65390,7 +65395,7 @@ Transform:
   m_GameObject: {fileID: 1088949124}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -57.4, y: 16.94, z: -10}
+  m_LocalPosition: {x: -19.36, y: 27.609999, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -75796,6 +75801,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ropePrefab: {fileID: 1334006083}
+  ropeDestroyed: 0
 --- !u!233 &1334006086
 HingeJoint2D:
   m_ObjectHideFlags: 0
@@ -89855,6 +89861,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ropePrefab: {fileID: 1638315921}
+  ropeDestroyed: 0
 --- !u!1 &1639903977
 GameObject:
   m_ObjectHideFlags: 0
@@ -94595,6 +94602,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ropePrefab: {fileID: 1771405854}
+  ropeDestroyed: 0
 --- !u!1 &1771831781
 GameObject:
   m_ObjectHideFlags: 0
@@ -96394,7 +96402,7 @@ Transform:
   m_GameObject: {fileID: 1795734061}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -57.4, y: 16.94, z: -10}
+  m_LocalPosition: {x: -19.36, y: 27.609999, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -109768,6 +109776,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ropePrefab: {fileID: 2075180494}
+  ropeDestroyed: 0
 --- !u!233 &2075180497
 HingeJoint2D:
   m_ObjectHideFlags: 0

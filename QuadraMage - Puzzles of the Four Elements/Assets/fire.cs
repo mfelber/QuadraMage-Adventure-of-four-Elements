@@ -19,7 +19,7 @@ public class fire : MonoBehaviour
 
     private void Start()
     {
-        Physics2D.IgnoreLayerCollision(9, 10);
+        //Physics2D.IgnoreLayerCollision(9, 10);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -40,7 +40,7 @@ public class fire : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("WaterElementShot"))
         {
-            Destroy(gameObject, 1);
+            Destroy(gameObject);
         }
         if (collision.gameObject.CompareTag("Water"))
         {

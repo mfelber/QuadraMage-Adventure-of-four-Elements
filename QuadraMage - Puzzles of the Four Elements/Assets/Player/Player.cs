@@ -157,7 +157,7 @@ public class Player : MonoBehaviour
             
         }
         
-        Debug.LogError(inBulding);
+       // Debug.LogError(inBulding);
 
         if (ManaBar.isEmpty)
         {
@@ -366,7 +366,7 @@ public class Player : MonoBehaviour
 
         if (collision.gameObject.CompareTag("camera"))
         {
-            StartCoroutine(ChangeOrthoSizePirateShip(10f, 2f));
+            StartCoroutine(ChangeOrthoSizePirateShip(9f, 2f));
            
         }
 
@@ -520,7 +520,7 @@ public class Player : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("camera"))
         {
-            StartCoroutine(ChangeOrthoSizePirateShip(5.3f, 2f));
+            StartCoroutine(ChangeOrthoSizePirateShip(5.8f, 2f));
             //vcam.m_Lens.OrthographicSize = 5.3f;
         }
 

@@ -21,7 +21,8 @@ public class tnt : MonoBehaviour
         time = 5;
         tntIsActive = false;
         questManager = FindObjectOfType<QuestManager>();
-        
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("item"), LayerMask.NameToLayer("Mast"));
+
 
         // tntGameObject = GetComponent<GameObject>();
 

@@ -21,6 +21,7 @@ public class EnemyPirate : MonoBehaviour
         Tnt = tntObject.GetComponent<tnt>();
        
         pirateNearTnt = false;
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Enemy"), LayerMask.NameToLayer("Ground"), true);
     }
 
     // Update is called once per frame
@@ -87,6 +88,7 @@ public class EnemyPirate : MonoBehaviour
             animator.SetBool("pirateOverBoard", true);
             animator.SetBool("overBoardPirate3", true);
             animator.SetBool("overBoardPirate4", true);
+            animator.SetBool("overBoardPirate2", true);
             Destroy(collision.gameObject);
         }
 
