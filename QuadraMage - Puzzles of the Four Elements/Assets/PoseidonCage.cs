@@ -18,7 +18,7 @@ public class PoseidonCage : MonoBehaviour
         pirateIsFree = false;
         destroy.SetActive(true);
         
-        tntBarrel.SetActive(false);
+        tntBarrel.SetActive(true);
         /*
         for (int i = 0; i < itemsToSpawn.Count; i++)
         {

@@ -10,6 +10,7 @@ public class EnemyPirate : MonoBehaviour
     public PlayerMovement PlayerMovement;
     tnt Tnt;
     public bool pirateNearTnt;
+    
     //public string tntObjectName;
     public string tntObjectName;
     void Start()
@@ -34,7 +35,9 @@ public class EnemyPirate : MonoBehaviour
             animator.SetBool("overBoardPirate2", true);
             animator.SetBool("DeadPirate", true);
             animator.SetBool("deadOctopus", true);
-        }
+        } 
+
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -52,7 +55,7 @@ public class EnemyPirate : MonoBehaviour
         }
 
         
-
+        
         if (collision.gameObject.name == tntObjectName)
         {
             Debug.Log("kolizia");
@@ -61,7 +64,8 @@ public class EnemyPirate : MonoBehaviour
 
         
 
-       
+
+
 
     }
 
