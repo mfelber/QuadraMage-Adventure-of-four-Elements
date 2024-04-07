@@ -57,10 +57,7 @@ public class EnemyPirate : MonoBehaviour
             pirateNearTnt =true;
         }
 
-        if (collision.gameObject.CompareTag("cage"))
-        {
-            animator.SetBool("overBoardPirate5", true);
-        }
+       
 
     }
 
@@ -110,6 +107,7 @@ public class EnemyPirate : MonoBehaviour
             }
         }
 
+       
 
 
     }

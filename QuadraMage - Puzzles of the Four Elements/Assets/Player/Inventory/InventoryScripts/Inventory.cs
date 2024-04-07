@@ -103,7 +103,7 @@ public class Inventory : MonoBehaviour
     }
 
     
-    
+    public bool waterAdded = false;
 
     void Update()
     {
@@ -112,11 +112,13 @@ public class Inventory : MonoBehaviour
 
         if (sceneName == "Level3")
         {
-            if (poseidonQuestManager.acceptSaveMarmaid)
+            if (poseidonQuestManager.acceptSaveMarmaid && waterAdded == false)
             {
+
                 Item.ItemData water = new Item.ItemData();
                 water.itemName = "Water";
                 inventory.Add(water);
+                waterAdded = true;
             }           
 
         }

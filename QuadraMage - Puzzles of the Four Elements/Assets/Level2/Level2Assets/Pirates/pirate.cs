@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class pirate : MonoBehaviour
 {
@@ -20,10 +21,17 @@ public class pirate : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("cage"))
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+
+        if (sceneName == "Level2")
         {
-            Destroy(gameObject);  
+            if (collision.gameObject.CompareTag("cage"))
+            {
+                Destroy(gameObject);
+            }
         }
+        
         if (collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("kolizia");

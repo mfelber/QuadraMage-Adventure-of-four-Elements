@@ -27,6 +27,16 @@ public class rope : MonoBehaviour
             ropePrefab.SetActive(false);
             ropeDestroyed = true;
         }
+
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            Destroy(gameObject, 1);
+        }
+
+        if (collision.gameObject.CompareTag("OneWayPlatform"))
+        {
+            Destroy(gameObject, 1);
+        }
     }
 
 

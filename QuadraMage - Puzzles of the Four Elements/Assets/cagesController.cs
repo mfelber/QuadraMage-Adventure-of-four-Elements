@@ -27,5 +27,12 @@ public class cagesController : MonoBehaviour
         }
 
         
+        if (collision.gameObject.CompareTag("OneWayPlatform"))
+        {
+            Destroy(gameObject, 1);
+        }
+        
+
+
     }
 }

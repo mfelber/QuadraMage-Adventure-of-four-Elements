@@ -41,6 +41,7 @@ public class fire : MonoBehaviour
         if (collision.gameObject.CompareTag("WaterElementShot"))
         {
             Destroy(gameObject);
+            Destroy(collision.gameObject); 
         }
         if (collision.gameObject.CompareTag("Water"))
         {
