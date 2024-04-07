@@ -9,6 +9,7 @@ public class WindScript : MonoBehaviour
 
     void Start()
     {
+        
         if (speed <= 0)
         {
             Debug.LogError("You forgot to set the spped tp non-zero");

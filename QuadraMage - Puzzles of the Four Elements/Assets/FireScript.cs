@@ -10,6 +10,7 @@ public class FireScript : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     void Start()
     {
+        
         if (speed == 0)
         {
             Debug.LogError("You forgot to set the speed to non-zero");

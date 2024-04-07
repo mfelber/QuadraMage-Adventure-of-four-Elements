@@ -32,6 +32,8 @@ public class EnemyPirate : MonoBehaviour
         if (pirateNearTnt && Tnt.time < 0)
         {
             animator.SetBool("overBoardPirate2", true);
+            animator.SetBool("DeadPirate", true);
+            animator.SetBool("deadOctopus", true);
         }
     }
 
@@ -56,6 +58,8 @@ public class EnemyPirate : MonoBehaviour
             Debug.Log("kolizia");
             pirateNearTnt =true;
         }
+
+        
 
        
 

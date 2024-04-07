@@ -8,8 +8,8 @@ public class craneHand : MonoBehaviour
     private bool craneNotdefault;
     public Animator craneHandAnimator;
     
-    public GameObject rope1;
-    public GameObject rope2;
+   // public GameObject rope1;
+   // public GameObject rope2;
     public GameObject hook;
     //public GameObject rope1;
     //public Rigidbody2D tnt;
@@ -31,13 +31,13 @@ public class craneHand : MonoBehaviour
     void Update()
     {
         
-        if (ropeScript.ropeDestroyed)
+        if (rope.ropeDestroyed)
         {
             tntBox.bodyType = RigidbodyType2D.Dynamic;
             //tnt.bodyType = RigidbodyType2D.Dynamic;
 
-            Destroy(rope2);
-            Destroy(rope1);
+           // Destroy(rope2);
+          //  Destroy(rope1);
             Destroy(hook);
             
         }

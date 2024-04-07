@@ -6,7 +6,7 @@ public class rope : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject ropePrefab;
-    public bool ropeDestroyed;
+    public static bool ropeDestroyed;
     void Start()
     {
         ropeDestroyed = false;
@@ -28,11 +28,12 @@ public class rope : MonoBehaviour
             ropeDestroyed = true;
         }
 
+        
         if (collision.gameObject.CompareTag("Ground"))
         {
             Destroy(gameObject, 1);
         }
-
+        
         if (collision.gameObject.CompareTag("OneWayPlatform"))
         {
             Destroy(gameObject, 1);

@@ -33,11 +33,22 @@ public class CranePlatform : MonoBehaviour
             collision.transform.SetParent(transform);
             tntOnPlatWhileAnim = true;
             
+        } else
+        {
+            return;
         }
 
         
 
        
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Destroy"))
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -48,6 +59,9 @@ public class CranePlatform : MonoBehaviour
             collision.transform.SetParent(null);
             tntOnPlatWhileAnim = false;
 
+        } else
+        {
+            return;
         }
     }
 }

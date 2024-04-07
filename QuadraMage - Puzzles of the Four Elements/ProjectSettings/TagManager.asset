@@ -56,6 +56,7 @@ TagManager:
   - FireElementShot
   - EarthElementShot
   - PoseidonQuest
+  - Destroy
   layers:
   - Default
   - TransparentFX
@@ -81,8 +82,8 @@ TagManager:
   - NPC
   - WaterTank
   - Mast
-  - 
-  - 
+  - Cage
+  - Octopus
   - 
   - 
   - 

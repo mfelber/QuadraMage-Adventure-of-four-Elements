@@ -12,6 +12,7 @@ public class WaterScript : MonoBehaviour
 
     void Start()
     {
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Elements"), LayerMask.NameToLayer("Cage"), true);
         if (speed == 0)
         {
             Debug.LogError("Speed is set to 0");

@@ -59,11 +59,7 @@ public class WorkBench : MonoBehaviour
             //Destroy(collision.gameObject);
         }
 
-        if (collision.gameObject.CompareTag("WaterElementShot"))
-        {
-            questManager.quest3Completed();
-            //Destroy(collision.gameObject);
-        }
+       
 
 
     }
