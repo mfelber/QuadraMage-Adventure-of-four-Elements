@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 300
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -69,10 +69,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -121,7 +121,469 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: BackGroundDevilPalace_0
+      rect:
+        serializedVersion: 2
+        x: 3172
+        y: 1518
+        width: 360
+        height: 614
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0db76902b4ddc76488dc9eeb5eb0fd44
+      internalID: -1696192946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BackGroundDevilPalace_1
+      rect:
+        serializedVersion: 2
+        x: 3172
+        y: 1984
+        width: 4
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbadcfa3b3d46d640ab2bb08d6d0240c
+      internalID: -498916055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BackGroundDevilPalace_2
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 1264
+        width: 680
+        height: 647
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df7080e4a8257e442a6a75815985b80d
+      internalID: 1348286852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BackGroundDevilPalace_3
+      rect:
+        serializedVersion: 2
+        x: 3172
+        y: 1884
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 273653e9beb9cea418bda1a561c26cad
+      internalID: 354583210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BackGroundDevilPalace_4
+      rect:
+        serializedVersion: 2
+        x: 3172
+        y: 1824
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f16a5fb09544dc418471c9461449d6c
+      internalID: 1384634602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BackGroundDevilPalace_5
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 1812
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aef60f172b6860d44b93bdd6b6dde0dc
+      internalID: -1140140737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BackGroundDevilPalace_6
+      rect:
+        serializedVersion: 2
+        x: 3172
+        y: 1796
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6b9ada58369bf94f8432dffdf37509b
+      internalID: -571774483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BackGroundDevilPalace_7
+      rect:
+        serializedVersion: 2
+        x: 1128
+        y: 1632
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44fd203f304f5b1409d31574526e80fa
+      internalID: -2096626438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BackGroundDevilPalace_8
+      rect:
+        serializedVersion: 2
+        x: 2104
+        y: 1584
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 322724b1412e04f4b942fe18db639b1c
+      internalID: 386645121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BackGroundDevilPalace_9
+      rect:
+        serializedVersion: 2
+        x: 1656
+        y: 544
+        width: 702
+        height: 1037
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23d3be5826ec9c7449bd5cb259df1f53
+      internalID: -1213968583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BackGroundDevilPalace_10
+      rect:
+        serializedVersion: 2
+        x: 2108
+        y: 1580
+        width: 8
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19c3808d4de39cc4f82947aa0c132178
+      internalID: -1017565198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BackGroundDevilPalace_11
+      rect:
+        serializedVersion: 2
+        x: 3172
+        y: 1580
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c15c5c2e1d9abef468971f50eedcf2ab
+      internalID: -1309916035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BackGroundDevilPalace_12
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 676
+        width: 676
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cd4cfbbde402334387bb203525da9cf
+      internalID: 1688906559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BackGroundDevilPalace_13
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 996
+        width: 4
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46a15a7a96ef64448b37dc7bc326db2f
+      internalID: 189630289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BackGroundDevilPalace_14
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 904
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4eb658794b2a92041ae90d0923dbf7d6
+      internalID: 1075355583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BackGroundDevilPalace_15
+      rect:
+        serializedVersion: 2
+        x: 1660
+        y: 768
+        width: 4
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caa5c12cf3db0b848912369b797843b6
+      internalID: -526570844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BackGroundDevilPalace_16
+      rect:
+        serializedVersion: 2
+        x: 2916
+        y: 231
+        width: 785
+        height: 586
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba84e122504a98848be24953b05dc058
+      internalID: -403804199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BackGroundDevilPalace_17
+      rect:
+        serializedVersion: 2
+        x: 1660
+        y: 756
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85ca3bb01ce7e764ab18cbf95228df12
+      internalID: 1654518390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BackGroundDevilPalace_18
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 680
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 661f4a6efc1435149a4b49b8573e9437
+      internalID: 244537345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BackGroundDevilPalace_19
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 676
+        width: 60
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4eab4edcbc2e151469a8e75703d433ab
+      internalID: 689753777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BackGroundDevilPalace_20
+      rect:
+        serializedVersion: 2
+        x: 1952
+        y: 548
+        width: 12
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7325b3aeea262ac4cb6486c8a2b586a4
+      internalID: 1700470355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BackGroundDevilPalace_21
+      rect:
+        serializedVersion: 2
+        x: 2152
+        y: 544
+        width: 28
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8eac7e947ed39784f8d33a6c957cdc33
+      internalID: -1593990363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,9 +594,31 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BackGroundDevilPalace_0: -1696192946
+      BackGroundDevilPalace_1: -498916055
+      BackGroundDevilPalace_10: -1017565198
+      BackGroundDevilPalace_11: -1309916035
+      BackGroundDevilPalace_12: 1688906559
+      BackGroundDevilPalace_13: 189630289
+      BackGroundDevilPalace_14: 1075355583
+      BackGroundDevilPalace_15: -526570844
+      BackGroundDevilPalace_16: -403804199
+      BackGroundDevilPalace_17: 1654518390
+      BackGroundDevilPalace_18: 244537345
+      BackGroundDevilPalace_19: 689753777
+      BackGroundDevilPalace_2: 1348286852
+      BackGroundDevilPalace_20: 1700470355
+      BackGroundDevilPalace_21: -1593990363
+      BackGroundDevilPalace_3: 354583210
+      BackGroundDevilPalace_4: 1384634602
+      BackGroundDevilPalace_5: -1140140737
+      BackGroundDevilPalace_6: -571774483
+      BackGroundDevilPalace_7: -2096626438
+      BackGroundDevilPalace_8: 386645121
+      BackGroundDevilPalace_9: -1213968583
   mipmapLimitGroupName: 
-  pSDRemoveMatte: 0
+  pSDRemoveMatte: 1
   userData: 
   assetBundleName: 
   assetBundleVariant: 

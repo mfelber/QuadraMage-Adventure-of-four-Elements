@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class leverDeamon : MonoBehaviour
 {
-    public Animator leverAnimator;
+    
     public Animator BridgeAnimator;
+    public GameObject leverOff, leverOn;
     public bool hit;
 
 
     void Start()
     {
         hit = false;
+        leverOff.SetActive(true);
+        leverOn.SetActive(false);
     }
 
     // Update is called once per frame
@@ -20,6 +23,8 @@ public class leverDeamon : MonoBehaviour
         if (hit)
         {
             BridgeAnimator.SetBool("down", true);
+            leverOff.SetActive(false);
+            leverOn.SetActive(true);
         }
     }
 
@@ -27,7 +32,7 @@ public class leverDeamon : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            leverAnimator.SetBool("hitByDeamon",true);
+            
             hit = true;
         }
     }
