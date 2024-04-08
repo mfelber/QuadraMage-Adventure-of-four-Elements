@@ -16450,11 +16450,16 @@ MonoBehaviour:
     - character:
         name: 
         icon: {fileID: 0}
-      line: shdgajd
+      line: 'Pomoc '
     - character:
         name: 
         icon: {fileID: 0}
-      line: uuuuuuuuuu
+      line: ako sa do da otvorit
+    - character:
+        name: 
+        icon: {fileID: 0}
+      line: neotvoris to, otvorit to viem len ten kto ovlada vodu a moria co dokaze
+        len Poseidon, to on ma sem zavrel
 --- !u!212 &429090835
 SpriteRenderer:
   m_ObjectHideFlags: 0
