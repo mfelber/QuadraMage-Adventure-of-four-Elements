@@ -22,6 +22,7 @@ public class tnt : MonoBehaviour
         tntIsActive = false;
         questManager = FindObjectOfType<QuestManager>();
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("item"), LayerMask.NameToLayer("Mast"));
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("item"), LayerMask.NameToLayer("WorkBench"));
 
 
         // tntGameObject = GetComponent<GameObject>();
@@ -45,6 +46,7 @@ public class tnt : MonoBehaviour
         if(time < 0)
         {
             tntIsActive = false;
+            //gameObject.SetActive(false);
             Destroy(gameObject);
            // gameObject.SetActive(false);
         }

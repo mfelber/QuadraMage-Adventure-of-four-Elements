@@ -7755,6 +7755,7 @@ GameObject:
   - component: {fileID: 248071043}
   - component: {fileID: 248071042}
   - component: {fileID: 248071041}
+  - component: {fileID: 248071047}
   m_Layer: 18
   m_Name: TntBox
   m_TagString: Tnt
@@ -7769,7 +7770,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 248071040}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -7829,7 +7830,7 @@ CapsuleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 248071040}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -7924,9 +7925,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: -53206899, guid: fd9f5cbc05c291046919c63ebdbf7d6b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -7945,12 +7946,33 @@ Transform:
   m_GameObject: {fileID: 248071040}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.22, y: 0.03, z: 0}
+  m_LocalPosition: {x: 0.11, y: 0.28, z: 0}
   m_LocalScale: {x: 0.3234798, y: 0.3234798, z: 0.3234798}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &248071047
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 248071040}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 695d5277f7fd9bc409b265d1f3ad7caf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &250088765
 GameObject:
   m_ObjectHideFlags: 0
@@ -11961,8 +11983,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemsToSpawn: []
   destroy: {fileID: 1571864678}
-  tntBarrel: {fileID: 248071040}
+  pirateIsFree: 0
   animator: {fileID: 831797804}
+  tntBarrel: {fileID: 248071047}
 --- !u!4 &338119697
 Transform:
   m_ObjectHideFlags: 0
