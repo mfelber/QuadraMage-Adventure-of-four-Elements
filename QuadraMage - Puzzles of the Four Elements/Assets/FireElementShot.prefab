@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 3982409034117663495}
   m_Layer: 9
   m_Name: FireElementShot
-  m_TagString: Untagged
+  m_TagString: FireElementShot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
