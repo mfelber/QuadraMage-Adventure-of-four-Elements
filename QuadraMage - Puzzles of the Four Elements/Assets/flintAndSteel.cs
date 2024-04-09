@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class flintAndSteel : MonoBehaviour
 {
@@ -19,5 +20,7 @@ public class flintAndSteel : MonoBehaviour
         {
             flintandSteel.SetActive(true);
         }
+
+       
     }
 }

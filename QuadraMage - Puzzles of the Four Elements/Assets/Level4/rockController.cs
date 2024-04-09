@@ -20,7 +20,19 @@ public class rockController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Wood"))
         {
+            Destroy(gameObject);
             Destroy(collision.gameObject);
+        }
+
+        
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Platform"))
+        {
+
+            Destroy(gameObject, 1);
         }
     }
 }

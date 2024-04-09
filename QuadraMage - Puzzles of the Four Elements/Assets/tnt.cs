@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class tnt : MonoBehaviour
 {
@@ -32,6 +33,15 @@ public class tnt : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+
+        if (playerNearTnt && Input.GetKeyDown(KeyCode.E) && sceneName == "Level4")
+        {
+            tntIsActive = true;
+        }
+
         if (playerNearTnt && Input.GetKeyDown(KeyCode.E) && questManager.acceptFirstQuest == true)
         {
             tntIsActive = true;

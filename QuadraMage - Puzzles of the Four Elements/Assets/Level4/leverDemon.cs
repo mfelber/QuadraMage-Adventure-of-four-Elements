@@ -5,7 +5,7 @@ using UnityEngine;
 public class leverDeamon : MonoBehaviour
 {
     
-    public Animator BridgeAnimator;
+    public Animator LadderAnimation;
     public GameObject leverOff, leverOn;
     public bool hit;
 
@@ -22,7 +22,7 @@ public class leverDeamon : MonoBehaviour
     {
         if (hit)
         {
-            BridgeAnimator.SetBool("down", true);
+            LadderAnimation.SetBool("down", true);
             leverOff.SetActive(false);
             leverOn.SetActive(true);
         }

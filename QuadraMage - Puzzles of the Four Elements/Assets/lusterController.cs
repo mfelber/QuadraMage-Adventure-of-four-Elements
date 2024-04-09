@@ -20,7 +20,7 @@ public class lusterController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            Destroy(gameObject,1);
+            Destroy(gameObject);
         }
 
         if (collision.gameObject.CompareTag("Tnt"))
@@ -33,5 +33,12 @@ public class lusterController : MonoBehaviour
             Destroy(collision.gameObject, 1);
         }
 
+        if (collision.gameObject.CompareTag("Bridge"))
+        {
+
+            Destroy(collision.gameObject);
+            Destroy(gameObject, 0.6f);
+
+        }
     }
 }

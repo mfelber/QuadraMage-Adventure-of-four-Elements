@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class leverRoundedRocksScript : MonoBehaviour
 {
-    public Sprite off, on, destoyed;
+    public GameObject off, on, destoyed;
     public static bool isLeverOn;
     public GameObject arrow;
     public bool leverDestoyed;
     void Start()
     {
-        GetComponent<SpriteRenderer>().sprite = off;
+        off.SetActive(true);
+        on.SetActive(false);
         isLeverOn = false;
         leverDestoyed = false;
        // Invoke("DeactivateLever", 2.2f);
@@ -44,13 +45,16 @@ public class leverRoundedRocksScript : MonoBehaviour
             }
 
             
+            
         if (leverDestoyed == true)
         {
 
            arrow.SetActive(false);
-            GetComponent<SpriteRenderer>().sprite = destoyed;
-           // Destroy(arrow);
+            off.SetActive(false);
+            on.SetActive(true);
+            // Destroy(arrow);
         }
+            
             
     }
 
@@ -83,13 +87,15 @@ public class leverRoundedRocksScript : MonoBehaviour
     private void ActivateLever()
     {
         isLeverOn = true;
-        GetComponent<SpriteRenderer>().sprite = on;
+        off.SetActive(false);
+        on.SetActive(true);
         Invoke("DeactivateLever", 2.2f);
     }
 
     private void DeactivateLever()
     {
-        GetComponent<SpriteRenderer>().sprite = off;
+        off.SetActive(true);
+        on.SetActive(false);
         isLeverOn = false;
     }
 }
