@@ -8,7 +8,7 @@ public class Devil : MonoBehaviour
     public bool firstHornDownBool;
     void Start()
     {
-        firstHornDown.SetActive(false);
+        firstHornDown.SetActive(true);
     }
 
     // Update is called once per frame
@@ -19,10 +19,16 @@ public class Devil : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
         if (collision.gameObject.CompareTag("Rock"))
         {
-            firstHornDown.SetActive(true);
+            firstHornDown.SetActive(false);
             firstHornDownBool = true;
+            Destroy(collision.gameObject);
         }
     }
 }

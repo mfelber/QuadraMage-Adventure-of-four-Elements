@@ -202,10 +202,10 @@ public class DevilShoot : MonoBehaviour
 
         IEnumerator startPostSmashAnimations()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(0.5f);
 
-        ground1.Play("groundCrack2");
-        ground2.Play("groundSecondCrack2");
+        ground1.Play("GroundCrack");
+        ground2.Play("GroundCrack2");
         StartCoroutine(ChangeOrthoSizeFinalBoss(5.3f,2));
         
        
