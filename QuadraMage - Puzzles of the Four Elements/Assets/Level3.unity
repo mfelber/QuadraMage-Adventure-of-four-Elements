@@ -17837,7 +17837,7 @@ Transform:
   m_GameObject: {fileID: 462707940}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -34.61, y: 38, z: 0}
+  m_LocalPosition: {x: -12.33, y: 1.62, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -45283,7 +45283,7 @@ Transform:
   m_GameObject: {fileID: 1088949124}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -34.61, y: 41.64, z: -10}
+  m_LocalPosition: {x: -12.33, y: 5.26, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -65755,7 +65755,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.088, y: 0.106, z: 0}
-  m_LocalScale: {x: 0.7563, y: 0.7563, z: 0.7563}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 898420411}
@@ -67610,7 +67610,7 @@ Transform:
   m_GameObject: {fileID: 1795734061}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -34.61, y: 41.64, z: -10}
+  m_LocalPosition: {x: -12.33, y: 5.26, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -75649,10 +75649,10 @@ MonoBehaviour:
   offsetRightY: 0.1
   offsetLeftX: 0.06
   offsetLeftY: -0.11
-  shootPointOffsetLY: 0.097
-  shootPointOffsetLX: 0.199
-  shootPointOffSetRY: 0.41
-  shootPointOffSetRX: 0.69
+  shootPointOffsetLY: -0.17
+  shootPointOffsetLX: 0.249
+  shootPointOffSetRY: 0.191
+  shootPointOffSetRX: 0.26
   shootPoint: {fileID: 898420410}
   maxZRot: 15
   minZRot: -40
