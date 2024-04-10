@@ -19,10 +19,13 @@ public class WandPickUp : MonoBehaviour
     }
     public void pickUpwand()
     {
-        wandIsPickedUp = true;
-        Destroy(gameObject);
-        playPickUpScene.Play();
+      //  wandIsPickedUp = true;
+       // Destroy(gameObject);
+       // playPickUpScene.Play();
+      //  wind.SetActive(true);
+
         wind.SetActive(true);
+        Destroy(wand);
     }
 
     public void pickUpEarth()

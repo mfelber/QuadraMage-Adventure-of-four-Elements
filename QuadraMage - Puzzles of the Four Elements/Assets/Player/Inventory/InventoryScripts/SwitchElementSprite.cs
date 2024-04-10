@@ -24,6 +24,7 @@ public class SwitchElementSprite : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().sprite = null;
         }
+        Debug.Log(inventoryScript.inventory.Count);
         
     }
 
@@ -45,7 +46,7 @@ public class SwitchElementSprite : MonoBehaviour
 
         if (sceneName == "Level1")
         {
-            if (inventoryScript.inventory.Count == 1)
+            if (inventoryScript.inventory.Count >= 1)
             {
                 GetComponent<SpriteRenderer>().sprite = wind;
             }
