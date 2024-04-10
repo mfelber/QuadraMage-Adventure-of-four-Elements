@@ -55547,7 +55547,7 @@ Transform:
   m_GameObject: {fileID: 898420410}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.199, y: 0.097, z: 0}
+  m_LocalPosition: {x: 0.388, y: 0.162, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -93518,7 +93518,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 644caeb6d003e0b4f8178a34b5485d9f, type: 3}
+  m_Sprite: {fileID: -1859633551, guid: b36fb5cc30a8eb548b31329066ab4aef, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -108427,7 +108427,7 @@ Transform:
   m_GameObject: {fileID: 2026641372}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.1114689, w: 0.9937679}
-  m_LocalPosition: {x: 0.33, y: 0.14, z: 0.027760385}
+  m_LocalPosition: {x: 0.251, y: 0.018, z: 0.027760385}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -108451,13 +108451,13 @@ MonoBehaviour:
   turnSpeed: 45
   sprite: {fileID: 1725185667}
   offsetRightX: 0.33
-  offsetRightY: 0.14
+  offsetRightY: 0.08
   offsetLeftX: 0.26
   offsetLeftY: -0.12
   shootPointOffsetLY: 0.097
   shootPointOffsetLX: 0.199
-  shootPointOffSetRY: 0.079
-  shootPointOffSetRX: 0.24
+  shootPointOffSetRY: 0.162
+  shootPointOffSetRX: 0.388
   shootPoint: {fileID: 898420410}
   maxZRot: 15
   minZRot: -40
