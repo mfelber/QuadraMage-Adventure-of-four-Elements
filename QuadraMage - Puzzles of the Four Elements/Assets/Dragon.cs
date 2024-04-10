@@ -47,7 +47,16 @@ public class Dragon : MonoBehaviour
 
     private void Update()
     {
-        
+        if (currentHealth == 0)
+        {
+            Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Dragon"), true);
+            Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("item"), LayerMask.NameToLayer("Dragon"), true);
+
+        } else
+        {
+            Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Dragon"), false);
+            Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("item"), LayerMask.NameToLayer("Dragon"), false);
+        }
     }
 
 
