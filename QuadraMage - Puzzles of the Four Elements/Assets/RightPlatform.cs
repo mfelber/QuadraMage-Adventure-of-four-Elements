@@ -53,7 +53,7 @@ public class RightPlatform : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Box"))
         {
-            boxOnPlatform = true;
+           
             GameObject boxx = GameObject.FindGameObjectWithTag("Box");
             //boxx.transform.SetParent(transform);
             collision.transform.SetParent(transform);
@@ -116,7 +116,7 @@ public class RightPlatform : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Box"))
         {
-            boxOnPlatform = false;
+            
             Rigidbody2D boxRigidbody = collision.gameObject.GetComponent<Rigidbody2D>();
             //GameObject box = GameObject.FindGameObjectWithTag("Box");
             //box.transform.SetParent(null);

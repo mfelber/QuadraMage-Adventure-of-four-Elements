@@ -9,11 +9,8 @@ public class WindScript : MonoBehaviour
 
     void Start()
     {
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Elements"), LayerMask.NameToLayer("WorkBench"), true);
         
-        if (speed <= 0)
-        {
-            Debug.LogError("You forgot to set the spped tp non-zero");
-        }
     }
 
     // Update is called once per frame

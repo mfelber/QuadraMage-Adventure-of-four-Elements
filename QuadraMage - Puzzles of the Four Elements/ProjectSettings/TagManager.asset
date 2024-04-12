@@ -57,6 +57,7 @@ TagManager:
   - EarthElementShot
   - PoseidonQuest
   - Destroy
+  - THE END
   layers:
   - Default
   - TransparentFX

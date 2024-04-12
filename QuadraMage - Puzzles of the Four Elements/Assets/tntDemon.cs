@@ -8,6 +8,7 @@ public class tntDemon : MonoBehaviour
     DemonScript demonScript;
     public bool tntIsActive;
     public List<GameObject> bridgeParts = new List<GameObject>();
+    public bool playerInRange;
     void Start()
     {
         demonScript = FindObjectOfType<DemonScript>();
@@ -18,7 +19,7 @@ public class tntDemon : MonoBehaviour
     void Update()
     {
 
-        if (demonScript.playerInRange)
+        if (DemonScript.playerInRange)
         {
             tntIsActive = true;
         }
@@ -41,4 +42,6 @@ public class tntDemon : MonoBehaviour
 
         }
     }
+
+    
 }

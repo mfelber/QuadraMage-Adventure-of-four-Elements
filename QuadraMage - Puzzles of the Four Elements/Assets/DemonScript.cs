@@ -6,7 +6,7 @@ public class DemonScript : MonoBehaviour
 {
     public Animator demonAnimator;
     public PlayerMovement PlayerMovement;
-    public bool playerInRange;
+    public static bool playerInRange;
     void Start()
     {
         playerInRange = false;

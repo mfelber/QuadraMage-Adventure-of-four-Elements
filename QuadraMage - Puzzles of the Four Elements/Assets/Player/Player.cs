@@ -324,6 +324,11 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
+        if (collision.gameObject.CompareTag("THE END"))
+        {
+            SceneManager.LoadScene("THE END");
+        }
+
         
         if (collision.gameObject.CompareTag("Obstacles"))
         {

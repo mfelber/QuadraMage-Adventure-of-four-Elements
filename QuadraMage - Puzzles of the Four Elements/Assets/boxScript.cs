@@ -8,6 +8,8 @@ public class boxScript : MonoBehaviour
     void Start()
     {
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Ground"), LayerMask.NameToLayer("WorkBench"));
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Ground"), LayerMask.NameToLayer("NPC"));
+       
     }
 
     // Update is called once per frame
@@ -18,10 +20,6 @@ public class boxScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("WorkBench"))
-        {
-
-       
-        }
+        
     }
 }

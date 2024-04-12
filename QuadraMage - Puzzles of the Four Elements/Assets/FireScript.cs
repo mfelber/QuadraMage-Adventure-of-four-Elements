@@ -10,12 +10,9 @@ public class FireScript : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     void Start()
     {
-        
-        if (speed == 0)
-        {
-            Debug.LogError("You forgot to set the speed to non-zero");
-        }
-            spriteRenderer = GetComponent<SpriteRenderer>();
+
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Elements"), LayerMask.NameToLayer("WorkBench"), true);
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
