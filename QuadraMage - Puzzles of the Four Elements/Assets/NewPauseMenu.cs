@@ -77,7 +77,7 @@ public class NewPauseMenu : MonoBehaviour
     }
 
    
-
+    /*
     public void RestartLevel()
     {
        
@@ -95,5 +95,6 @@ public class NewPauseMenu : MonoBehaviour
         isPauseMenuOpen = false;
         Time.timeScale = 1f;
     }
+    */
 
 }

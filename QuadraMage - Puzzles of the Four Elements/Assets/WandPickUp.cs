@@ -8,6 +8,7 @@ public class WandPickUp : MonoBehaviour
     public bool wandIsPickedUp;
     public GameObject wand;
     public GameObject wind;
+    public GameObject finishObject;
     
 
     [SerializeField] private PlayableDirector playPickUpScene;
@@ -16,6 +17,15 @@ public class WandPickUp : MonoBehaviour
     private void Start()
     {
         wind.SetActive(false);
+        finishObject.SetActive(false);
+    }
+
+    private void Update()
+    {
+        if(wandIsPickedUp)
+        {
+            finishObject.SetActive(true);
+        }
     }
     public void pickUpwand()
     {
@@ -26,11 +36,13 @@ public class WandPickUp : MonoBehaviour
 
         wind.SetActive(true);
         Destroy(wand);
+        wandIsPickedUp = true;
     }
 
     public void pickUpEarth()
     {
         wind.SetActive(true);
         Destroy(wand);
+        wandIsPickedUp = true;
     }
 }

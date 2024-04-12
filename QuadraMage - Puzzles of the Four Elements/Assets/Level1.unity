@@ -2657,8 +2657,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wandIsPickedUp: 0
-  wand: {fileID: 243616434}
+  wand: {fileID: 604909702}
   wind: {fileID: 1379941133}
+  finishObject: {fileID: 650752308}
   playPickUpScene: {fileID: 0}
 --- !u!1001 &244149585
 PrefabInstance:
@@ -7509,6 +7510,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainQuest: {fileID: 75328366}
   player: {fileID: 565569990}
+--- !u!1 &604909702 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3456339991900423555, guid: d263bf8b533adf2498d4226585bfd1d3, type: 3}
+  m_PrefabInstance: {fileID: 2936135075613953979}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &621283384
 GameObject:
   m_ObjectHideFlags: 0
@@ -8022,6 +8028,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 198162883}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &650752308 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7692419080250128097, guid: 1e5ea7ca44dfd874eae9dd75902c082f, type: 3}
+  m_PrefabInstance: {fileID: 474806040}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &653104413
 GameObject:
   m_ObjectHideFlags: 0
