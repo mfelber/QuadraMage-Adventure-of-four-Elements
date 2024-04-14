@@ -53,6 +53,8 @@ public class SwitchElementSprite : MonoBehaviour
 
         }
 
+        
+
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
