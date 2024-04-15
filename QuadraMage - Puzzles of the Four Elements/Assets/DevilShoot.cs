@@ -100,7 +100,7 @@ public class DevilShoot : MonoBehaviour
             
             newTimer += Time.deltaTime;
             Debug.Log(newTimer);
-            if (newTimer > 5)
+            if (newTimer > 3)
             {
                 Devilanimator.SetBool("secondSmashAttack", true);
                 StartCoroutine(startPostSmashAnimations());

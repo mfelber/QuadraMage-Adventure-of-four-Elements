@@ -5,13 +5,13 @@ using UnityEngine;
 public class devilAttack : MonoBehaviour
 {
     private GameObject player;
-    private Rigidbody2D rb;
-    public Rigidbody2D playerRB;
+    private Rigidbody2D rb;   
     public float force;
-    public PlayerMovement PlayerMovement;
+    private float lifespan;
 
     void Start()
     {
+        lifespan = 3;
         rb = GetComponent<Rigidbody2D>();
         
         player = GameObject.FindGameObjectWithTag("Player");
@@ -27,28 +27,27 @@ public class devilAttack : MonoBehaviour
     public bool hitplayer;
     void Update()
     {
-        /*
-        if(hitplayer)
+        lifespan -= Time.deltaTime; 
+        if (lifespan < 0)
         {
-            player.transform.position = new Vector2(player.transform.position.x - 0.5f, player.transform.position.y + 0.5f);
-            hitplayer = false;
-        }
-        */
-
-        if (hitplayer)
-        {
-            playerRB.velocity = new Vector2(-10, 10);
+            Destroy(gameObject);
         }
     }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
         if (collision.gameObject.CompareTag("Player"))
         {
-            hitplayer = true;
             Destroy(gameObject, 0.1f);
+        }
+
+        if (collision.gameObject.CompareTag("WaterElementShot"))
+        {
+            Destroy(gameObject);
         }
     }
 
-    
 }
+
+    
+
