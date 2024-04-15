@@ -123,57 +123,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: water + lava_1
-      rect:
-        serializedVersion: 2
-        x: 1710
-        y: 1475
-        width: 609
-        height: 612
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bbc8525a70bfef345b0a3aae1670f547
-      internalID: 372939944
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: water + lava_3
-      rect:
-        serializedVersion: 2
-        x: 2394
-        y: 1474
-        width: 613
-        height: 614
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bde17bdb76902434e86120e4c014816d
-      internalID: -434687726
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: water + lava_5
       rect:
         serializedVersion: 2
         x: 396
         y: 615
-        width: 609
+        width: 640
         height: 629
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -186,7 +144,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: water + lava_7
+      name: water + lava_5
       rect:
         serializedVersion: 2
         x: 1068
@@ -194,7 +152,7 @@ TextureImporter:
         width: 616
         height: 644
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -202,6 +160,195 @@ TextureImporter:
       bones: []
       spriteID: 4b74cb6622fd2b249b1f8f3b5966649c
       internalID: -402562914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water + lava_0
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 1460
+        width: 614
+        height: 610
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7171e14c0b1ace488ea64e0108d1217
+      internalID: -1003738613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water + lava_2
+      rect:
+        serializedVersion: 2
+        x: 1069
+        y: 1460
+        width: 613
+        height: 612
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8365f33f80df9dc44b0e3a5d12bfae1b
+      internalID: -144834512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water + lava_4
+      rect:
+        serializedVersion: 2
+        x: 972
+        y: 1224
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d3cb5d1a8ceff5418bb6db059e93331
+      internalID: -1953535331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water + lava_6
+      rect:
+        serializedVersion: 2
+        x: 1036
+        y: 1176
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fcd186570a8fb04c8e35e5f5aaa4362
+      internalID: 368244109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water + lava_7
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 1144
+        width: 4
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aeaf7aab36b6af540a49e76930608102
+      internalID: 1650368842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water + lava_8
+      rect:
+        serializedVersion: 2
+        x: 1036
+        y: 1028
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26ec3f8da86761949ad8f4a8eb98d97a
+      internalID: -132519124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water + lava_9
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 992
+        width: 4
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c39a5ea8a6162a4db52cb39697adc16
+      internalID: -1117777048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water + lava_10
+      rect:
+        serializedVersion: 2
+        x: 2161
+        y: 184
+        width: 608
+        height: 609
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc6f4a855821d644cb89eb1aeae7ad0a
+      internalID: -1118686101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water + lava_13
+      rect:
+        serializedVersion: 2
+        x: 2846
+        y: 184
+        width: 611
+        height: 613
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3734f82b0304e414a956afc571b3d1d2
+      internalID: 265304890
       vertices: []
       indices: 
       edges: []
@@ -219,16 +366,18 @@ TextureImporter:
     nameFileIdTable:
       water + lava_0: -1003738613
       water + lava_1: 372939944
-      water + lava_10: -1118686101
-      water + lava_11: -252488592
-      water + lava_2: -144834512
-      water + lava_3: -434687726
-      water + lava_4: -1953535331
-      water + lava_5: -577604185
-      water + lava_6: 368244109
-      water + lava_7: -402562914
-      water + lava_8: -132519124
-      water + lava_9: -1117777048
+      water + lava_10: -144834512
+      water + lava_11: -434687726
+      water + lava_12: 932313210
+      water + lava_13: 265304890
+      water + lava_2: -1953535331
+      water + lava_3: -577604185
+      water + lava_4: 368244109
+      water + lava_5: -402562914
+      water + lava_6: -132519124
+      water + lava_7: -1117777048
+      water + lava_8: -1118686101
+      water + lava_9: -252488592
   mipmapLimitGroupName: 
   pSDRemoveMatte: 1
   userData: 

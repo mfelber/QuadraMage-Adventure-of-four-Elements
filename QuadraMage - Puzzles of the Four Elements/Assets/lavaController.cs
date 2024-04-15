@@ -22,6 +22,7 @@ public class lavaController : MonoBehaviour
         if (collision.gameObject.CompareTag("WaterElementShot"))
         {
             cooledLava.SetActive(true);
+            Destroy(gameObject);
             Destroy(collision.gameObject);
 
         }
