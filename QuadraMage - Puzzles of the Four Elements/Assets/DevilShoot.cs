@@ -95,12 +95,12 @@ public class DevilShoot : MonoBehaviour
             
         }
 
-        if (devil.firstHornDownBool == true)
+        if (Devil.firstHornDownBool == true)
         {
             
             newTimer += Time.deltaTime;
             Debug.Log(newTimer);
-            if (newTimer > 10)
+            if (newTimer > 5)
             {
                 Devilanimator.SetBool("secondSmashAttack", true);
                 StartCoroutine(startPostSmashAnimations());

@@ -8,7 +8,7 @@ public class EarthScript : MonoBehaviour
     public bool isRightFacing;
     void Start()
     {
-        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Elements"), LayerMask.NameToLayer("WorkBench"), true);
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Elements"), LayerMask.NameToLayer("Ship"), true);
 
     }
     // Update is called once per frame

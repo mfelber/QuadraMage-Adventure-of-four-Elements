@@ -11,7 +11,7 @@ public class FireScript : MonoBehaviour
     void Start()
     {
 
-        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Elements"), LayerMask.NameToLayer("WorkBench"), true);
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Elements"), LayerMask.NameToLayer("Ship"), true);
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 

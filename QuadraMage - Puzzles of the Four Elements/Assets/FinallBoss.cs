@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class FinallBoss : MonoBehaviour
 {
-    public List<GameObject> gameObjects = new List<GameObject>();
+    //public List<GameObject> gameObjects = new List<GameObject>();
     public bool playerInrange;
     public BoxCollider2D collider;
     void Start()
     {
         playerInrange = false;
+        /*
         for (int i = 0; i < gameObjects.Count; i++)
         {
             gameObjects[i].SetActive(false);
         }
+        */
         collider = GetComponent<BoxCollider2D>();
         collider.enabled = false;
     }
@@ -24,10 +26,10 @@ public class FinallBoss : MonoBehaviour
         if (playerInrange)
         {
             collider.enabled = true;
-            for (int i = 0; i < gameObjects.Count; i++)
-            {
-                gameObjects[i].SetActive(true);
-            }
+          //  for (int i = 0; i < gameObjects.Count; i++)
+          //  {
+              //  gameObjects[i].SetActive(true);
+        //    }
 
         }
     }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Devil : MonoBehaviour
 {
     public GameObject firstHornDown;
-    public bool firstHornDownBool;
+    public static bool firstHornDownBool;
     void Start()
     {
         firstHornDown.SetActive(true);

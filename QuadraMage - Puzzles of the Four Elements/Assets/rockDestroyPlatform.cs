@@ -21,7 +21,7 @@ public class rockDestroyPlatform : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Ground"))
         {
-            Destroy(gameObject,0.1f);
+            gameObject.SetActive(false);
             Destroy(collision.gameObject);
         }
     }

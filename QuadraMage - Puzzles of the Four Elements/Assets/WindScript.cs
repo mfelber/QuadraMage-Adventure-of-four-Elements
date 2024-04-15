@@ -9,7 +9,7 @@ public class WindScript : MonoBehaviour
 
     void Start()
     {
-        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Elements"), LayerMask.NameToLayer("WorkBench"), true);
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Elements"), LayerMask.NameToLayer("Ship"), true);
         
     }
 
@@ -26,5 +26,10 @@ public class WindScript : MonoBehaviour
                 wind.flipX = true;
             transform.Translate(new Vector3(-speed * Time.deltaTime, 0, 0));
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Destroy(gameObject);
     }
 }
