@@ -12,12 +12,14 @@ public class tnt : MonoBehaviour
     public bool playerNearTnt;
     //[SerializeField]private GameObject tntPrefab;
     QuestManager questManager;
+    public GameObject interact;
    
 
 
 
     void Start()
     {
+        interact.SetActive(false);
        player = FindObjectOfType<Player>();
         time = 5;
         tntIsActive = false;
@@ -74,17 +76,19 @@ public class tnt : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && questManager.acceptFirstQuest == true)
         {
             playerNearTnt = true;
+            interact.SetActive(true);
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && questManager.acceptFirstQuest == true)
         {
             playerNearTnt = false;
+            interact.SetActive(false);
         }
     }
 }
