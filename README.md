@@ -1,1 +1,1 @@
-# QuadraMage-Puzzles-of-the-Four-Elements
+# QuadraMage-Adventure of four Elements
