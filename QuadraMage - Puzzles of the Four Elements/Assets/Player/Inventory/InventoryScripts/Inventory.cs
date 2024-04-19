@@ -125,7 +125,7 @@ public class Inventory : MonoBehaviour
 
         //Debug.Log( "Can use elemnt :" + canUseElement);
         Animator anim = GetComponent<Animator>();
-        if (!NewPauseMenu.isPauseMenuOpen && !Book.isBookOpen && !MovingPlatform.isChildOfPlatform)
+        if (!NewPauseMenu.isPauseMenuOpen && !MovingPlatform.isChildOfPlatform)
         {
             if(!PlayerMovement.PlayerIsMoving)
             {

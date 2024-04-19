@@ -33,7 +33,7 @@ public class Aim : MonoBehaviour
     
     NewPauseMenu newPauseMenu;
     Inventory inventory;
-    Book book;
+    
 
     public float maxZRot = 15;
     public float minZRot = -40;
@@ -55,7 +55,7 @@ public class Aim : MonoBehaviour
 
     void Update()
     {
-        if (!NewPauseMenu.isPauseMenuOpen && !Book.isBookOpen && !MovingPlatform.isChildOfPlatform && PlayerMovement.isInputEnabled == true)
+        if (!NewPauseMenu.isPauseMenuOpen && !MovingPlatform.isChildOfPlatform && PlayerMovement.isInputEnabled == true)
         {
             if (!Inventory.isPlayerUsingElement)
             {

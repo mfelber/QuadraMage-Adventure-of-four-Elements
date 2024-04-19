@@ -15,7 +15,7 @@ public class ParticleController : MonoBehaviour
     public void OnCollisionEnter2D(Collision2D collision)
     {
 
-        if (!PauseMenu.isGamePaused && !Book.isBookOpen)
+        if (!PauseMenu.isGamePaused)
         {
             if (collision.gameObject.CompareTag("Player"))
             {

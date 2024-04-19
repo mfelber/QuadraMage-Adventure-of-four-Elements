@@ -6,7 +6,7 @@ public class Lava : MonoBehaviour
 {
     public float weight;
     public GameObject startterBox;
-    public bool boxOnPlatform;
+    public static bool boxOnPlatform;
     void Start()
     {
         weight = 0;

@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
 
     PauseMenu pauseMenu;
     NewPauseMenu newPauseMenu;
-    Book book;
+    
     Inventory inventory;
    
 
@@ -90,7 +90,7 @@ public class PlayerMovement : MonoBehaviour
 
         
 
-        if (!Inventory.isPlayerUsingElement && !NewPauseMenu.isPauseMenuOpen && !Book.isBookOpen && isInputEnabled && !MovingPlatform.isChildOfPlatform && !DialogManager.isDialgueActive)
+        if (!Inventory.isPlayerUsingElement && !NewPauseMenu.isPauseMenuOpen  && isInputEnabled && !MovingPlatform.isChildOfPlatform && !DialogManager.isDialgueActive)
             {
 
             

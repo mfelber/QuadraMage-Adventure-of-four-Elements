@@ -5,7 +5,7 @@ using UnityEngine;
 public class RightPlatform : MonoBehaviour
 {
     public float weight;
-    public bool boxOnPlatform;
+    public static bool boxOnPlatform;
     void Start()
     {
         weight = 0;
@@ -40,6 +40,7 @@ public class RightPlatform : MonoBehaviour
         if (collision.gameObject.CompareTag("Iron"))
         {
             boxOnPlatform = true;
+            Debug.Log(boxOnPlatform);
             Rigidbody2D iron = collision.gameObject.GetComponent<Rigidbody2D>();
             //GameObject ironBox = GameObject.FindGameObjectWithTag("Iron");
             //ironBox.transform.SetParent(transform); 
@@ -102,6 +103,7 @@ public class RightPlatform : MonoBehaviour
         if (collision.gameObject.CompareTag("Iron"))
         {
             boxOnPlatform = false;
+            Debug.Log(boxOnPlatform);
             Rigidbody2D ironBox = collision.gameObject.GetComponent<Rigidbody2D>();
             //GameObject iron = GameObject.FindGameObjectWithTag("Iron");
             //iron.transform.SetParent(null);
