@@ -13314,11 +13314,17 @@ MonoBehaviour:
   dialogues:
     dialogueLines:
     - character:
-        name: 
+        name: LumberJack
         icon: {fileID: 0}
-      line: 'hori
-
-'
+      line: Please help
+    - character:
+        name: LumberJack
+        icon: {fileID: 0}
+      line: Do whatever you can, just put out the fire
+    - character:
+        name: LumberJack
+        icon: {fileID: 0}
+      line: There's water in that wooden thing
 --- !u!4 &319012221
 Transform:
   m_ObjectHideFlags: 0
@@ -34233,17 +34239,20 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 708.4903, y: 132.45557}
+    - - {x: 152.02982, y: -27.064274}
+      - {x: 708.4903, y: 132.45557}
       - {x: 643.22437, y: 134.08722}
+      - {x: 151.40051, y: -17.46415}
       - {x: 66.698616, y: 100.305786}
       - {x: -43.888863, y: 78.1208}
       - {x: -103.92296, y: 33.660244}
-      - {x: -107.72859, y: -38.954475}
-      - {x: -49.44371, y: -80.43196}
-      - {x: 24.751247, y: -92.60428}
-      - {x: 168.73874, y: -96.54727}
+      - {x: -82.06906, y: -11.6448}
+      - {x: -80.58406, y: -29.230465}
+      - {x: -38.733982, y: -52.170177}
+      - {x: 36.94844, y: -55.71521}
+      - {x: 150.5917, y: -48.35348}
       - {x: 277.56033, y: -99.527275}
-      - {x: 728.27954, y: -88.330414}
+      - {x: 151.80942, y: -40.36873}
   m_UseDelaunayMesh: 0
 --- !u!4 &689673462
 Transform:
@@ -59940,7 +59949,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1432222982
 Transform:
   m_ObjectHideFlags: 0
@@ -72000,6 +72009,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1813946687}
   - component: {fileID: 1813946686}
+  - component: {fileID: 1813946688}
   m_Layer: 0
   m_Name: cabin_0 (2)
   m_TagString: Untagged
@@ -72074,6 +72084,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1813946688
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813946685}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -5.040333, y: -3.2247295}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.9453125, y: 4.4140625}
+    newSize: {x: 5.9453125, y: 4.4140625}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.6690292, y: 16.933598}
+  m_EdgeRadius: 0
 --- !u!1 &1815049911
 GameObject:
   m_ObjectHideFlags: 0
