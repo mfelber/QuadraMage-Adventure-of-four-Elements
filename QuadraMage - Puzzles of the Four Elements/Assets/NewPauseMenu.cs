@@ -8,20 +8,20 @@ using UnityEngine.SceneManagement;
 public class NewPauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
-    
+   
     Inventory inventory;
     ActivateCutScene activateCutScene;
 
     public static bool isPauseMenuOpen;
     void Start()
     {
-      
+       
         pauseMenu.SetActive(false);
         inventory = FindObjectOfType<Inventory>();
         activateCutScene = FindObjectOfType<ActivateCutScene>();
     }
 
-    
+    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyUp(KeyCode.Escape))
@@ -36,7 +36,7 @@ public class NewPauseMenu : MonoBehaviour
                
             }
         }
-       
+     
         
     }
 
@@ -45,7 +45,7 @@ public class NewPauseMenu : MonoBehaviour
     {
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
-        
+      
         isPauseMenuOpen = true;
     }
 

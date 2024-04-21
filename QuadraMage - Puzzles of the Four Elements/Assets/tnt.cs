@@ -10,7 +10,7 @@ public class tnt : MonoBehaviour
     Player player;
     public bool tntIsActive;
     public bool playerNearTnt;
-   
+    //[SerializeField]private GameObject tntPrefab;
     QuestManager questManager;
     public GameObject interact;
    
@@ -28,7 +28,7 @@ public class tnt : MonoBehaviour
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("item"), LayerMask.NameToLayer("WorkBench"));
 
 
-      
+        // tntGameObject = GetComponent<GameObject>();
 
     }
 
@@ -58,11 +58,11 @@ public class tnt : MonoBehaviour
         if(time < 0)
         {
             tntIsActive = false;
-            
+            //gameObject.SetActive(false);
             Destroy(gameObject);
-           
+           // gameObject.SetActive(false);
         }
-       
+        //Debug.Log(time);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -97,6 +97,7 @@ public class tnt : MonoBehaviour
     {
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
+
 
         if (collision.CompareTag("Player") && sceneName == "Level4")
         {

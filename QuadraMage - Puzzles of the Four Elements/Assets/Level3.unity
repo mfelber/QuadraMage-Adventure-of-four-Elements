@@ -30197,6 +30197,11 @@ MonoBehaviour:
     - character:
         name: Poseidon
         icon: {fileID: 228589946, guid: 161432ea0d8b6b844aba45d39faed2f0, type: 3}
+      line: There's a sea horse in front of the palace that will take you to the
+        ship
+    - character:
+        name: Poseidon
+        icon: {fileID: 228589946, guid: 161432ea0d8b6b844aba45d39faed2f0, type: 3}
       line: When you rescue her, come back to me
 --- !u!212 &1044563622
 SpriteRenderer:
