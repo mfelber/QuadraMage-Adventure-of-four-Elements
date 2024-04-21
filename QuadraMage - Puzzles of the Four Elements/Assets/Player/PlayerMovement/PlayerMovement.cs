@@ -8,7 +8,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 
-    PauseMenu pauseMenu;
+    //PauseMenu pauseMenu;
     NewPauseMenu newPauseMenu;
     
     Inventory inventory;
