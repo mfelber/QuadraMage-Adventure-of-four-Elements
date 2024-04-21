@@ -21954,9 +21954,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1369454899010301998, guid: d3b5de3b5bb8d0f429cbb5d4a3a73aab, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1900705822}
-    - targetCorrespondingSourceObject: {fileID: 1369454899010301998, guid: d3b5de3b5bb8d0f429cbb5d4a3a73aab, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1900705825}
   m_SourcePrefab: {fileID: 100100000, guid: d3b5de3b5bb8d0f429cbb5d4a3a73aab, type: 3}
 --- !u!1 &599282406
 GameObject:
@@ -32152,16 +32149,17 @@ MonoBehaviour:
     - character:
         name: Poseidon
         icon: {fileID: 228589946, guid: 161432ea0d8b6b844aba45d39faed2f0, type: 3}
-      line: I need you to help me save my daughter
-    - character:
-        name: Poseidon
-        icon: {fileID: 228589946, guid: 161432ea0d8b6b844aba45d39faed2f0, type: 3}
       line: I need you to help me save my daughter. She was captured by pirates using
         a net while swimming with other fish
     - character:
         name: Poseidon
         icon: {fileID: 228589946, guid: 161432ea0d8b6b844aba45d39faed2f0, type: 3}
       line: Here is the water element, it can help you on your journey to save her
+    - character:
+        name: Poseidon
+        icon: {fileID: 228589946, guid: 161432ea0d8b6b844aba45d39faed2f0, type: 3}
+      line: There's a sea horse in front of the palace that will take you to the
+        ship
     - character:
         name: Poseidon
         icon: {fileID: 228589946, guid: 161432ea0d8b6b844aba45d39faed2f0, type: 3}
@@ -53353,10 +53351,6 @@ MonoBehaviour:
     - character:
         name: Poseidon
         icon: {fileID: 228589946, guid: 161432ea0d8b6b844aba45d39faed2f0, type: 3}
-      line: Thank you for saving her
-    - character:
-        name: Poseidon
-        icon: {fileID: 228589946, guid: 161432ea0d8b6b844aba45d39faed2f0, type: 3}
       line: For your bravery, you may keep the water element I gave you
     - character:
         name: August
@@ -53772,35 +53766,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 558711867}
---- !u!114 &1900705825
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 914034424}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 198899d51ec6e8a4b93afb7beaae001d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NPCQuest1: {fileID: 0}
-  NPCQuest2: {fileID: 0}
-  NPCQuest3: {fileID: 0}
-  questItem1: {fileID: 0}
-  questItem2: {fileID: 0}
-  questItem3: {fileID: 0}
-  Quest3: {fileID: 0}
-  isQuest1comp: 0
-  isQuest2comp: 0
-  isQuest3comp: 0
-  npc1Vis: 0
-  npc2Vis: 0
-  npc3Vis: 0
-  questNumber: 0
-  acceptFirstQuest: 0
-  acceptSecondQuest: 0
-  acceptThirdQuest: 0
 --- !u!1 &1904519733
 GameObject:
   m_ObjectHideFlags: 0
