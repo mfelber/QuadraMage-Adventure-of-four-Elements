@@ -32,14 +32,7 @@ public class SwitchElementSprite : MonoBehaviour
     
     void Update()
     {
-        /*
-        if (Inventory.inventory.Count >= 1)
-        {
-
-            GetComponent<SpriteRenderer>().sprite = wind;
-
-        }
-        */
+       
 
 
         Scene currentScene = SceneManager.GetActiveScene();
@@ -62,7 +55,7 @@ public class SwitchElementSprite : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
 
-                //TODO pridat podmienky na zmenenie sprite palicky
+               
 
                 if (inventoryScript.inventory.Count >= 1)
                 {

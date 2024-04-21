@@ -11,14 +11,14 @@ public class EnemyPirate : MonoBehaviour
     tnt Tnt;
     public bool pirateNearTnt;
     
-    //public string tntObjectName;
+    
     public string tntObjectName;
     void Start()
     {
-        //GameObject tntObject = GameObject.Find(tntObjectName);
+        
         GameObject tntObject = GameObject.Find(tntObjectName);
 
-        // Tnt = FindObjectOfType<tnt>();
+       
         Tnt = tntObject.GetComponent<tnt>();
        
         pirateNearTnt = false;
@@ -28,7 +28,7 @@ public class EnemyPirate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(Tnt.time);
+       
 
         if (pirateNearTnt && Tnt.time < 0)
         {
@@ -50,7 +50,7 @@ public class EnemyPirate : MonoBehaviour
 
         if (collision.gameObject.CompareTag("FireSpread"))
         {
-           // Debug.LogError("kolizia ohen + pirat");
+           
             animator.SetBool("overBoardPirate3", true);
         }
 
@@ -71,13 +71,7 @@ public class EnemyPirate : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        /*
-        if (collision.gameObject.name == tntObjectName)
-        {
-            Debug.Log("neni kolizia");
-            pirateNearTnt = false;
-        }
-        */
+        
     }
 
 

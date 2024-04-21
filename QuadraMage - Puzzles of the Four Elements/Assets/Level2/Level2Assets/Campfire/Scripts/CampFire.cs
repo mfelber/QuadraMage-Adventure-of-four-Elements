@@ -11,7 +11,7 @@ public class CampFire : MonoBehaviour
 
     void Start()
     {
-        //GetComponent<SpriteRenderer>().sprite = tiny;
+        
         tiny.SetActive(true);
         small.SetActive(false);
         medium.SetActive(false);
@@ -20,7 +20,7 @@ public class CampFire : MonoBehaviour
         stage = 1;
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         
@@ -32,7 +32,7 @@ public class CampFire : MonoBehaviour
         {
             Destroy(collision.gameObject);  
             stage++;
-            // mozno carateen ked bude animacia ze ju postupne pustim
+           
             if (stage == 2)
             {
                 tiny.SetActive(false);
@@ -48,7 +48,7 @@ public class CampFire : MonoBehaviour
             }
             if(stage == 4)
             {
-                //small.SetActive(false);
+               
                 medium.SetActive(false);
                 large.SetActive(true);
             }

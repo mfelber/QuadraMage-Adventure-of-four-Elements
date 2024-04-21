@@ -41,10 +41,7 @@ public class Inventory : MonoBehaviour
 
         player = GetComponent<Player>();
 
-        if (inventory.Count > 0)
-        {
-           // updateActualElement();
-        }
+       
 
         if (Waterball == null)
         {
@@ -123,7 +120,7 @@ public class Inventory : MonoBehaviour
 
         }
 
-        //Debug.Log( "Can use elemnt :" + canUseElement);
+        
         Animator anim = GetComponent<Animator>();
         if (!NewPauseMenu.isPauseMenuOpen && !MovingPlatform.isChildOfPlatform)
         {
@@ -131,7 +128,7 @@ public class Inventory : MonoBehaviour
             {
                 if (inventory.Count > 0) {
                     mana.SetActive(true);
-                    //updateActualElement();
+                   
                 }                
                 if (Input.GetMouseButtonDown(0))
                 {
@@ -146,7 +143,7 @@ public class Inventory : MonoBehaviour
                                 Debug.LogError(inventory.Count);
                                 anim.SetBool("Wind", true);
                                 player.useMana(25);
-                               // Debug.LogError("pouzil si wind");
+                               
                                 playerUsingElement();
                                 canUseElement = false;
                             }  else if (ManaBar.isEmpty)
@@ -163,7 +160,7 @@ public class Inventory : MonoBehaviour
                             {
 
                                 anim.SetBool("WaterBall", true);
-                                //useMana(25);
+                               
                                 player.useMana(25);
                                 
                                 playerUsingElement();
@@ -255,14 +252,7 @@ public class Inventory : MonoBehaviour
 
     
 
-    /*
-    void useMana(int mana)
-    {
-        Player.currentMana -= mana;
-        manaBar.setMana(Player.currentMana);
-    }
-
-    */
+    
 
     public void SpawnWindElement( Object windElement)
     {
@@ -271,7 +261,7 @@ public class Inventory : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(CheckIfElementDestroyed(wind));
         StartCoroutine(playerStopUsingElement());
-       // Invoke("playerStopUsingElement", 0.3f);
+      
     }
 
     public void SpawnWaterElement(Object waterElement)
@@ -281,7 +271,7 @@ public class Inventory : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(CheckIfElementDestroyed(water));
         StartCoroutine(playerStopUsingElement());
-       // Invoke("playerStopUsingElement", 0.3f);
+      
         
     }
 
@@ -289,10 +279,10 @@ public class Inventory : MonoBehaviour
     {       
         GameObject fire = GameObject.Instantiate<GameObject>(Fireball, shootpoint.position, shootpoint.rotation);
         Destroy(fire, 1);
-       // StopAllCoroutines();
+      
         StartCoroutine(CheckIfElementDestroyed(fire));
         StartCoroutine(playerStopUsingElement());
-      //  Invoke("playerStopUsingElement", 0.3f);
+     
         
     }
 
@@ -300,10 +290,10 @@ public class Inventory : MonoBehaviour
     {
         GameObject fire = GameObject.Instantiate<GameObject>(Earth, shootpoint.position, shootpoint.rotation);
         Destroy(fire, 1);
-        // StopAllCoroutines();
+       
         StartCoroutine(CheckIfElementDestroyed(fire));
         StartCoroutine(playerStopUsingElement());
-        //  Invoke("playerStopUsingElement", 0.3f);
+       
 
     }
 
@@ -367,8 +357,7 @@ public class Inventory : MonoBehaviour
     public void addToInventory(Item.ItemData itemData)
     {
         inventory.Add(itemData);
-       // Debug.Log("Element " + itemData.itemName + " is added to your inventory");
-      //  Debug.Log(inventory.Count);
+     
 
     }
 
@@ -377,8 +366,7 @@ public class Inventory : MonoBehaviour
         if (index >= 0 && index < inventory.Count)
         {
             currentIndex = index;
-            //updateActualElement();
-
+          
         }
 
         else if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -405,16 +393,7 @@ public class Inventory : MonoBehaviour
 
     }
 
-    /*
-    private void updateActualElement()
-    {
-
-        Debug.Log("You are using : " + inventory[currentIndex].itemName);
-
-
-
-    }
-    */
+    
 
 
     public void playerUsingElement()
@@ -422,11 +401,5 @@ public class Inventory : MonoBehaviour
         isPlayerUsingElement = true;
        }
 
-    /*
-    public void playerStopUsingElement()
-    {
-        isPlayerUsingElement = false;
-        
-    }
-    */
+   
 }

@@ -9,12 +9,7 @@ public class WorkBench : MonoBehaviour
     QuestManager questManager;
 
 
-    //public GameObject Gold;
-    /*
-    public GameObject Iron;
-
-    public GameObject Wood;
-    */
+    
 
     private void Start()
     {
@@ -31,7 +26,7 @@ public class WorkBench : MonoBehaviour
             {
                 questManager.quest1Completed();         
             
-             //  Gold.SetActive(false);
+            
             
         }
         
@@ -40,23 +35,20 @@ public class WorkBench : MonoBehaviour
             if (collision.gameObject.CompareTag("Iron"))
             {
                 questManager.quest2Completed();
-            //Destroy(collision.gameObject);
-            //Iron.SetActive(false);
-
+            
         }
 
        
             if (collision.gameObject.CompareTag("Wood"))
             {
                 questManager.quest3Completed();
-           // Destroy(collision.gameObject);
-            //Wood.SetActive(false);
+           
         }
 
             if (collision.gameObject.CompareTag("GunPowder"))
         {
             questManager.quest1Completed();
-            //Destroy(collision.gameObject);
+           
         }
 
        

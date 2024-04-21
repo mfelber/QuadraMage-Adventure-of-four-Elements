@@ -24,7 +24,7 @@ public class MovingPlatform : MonoBehaviour
     private bool isAnimationEnabledLeft;
 
     public bool playerOnPlatform = false;
-    //public bool boxOnPlatform = false;
+    
 
     public bool movingtoright;
     private bool movingtoleft;
@@ -37,50 +37,11 @@ public class MovingPlatform : MonoBehaviour
         
         animator = GetComponent<Animator>();
         windCollisionWheel = FindObjectOfType<WindCollisionWheel>();
-        //playerOnPlatform = false;
+       
         
     }
 
-    /*
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-
-         isAnimationEnabledRight = animator.GetBool("IsMovingToRight");
-         isAnimationEnabledLeft = animator.GetBool("IsMovingToLeft");
-        if (collision.gameObject.CompareTag("Player") && (isAnimationEnabledRight == true || isAnimationEnabledLeft == true))
-        {
-            collision.transform.SetParent(transform);
-            
-           
-            //PlayerMovement.isInputEnabled = false;
-            //Invoke("set", 3);
-        }
-        
-
-
-    }
-
-    */
-
- 
-
-
-    /*
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        isAnimationEnabledRight = animator.GetBool("IsMovingToRight");
-        isAnimationEnabledLeft = animator.GetBool("IsMovingToLeft");
-
-        //Debug.LogError("idem do lava state =" + isAnimationEnabledLeft);
-        //Debug.LogError("idem do prava state =" + isAnimationEnabledRight);
-
-        if (other.gameObject.CompareTag("Player") && (movingtoright == true || movingtoleft == true))
-        {
-            Debug.LogError("Collision with Player detected and AnimationEnabled");
-            other.transform.SetParent(transform);
-        }
-    }
-    */
+   
 
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -93,13 +54,7 @@ public class MovingPlatform : MonoBehaviour
 
         
 
-        /*
-        if (collision.gameObject.CompareTag("Box"))
-        {
-            //boxOnPlatform = true;
-            Debug.LogError("Box je na platforme");
-        }
-        */
+       
 
     }
 
@@ -110,7 +65,7 @@ public class MovingPlatform : MonoBehaviour
         {
             collision.transform.SetParent(null);
             playerOnPlatform = false;
-            //boxOnPlatform=false;
+           
             Debug.LogError("uz neni Player");
 
         }
@@ -136,12 +91,7 @@ public class MovingPlatform : MonoBehaviour
 
 
        
-        // Debug.LogError(movingtoright);
-        //  Debug.LogError(movingtoleft);
-
-        //Debug.LogError("idem do lava state =" + isAnimationEnabledLeft);
-        //Debug.LogError("idem do prava state =" + isAnimationEnabledRight);
-
+        
 
         if(movingtoright)
         {
@@ -157,7 +107,7 @@ public class MovingPlatform : MonoBehaviour
 
         if (playerOnPlatform && (movingtoright == true || movingtoleft == true))
         {
-            //Debug.LogError("Animation is going");
+            
             GameObject player = GameObject.FindGameObjectWithTag("Player");
             
             if (player != null)
@@ -185,18 +135,18 @@ public class MovingPlatform : MonoBehaviour
 
         if (IsonPlatformWhileMoving)
         {
-           // PlayerMovement.isInputEnabled = false;
+           
             isChildOfPlatform = true;
-            //Debug.LogError("Som child ked sa chybem" + isChildOfPlatform);
+            
         } else
         {
-           // PlayerMovement.isInputEnabled = true;
+          
             isChildOfPlatform = false;
-            //Debug.LogError("niesom child ked sa chybem" + isChildOfPlatform);
+           
         }
 
 
-        //Debug.LogError(IsonPlatformWhileMoving);
+      
        
 
     }

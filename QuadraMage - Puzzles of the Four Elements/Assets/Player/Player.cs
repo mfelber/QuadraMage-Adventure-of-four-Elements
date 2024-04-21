@@ -49,10 +49,7 @@ public class Player : MonoBehaviour
 
     public void LoadPlayerData()
     {
-        //PlayerData data = Save.LoadPlayerSave();
-
-        //level = data.level;
-        //hiddenKey = data.hiddenKey;
+        
 
 
         PlayerData data = Save.LoadPlayerSave();
@@ -83,7 +80,7 @@ public class Player : MonoBehaviour
     public static bool manaIsLoaded = true;
     void Start()
     {
-       // playerHasCollide = false;
+       
        inBulding = false;
         infrontOfTavern = false;
         infrontOfDoors = false;
@@ -107,21 +104,11 @@ public class Player : MonoBehaviour
         {
             Wand.SetActive(false);
         }
-        // Physics2D.IgnoreLayerCollision(6,14);
+       
 
         poseidonQuestManager = FindObjectOfType<PoseidonQuestManager>();
         activateCutScene = FindObjectOfType<ActivateCutScene>();
-        /*
-        if(level == 1)
-        {
-            SceneManager.LoadScene("New Scene", LoadSceneMode.Additive);
-        }
-        if(level == 2)
-        {
-            SceneManager.LoadScene("Scena2", LoadSceneMode.Additive);
-        }
-        
-        */
+       
         LoadPlayerData();
        
        
@@ -158,7 +145,7 @@ public class Player : MonoBehaviour
             
         }
         
-       // Debug.LogError(inBulding);
+      
 
         if (ManaBar.isEmpty)
         {
@@ -238,7 +225,7 @@ public class Player : MonoBehaviour
     {
         if (canbereloaded)
         {
-            //Debug.Log("reloadujem neprazdnu manu");
+            
             yield return new WaitForSeconds(5);
 
             currentMana = 100;
@@ -355,14 +342,14 @@ public class Player : MonoBehaviour
             if (collision.gameObject.CompareTag("Lever"))
             {
                 inRangeOfLever = true;
-                //interactionMassage.SetActive(true);
+                
             }
 
 
         if (collision.gameObject.CompareTag("MineCartLever"))
         {
             inRangeOfMineCartLever = true;
-            //interactionMassage.SetActive(true);
+           
         }
 
 
@@ -379,23 +366,17 @@ public class Player : MonoBehaviour
            
         }
 
-        /*
-        if (collision.gameObject.CompareTag("FinalBosscamera"))
-        {
-            StartCoroutine(ChangeOrthoSizeFinalBoss(8.5f, 2f));
-            //vcam.m_Lens.OrthographicSize = 10;
-        }
-        */
+       
         if (collision.gameObject.CompareTag("Tavern"))
         {
-            //inTaver = true;
+           
             infrontOfTavern = true;
             interactionMassage.SetActive(true);
         }
 
         if (collision.gameObject.CompareTag("InBuilding"))
         {
-            //inTaver = true;
+           
             infrontOfDoors = true;
             interactionMassage.SetActive(true);
         }
@@ -434,26 +415,25 @@ public class Player : MonoBehaviour
             
             if (collision.gameObject.CompareTag("Finish"))
             {
-                //level += 1;                
-                //SavePlayerData();
+                
                 playerHasCollide = true;
                 inventory.inventory.Clear();
-                //Invoke("noCollide",1);
+               
                  
             }
             if (collision.gameObject.CompareTag("Test"))
             {
                 LoadPlayerData();
                 Debug.LogError(level);
-                //Debug.LogError(hiddenKey);
+                
                 playerHasCollide = true;
             }
 
-            //TODO if collision compare tag final teleport = player finish the game = true
+            
 
             if (collision.gameObject.CompareTag("HiddenKey"))
             {
-                //LoadPlayerData();
+                
                 Debug.LogError(level);
                 hiddenKey++;
                 Debug.LogError(hiddenKey);
@@ -497,8 +477,7 @@ public class Player : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Finish"))
         {
-            //level += 1;                
-            //SavePlayerData();
+           
             playerHasCollide = false;
             
 
@@ -513,13 +492,13 @@ public class Player : MonoBehaviour
             if (collision.gameObject.CompareTag("Lever"))
             {
                 inRangeOfLever = false;
-                //interactionMassage.SetActive(false);
+                
             }
 
         if (collision.gameObject.CompareTag("MineCartLever"))
         {
             inRangeOfMineCartLever = false;
-            //interactionMassage.SetActive(true);
+            
         }
 
         if (collision.gameObject.CompareTag("NPC"))
@@ -530,12 +509,12 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("camera"))
         {
             StartCoroutine(ChangeOrthoSizePirateShip(5.8f, 2f));
-            //vcam.m_Lens.OrthographicSize = 5.3f;
+            
         }
 
         if (collision.gameObject.CompareTag("Tavern"))
         {
-            //inTaver = false;
+           
             infrontOfTavern = false;
             interactionMassage.SetActive(false);
 
@@ -543,16 +522,11 @@ public class Player : MonoBehaviour
 
         if (collision.gameObject.CompareTag("InBuilding"))
         {
-            //inTaver = true;
+            
             infrontOfDoors = false;
             interactionMassage.SetActive(false);
         }
-        /*
-        if (collision.gameObject.CompareTag("Tnt"))
-        {
-            inRangeOfTnt = false;
-        }
-        */
+        
 
 
         if (collision.gameObject.CompareTag("FirstQuest"))
@@ -589,26 +563,7 @@ public class Player : MonoBehaviour
     public float silaOdrazeniaY = 2f;
 
     
-    /*
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        //Scene currentScene = SceneManager.GetActiveScene();
-        //string sceneName = currentScene.name;
-
-        if (collision.gameObject.CompareTag("Obstacles"))
-        {
-            
-
-           
-                Invoke("setToSpawn",0.1f);
-
-            
-
-        }
-        
-    }
-    
-    */
+   
 
     
 
@@ -627,10 +582,10 @@ public class Player : MonoBehaviour
 
     private void setToSpawn()
     {
-        //player.transform.position = new Vector3(-6.546f, -0.029f, 0);
+        
         Scene currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currentScene.name, LoadSceneMode.Single);
-       // activateCutScene.firstRun = true;
+     
         inventory.inventory.Clear();
         Inventory.canUseElement = true;
         Inventory.isPlayerUsingElement = false;

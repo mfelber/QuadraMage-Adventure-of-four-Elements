@@ -5,7 +5,7 @@ using UnityEngine;
 public class Dragon : MonoBehaviour
 {
     public PlayerMovement PlayerMovement;
-    public Sprite sleepingDragon, deadDragon;
+    
     public int maxDragonhealth = 100;
     public int currentHealth;
     public DragonHealthBar healthBar;
@@ -13,7 +13,7 @@ public class Dragon : MonoBehaviour
 
     private void Start()
     {
-        //GetComponent<SpriteRenderer>().sprite = sleepingDragon;
+        
         currentHealth = maxDragonhealth;
         healthBar.setMaxHealth(maxDragonhealth);
         health.SetActive(false);
@@ -66,27 +66,5 @@ public class Dragon : MonoBehaviour
         healthBar.setHealth(currentHealth);
     }
 
-    /*
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        // maybe call invoke to start animation of opening eyes
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            GetComponent<SpriteRenderer>().sprite = awakeDragon;
-
-        }
-    }
-    */
-
-    /*
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        // maybe call invoke to start animation of closing eyes
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            GetComponent<SpriteRenderer>().sprite = sleepingDragon;
-
-        }
-    }
-    */
+    
 }

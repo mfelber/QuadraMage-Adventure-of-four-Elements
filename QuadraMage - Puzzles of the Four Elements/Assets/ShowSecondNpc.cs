@@ -64,8 +64,7 @@ public class ShowSecondNpc : MonoBehaviour
             {
 
                 NpcQuest1.SetActive(false);
-                //Poseidon.SetActive(false);
-                //questManager.NPCQuest2.SetActive(true);
+                
 
             }
             else

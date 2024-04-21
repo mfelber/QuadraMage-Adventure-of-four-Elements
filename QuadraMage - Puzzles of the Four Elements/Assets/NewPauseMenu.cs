@@ -8,35 +8,35 @@ using UnityEngine.SceneManagement;
 public class NewPauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
-    //private Book book;
+    
     Inventory inventory;
     ActivateCutScene activateCutScene;
 
     public static bool isPauseMenuOpen;
     void Start()
     {
-       // book = GetComponent<Book>();
+      
         pauseMenu.SetActive(false);
         inventory = FindObjectOfType<Inventory>();
         activateCutScene = FindObjectOfType<ActivateCutScene>();
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         if (Input.GetKeyUp(KeyCode.Escape))
         {
             if (isPauseMenuOpen)
             {
-                //OpenPauseMenu();
+              
                 ClosePauseMenu();
             } else
             {
                 OpenPauseMenu();
-                //ClosePauseMenu();
+               
             }
         }
-        //Debug.Log(isPauseMenuOpen);
+       
         
     }
 
@@ -45,7 +45,7 @@ public class NewPauseMenu : MonoBehaviour
     {
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
-        // book.OpenBook();
+        
         isPauseMenuOpen = true;
     }
 
@@ -77,24 +77,6 @@ public class NewPauseMenu : MonoBehaviour
     }
 
    
-    /*
-    public void RestartLevel()
-    {
-       
-        Scene currentScene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(currentScene.name, LoadSceneMode.Single);
-        inventory.inventory.Clear();
-        Inventory.canUseElement = true;
-        // Debug.Log(inventory.inventory.Count);
-        // Vector3 mouseP = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        PlayerMovement.playerFacingRight = true;
-        // Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        //mousePos = new Vector2(120, mousePos.y);
-
-        
-        isPauseMenuOpen = false;
-        Time.timeScale = 1f;
-    }
-    */
+   
 
 }

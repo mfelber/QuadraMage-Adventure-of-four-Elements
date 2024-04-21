@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class QuestManager : MonoBehaviour
 {
-    //public List<Quest> quests = new List<Quest>();
+    
 
 
    public GameObject NPCQuest1;
@@ -51,8 +51,6 @@ public class QuestManager : MonoBehaviour
         NPCQuest2.SetActive(false);
         NPCQuest3.SetActive(false);
 
-      //NPCQuest2.SetActive(false);
-     //NPCQuest3.SetActive(false);
 
         npc1Vis = true;
         npc2Vis = false;
@@ -71,15 +69,15 @@ public class QuestManager : MonoBehaviour
         if (isQuest1comp && NPCQuest1.activeSelf)
         {
             
-            //questItem1.SetActive(false);
+            
                 npc2Vis = true;
-            //Destroy(NPCQuest1);
+         
             
             NPCQuest1.SetActive(false);
             
             NPCQuest2.SetActive(true);
             npc1Vis = false;        
-            //questItem2.SetActive(true);
+           
            
            
 
@@ -88,8 +86,7 @@ public class QuestManager : MonoBehaviour
         {
             npc2Vis = false;
             npc3Vis = true;
-            //Destroy(NPCQuest2);
-
+           
            
                 NPCQuest2.SetActive(false);
             
@@ -97,23 +94,19 @@ public class QuestManager : MonoBehaviour
             
             
             NPCQuest3.SetActive(true);
-            //setInVisibleNPC2();
-            //setVisibleNPC3();
-            //NPCQuest2.SetActive(false);
            
-            //NPCQuest3.SetActive(true);            
-            //questItem2.SetActive(false);
+           
+           
             questItem3.SetActive(true);
             Quest3.SetActive(true);
 
         }
         if (isQuest3comp && questNumber >= 3)
         {
-            //questItem3.SetActive(false);
+           
         }
 
-        //Debug.Log("npc 1 visible"+ npc1Vis);
-        //Debug.Log("npc 2 visible"+ npc2Vis);
+       
         
     }
 
@@ -189,7 +182,7 @@ public class QuestManager : MonoBehaviour
     {
         isQuest2comp = true;
         questItem2.SetActive(false);
-        //Quest3.SetActive(true);
+       
         questNumber++;
     }
     public void quest3Completed()

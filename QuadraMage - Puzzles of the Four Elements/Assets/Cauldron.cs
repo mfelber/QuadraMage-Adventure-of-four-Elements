@@ -34,7 +34,7 @@ public class Cauldron : MonoBehaviour
             heat += 0.5f;
             if (heat == 250)
             {
-                // set states
+               
              
                     cauldronAnimator.Play("cauldronBoiling");
                 

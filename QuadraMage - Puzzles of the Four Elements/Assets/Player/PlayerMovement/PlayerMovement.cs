@@ -8,7 +8,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 
-    //PauseMenu pauseMenu;
+   
     NewPauseMenu newPauseMenu;
     
     Inventory inventory;
@@ -116,7 +116,7 @@ public class PlayerMovement : MonoBehaviour
             }
 
             if (!Inventory.isPlayerUsingElement)
-                //Debug.Log(Inventory.isPlayerUsingElement);
+                
                 {
                     if(HowMuchTimeIsLeft <= 0)
                 {
@@ -134,7 +134,7 @@ public class PlayerMovement : MonoBehaviour
                     {
                         playerRB.velocity = new Vector2(-KnobBackForce,KnobBackForce);
                         knockBackIsGoing = true;
-                        //Debug.LogError(knockBackIsGoing);
+                        
                         playerOnGround = false;
                         Invoke("knockbackOff",1.3f);
                         
@@ -143,7 +143,7 @@ public class PlayerMovement : MonoBehaviour
                     {
                         playerRB.velocity = new Vector2(KnobBackForce, KnobBackForce);
                         knockBackIsGoing=true;
-                        //Debug.LogError(knockBackIsGoing);
+                        
                         playerOnGround = false;
                         Invoke("knockbackOff", 1.3f);
 
@@ -152,7 +152,7 @@ public class PlayerMovement : MonoBehaviour
 
                     HowMuchTimeIsLeft -= Time.deltaTime;
                     
-                    //Debug.LogError(knockBackIsGoing);
+                    
                 }
 
                     
@@ -167,14 +167,7 @@ public class PlayerMovement : MonoBehaviour
                     }
 
 
-                /*
-                 *  if (Input.GetButtonDown("Jump") && playerOnGround)
-                {
-                    playerRB.velocity = new Vector2(playerRB.velocity.x, jumpHeight);
-                    playerOnGround = false;
-
-                }
-                 */
+                
 
                     
                 if (isGrounded() == true)
@@ -209,11 +202,6 @@ public class PlayerMovement : MonoBehaviour
 
              UpdateAnimation();
         }
-
-        //Debug.LogError("pozeram do prava" + playerFacingRight);
-        // Debug.LogError("pozeram do lava" + !playerFacingRight);
-
-        //Debug.LogError(playerOnGround);
 
 
 
@@ -274,7 +262,7 @@ public class PlayerMovement : MonoBehaviour
             }
 
         }
-        //animator.SetInteger("state", (int)state);
+       
         animator.SetInteger("state", (int)states);
     }
 
@@ -326,19 +314,7 @@ public class PlayerMovement : MonoBehaviour
     
 
 
-    
-    /*
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (!feet2.IsTouching(collision.collider))
-        {
-            StopAllCoroutines();
-            StartCoroutine(NotTouching());
-            
-        }
-
-    }
-    */
+   
     IEnumerator NotTouching()
     {
         yield return new WaitForSeconds(0.050f);

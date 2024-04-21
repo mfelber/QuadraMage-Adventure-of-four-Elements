@@ -8,12 +8,9 @@ public class craneHand : MonoBehaviour
     private bool craneNotdefault;
     public Animator craneHandAnimator;
     
-   // public GameObject rope1;
-   // public GameObject rope2;
+   
     public GameObject hook;
-    //public GameObject rope1;
-    //public Rigidbody2D tnt;
-   // public Rigidbody2D rop3;
+   
     public Rigidbody2D tntBox;
     rope ropeScript;
     public bool animationGoing;
@@ -34,10 +31,7 @@ public class craneHand : MonoBehaviour
         if (rope.ropeDestroyed)
         {
             tntBox.bodyType = RigidbodyType2D.Dynamic;
-            //tnt.bodyType = RigidbodyType2D.Dynamic;
-
-           // Destroy(rope2);
-          //  Destroy(rope1);
+            
             Destroy(hook);
             
         }
@@ -64,21 +58,12 @@ public class craneHand : MonoBehaviour
             Debug.Log("kolizia");
             if(craneNotdefault == true)
             {
-              //  tnt.bodyType = RigidbodyType2D.Static;
-                // rop1.bodyType = RigidbodyType2D.Static;
-                // rop2.bodyType = RigidbodyType2D.Static;
-                //  rop3.bodyType = RigidbodyType2D.Static;    
-                //  tntBox.bodyType = RigidbodyType2D.Static;
-                //rope1.transform.position = new Vector3(rope1.transform.position.x, rope1.transform.position.y, 0);
+          
                 StopAllCoroutines();
 
                 StartCoroutine(setRotateBool());
                 craneHandAnimator.SetBool("rotate", true);
-                //Invoke("setRotateBool", 2.5f);
-
-                
                
-                //craneNotdefault = false;
             }
             
         }
@@ -87,12 +72,7 @@ public class craneHand : MonoBehaviour
         {
             if(craneNotdefault == false)
             {
-               // tnt.bodyType = RigidbodyType2D.Static;
-                // rop1.bodyType = RigidbodyType2D.Static;
-                // rop2.bodyType = RigidbodyType2D.Static;
-                // rop3.bodyType = RigidbodyType2D.Static;
-                //  tntBox.bodyType = RigidbodyType2D.Static;
-                //Invoke("setRotateBool", 2.5f);
+               
                 StopAllCoroutines();
                 StartCoroutine(setRotateBool());
                 craneHandAnimator.SetBool("rotate", false);
@@ -107,44 +87,17 @@ public class craneHand : MonoBehaviour
 
         if (craneNotdefault == true)
         {
-           // tnt.bodyType = RigidbodyType2D.Dynamic;
-            // rop1.bodyType = RigidbodyType2D.Dynamic;
-            // rop2.bodyType = RigidbodyType2D.Dynamic;
-            //  rop3.bodyType = RigidbodyType2D.Dynamic;
-            //  tntBox.bodyType = RigidbodyType2D.Dynamic;
+           
             craneNotdefault = false;
         }
         else
         {
             craneNotdefault = true;
-            //tnt.bodyType = RigidbodyType2D.Dynamic;
-            // rop1.bodyType = RigidbodyType2D.Dynamic;
-            //  rop2.bodyType = RigidbodyType2D.Dynamic;
-            //  rop3.bodyType = RigidbodyType2D.Dynamic;
-            //  tntBox.bodyType = RigidbodyType2D.Dynamic;
+           
         }
 
     }
     
 
-    /*
-    public void setRotateBool ()
-    {
-        if (craneNotdefault == true)
-        {
-            craneNotdefault = false;
-            rop1.bodyType = RigidbodyType2D.Dynamic;
-            rop2.bodyType = RigidbodyType2D.Dynamic;
-            rop3.bodyType = RigidbodyType2D.Dynamic;
-            tntBox.bodyType = RigidbodyType2D.Dynamic;
-        } else
-        {
-            craneNotdefault = true;
-            rop1.bodyType = RigidbodyType2D.Dynamic;
-            rop2.bodyType = RigidbodyType2D.Dynamic;
-            rop3.bodyType = RigidbodyType2D.Dynamic;
-            tntBox.bodyType = RigidbodyType2D.Dynamic;
-        }
-    }
-    */
+    
 }

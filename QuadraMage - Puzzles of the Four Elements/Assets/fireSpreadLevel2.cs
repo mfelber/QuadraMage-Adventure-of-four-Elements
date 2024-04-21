@@ -6,8 +6,7 @@ public class fireSpreadLevel2 : MonoBehaviour
 {
     public GameObject fire1;
     public GameObject fire2;
-   // public GameObject fire3;
-    //public GameObject fire4;
+   
     public Animator Animator;
     [SerializeField] Animator waterTank;
     QuestManager questManager;
@@ -19,18 +18,10 @@ public class fireSpreadLevel2 : MonoBehaviour
         questManager = FindObjectOfType<QuestManager>();
     }
 
-    // Update is called once per frame
+   
     void Update()
     {
-        /*
-        if (questManager.acceptThirdQuest)
-        {
-            fireSpreadObject.transform.position = new Vector2(30.84f, 23.57f);
-        } else
-        {
-            fireSpreadObject.transform.position = new Vector2(30.84f, 36.87f);
-        }
-            */
+       
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -52,18 +43,7 @@ public class fireSpreadLevel2 : MonoBehaviour
         yield return new WaitForSeconds(time);
         fire1.SetActive(true);
         fire2.SetActive(true);
-        //float elapsedTime = 0f;
-
-        /*
-        while (elapsedTime < cas)
-        {
-            yield return null;
-            elapsedTime += Time.deltaTime;
-        }
-        */
-
-        //fire1.gameObject.SetActive(true);
-        //fire2.gameObject.SetActive(true);
+        
         Animator.SetBool("spread", false);
         Invoke("fall", 3);
     }

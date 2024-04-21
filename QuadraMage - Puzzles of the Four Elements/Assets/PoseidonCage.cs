@@ -9,7 +9,7 @@ public class PoseidonCage : MonoBehaviour
     public List<GameObject> itemsToSpawn = new List<GameObject>();
     public GameObject destroy;
    
-    //public GameObject tntBarrel;
+    
     public bool pirateIsFree;
     public Animator animator;
     [SerializeField] public Animator tntBarrel;
@@ -19,14 +19,7 @@ public class PoseidonCage : MonoBehaviour
         pirateIsFree = false;
         destroy.SetActive(true);
         
-        //tntBarrel.SetActive(true);
-        /*
-        for (int i = 0; i < itemsToSpawn.Count; i++)
-        {
-            itemsToSpawn[i].SetActive(false);
-     
-        }
-        */
+        
     }
 
     // Update is called once per frame
@@ -34,13 +27,7 @@ public class PoseidonCage : MonoBehaviour
     {
         if (pirateIsFree)
         {
-            /*
-            for (int i = 0; i < itemsToSpawn.Count; i++)
-            {
-                itemsToSpawn[i].SetActive(true);
-
-            }
-            */
+            
             destroy.SetActive(false);
             
             animator.Play("PirateInCageGoToShip");
@@ -54,7 +41,7 @@ public class PoseidonCage : MonoBehaviour
         {
             questManager.quest3Completed();
             pirateIsFree = true;
-            //Destroy(collision.gameObject);
+           
         }
     }
 
@@ -62,8 +49,7 @@ public class PoseidonCage : MonoBehaviour
     {
         tntBarrel.Play("showBarrel");
         Invoke("desibleAnimator", 0.6f);
-        // tntBarrel.enabled = false;
-        //tntBarrel.SetActive(true);
+        
     }
 
     public void desibleAnimator()
