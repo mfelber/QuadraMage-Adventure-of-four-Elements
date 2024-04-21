@@ -15117,7 +15117,7 @@ GameObject:
   - component: {fileID: 555387674}
   - component: {fileID: 555387676}
   - component: {fileID: 555387677}
-  m_Layer: 7
+  m_Layer: 29
   m_Name: WeaknesFire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16786,7 +16786,7 @@ GameObject:
   m_Component:
   - component: {fileID: 610217779}
   - component: {fileID: 610217780}
-  m_Layer: 7
+  m_Layer: 29
   m_Name: Troops_18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26858,7 +26858,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1018721230}
   - component: {fileID: 1018721231}
-  m_Layer: 7
+  m_Layer: 29
   m_Name: Troops_16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37890,7 +37890,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1484983397}
   - component: {fileID: 1484983398}
-  m_Layer: 7
+  m_Layer: 29
   m_Name: Troops_15
   m_TagString: Untagged
   m_Icon: {fileID: 0}

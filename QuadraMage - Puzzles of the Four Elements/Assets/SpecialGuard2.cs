@@ -22,7 +22,7 @@ public class SpecialGuard2 : MonoBehaviour
 
             // specialGuardAnimator.enabled = false;
             // GetComponent<SpriteRenderer>().sprite = dead;
-            Physics2D.IgnoreLayerCollision(6, 7);
+            Physics2D.IgnoreLayerCollision(6, 29);
         }
 
 
