@@ -23,10 +23,11 @@ public class pirate : MonoBehaviour
     {
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
-
-        if (sceneName == "Level2")
-        {
+        
+       
             if (collision.gameObject.CompareTag("cage"))
+        {
+            if (sceneName == "Level2")
             {
                 Destroy(gameObject);
             }

@@ -2,108 +2,78 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyPirate : MonoBehaviour
+public class EnemyPirate2 : MonoBehaviour
 {
-    // Start is called before the first frame update
-
     public Animator animator;
     public PlayerMovement PlayerMovement;
     tnt Tnt;
-    public bool pirateNearTnt;
-    
-    
+    public static bool pirate2NearTnt;
     public string tntObjectName;
     void Start()
     {
-        
         GameObject tntObject = GameObject.Find(tntObjectName);
-
-       
         Tnt = tntObject.GetComponent<tnt>();
-       
-        pirateNearTnt = false;
-        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Enemy"), LayerMask.NameToLayer("Ground"), true);
+
+        pirate2NearTnt = false;
+        //Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Enemy"), LayerMask.NameToLayer("Ground"), true);
     }
 
     // Update is called once per frame
     void Update()
     {
-       
-
-        if (pirateNearTnt && Tnt.time < 0)
+        if (pirate2NearTnt && Tnt.time < 0)
         {
-            
-            animator.SetBool("DeadPirate", true);
-            animator.SetBool("deadOctopus", true);
-        } 
-
-
+            animator.Play("pirateOverBoard2");
+        }
+        Debug.LogError(pirate2NearTnt);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Player"))
+       
+
+
+
+        if (collision.gameObject.CompareTag("TNTPIRATE"))
         {
-            
-            animator.SetBool("go", true);
+            Debug.Log("kolizia s tnt");
+            pirate2NearTnt = true;
         }
-
-        if (collision.gameObject.CompareTag("FireSpread"))
-        {
-           
-            animator.SetBool("overBoardPirate3", true);
-        }
-
-        
-        
-        if (collision.gameObject.name == tntObjectName)
-        {
-            Debug.Log("kolizia");
-            pirateNearTnt =true;
-        }
-
-        
-
-
 
 
     }
 
+
+    
+    /*
     private void OnTriggerExit2D(Collider2D collision)
     {
 
         if (collision.gameObject.name == tntObjectName)
         {
             Invoke("setCollision", 1f);
-           // Debug.Log("kolizia");
-           // pirateNearTnt = false;
+            // Debug.Log("kolizia");
+            // pirateNearTnt = false;
         }
     }
+    */
 
-
-
-
-    public void setCollision ()
+    public void setCollision()
     {
-        pirateNearTnt = false;
+        pirate2NearTnt = false;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("WindElementShot"))
         {
-            animator.SetBool("pirateOverBoard", true);
-            animator.SetBool("overBoardPirate3", true);
-            animator.SetBool("overBoardPirate4", true);
-            animator.SetBool("overBoardPirate2", true);
+            animator.Play("pirateOverBoard2");
             Destroy(collision.gameObject);
         }
 
-        
-
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("kolizia");
+           // Debug.Log("kolizia");
             PlayerMovement.HowMuchTimeIsLeft = PlayerMovement.TimeOfKnockBack;
             if (collision.transform.position.x <= transform.position.x)
             {
@@ -117,10 +87,5 @@ public class EnemyPirate : MonoBehaviour
             }
         }
 
-       
-
-
     }
-
-    
 }

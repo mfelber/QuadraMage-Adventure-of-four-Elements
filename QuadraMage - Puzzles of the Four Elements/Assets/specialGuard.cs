@@ -55,16 +55,18 @@ public class specialGuard : MonoBehaviour
         
 
 
+       
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
         if (collision.gameObject.CompareTag("WaterElementShot"))
         {
             //specialGuardAnimator.SetBool("hit", true);
             hitByWater = true;
             Destroy(collision.gameObject);
         }
-    }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
         if (collision.gameObject.CompareTag("WindElementShot"))
         {
             Destroy(collision.gameObject);
