@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class SpecialGuard2 : MonoBehaviour
 {
-<<<<<<< HEAD
-    // Start is called before the first frame update
-=======
->>>>>>> fix
     public Animator specialGuardAnimator;
     public bool isHit = false;
     public PlayerMovement PlayerMovement;
@@ -21,19 +17,15 @@ public class SpecialGuard2 : MonoBehaviour
     {
         if (isHit)
         {
-<<<<<<< HEAD
+
             specialGuardAnimator.Play("specialGuardElimination2");
-=======
-            specialGuardAnimator.Play("specialGuardElimination");
->>>>>>> fix
+
             // specialGuardAnimator.enabled = false;
             // GetComponent<SpriteRenderer>().sprite = dead;
             Physics2D.IgnoreLayerCollision(6, 7);
         }
-<<<<<<< HEAD
-=======
 
->>>>>>> fix
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
