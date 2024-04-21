@@ -23,6 +23,7 @@ public class ActivateCutScene : MonoBehaviour
            
                 playableDirector.Play();
                 GetComponent<BoxCollider2D>().enabled = false;
+            gameObject.SetActive(false);
                 
             }
 

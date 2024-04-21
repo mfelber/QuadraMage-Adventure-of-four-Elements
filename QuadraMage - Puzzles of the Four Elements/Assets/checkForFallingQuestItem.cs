@@ -47,7 +47,7 @@ public class checkForFallingQuestItem : MonoBehaviour
             {
 
                 collision.transform.position = new Vector2(5.308025f, 23.71198f);
-                item.text = "iron padol chod si pre neho";
+                item.text = "Iron has fallen, go back and get it";
                 animator.Play("itemFall");
                 Invoke("hideWarning", 2f);
 
@@ -56,7 +56,7 @@ public class checkForFallingQuestItem : MonoBehaviour
             if (collision.gameObject.CompareTag("Wood"))
             {
                 collision.transform.position = new Vector2(36.9f, 23.83f);
-                item.text = "wood padol chod si pre neho";
+                item.text = "Wood has fallen, go back and get it";
                 animator.Play("itemFall");
                 Invoke("hideWarning", 2f);
             }
@@ -64,7 +64,7 @@ public class checkForFallingQuestItem : MonoBehaviour
             if (collision.gameObject.CompareTag("Gold") )
             {
                 collision.transform.position = new Vector2(-94.14f, 12f);
-                item.text = "gold padol chod si pre neho";
+                item.text = "Gold has fallen, go back and get it";
                 animator.Play("itemFall");
                 Invoke("hideWarning", 2f);
 

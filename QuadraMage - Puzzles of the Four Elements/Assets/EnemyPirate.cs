@@ -44,7 +44,7 @@ public class EnemyPirate : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Kolizia");
+            
             animator.SetBool("go", true);
         }
 

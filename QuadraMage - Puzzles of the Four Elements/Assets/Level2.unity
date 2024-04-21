@@ -11852,30 +11852,30 @@ MonoBehaviour:
     dialogueLines:
     - character:
         name: Stranger
-        icon: {fileID: 0}
+        icon: {fileID: -1705871327, guid: 161432ea0d8b6b844aba45d39faed2f0, type: 3}
       line: Hi traveler, I have three quests for you, but I'll only give you riddles.
         It's up to you to figure out where you need to go
     - character:
         name: Stranger
-        icon: {fileID: 0}
+        icon: {fileID: -1705871327, guid: 161432ea0d8b6b844aba45d39faed2f0, type: 3}
       line: If you complete these quests you can craft lever for you and go to the
         other side of the bridge
     - character:
         name: Stranger
-        icon: {fileID: 0}
+        icon: {fileID: -1705871327, guid: 161432ea0d8b6b844aba45d39faed2f0, type: 3}
       line: You can bring items for crafting the lever into the workbench in front
         of the Tavern
     - character:
         name: August
-        icon: {fileID: 0}
+        icon: {fileID: -431850654, guid: a7dae2a4e3137284eb6f964515792964, type: 3}
       line: OK
     - character:
         name: Stranger
-        icon: {fileID: 0}
+        icon: {fileID: -1705871327, guid: 161432ea0d8b6b844aba45d39faed2f0, type: 3}
       line: 'Here is first riddle :'
     - character:
         name: Stranger
-        icon: {fileID: 0}
+        icon: {fileID: -1705871327, guid: 161432ea0d8b6b844aba45d39faed2f0, type: 3}
       line: 'In dragon''s grasp, I gleam bold,
 
         A prized possession, wealth
@@ -12845,8 +12845,8 @@ MonoBehaviour:
   dialogues:
     dialogueLines:
     - character:
-        name: 
-        icon: {fileID: 0}
+        name: LumberJack
+        icon: {fileID: -1790512053, guid: 18f14aea4d3bfb644bfc80b501cf140e, type: 3}
       line: 'Hi
 
 '
@@ -13315,15 +13315,15 @@ MonoBehaviour:
     dialogueLines:
     - character:
         name: LumberJack
-        icon: {fileID: 0}
+        icon: {fileID: 921658069, guid: 161432ea0d8b6b844aba45d39faed2f0, type: 3}
       line: Please help
     - character:
         name: LumberJack
-        icon: {fileID: 0}
+        icon: {fileID: 921658069, guid: 161432ea0d8b6b844aba45d39faed2f0, type: 3}
       line: Do whatever you can, just put out the fire
     - character:
         name: LumberJack
-        icon: {fileID: 0}
+        icon: {fileID: 921658069, guid: 161432ea0d8b6b844aba45d39faed2f0, type: 3}
       line: There's water in that wooden thing
 --- !u!4 &319012221
 Transform:
@@ -16590,22 +16590,22 @@ MonoBehaviour:
     dialogueLines:
     - character:
         name: August
-        icon: {fileID: 0}
+        icon: {fileID: -431850654, guid: a7dae2a4e3137284eb6f964515792964, type: 3}
       line: I delivered the iron what's the last riddle?
     - character:
         name: Stranger
-        icon: {fileID: 0}
+        icon: {fileID: -1705871327, guid: 161432ea0d8b6b844aba45d39faed2f0, type: 3}
       line: 'Here is the last riddle:'
     - character:
         name: Stranger
-        icon: {fileID: 0}
+        icon: {fileID: -1705871327, guid: 161432ea0d8b6b844aba45d39faed2f0, type: 3}
       line: 'In the woods so deep, where shadows sprawl,
 
         With a lumberjack''s
         care, I never fall.'
     - character:
         name: Stranger
-        icon: {fileID: 0}
+        icon: {fileID: -1705871327, guid: 161432ea0d8b6b844aba45d39faed2f0, type: 3}
       line: After you deliver this last item to the workbench, you can put the lever
         in its rightful place.
 --- !u!212 &404897996
@@ -18850,7 +18850,7 @@ Transform:
   m_GameObject: {fileID: 462707940}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.89, y: 0.67, z: 0}
+  m_LocalPosition: {x: 0.8, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -33876,7 +33876,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.8184061, y: 0}
+  m_Offset: {x: -1.472539, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -33887,7 +33887,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.6368122, y: 1}
+  m_Size: {x: 3.945078, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &683705674
 MonoBehaviour:
@@ -36994,6 +36994,99 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -9.1, y: 23.743, z: 0}
   m_LocalScale: {x: 0.1198, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &749560100
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 749560103}
+  - component: {fileID: 749560102}
+  - component: {fileID: 749560101}
+  m_Layer: 0
+  m_Name: CheckForQuestItemFalling (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &749560101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 749560100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b5dae4d052681e4bac6c08b64008549, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iron: {fileID: 0}
+  item: {fileID: 1774793694}
+  animator: {fileID: 905815103}
+--- !u!61 &749560102
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 749560100}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 3.6958132, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 18.566622, y: 1}
+  m_EdgeRadius: 0
+--- !u!4 &749560103
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 749560100}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.23, y: -2.92, z: -0.25835}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -48908,7 +49001,7 @@ Transform:
   m_GameObject: {fileID: 1088949124}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.89, y: 4.31, z: -10}
+  m_LocalPosition: {x: 0.8, y: 4.1400003, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -52271,19 +52364,19 @@ MonoBehaviour:
     dialogueLines:
     - character:
         name: August
-        icon: {fileID: 0}
+        icon: {fileID: -431850654, guid: a7dae2a4e3137284eb6f964515792964, type: 3}
       line: I delivered the gold, what's next?
     - character:
         name: Stranger
-        icon: {fileID: 0}
+        icon: {fileID: -1705871327, guid: 161432ea0d8b6b844aba45d39faed2f0, type: 3}
       line: Good job
     - character:
         name: Stranger
-        icon: {fileID: 0}
+        icon: {fileID: -1705871327, guid: 161432ea0d8b6b844aba45d39faed2f0, type: 3}
       line: 'Next riddle is : '
     - character:
         name: Stranger
-        icon: {fileID: 0}
+        icon: {fileID: -1705871327, guid: 161432ea0d8b6b844aba45d39faed2f0, type: 3}
       line: 'Forged in heat, a blade so bright,
 
         In hands of knights, I join
@@ -57437,7 +57530,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7400639690937788805, guid: 75daf37d3a9067d4f87694427041f149, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.75
+      value: -7.75
       objectReference: {fileID: 0}
     - target: {fileID: 7400639690937788805, guid: 75daf37d3a9067d4f87694427041f149, type: 3}
       propertyPath: m_LocalPosition.y
@@ -71220,7 +71313,7 @@ Transform:
   m_GameObject: {fileID: 1795734061}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.89, y: 4.31, z: -10}
+  m_LocalPosition: {x: 0.8, y: 4.1400003, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -84107,6 +84200,7 @@ SceneRoots:
   - {fileID: 818647255}
   - {fileID: 908879508}
   - {fileID: 1073117985}
+  - {fileID: 749560103}
   - {fileID: 2082090707}
   - {fileID: 272491643}
   - {fileID: 514494346}
