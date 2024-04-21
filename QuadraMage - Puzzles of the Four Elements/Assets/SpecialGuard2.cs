@@ -2,63 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class specialGuard : MonoBehaviour
+public class SpecialGuard2 : MonoBehaviour
 {
     // Start is called before the first frame update
     public Animator specialGuardAnimator;
-    //public GameObject specialGuardGO;
-    private Renderer specialGuardRenderer;
-   // public Sprite dead;
+    public bool isHit = false;
     public PlayerMovement PlayerMovement;
-
-    //public bool isHit = false;
-    public bool hitByWater = false;
-
     void Start()
     {
-       
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        /*
-        if(isHit)
+        if (isHit)
         {
             specialGuardAnimator.Play("specialGuardElimination2");
-           // specialGuardAnimator.enabled = false;
+            // specialGuardAnimator.enabled = false;
             // GetComponent<SpriteRenderer>().sprite = dead;
             Physics2D.IgnoreLayerCollision(6, 7);
         }
-
-        */
-        if (hitByWater)
-        {
-            
-            Physics2D.IgnoreLayerCollision(6, 7);
-            Invoke("desibleAnimator", 0.6f);
-        }
-
     }
-
-    public void desibleAnimator()
-    {
-        specialGuardAnimator.Play("specialGuardElimination");
-        specialGuardAnimator.enabled = false;
-
-    }
-
-
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
-
-
-        if (collision.gameObject.CompareTag("WaterElementShot"))
+        if (collision.gameObject.CompareTag("FireElementShot"))
         {
             //specialGuardAnimator.SetBool("hit", true);
-            hitByWater = true;
+            isHit = true;
             Destroy(collision.gameObject);
         }
     }

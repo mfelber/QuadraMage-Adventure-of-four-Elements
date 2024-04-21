@@ -12013,7 +12013,7 @@ Transform:
   m_GameObject: {fileID: 462707940}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -23.6, y: 11.6, z: 0}
+  m_LocalPosition: {x: -24.4, y: 10.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12046,7 +12046,7 @@ MonoBehaviour:
   knockBackIsGoing: 0
   Ground:
     serializedVersion: 2
-    m_Bits: 8192
+    m_Bits: 270336
 --- !u!61 &462707944
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13285,7 +13285,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   specialGuardAnimator: {fileID: 500916248}
   PlayerMovement: {fileID: 462707943}
-  isHit: 0
   hitByWater: 0
 --- !u!212 &500916250
 SpriteRenderer:
@@ -14585,6 +14584,7 @@ GameObject:
   - component: {fileID: 555387675}
   - component: {fileID: 555387674}
   - component: {fileID: 555387676}
+  - component: {fileID: 555387677}
   m_Layer: 7
   m_Name: WeaknesFire
   m_TagString: Untagged
@@ -14620,14 +14620,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 555387669}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dab0aafd1e696814ea54fcb5a89baf11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   specialGuardAnimator: {fileID: 555387670}
   PlayerMovement: {fileID: 462707943}
-  isHit: 0
   hitByWater: 0
 --- !u!212 &555387672
 SpriteRenderer:
@@ -14816,6 +14815,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &555387677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555387669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa3d4c5e68231b3459edd65e73c1f27e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  specialGuardAnimator: {fileID: 555387670}
+  isHit: 0
+  PlayerMovement: {fileID: 462707943}
 --- !u!1 &562425140
 GameObject:
   m_ObjectHideFlags: 3
@@ -28475,7 +28489,7 @@ Transform:
   m_GameObject: {fileID: 1088949124}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -23.6, y: 15.240001, z: -10}
+  m_LocalPosition: {x: -24.4, y: 14.440001, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -45353,7 +45367,7 @@ Transform:
   m_GameObject: {fileID: 1795734061}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -23.6, y: 15.240001, z: -10}
+  m_LocalPosition: {x: -24.4, y: 14.440001, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

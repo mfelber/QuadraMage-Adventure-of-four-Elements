@@ -98,16 +98,18 @@ public class tnt : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
 
+        if (collision.CompareTag("Player") && sceneName == "Level4")
+        {
+            playerNearTnt = false;
+            interact.SetActive(false);
+        }
+
         if (collision.CompareTag("Player") && questManager.acceptFirstQuest == true)
         {
             playerNearTnt = false;
             interact.SetActive(false);
         }
 
-        if (collision.CompareTag("Player") && sceneName == "Level4")
-        {
-            playerNearTnt = false;
-            interact.SetActive(false);
-        }
+        
     }
 }
